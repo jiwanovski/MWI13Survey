@@ -2,6 +2,7 @@
  */
 package de.nordakademie.mwi13a.team1.survey.survey;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +12,7 @@ package de.nordakademie.mwi13a.team1.survey.survey;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.DropDown#getName <em>Name</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.DropDown#getAnswer <em>Answer</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +20,22 @@ package de.nordakademie.mwi13a.team1.survey.survey;
  * @model
  * @generated
  */
-public interface DropDown extends Type
+public interface DropDown extends SurveyTerminalTypes
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Answer</b></em>' containment reference list.
+   * The list contents are of type {@link de.nordakademie.mwi13a.team1.survey.survey.Answer}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Answer</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getDropDown_Name()
-   * @model
+   * @return the value of the '<em>Answer</em>' containment reference list.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getDropDown_Answer()
+   * @model containment="true"
    * @generated
    */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link de.nordakademie.mwi13a.team1.survey.survey.DropDown#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  EList<Answer> getAnswer();
 
 } // DropDown

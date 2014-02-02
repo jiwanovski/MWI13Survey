@@ -41,7 +41,7 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cIDKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cQuestionnaireIDKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cIdIdentifierParserRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
 		private final Assignment cPartAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -49,10 +49,10 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		/// *A Questionnaire must contain at least 1 Part* / Questionnaire:
-		//	"Questionnaire:" name=STRING "{" "ID:" id=Identifier part+=Part+ "}";
+		//	"Questionnaire:" name=STRING "{" "Questionnaire-ID:" id=Identifier part+=Part+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Questionnaire:" name=STRING "{" "ID:" id=Identifier part+=Part+ "}"
+		//"Questionnaire:" name=STRING "{" "Questionnaire-ID:" id=Identifier part+=Part+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Questionnaire:"
@@ -67,8 +67,8 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"ID:"
-		public Keyword getIDKeyword_3() { return cIDKeyword_3; }
+		//"Questionnaire-ID:"
+		public Keyword getQuestionnaireIDKeyword_3() { return cQuestionnaireIDKeyword_3; }
 
 		//id=Identifier
 		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
@@ -93,7 +93,7 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cIDKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cPartIDKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cIdIdentifierParserRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
 		private final Assignment cQuestionAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -101,10 +101,10 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		/// *A Part must contain at least 1 Question* / Part:
-		//	"Part:" name=STRING "{" "ID:" id=Identifier question+=Question+ "}";
+		//	"Part:" name=STRING "{" "Part-ID:" id=Identifier question+=Question+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Part:" name=STRING "{" "ID:" id=Identifier question+=Question+ "}"
+		//"Part:" name=STRING "{" "Part-ID:" id=Identifier question+=Question+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Part:"
@@ -119,8 +119,8 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"ID:"
-		public Keyword getIDKeyword_3() { return cIDKeyword_3; }
+		//"Part-ID:"
+		public Keyword getPartIDKeyword_3() { return cPartIDKeyword_3; }
 
 		//id=Identifier
 		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
@@ -145,30 +145,25 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cIDKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cQuestionIDKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cIdIdentifierParserRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
-		private final Keyword cMandatoryKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cMandatoryAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cMandatoryMandatoryParserRuleCall_6_0 = (RuleCall)cMandatoryAssignment_6.eContents().get(0);
-		private final Keyword cTypeKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cTypeAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cTypeTypeParserRuleCall_8_0 = (RuleCall)cTypeAssignment_8.eContents().get(0);
-		private final Assignment cAnswerAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cAnswerAnswerParserRuleCall_9_0 = (RuleCall)cAnswerAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cMandatoryAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final Keyword cMandatoryMandatoryFieldKeyword_5_0 = (Keyword)cMandatoryAssignment_5.eContents().get(0);
+		private final Keyword cTypeKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cQuestionTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cQuestionTypeSurveyTerminalTypesParserRuleCall_7_0 = (RuleCall)cQuestionTypeAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		/// *For each Question will be defined a type and wether it's a mandatory field or not* / Question:
-		//	"Question:" name=STRING "{" "ID:" id=Identifier "Mandatory:" mandatory=Mandatory "Type:" type= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
-		//	Type / *For each Question can be defined an arbitraty number of Answers. 
-		//		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.* / answer+=Answer*
-		//	"}";
+		//	"Question:" name=STRING "{" "Question-ID:" id=Identifier mandatory?="Mandatory Field"? "Type:" questionType= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
+		//	SurveyTerminalTypes / *For each Question can be defined an arbitraty number of Answers. 
+		//		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.* / "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Question:" name=STRING "{" "ID:" id=Identifier "Mandatory:" mandatory=Mandatory "Type:" type= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
-		//Type / *For each Question can be defined an arbitraty number of Answers. 
-		//		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.* / answer+=Answer*
-		//"}"
+		//"Question:" name=STRING "{" "Question-ID:" id=Identifier mandatory?="Mandatory Field"? "Type:" questionType= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
+		//SurveyTerminalTypes / *For each Question can be defined an arbitraty number of Answers. 
+		//		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.* / "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Question:"
@@ -183,8 +178,8 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"ID:"
-		public Keyword getIDKeyword_3() { return cIDKeyword_3; }
+		//"Question-ID:"
+		public Keyword getQuestionIDKeyword_3() { return cQuestionIDKeyword_3; }
 
 		//id=Identifier
 		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
@@ -192,55 +187,83 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//Identifier
 		public RuleCall getIdIdentifierParserRuleCall_4_0() { return cIdIdentifierParserRuleCall_4_0; }
 
-		//"Mandatory:"
-		public Keyword getMandatoryKeyword_5() { return cMandatoryKeyword_5; }
+		//mandatory?="Mandatory Field"?
+		public Assignment getMandatoryAssignment_5() { return cMandatoryAssignment_5; }
 
-		//mandatory=Mandatory
-		public Assignment getMandatoryAssignment_6() { return cMandatoryAssignment_6; }
-
-		//Mandatory
-		public RuleCall getMandatoryMandatoryParserRuleCall_6_0() { return cMandatoryMandatoryParserRuleCall_6_0; }
+		//"Mandatory Field"
+		public Keyword getMandatoryMandatoryFieldKeyword_5_0() { return cMandatoryMandatoryFieldKeyword_5_0; }
 
 		//"Type:"
-		public Keyword getTypeKeyword_7() { return cTypeKeyword_7; }
+		public Keyword getTypeKeyword_6() { return cTypeKeyword_6; }
 
-		//type= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
-		//Type
-		public Assignment getTypeAssignment_8() { return cTypeAssignment_8; }
+		//questionType= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
+		//SurveyTerminalTypes
+		public Assignment getQuestionTypeAssignment_7() { return cQuestionTypeAssignment_7; }
 
 		////(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
-		//Type
-		public RuleCall getTypeTypeParserRuleCall_8_0() { return cTypeTypeParserRuleCall_8_0; }
+		//SurveyTerminalTypes
+		public RuleCall getQuestionTypeSurveyTerminalTypesParserRuleCall_7_0() { return cQuestionTypeSurveyTerminalTypesParserRuleCall_7_0; }
 
-		//answer+=Answer*
-		public Assignment getAnswerAssignment_9() { return cAnswerAssignment_9; }
+		/// *For each Question can be defined an arbitraty number of Answers. 
+		//		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.* / "}"
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+	}
 
-		//Answer
-		public RuleCall getAnswerAnswerParserRuleCall_9_0() { return cAnswerAnswerParserRuleCall_9_0; }
+	public class MatrixQuestionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MatrixQuestion");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cQuestionIDKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIdIdentifierParserRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Keyword cQuestionKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		
+		//MatrixQuestion:
+		//	"Question-ID:" id=Identifier "Question:" name=STRING;
+		public ParserRule getRule() { return rule; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		//"Question-ID:" id=Identifier "Question:" name=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"Question-ID:"
+		public Keyword getQuestionIDKeyword_0() { return cQuestionIDKeyword_0; }
+
+		//id=Identifier
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+
+		//Identifier
+		public RuleCall getIdIdentifierParserRuleCall_1_0() { return cIdIdentifierParserRuleCall_1_0; }
+
+		//"Question:"
+		public Keyword getQuestionKeyword_2() { return cQuestionKeyword_2; }
+
+		//name=STRING
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 	}
 
 	public class AnswerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Answer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIDKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAnswerIDKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cIdIdentifierParserRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
 		private final Keyword cAnswerKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameIdentifierParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//Answer:
-		//	"ID:" id=Identifier "Answer:" name=Identifier;
+		//	"Answer-ID:" id=Identifier "Answer:" name=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//"ID:" id=Identifier "Answer:" name=Identifier
+		//"Answer-ID:" id=Identifier "Answer:" name=STRING
 		public Group getGroup() { return cGroup; }
 
-		//"ID:"
-		public Keyword getIDKeyword_0() { return cIDKeyword_0; }
+		//"Answer-ID:"
+		public Keyword getAnswerIDKeyword_0() { return cAnswerIDKeyword_0; }
 
 		//id=Identifier
 		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
@@ -251,213 +274,278 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//"Answer:"
 		public Keyword getAnswerKeyword_2() { return cAnswerKeyword_2; }
 
-		//name=Identifier
+		//name=STRING
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 
-		//Identifier
-		public RuleCall getNameIdentifierParserRuleCall_3_0() { return cNameIdentifierParserRuleCall_3_0; }
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 	}
 
-	public class TextLnElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextLn");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTextLnKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cLengthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLengthINTTerminalRuleCall_2_0 = (RuleCall)cLengthAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+	public class SurveyTerminalTypesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SurveyTerminalTypes");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cTextLineAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Keyword cNameTextLineKeyword_0_1_0 = (Keyword)cNameAssignment_0_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cLengthAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cLengthINTTerminalRuleCall_0_3_0 = (RuleCall)cLengthAssignment_0_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cTextBlockAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Keyword cNameTextBlockKeyword_1_1_0 = (Keyword)cNameAssignment_1_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cLengthAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cLengthINTTerminalRuleCall_1_3_0 = (RuleCall)cLengthAssignment_1_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cMatrixAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final Keyword cNameMatrixKeyword_2_1_0 = (Keyword)cNameAssignment_2_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cScaleKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final RuleCall cIdentifierParserRuleCall_2_5 = (RuleCall)cGroup_2.eContents().get(5);
+		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
+		private final Keyword cVerticalLineKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
+		private final RuleCall cIdentifierParserRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
+		private final Keyword cQuestionsKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
+		private final Keyword cLeftParenthesisKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
+		private final Assignment cMatrixQuestionAssignment_2_10 = (Assignment)cGroup_2.eContents().get(10);
+		private final RuleCall cMatrixQuestionMatrixQuestionParserRuleCall_2_10_0 = (RuleCall)cMatrixQuestionAssignment_2_10.eContents().get(0);
+		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
+		private final Keyword cVerticalLineKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
+		private final Assignment cMatrixQuestionAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cMatrixQuestionMatrixQuestionParserRuleCall_2_11_1_0 = (RuleCall)cMatrixQuestionAssignment_2_11_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_13 = (Keyword)cGroup_2.eContents().get(13);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cComboBoxAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Keyword cNameComboBoxKeyword_3_1_0 = (Keyword)cNameAssignment_3_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cAnswerAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cAnswerAnswerParserRuleCall_3_3_0 = (RuleCall)cAnswerAssignment_3_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cDropDownAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Assignment cNameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final Keyword cNameDropDownKeyword_4_1_0 = (Keyword)cNameAssignment_4_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Assignment cAnswerAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cAnswerAnswerParserRuleCall_4_3_0 = (RuleCall)cAnswerAssignment_4_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Action cRadioAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Assignment cNameAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final Keyword cNameRadioKeyword_5_1_0 = (Keyword)cNameAssignment_5_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cAnswerAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cAnswerAnswerParserRuleCall_5_3_0 = (RuleCall)cAnswerAssignment_5_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		
-		/// *Following Question Types are available:
-		// *TextLn (Textline) and TextBl (Textblock) require the indication of the maximal length of text input in brackets.* / TextLn:
-		//	"TextLn" "(" length=INT ")";
+		//SurveyTerminalTypes:
+		//	{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix}
+		//	name="Matrix" "{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
+		//	matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{" answer+=Answer+ "}" | {DropDown}
+		//	name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"TextLn" "(" length=INT ")"
-		public Group getGroup() { return cGroup; }
+		//{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix} name="Matrix"
+		//"{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
+		//matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{" answer+=Answer+ "}" | {DropDown}
+		//name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+ "}"
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"TextLn"
-		public Keyword getTextLnKeyword_0() { return cTextLnKeyword_0; }
+		//{TextLine} name="TextLine" "(" length=INT ")"
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{TextLine}
+		public Action getTextLineAction_0_0() { return cTextLineAction_0_0; }
+
+		//name="TextLine"
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+
+		//"TextLine"
+		public Keyword getNameTextLineKeyword_0_1_0() { return cNameTextLineKeyword_0_1_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		public Keyword getLeftParenthesisKeyword_0_2() { return cLeftParenthesisKeyword_0_2; }
 
 		//length=INT
-		public Assignment getLengthAssignment_2() { return cLengthAssignment_2; }
+		public Assignment getLengthAssignment_0_3() { return cLengthAssignment_0_3; }
 
 		//INT
-		public RuleCall getLengthINTTerminalRuleCall_2_0() { return cLengthINTTerminalRuleCall_2_0; }
+		public RuleCall getLengthINTTerminalRuleCall_0_3_0() { return cLengthINTTerminalRuleCall_0_3_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-	}
+		public Keyword getRightParenthesisKeyword_0_4() { return cRightParenthesisKeyword_0_4; }
 
-	public class TextBlElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextBl");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTextBlKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cLengthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLengthINTTerminalRuleCall_2_0 = (RuleCall)cLengthAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//TextBl:
-		//	"TextBl" "(" length=INT ")";
-		public ParserRule getRule() { return rule; }
+		//{TextBlock} name="TextBlock" "(" length=INT ")"
+		public Group getGroup_1() { return cGroup_1; }
 
-		//"TextBl" "(" length=INT ")"
-		public Group getGroup() { return cGroup; }
+		//{TextBlock}
+		public Action getTextBlockAction_1_0() { return cTextBlockAction_1_0; }
 
-		//"TextBl"
-		public Keyword getTextBlKeyword_0() { return cTextBlKeyword_0; }
+		//name="TextBlock"
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+
+		//"TextBlock"
+		public Keyword getNameTextBlockKeyword_1_1_0() { return cNameTextBlockKeyword_1_1_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
 
 		//length=INT
-		public Assignment getLengthAssignment_2() { return cLengthAssignment_2; }
+		public Assignment getLengthAssignment_1_3() { return cLengthAssignment_1_3; }
 
 		//INT
-		public RuleCall getLengthINTTerminalRuleCall_2_0() { return cLengthINTTerminalRuleCall_2_0; }
+		public RuleCall getLengthINTTerminalRuleCall_1_3_0() { return cLengthINTTerminalRuleCall_1_3_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-	}
+		public Keyword getRightParenthesisKeyword_1_4() { return cRightParenthesisKeyword_1_4; }
 
-	public class MatrixElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Matrix");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMatrixKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cScaleKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cIdentifierParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cVerticalLineKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final RuleCall cIdentifierParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cQuestionsKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cAnswerAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cAnswerAnswerParserRuleCall_9_0 = (RuleCall)cAnswerAssignment_9.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cVerticalLineKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cAnswerAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cAnswerAnswerParserRuleCall_10_1_0 = (RuleCall)cAnswerAssignment_10_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cRightParenthesisKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		
-		/// *Question Matrix* / Matrix:
-		//	"Matrix" "(" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" answer+=Answer ("|" answer+=Answer)* ")"
-		//	")";
-		public ParserRule getRule() { return rule; }
+		//{Matrix} name="Matrix" "{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion
+		//("|" matrixQuestion+=MatrixQuestion)* ")" "}"
+		public Group getGroup_2() { return cGroup_2; }
 
-		//"Matrix" "(" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" answer+=Answer ("|" answer+=Answer)* ")" ")"
-		public Group getGroup() { return cGroup; }
+		//{Matrix}
+		public Action getMatrixAction_2_0() { return cMatrixAction_2_0; }
+
+		//name="Matrix"
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
 
 		//"Matrix"
-		public Keyword getMatrixKeyword_0() { return cMatrixKeyword_0; }
+		public Keyword getNameMatrixKeyword_2_1_0() { return cNameMatrixKeyword_2_1_0; }
 
-		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2_2() { return cLeftCurlyBracketKeyword_2_2; }
 
 		//"Scale:"
-		public Keyword getScaleKeyword_2() { return cScaleKeyword_2; }
+		public Keyword getScaleKeyword_2_3() { return cScaleKeyword_2_3; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		public Keyword getLeftParenthesisKeyword_2_4() { return cLeftParenthesisKeyword_2_4; }
 
 		//Identifier
-		public RuleCall getIdentifierParserRuleCall_4() { return cIdentifierParserRuleCall_4; }
+		public RuleCall getIdentifierParserRuleCall_2_5() { return cIdentifierParserRuleCall_2_5; }
 
 		//("|" Identifier)*
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_2_6() { return cGroup_2_6; }
 
 		//"|"
-		public Keyword getVerticalLineKeyword_5_0() { return cVerticalLineKeyword_5_0; }
+		public Keyword getVerticalLineKeyword_2_6_0() { return cVerticalLineKeyword_2_6_0; }
 
 		//Identifier
-		public RuleCall getIdentifierParserRuleCall_5_1() { return cIdentifierParserRuleCall_5_1; }
+		public RuleCall getIdentifierParserRuleCall_2_6_1() { return cIdentifierParserRuleCall_2_6_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+		public Keyword getRightParenthesisKeyword_2_7() { return cRightParenthesisKeyword_2_7; }
 
 		//"Questions:"
-		public Keyword getQuestionsKeyword_7() { return cQuestionsKeyword_7; }
+		public Keyword getQuestionsKeyword_2_8() { return cQuestionsKeyword_2_8; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_8() { return cLeftParenthesisKeyword_8; }
+		public Keyword getLeftParenthesisKeyword_2_9() { return cLeftParenthesisKeyword_2_9; }
 
-		//answer+=Answer
-		public Assignment getAnswerAssignment_9() { return cAnswerAssignment_9; }
+		//matrixQuestion+=MatrixQuestion
+		public Assignment getMatrixQuestionAssignment_2_10() { return cMatrixQuestionAssignment_2_10; }
 
-		//Answer
-		public RuleCall getAnswerAnswerParserRuleCall_9_0() { return cAnswerAnswerParserRuleCall_9_0; }
+		//MatrixQuestion
+		public RuleCall getMatrixQuestionMatrixQuestionParserRuleCall_2_10_0() { return cMatrixQuestionMatrixQuestionParserRuleCall_2_10_0; }
 
-		//("|" answer+=Answer)*
-		public Group getGroup_10() { return cGroup_10; }
+		//("|" matrixQuestion+=MatrixQuestion)*
+		public Group getGroup_2_11() { return cGroup_2_11; }
 
 		//"|"
-		public Keyword getVerticalLineKeyword_10_0() { return cVerticalLineKeyword_10_0; }
+		public Keyword getVerticalLineKeyword_2_11_0() { return cVerticalLineKeyword_2_11_0; }
 
-		//answer+=Answer
-		public Assignment getAnswerAssignment_10_1() { return cAnswerAssignment_10_1; }
+		//matrixQuestion+=MatrixQuestion
+		public Assignment getMatrixQuestionAssignment_2_11_1() { return cMatrixQuestionAssignment_2_11_1; }
 
-		//Answer
-		public RuleCall getAnswerAnswerParserRuleCall_10_1_0() { return cAnswerAnswerParserRuleCall_10_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
+		//MatrixQuestion
+		public RuleCall getMatrixQuestionMatrixQuestionParserRuleCall_2_11_1_0() { return cMatrixQuestionMatrixQuestionParserRuleCall_2_11_1_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_12() { return cRightParenthesisKeyword_12; }
-	}
+		public Keyword getRightParenthesisKeyword_2_12() { return cRightParenthesisKeyword_2_12; }
 
-	public class ComboBoxElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComboBox");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cNameComboBoxKeyword_0 = (Keyword)cNameAssignment.eContents().get(0);
-		
-		/// *Multiple Choice Question* / ComboBox:
-		//	name="ComboBox";
-		public ParserRule getRule() { return rule; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_2_13() { return cRightCurlyBracketKeyword_2_13; }
+
+		//{ComboBox} name="ComboBox" "{" answer+=Answer+ "}"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//{ComboBox}
+		public Action getComboBoxAction_3_0() { return cComboBoxAction_3_0; }
 
 		//name="ComboBox"
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
 
 		//"ComboBox"
-		public Keyword getNameComboBoxKeyword_0() { return cNameComboBoxKeyword_0; }
-	}
+		public Keyword getNameComboBoxKeyword_3_1_0() { return cNameComboBoxKeyword_3_1_0; }
 
-	public class DropDownElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DropDown");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cNameDropDownKeyword_0 = (Keyword)cNameAssignment.eContents().get(0);
-		
-		/// *Single Choice Question* / DropDown:
-		//	name="DropDown";
-		public ParserRule getRule() { return rule; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3_2() { return cLeftCurlyBracketKeyword_3_2; }
+
+		//answer+=Answer+
+		public Assignment getAnswerAssignment_3_3() { return cAnswerAssignment_3_3; }
+
+		//Answer
+		public RuleCall getAnswerAnswerParserRuleCall_3_3_0() { return cAnswerAnswerParserRuleCall_3_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
+
+		//{DropDown} name="DropDown" "{" answer+=Answer+ "}"
+		public Group getGroup_4() { return cGroup_4; }
+
+		//{DropDown}
+		public Action getDropDownAction_4_0() { return cDropDownAction_4_0; }
 
 		//name="DropDown"
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_4_1() { return cNameAssignment_4_1; }
 
 		//"DropDown"
-		public Keyword getNameDropDownKeyword_0() { return cNameDropDownKeyword_0; }
-	}
+		public Keyword getNameDropDownKeyword_4_1_0() { return cNameDropDownKeyword_4_1_0; }
 
-	public class RadioElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Radio");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cNameRadioKeyword_0 = (Keyword)cNameAssignment.eContents().get(0);
-		
-		//Radio:
-		//	name="Radio";
-		public ParserRule getRule() { return rule; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_4_2() { return cLeftCurlyBracketKeyword_4_2; }
+
+		//answer+=Answer+
+		public Assignment getAnswerAssignment_4_3() { return cAnswerAssignment_4_3; }
+
+		//Answer
+		public RuleCall getAnswerAnswerParserRuleCall_4_3_0() { return cAnswerAnswerParserRuleCall_4_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+
+		//{Radio} name="Radio" "{" answer+=Answer+ "}"
+		public Group getGroup_5() { return cGroup_5; }
+
+		//{Radio}
+		public Action getRadioAction_5_0() { return cRadioAction_5_0; }
 
 		//name="Radio"
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_5_1() { return cNameAssignment_5_1; }
 
 		//"Radio"
-		public Keyword getNameRadioKeyword_0() { return cNameRadioKeyword_0; }
+		public Keyword getNameRadioKeyword_5_1_0() { return cNameRadioKeyword_5_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5_2() { return cLeftCurlyBracketKeyword_5_2; }
+
+		//answer+=Answer+
+		public Assignment getAnswerAssignment_5_3() { return cAnswerAssignment_5_3; }
+
+		//Answer
+		public RuleCall getAnswerAnswerParserRuleCall_5_3_0() { return cAnswerAnswerParserRuleCall_5_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
 	}
 
 	public class IdentifierElements extends AbstractParserRuleElementFinder {
@@ -467,7 +555,8 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Identifier:
+		/// *Following Question Types are available:
+		// *TextLn (Textline) and TextBl (Textblock) require the indication of the maximal length of text input in brackets.* / Identifier:
 		//	ID | STRING | INT;
 		public ParserRule getRule() { return rule; }
 
@@ -483,78 +572,16 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
-
-	public class MandatoryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Mandatory");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cYesKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cNoKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//Mandatory:
-		//	"Yes" | "No";
-		public ParserRule getRule() { return rule; }
-
-		//"Yes" | "No"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"Yes"
-		public Keyword getYesKeyword_0() { return cYesKeyword_0; }
-
-		//"No"
-		public Keyword getNoKeyword_1() { return cNoKeyword_1; }
-	}
-
-	public class TypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cTextLnParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cComboBoxParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cDropDownParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cTextBlParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cMatrixParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cRadioParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		
-		//Type:
-		//	TextLn | ComboBox | DropDown | TextBl | Matrix | Radio;
-		public ParserRule getRule() { return rule; }
-
-		//TextLn | ComboBox | DropDown | TextBl | Matrix | Radio
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//TextLn
-		public RuleCall getTextLnParserRuleCall_0() { return cTextLnParserRuleCall_0; }
-
-		//ComboBox
-		public RuleCall getComboBoxParserRuleCall_1() { return cComboBoxParserRuleCall_1; }
-
-		//DropDown
-		public RuleCall getDropDownParserRuleCall_2() { return cDropDownParserRuleCall_2; }
-
-		//TextBl
-		public RuleCall getTextBlParserRuleCall_3() { return cTextBlParserRuleCall_3; }
-
-		//Matrix
-		public RuleCall getMatrixParserRuleCall_4() { return cMatrixParserRuleCall_4; }
-
-		//Radio
-		public RuleCall getRadioParserRuleCall_5() { return cRadioParserRuleCall_5; }
-	}
 	
 	
 	private SurveyElements pSurvey;
 	private QuestionnaireElements pQuestionnaire;
 	private PartElements pPart;
 	private QuestionElements pQuestion;
+	private MatrixQuestionElements pMatrixQuestion;
 	private AnswerElements pAnswer;
-	private TextLnElements pTextLn;
-	private TextBlElements pTextBl;
-	private MatrixElements pMatrix;
-	private ComboBoxElements pComboBox;
-	private DropDownElements pDropDown;
-	private RadioElements pRadio;
+	private SurveyTerminalTypesElements pSurveyTerminalTypes;
 	private IdentifierElements pIdentifier;
-	private MandatoryElements pMandatory;
-	private TypeElements pType;
 	
 	private final Grammar grammar;
 
@@ -605,7 +632,7 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *A Questionnaire must contain at least 1 Part* / Questionnaire:
-	//	"Questionnaire:" name=STRING "{" "ID:" id=Identifier part+=Part+ "}";
+	//	"Questionnaire:" name=STRING "{" "Questionnaire-ID:" id=Identifier part+=Part+ "}";
 	public QuestionnaireElements getQuestionnaireAccess() {
 		return (pQuestionnaire != null) ? pQuestionnaire : (pQuestionnaire = new QuestionnaireElements());
 	}
@@ -615,7 +642,7 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *A Part must contain at least 1 Question* / Part:
-	//	"Part:" name=STRING "{" "ID:" id=Identifier question+=Question+ "}";
+	//	"Part:" name=STRING "{" "Part-ID:" id=Identifier question+=Question+ "}";
 	public PartElements getPartAccess() {
 		return (pPart != null) ? pPart : (pPart = new PartElements());
 	}
@@ -625,10 +652,9 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *For each Question will be defined a type and wether it's a mandatory field or not* / Question:
-	//	"Question:" name=STRING "{" "ID:" id=Identifier "Mandatory:" mandatory=Mandatory "Type:" type= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
-	//	Type / *For each Question can be defined an arbitraty number of Answers. 
-	//		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.* / answer+=Answer*
-	//	"}";
+	//	"Question:" name=STRING "{" "Question-ID:" id=Identifier mandatory?="Mandatory Field"? "Type:" questionType= //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
+	//	SurveyTerminalTypes / *For each Question can be defined an arbitraty number of Answers. 
+	//		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.* / "}";
 	public QuestionElements getQuestionAccess() {
 		return (pQuestion != null) ? pQuestion : (pQuestion = new QuestionElements());
 	}
@@ -637,8 +663,18 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		return getQuestionAccess().getRule();
 	}
 
+	//MatrixQuestion:
+	//	"Question-ID:" id=Identifier "Question:" name=STRING;
+	public MatrixQuestionElements getMatrixQuestionAccess() {
+		return (pMatrixQuestion != null) ? pMatrixQuestion : (pMatrixQuestion = new MatrixQuestionElements());
+	}
+	
+	public ParserRule getMatrixQuestionRule() {
+		return getMatrixQuestionAccess().getRule();
+	}
+
 	//Answer:
-	//	"ID:" id=Identifier "Answer:" name=Identifier;
+	//	"Answer-ID:" id=Identifier "Answer:" name=STRING;
 	public AnswerElements getAnswerAccess() {
 		return (pAnswer != null) ? pAnswer : (pAnswer = new AnswerElements());
 	}
@@ -647,69 +683,21 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		return getAnswerAccess().getRule();
 	}
 
+	//SurveyTerminalTypes:
+	//	{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix}
+	//	name="Matrix" "{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
+	//	matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{" answer+=Answer+ "}" | {DropDown}
+	//	name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+ "}";
+	public SurveyTerminalTypesElements getSurveyTerminalTypesAccess() {
+		return (pSurveyTerminalTypes != null) ? pSurveyTerminalTypes : (pSurveyTerminalTypes = new SurveyTerminalTypesElements());
+	}
+	
+	public ParserRule getSurveyTerminalTypesRule() {
+		return getSurveyTerminalTypesAccess().getRule();
+	}
+
 	/// *Following Question Types are available:
-	// *TextLn (Textline) and TextBl (Textblock) require the indication of the maximal length of text input in brackets.* / TextLn:
-	//	"TextLn" "(" length=INT ")";
-	public TextLnElements getTextLnAccess() {
-		return (pTextLn != null) ? pTextLn : (pTextLn = new TextLnElements());
-	}
-	
-	public ParserRule getTextLnRule() {
-		return getTextLnAccess().getRule();
-	}
-
-	//TextBl:
-	//	"TextBl" "(" length=INT ")";
-	public TextBlElements getTextBlAccess() {
-		return (pTextBl != null) ? pTextBl : (pTextBl = new TextBlElements());
-	}
-	
-	public ParserRule getTextBlRule() {
-		return getTextBlAccess().getRule();
-	}
-
-	/// *Question Matrix* / Matrix:
-	//	"Matrix" "(" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" answer+=Answer ("|" answer+=Answer)* ")"
-	//	")";
-	public MatrixElements getMatrixAccess() {
-		return (pMatrix != null) ? pMatrix : (pMatrix = new MatrixElements());
-	}
-	
-	public ParserRule getMatrixRule() {
-		return getMatrixAccess().getRule();
-	}
-
-	/// *Multiple Choice Question* / ComboBox:
-	//	name="ComboBox";
-	public ComboBoxElements getComboBoxAccess() {
-		return (pComboBox != null) ? pComboBox : (pComboBox = new ComboBoxElements());
-	}
-	
-	public ParserRule getComboBoxRule() {
-		return getComboBoxAccess().getRule();
-	}
-
-	/// *Single Choice Question* / DropDown:
-	//	name="DropDown";
-	public DropDownElements getDropDownAccess() {
-		return (pDropDown != null) ? pDropDown : (pDropDown = new DropDownElements());
-	}
-	
-	public ParserRule getDropDownRule() {
-		return getDropDownAccess().getRule();
-	}
-
-	//Radio:
-	//	name="Radio";
-	public RadioElements getRadioAccess() {
-		return (pRadio != null) ? pRadio : (pRadio = new RadioElements());
-	}
-	
-	public ParserRule getRadioRule() {
-		return getRadioAccess().getRule();
-	}
-
-	//Identifier:
+	// *TextLn (Textline) and TextBl (Textblock) require the indication of the maximal length of text input in brackets.* / Identifier:
 	//	ID | STRING | INT;
 	public IdentifierElements getIdentifierAccess() {
 		return (pIdentifier != null) ? pIdentifier : (pIdentifier = new IdentifierElements());
@@ -717,26 +705,6 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getIdentifierRule() {
 		return getIdentifierAccess().getRule();
-	}
-
-	//Mandatory:
-	//	"Yes" | "No";
-	public MandatoryElements getMandatoryAccess() {
-		return (pMandatory != null) ? pMandatory : (pMandatory = new MandatoryElements());
-	}
-	
-	public ParserRule getMandatoryRule() {
-		return getMandatoryAccess().getRule();
-	}
-
-	//Type:
-	//	TextLn | ComboBox | DropDown | TextBl | Matrix | Radio;
-	public TypeElements getTypeAccess() {
-		return (pType != null) ? pType : (pType = new TypeElements());
-	}
-	
-	public ParserRule getTypeRule() {
-		return getTypeAccess().getRule();
 	}
 
 	//terminal ID:

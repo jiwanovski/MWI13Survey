@@ -3,37 +3,47 @@ import "http://www.nordakademie.de/mwi13a/team1/survey/Survey" as surveyImp
 
 generate dependency "http://www.nordakademie.de/mwi13a/team1/dependency/Dependency"
 
-SurveyDependencies:
-	surveyDependency+=SurveyDependency+;
-
-QualifiedName:
-	STRING ('.' STRING)*
-;
-		
-SurveyDependency:
-	'Survey:' survey=[surveyImp::Questionnaire|STRING] '{'
-		(part+=SDPart)+
-	'}'	 
+DependencyModel:
+	elements += SurveyElements+
 ;
 
-SDPart:
-	'Part:' part2=[surveyImp::Part|STRING] '{'
-		'Next part (default):' defaultNextPart=[surveyImp::Part|STRING]
-		('Next parts {' 
-			(nextParts+=SDNextParts)*
-		'}')?
+SurveyElements:
+	'Survey:' name=[surveyImp::Questionnaire|STRING] '{'
+		(partElements+=PartElements)+
 	'}'
 ;
 
-SDNextParts:
-	'Next part:' nextPart+=[surveyImp::Part|STRING]
-	'Part dependencies {' 
-		partDependencies+=SDPartDependencies
-		(('AND'|'OR') partDependencies+=SDPartDependencies)*
-	'}'
+PartElements:
+	'Part:' name=[surveyImp::Part|STRING]
+	('Next parts {'
+		(nextParts+=DMNextParts ('OR' nextParts+=DMNextParts)*)
+	'}')+
 ;
 
-SDPartDependencies:
-	'Question:' question=[surveyImp::Question|STRING]
-	'Answer:' answer=[surveyImp::Answer|STRING]
+DMNextParts:
+	'Next part:' name=[surveyImp::Part|STRING]
+	('Part dependencies' '{'
+		expressions+=Dependency+
+	'}')?
+;
+
+Dependency:
+	Or
+;
+
+Or returns Dependency:
+	And ({Or.left=current} "OR" right=And)*
+;
+
+And returns Dependency:
+	Primary ({And.left=current} "AND" right=Primary)*
+;
+
+Primary returns Dependency:
+	'(' Dependency ')' |	
+	Atomic 
+;
+
+Atomic returns Dependency:
+	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING] 'Answer:' answer=[surveyImp::Answer|STRING] 
 ;

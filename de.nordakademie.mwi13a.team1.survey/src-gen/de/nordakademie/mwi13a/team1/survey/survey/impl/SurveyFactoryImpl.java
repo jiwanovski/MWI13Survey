@@ -68,14 +68,15 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
       case SurveyPackage.QUESTIONNAIRE: return createQuestionnaire();
       case SurveyPackage.PART: return createPart();
       case SurveyPackage.QUESTION: return createQuestion();
+      case SurveyPackage.MATRIX_QUESTION: return createMatrixQuestion();
       case SurveyPackage.ANSWER: return createAnswer();
-      case SurveyPackage.TEXT_LN: return createTextLn();
-      case SurveyPackage.TEXT_BL: return createTextBl();
+      case SurveyPackage.SURVEY_TERMINAL_TYPES: return createSurveyTerminalTypes();
+      case SurveyPackage.TEXT_LINE: return createTextLine();
+      case SurveyPackage.TEXT_BLOCK: return createTextBlock();
       case SurveyPackage.MATRIX: return createMatrix();
       case SurveyPackage.COMBO_BOX: return createComboBox();
       case SurveyPackage.DROP_DOWN: return createDropDown();
       case SurveyPackage.RADIO: return createRadio();
-      case SurveyPackage.TYPE: return createType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -130,6 +131,17 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public MatrixQuestion createMatrixQuestion()
+  {
+    MatrixQuestionImpl matrixQuestion = new MatrixQuestionImpl();
+    return matrixQuestion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Answer createAnswer()
   {
     AnswerImpl answer = new AnswerImpl();
@@ -141,10 +153,10 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TextLn createTextLn()
+  public SurveyTerminalTypes createSurveyTerminalTypes()
   {
-    TextLnImpl textLn = new TextLnImpl();
-    return textLn;
+    SurveyTerminalTypesImpl surveyTerminalTypes = new SurveyTerminalTypesImpl();
+    return surveyTerminalTypes;
   }
 
   /**
@@ -152,10 +164,21 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TextBl createTextBl()
+  public TextLine createTextLine()
   {
-    TextBlImpl textBl = new TextBlImpl();
-    return textBl;
+    TextLineImpl textLine = new TextLineImpl();
+    return textLine;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextBlock createTextBlock()
+  {
+    TextBlockImpl textBlock = new TextBlockImpl();
+    return textBlock;
   }
 
   /**
@@ -200,17 +223,6 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
   {
     RadioImpl radio = new RadioImpl();
     return radio;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type createType()
-  {
-    TypeImpl type = new TypeImpl();
-    return type;
   }
 
   /**

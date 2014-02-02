@@ -23,49 +23,76 @@ public interface DependencyFactory extends EFactory
   DependencyFactory eINSTANCE = de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Survey Dependencies</em>'.
+   * Returns a new object of class '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Survey Dependencies</em>'.
+   * @return a new object of class '<em>Model</em>'.
    * @generated
    */
-  SurveyDependencies createSurveyDependencies();
+  DependencyModel createDependencyModel();
 
   /**
-   * Returns a new object of class '<em>Survey Dependency</em>'.
+   * Returns a new object of class '<em>Survey Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Survey Dependency</em>'.
+   * @return a new object of class '<em>Survey Elements</em>'.
    * @generated
    */
-  SurveyDependency createSurveyDependency();
+  SurveyElements createSurveyElements();
 
   /**
-   * Returns a new object of class '<em>SD Part</em>'.
+   * Returns a new object of class '<em>Part Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>SD Part</em>'.
+   * @return a new object of class '<em>Part Elements</em>'.
    * @generated
    */
-  SDPart createSDPart();
+  PartElements createPartElements();
 
   /**
-   * Returns a new object of class '<em>SD Next Parts</em>'.
+   * Returns a new object of class '<em>DM Next Parts</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>SD Next Parts</em>'.
+   * @return a new object of class '<em>DM Next Parts</em>'.
    * @generated
    */
-  SDNextParts createSDNextParts();
+  DMNextParts createDMNextParts();
 
   /**
-   * Returns a new object of class '<em>SD Part Dependencies</em>'.
+   * Returns a new object of class '<em>Dependency</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>SD Part Dependencies</em>'.
+   * @return a new object of class '<em>Dependency</em>'.
    * @generated
    */
-  SDPartDependencies createSDPartDependencies();
+  Dependency createDependency();
+
+  /**
+   * Returns a new object of class '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or</em>'.
+   * @generated
+   */
+  Or createOr();
+
+  /**
+   * Returns a new object of class '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And</em>'.
+   * @generated
+   */
+  And createAnd();
+
+  /**
+   * Returns a new object of class '<em>DM Question</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DM Question</em>'.
+   * @generated
+   */
+  DMQuestion createDMQuestion();
 
   /**
    * Returns the package supported by this factory.

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDependencyLexer extends Lexer {
     public static final int RULE_ID=5;
+    public static final int T__23=23;
     public static final int T__22=22;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__21=21;
@@ -51,10 +52,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:11:7: ( 'AND' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:11:9: 'AND'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:11:7: ( 'Survey:' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:11:9: 'Survey:'
             {
-            match("AND"); 
+            match("Survey:"); 
 
 
             }
@@ -72,11 +73,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:12:7: ( 'OR' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:12:9: 'OR'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:12:7: ( '{' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:12:9: '{'
             {
-            match("OR"); 
-
+            match('{'); 
 
             }
 
@@ -93,11 +93,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:13:7: ( 'Survey:' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:13:9: 'Survey:'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:13:7: ( '}' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:13:9: '}'
             {
-            match("Survey:"); 
-
+            match('}'); 
 
             }
 
@@ -114,10 +113,11 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:14:7: ( '{' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:14:9: '{'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:14:7: ( 'Part:' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:14:9: 'Part:'
             {
-            match('{'); 
+            match("Part:"); 
+
 
             }
 
@@ -134,10 +134,11 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:15:7: ( '}' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:15:9: '}'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:15:7: ( 'Next parts {' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:15:9: 'Next parts {'
             {
-            match('}'); 
+            match("Next parts {"); 
+
 
             }
 
@@ -154,10 +155,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:16:7: ( 'Part:' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:16:9: 'Part:'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:16:7: ( 'OR' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:16:9: 'OR'
             {
-            match("Part:"); 
+            match("OR"); 
 
 
             }
@@ -175,10 +176,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:17:7: ( 'Next part (default):' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:17:9: 'Next part (default):'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:17:7: ( 'Next part:' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:17:9: 'Next part:'
             {
-            match("Next part (default):"); 
+            match("Next part:"); 
 
 
             }
@@ -196,10 +197,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:18:7: ( 'Next parts {' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:18:9: 'Next parts {'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:18:7: ( 'Part dependencies' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:18:9: 'Part dependencies'
             {
-            match("Next parts {"); 
+            match("Part dependencies"); 
 
 
             }
@@ -217,10 +218,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:19:7: ( 'Next part:' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:19:9: 'Next part:'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:19:7: ( 'AND' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:19:9: 'AND'
             {
-            match("Next part:"); 
+            match("AND"); 
 
 
             }
@@ -238,11 +239,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:20:7: ( 'Part dependencies {' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:20:9: 'Part dependencies {'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:20:7: ( '(' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:20:9: '('
             {
-            match("Part dependencies {"); 
-
+            match('('); 
 
             }
 
@@ -259,11 +259,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:21:7: ( 'Question:' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:21:9: 'Question:'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:21:7: ( ')' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:21:9: ')'
             {
-            match("Question:"); 
-
+            match(')'); 
 
             }
 
@@ -280,10 +279,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:22:7: ( 'Answer:' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:22:9: 'Answer:'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:22:7: ( 'Question:' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:22:9: 'Question:'
             {
-            match("Answer:"); 
+            match("Question:"); 
 
 
             }
@@ -296,15 +295,36 @@ public class InternalDependencyLexer extends Lexer {
     }
     // $ANTLR end "T__22"
 
+    // $ANTLR start "T__23"
+    public final void mT__23() throws RecognitionException {
+        try {
+            int _type = T__23;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:23:7: ( 'Answer:' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:23:9: 'Answer:'
+            {
+            match("Answer:"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__23"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1296:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1296:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1833:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1833:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1296:11: ( '^' )?
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1833:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -313,7 +333,7 @@ public class InternalDependencyLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1296:11: '^'
+                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1833:11: '^'
                     {
                     match('^'); 
 
@@ -331,7 +351,7 @@ public class InternalDependencyLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1296:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1833:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -380,10 +400,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1298:10: ( ( '0' .. '9' )+ )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1298:12: ( '0' .. '9' )+
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1835:10: ( ( '0' .. '9' )+ )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1835:12: ( '0' .. '9' )+
             {
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1298:12: ( '0' .. '9' )+
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1835:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -397,7 +417,7 @@ public class InternalDependencyLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1298:13: '0' .. '9'
+            	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1835:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -429,10 +449,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -450,10 +470,10 @@ public class InternalDependencyLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -469,7 +489,7 @@ public class InternalDependencyLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -485,7 +505,7 @@ public class InternalDependencyLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -510,10 +530,10 @@ public class InternalDependencyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -529,7 +549,7 @@ public class InternalDependencyLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -545,7 +565,7 @@ public class InternalDependencyLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1300:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1837:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -588,12 +608,12 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1302:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1302:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1839:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1839:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1302:24: ( options {greedy=false; } : . )*
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1839:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -618,7 +638,7 @@ public class InternalDependencyLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1302:52: .
+            	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1839:52: .
             	    {
             	    matchAny(); 
 
@@ -648,12 +668,12 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -666,7 +686,7 @@ public class InternalDependencyLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -686,7 +706,7 @@ public class InternalDependencyLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:40: ( ( '\\r' )? '\\n' )?
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -695,9 +715,9 @@ public class InternalDependencyLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:41: ( '\\r' )? '\\n'
+                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:41: ( '\\r' )?
+                    // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -706,7 +726,7 @@ public class InternalDependencyLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1304:41: '\\r'
+                            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1841:41: '\\r'
                             {
                             match('\r'); 
 
@@ -738,10 +758,10 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1306:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1306:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1843:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1843:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1306:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1843:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -795,8 +815,8 @@ public class InternalDependencyLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1308:16: ( . )
-            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1308:18: .
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1845:16: ( . )
+            // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1845:18: .
             {
             matchAny(); 
 
@@ -811,8 +831,8 @@ public class InternalDependencyLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=19;
+        // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=20;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -900,49 +920,56 @@ public class InternalDependencyLexer extends Lexer {
                 }
                 break;
             case 13 :
-                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:82: RULE_ID
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:82: T__23
+                {
+                mT__23(); 
+
+                }
+                break;
+            case 14 :
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:88: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 14 :
-                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:90: RULE_INT
+            case 15 :
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:96: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 15 :
-                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:99: RULE_STRING
+            case 16 :
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:105: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 16 :
-                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:111: RULE_ML_COMMENT
+            case 17 :
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:117: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 17 :
-                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:127: RULE_SL_COMMENT
+            case 18 :
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:133: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 18 :
-                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:143: RULE_WS
+            case 19 :
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:149: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 19 :
-                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:151: RULE_ANY_OTHER
+            case 20 :
+                // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:1:157: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -956,96 +983,102 @@ public class InternalDependencyLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\3\23\2\uffff\3\23\1\20\2\uffff\3\20\2\uffff\2\23\1\uffff"+
-        "\1\42\1\23\2\uffff\3\23\5\uffff\1\47\1\23\1\uffff\4\23\1\uffff\7"+
-        "\23\3\uffff\3\23\1\uffff\1\23\3\uffff\1\23\1\uffff\1\23\5\uffff";
+        "\1\uffff\1\24\2\uffff\4\24\2\uffff\1\24\1\22\2\uffff\3\22\2\uffff"+
+        "\1\24\3\uffff\2\24\1\47\2\24\2\uffff\1\24\5\uffff\3\24\1\uffff\1"+
+        "\56\5\24\1\uffff\3\24\3\uffff\3\24\1\uffff\2\24\3\uffff\1\24\1\uffff"+
+        "\1\24\4\uffff";
     static final String DFA12_eofS =
-        "\102\uffff";
+        "\105\uffff";
     static final String DFA12_minS =
-        "\1\0\1\116\1\122\1\165\2\uffff\1\141\1\145\1\165\1\101\2\uffff"+
-        "\2\0\1\52\2\uffff\1\104\1\163\1\uffff\1\60\1\162\2\uffff\1\162\1"+
-        "\170\1\145\5\uffff\1\60\1\167\1\uffff\1\166\2\164\1\163\1\uffff"+
-        "\2\145\2\40\1\164\1\162\1\171\2\uffff\1\160\1\151\2\72\1\141\1\157"+
-        "\2\uffff\1\162\1\156\1\164\1\72\1\40\4\uffff";
+        "\1\0\1\165\2\uffff\1\141\1\145\1\122\1\116\2\uffff\1\165\1\101"+
+        "\2\uffff\2\0\1\52\2\uffff\1\162\3\uffff\1\162\1\170\1\60\1\104\1"+
+        "\163\2\uffff\1\145\5\uffff\1\166\2\164\1\uffff\1\60\1\167\1\163"+
+        "\1\145\2\40\1\uffff\1\145\1\164\1\171\2\uffff\1\160\1\162\1\151"+
+        "\1\72\1\141\1\72\1\157\1\uffff\1\162\1\uffff\1\156\1\164\2\72\3"+
+        "\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\156\1\122\1\165\2\uffff\1\141\1\145\1\165\1\172\2\uffff"+
-        "\2\uffff\1\57\2\uffff\1\104\1\163\1\uffff\1\172\1\162\2\uffff\1"+
-        "\162\1\170\1\145\5\uffff\1\172\1\167\1\uffff\1\166\2\164\1\163\1"+
-        "\uffff\2\145\1\72\1\40\1\164\1\162\1\171\2\uffff\1\160\1\151\2\72"+
-        "\1\141\1\157\2\uffff\1\162\1\156\1\164\1\72\1\163\4\uffff";
+        "\1\uffff\1\165\2\uffff\1\141\1\145\1\122\1\156\2\uffff\1\165\1"+
+        "\172\2\uffff\2\uffff\1\57\2\uffff\1\162\3\uffff\1\162\1\170\1\172"+
+        "\1\104\1\163\2\uffff\1\145\5\uffff\1\166\2\164\1\uffff\1\172\1\167"+
+        "\1\163\1\145\1\72\1\40\1\uffff\1\145\1\164\1\171\2\uffff\1\160\1"+
+        "\162\1\151\1\72\1\141\1\72\1\157\1\uffff\1\162\1\uffff\1\156\1\164"+
+        "\1\72\1\163\3\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\4\1\5\4\uffff\1\15\1\16\3\uffff\1\22\1\23\2\uffff\1"+
-        "\15\2\uffff\1\4\1\5\3\uffff\1\16\1\17\1\20\1\21\1\22\2\uffff\1\2"+
-        "\4\uffff\1\1\7\uffff\1\6\1\12\6\uffff\1\14\1\3\5\uffff\1\13\1\7"+
-        "\1\10\1\11";
+        "\2\uffff\1\2\1\3\4\uffff\1\12\1\13\2\uffff\1\16\1\17\3\uffff\1"+
+        "\23\1\24\1\uffff\1\16\1\2\1\3\5\uffff\1\12\1\13\1\uffff\1\17\1\20"+
+        "\1\21\1\22\1\23\3\uffff\1\6\6\uffff\1\11\3\uffff\1\4\1\10\7\uffff"+
+        "\1\1\1\uffff\1\15\4\uffff\1\14\1\5\1\7";
     static final String DFA12_specialS =
-        "\1\2\13\uffff\1\1\1\0\64\uffff}>";
+        "\1\1\15\uffff\1\2\1\0\65\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\20\2\17\2\20\1\17\22\20\1\17\1\20\1\14\4\20\1\15\7\20\1"+
-            "\16\12\13\7\20\1\1\14\12\1\7\1\2\1\6\1\10\1\12\1\3\7\12\3\20"+
-            "\1\11\1\12\1\20\32\12\1\4\1\20\1\5\uff82\20",
-            "\1\21\37\uffff\1\22",
-            "\1\24",
-            "\1\25",
+            "\11\22\2\21\2\22\1\21\22\22\1\21\1\22\1\16\4\22\1\17\1\10\1"+
+            "\11\5\22\1\20\12\15\7\22\1\7\14\14\1\5\1\6\1\4\1\12\1\14\1\1"+
+            "\7\14\3\22\1\13\1\14\1\22\32\14\1\2\1\22\1\3\uff82\22",
+            "\1\23",
             "",
             "",
+            "\1\27",
             "\1\30",
             "\1\31",
-            "\1\32",
-            "\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\1\32\37\uffff\1\33",
             "",
             "",
-            "\0\34",
-            "\0\34",
-            "\1\35\4\uffff\1\36",
+            "\1\36",
+            "\32\24\4\uffff\1\24\1\uffff\32\24",
             "",
             "",
-            "\1\40",
-            "\1\41",
-            "",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
-            "\1\43",
+            "\0\40",
+            "\0\40",
+            "\1\41\4\uffff\1\42",
             "",
             "",
             "\1\44",
+            "",
+            "",
+            "",
             "\1\45",
             "\1\46",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\23\7\uffff\32\23\4\uffff\1\23\1\uffff\32\23",
+            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
             "\1\50",
-            "",
             "\1\51",
+            "",
+            "",
             "\1\52",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\53",
             "\1\54",
-            "",
             "\1\55",
-            "\1\56",
-            "\1\60\31\uffff\1\57",
-            "\1\61",
-            "\1\62",
-            "\1\63",
-            "\1\64",
             "",
+            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\1\57",
+            "\1\60",
+            "\1\61",
+            "\1\63\31\uffff\1\62",
+            "\1\64",
             "",
             "\1\65",
             "\1\66",
             "\1\67",
+            "",
+            "",
             "\1\70",
             "\1\71",
             "\1\72",
-            "",
-            "",
             "\1\73",
             "\1\74",
             "\1\75",
             "\1\76",
-            "\1\77\31\uffff\1\101\70\uffff\1\100",
             "",
+            "\1\77",
+            "",
+            "\1\100",
+            "\1\101",
+            "\1\102",
+            "\1\104\70\uffff\1\103",
             "",
             "",
             ""
@@ -1081,67 +1114,71 @@ public class InternalDependencyLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_13 = input.LA(1);
+                        int LA12_15 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFF')) ) {s = 28;}
+                        if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 32;}
 
-                        else s = 16;
+                        else s = 18;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_12 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 28;}
+                        if ( (LA12_0=='S') ) {s = 1;}
 
-                        else s = 16;
+                        else if ( (LA12_0=='{') ) {s = 2;}
+
+                        else if ( (LA12_0=='}') ) {s = 3;}
+
+                        else if ( (LA12_0=='P') ) {s = 4;}
+
+                        else if ( (LA12_0=='N') ) {s = 5;}
+
+                        else if ( (LA12_0=='O') ) {s = 6;}
+
+                        else if ( (LA12_0=='A') ) {s = 7;}
+
+                        else if ( (LA12_0=='(') ) {s = 8;}
+
+                        else if ( (LA12_0==')') ) {s = 9;}
+
+                        else if ( (LA12_0=='Q') ) {s = 10;}
+
+                        else if ( (LA12_0=='^') ) {s = 11;}
+
+                        else if ( ((LA12_0>='B' && LA12_0<='M')||LA12_0=='R'||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {s = 12;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 13;}
+
+                        else if ( (LA12_0=='\"') ) {s = 14;}
+
+                        else if ( (LA12_0=='\'') ) {s = 15;}
+
+                        else if ( (LA12_0=='/') ) {s = 16;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 17;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 18;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_0 = input.LA(1);
+                        int LA12_14 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='A') ) {s = 1;}
+                        if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFF')) ) {s = 32;}
 
-                        else if ( (LA12_0=='O') ) {s = 2;}
-
-                        else if ( (LA12_0=='S') ) {s = 3;}
-
-                        else if ( (LA12_0=='{') ) {s = 4;}
-
-                        else if ( (LA12_0=='}') ) {s = 5;}
-
-                        else if ( (LA12_0=='P') ) {s = 6;}
-
-                        else if ( (LA12_0=='N') ) {s = 7;}
-
-                        else if ( (LA12_0=='Q') ) {s = 8;}
-
-                        else if ( (LA12_0=='^') ) {s = 9;}
-
-                        else if ( ((LA12_0>='B' && LA12_0<='M')||LA12_0=='R'||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {s = 10;}
-
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 11;}
-
-                        else if ( (LA12_0=='\"') ) {s = 12;}
-
-                        else if ( (LA12_0=='\'') ) {s = 13;}
-
-                        else if ( (LA12_0=='/') ) {s = 14;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 15;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 16;}
+                        else s = 18;
 
                         if ( s>=0 ) return s;
                         break;

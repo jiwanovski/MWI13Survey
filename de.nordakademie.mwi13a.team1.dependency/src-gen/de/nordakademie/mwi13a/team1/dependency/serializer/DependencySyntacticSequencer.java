@@ -8,8 +8,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -19,14 +17,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class DependencySyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DependencyGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_SDNextParts_ANDKeyword_4_0_0_or_ORKeyword_4_0_1;
-	protected AbstractElementAlias match_SDPart___NextPartsKeyword_5_0_RightCurlyBracketKeyword_5_2__q;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_a;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DependencyGrammarAccess) access;
-		match_SDNextParts_ANDKeyword_4_0_0_or_ORKeyword_4_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSDNextPartsAccess().getANDKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getSDNextPartsAccess().getORKeyword_4_0_1()));
-		match_SDPart___NextPartsKeyword_5_0_RightCurlyBracketKeyword_5_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSDPartAccess().getNextPartsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getSDPartAccess().getRightCurlyBracketKeyword_5_2()));
+		match_Primary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
+		match_Primary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
 	}
 	
 	@Override
@@ -41,27 +39,27 @@ public class DependencySyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_SDNextParts_ANDKeyword_4_0_0_or_ORKeyword_4_0_1.equals(syntax))
-				emit_SDNextParts_ANDKeyword_4_0_0_or_ORKeyword_4_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_SDPart___NextPartsKeyword_5_0_RightCurlyBracketKeyword_5_2__q.equals(syntax))
-				emit_SDPart___NextPartsKeyword_5_0_RightCurlyBracketKeyword_5_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Primary_LeftParenthesisKeyword_0_0_a.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Primary_LeftParenthesisKeyword_0_0_p.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Syntax:
-	 *     'OR' | 'AND'
+	 *     '('*
 	 */
-	protected void emit_SDNextParts_ANDKeyword_4_0_0_or_ORKeyword_4_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Primary_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     ('Next parts {' '}')?
+	 *     '('+
 	 */
-	protected void emit_SDPart___NextPartsKeyword_5_0_RightCurlyBracketKeyword_5_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Primary_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

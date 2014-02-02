@@ -25,7 +25,7 @@ public class DependencyParser extends org.eclipse.xtext.parser.antlr.AbstractAnt
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "SurveyDependencies";
+		return "DependencyModel";
 	}
 	
 	public DependencyGrammarAccess getGrammarAccess() {

@@ -2,13 +2,16 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.dependency.impl;
 
+import de.nordakademie.mwi13a.team1.dependency.dependency.And;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion;
+import de.nordakademie.mwi13a.team1.dependency.dependency.Dependency;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyFactory;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage;
-import de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts;
-import de.nordakademie.mwi13a.team1.dependency.dependency.SDPart;
-import de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies;
-import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependencies;
-import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency;
+import de.nordakademie.mwi13a.team1.dependency.dependency.Or;
+import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements;
+import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements;
 
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
 
@@ -31,35 +34,56 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass surveyDependenciesEClass = null;
+  private EClass dependencyModelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass surveyDependencyEClass = null;
+  private EClass surveyElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass sdPartEClass = null;
+  private EClass partElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass sdNextPartsEClass = null;
+  private EClass dmNextPartsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass sdPartDependenciesEClass = null;
+  private EClass dependencyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass orEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass andEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dmQuestionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -132,9 +156,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSurveyDependencies()
+  public EClass getDependencyModel()
   {
-    return surveyDependenciesEClass;
+    return dependencyModelEClass;
   }
 
   /**
@@ -142,9 +166,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSurveyDependencies_SurveyDependency()
+  public EReference getDependencyModel_Elements()
   {
-    return (EReference)surveyDependenciesEClass.getEStructuralFeatures().get(0);
+    return (EReference)dependencyModelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -152,9 +176,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSurveyDependency()
+  public EClass getSurveyElements()
   {
-    return surveyDependencyEClass;
+    return surveyElementsEClass;
   }
 
   /**
@@ -162,9 +186,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSurveyDependency_Survey()
+  public EReference getSurveyElements_Name()
   {
-    return (EReference)surveyDependencyEClass.getEStructuralFeatures().get(0);
+    return (EReference)surveyElementsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -172,9 +196,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSurveyDependency_Part()
+  public EReference getSurveyElements_PartElements()
   {
-    return (EReference)surveyDependencyEClass.getEStructuralFeatures().get(1);
+    return (EReference)surveyElementsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -182,9 +206,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSDPart()
+  public EClass getPartElements()
   {
-    return sdPartEClass;
+    return partElementsEClass;
   }
 
   /**
@@ -192,9 +216,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSDPart_Part2()
+  public EReference getPartElements_Name()
   {
-    return (EReference)sdPartEClass.getEStructuralFeatures().get(0);
+    return (EReference)partElementsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -202,9 +226,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSDPart_DefaultNextPart()
+  public EReference getPartElements_NextParts()
   {
-    return (EReference)sdPartEClass.getEStructuralFeatures().get(1);
+    return (EReference)partElementsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -212,9 +236,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSDPart_NextParts()
+  public EClass getDMNextParts()
   {
-    return (EReference)sdPartEClass.getEStructuralFeatures().get(2);
+    return dmNextPartsEClass;
   }
 
   /**
@@ -222,9 +246,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSDNextParts()
+  public EReference getDMNextParts_Name()
   {
-    return sdNextPartsEClass;
+    return (EReference)dmNextPartsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -232,9 +256,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSDNextParts_NextPart()
+  public EReference getDMNextParts_Expressions()
   {
-    return (EReference)sdNextPartsEClass.getEStructuralFeatures().get(0);
+    return (EReference)dmNextPartsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -242,9 +266,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSDNextParts_PartDependencies()
+  public EClass getDependency()
   {
-    return (EReference)sdNextPartsEClass.getEStructuralFeatures().get(1);
+    return dependencyEClass;
   }
 
   /**
@@ -252,9 +276,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSDPartDependencies()
+  public EClass getOr()
   {
-    return sdPartDependenciesEClass;
+    return orEClass;
   }
 
   /**
@@ -262,9 +286,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSDPartDependencies_Question()
+  public EReference getOr_Left()
   {
-    return (EReference)sdPartDependenciesEClass.getEStructuralFeatures().get(0);
+    return (EReference)orEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -272,9 +296,69 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSDPartDependencies_Answer()
+  public EReference getOr_Right()
   {
-    return (EReference)sdPartDependenciesEClass.getEStructuralFeatures().get(1);
+    return (EReference)orEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAnd()
+  {
+    return andEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAnd_Left()
+  {
+    return (EReference)andEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAnd_Right()
+  {
+    return (EReference)andEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDMQuestion()
+  {
+    return dmQuestionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMQuestion_Question()
+  {
+    return (EReference)dmQuestionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMQuestion_Answer()
+  {
+    return (EReference)dmQuestionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -307,25 +391,34 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     isCreated = true;
 
     // Create classes and their features
-    surveyDependenciesEClass = createEClass(SURVEY_DEPENDENCIES);
-    createEReference(surveyDependenciesEClass, SURVEY_DEPENDENCIES__SURVEY_DEPENDENCY);
+    dependencyModelEClass = createEClass(DEPENDENCY_MODEL);
+    createEReference(dependencyModelEClass, DEPENDENCY_MODEL__ELEMENTS);
 
-    surveyDependencyEClass = createEClass(SURVEY_DEPENDENCY);
-    createEReference(surveyDependencyEClass, SURVEY_DEPENDENCY__SURVEY);
-    createEReference(surveyDependencyEClass, SURVEY_DEPENDENCY__PART);
+    surveyElementsEClass = createEClass(SURVEY_ELEMENTS);
+    createEReference(surveyElementsEClass, SURVEY_ELEMENTS__NAME);
+    createEReference(surveyElementsEClass, SURVEY_ELEMENTS__PART_ELEMENTS);
 
-    sdPartEClass = createEClass(SD_PART);
-    createEReference(sdPartEClass, SD_PART__PART2);
-    createEReference(sdPartEClass, SD_PART__DEFAULT_NEXT_PART);
-    createEReference(sdPartEClass, SD_PART__NEXT_PARTS);
+    partElementsEClass = createEClass(PART_ELEMENTS);
+    createEReference(partElementsEClass, PART_ELEMENTS__NAME);
+    createEReference(partElementsEClass, PART_ELEMENTS__NEXT_PARTS);
 
-    sdNextPartsEClass = createEClass(SD_NEXT_PARTS);
-    createEReference(sdNextPartsEClass, SD_NEXT_PARTS__NEXT_PART);
-    createEReference(sdNextPartsEClass, SD_NEXT_PARTS__PART_DEPENDENCIES);
+    dmNextPartsEClass = createEClass(DM_NEXT_PARTS);
+    createEReference(dmNextPartsEClass, DM_NEXT_PARTS__NAME);
+    createEReference(dmNextPartsEClass, DM_NEXT_PARTS__EXPRESSIONS);
 
-    sdPartDependenciesEClass = createEClass(SD_PART_DEPENDENCIES);
-    createEReference(sdPartDependenciesEClass, SD_PART_DEPENDENCIES__QUESTION);
-    createEReference(sdPartDependenciesEClass, SD_PART_DEPENDENCIES__ANSWER);
+    dependencyEClass = createEClass(DEPENDENCY);
+
+    orEClass = createEClass(OR);
+    createEReference(orEClass, OR__LEFT);
+    createEReference(orEClass, OR__RIGHT);
+
+    andEClass = createEClass(AND);
+    createEReference(andEClass, AND__LEFT);
+    createEReference(andEClass, AND__RIGHT);
+
+    dmQuestionEClass = createEClass(DM_QUESTION);
+    createEReference(dmQuestionEClass, DM_QUESTION__QUESTION);
+    createEReference(dmQuestionEClass, DM_QUESTION__ANSWER);
   }
 
   /**
@@ -360,27 +453,39 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    orEClass.getESuperTypes().add(this.getDependency());
+    andEClass.getESuperTypes().add(this.getDependency());
+    dmQuestionEClass.getESuperTypes().add(this.getDependency());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(surveyDependenciesEClass, SurveyDependencies.class, "SurveyDependencies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSurveyDependencies_SurveyDependency(), this.getSurveyDependency(), null, "surveyDependency", null, 0, -1, SurveyDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(dependencyModelEClass, DependencyModel.class, "DependencyModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDependencyModel_Elements(), this.getSurveyElements(), null, "elements", null, 0, -1, DependencyModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(surveyDependencyEClass, SurveyDependency.class, "SurveyDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSurveyDependency_Survey(), theSurveyPackage.getQuestionnaire(), null, "survey", null, 0, 1, SurveyDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSurveyDependency_Part(), this.getSDPart(), null, "part", null, 0, -1, SurveyDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(surveyElementsEClass, SurveyElements.class, "SurveyElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSurveyElements_Name(), theSurveyPackage.getQuestionnaire(), null, "name", null, 0, 1, SurveyElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSurveyElements_PartElements(), this.getPartElements(), null, "partElements", null, 0, -1, SurveyElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(sdPartEClass, SDPart.class, "SDPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSDPart_Part2(), theSurveyPackage.getPart(), null, "part2", null, 0, 1, SDPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSDPart_DefaultNextPart(), theSurveyPackage.getPart(), null, "defaultNextPart", null, 0, 1, SDPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSDPart_NextParts(), this.getSDNextParts(), null, "nextParts", null, 0, -1, SDPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(partElementsEClass, PartElements.class, "PartElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPartElements_Name(), theSurveyPackage.getPart(), null, "name", null, 0, 1, PartElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPartElements_NextParts(), this.getDMNextParts(), null, "nextParts", null, 0, -1, PartElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(sdNextPartsEClass, SDNextParts.class, "SDNextParts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSDNextParts_NextPart(), theSurveyPackage.getPart(), null, "nextPart", null, 0, -1, SDNextParts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSDNextParts_PartDependencies(), this.getSDPartDependencies(), null, "partDependencies", null, 0, -1, SDNextParts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(dmNextPartsEClass, DMNextParts.class, "DMNextParts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDMNextParts_Name(), theSurveyPackage.getPart(), null, "name", null, 0, 1, DMNextParts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDMNextParts_Expressions(), this.getDependency(), null, "expressions", null, 0, -1, DMNextParts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(sdPartDependenciesEClass, SDPartDependencies.class, "SDPartDependencies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSDPartDependencies_Question(), theSurveyPackage.getQuestion(), null, "question", null, 0, 1, SDPartDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSDPartDependencies_Answer(), theSurveyPackage.getAnswer(), null, "answer", null, 0, 1, SDPartDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOr_Left(), this.getDependency(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOr_Right(), this.getDependency(), null, "right", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAnd_Left(), this.getDependency(), null, "left", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnd_Right(), this.getDependency(), null, "right", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dmQuestionEClass, DMQuestion.class, "DMQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDMQuestion_Question(), theSurveyPackage.getQuestion(), null, "question", null, 0, 1, DMQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDMQuestion_Answer(), theSurveyPackage.getAnswer(), null, "answer", null, 0, 1, DMQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -9,25 +9,33 @@
     usedGenPackages="../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.genmodel#//survey">
   <genPackages prefix="Dependency" basePackage="de.nordakademie.mwi13a.team1.dependency"
       disposableProviderFactory="true" fileExtensions="sDependency" ecorePackage="Dependency.ecore#/">
-    <genClasses ecoreClass="Dependency.ecore#//SurveyDependencies">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//SurveyDependencies/surveyDependency"/>
+    <genClasses ecoreClass="Dependency.ecore#//DependencyModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//DependencyModel/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Dependency.ecore#//SurveyDependency">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//SurveyDependency/survey"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//SurveyDependency/part"/>
+    <genClasses ecoreClass="Dependency.ecore#//SurveyElements">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//SurveyElements/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//SurveyElements/partElements"/>
     </genClasses>
-    <genClasses ecoreClass="Dependency.ecore#//SDPart">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//SDPart/part2"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//SDPart/defaultNextPart"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//SDPart/nextParts"/>
+    <genClasses ecoreClass="Dependency.ecore#//PartElements">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//PartElements/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//PartElements/nextParts"/>
     </genClasses>
-    <genClasses ecoreClass="Dependency.ecore#//SDNextParts">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//SDNextParts/nextPart"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//SDNextParts/partDependencies"/>
+    <genClasses ecoreClass="Dependency.ecore#//DMNextParts">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMNextParts/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMNextParts/expressions"/>
     </genClasses>
-    <genClasses ecoreClass="Dependency.ecore#//SDPartDependencies">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//SDPartDependencies/question"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//SDPartDependencies/answer"/>
+    <genClasses ecoreClass="Dependency.ecore#//Dependency"/>
+    <genClasses ecoreClass="Dependency.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//Or/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//Or/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependency.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//And/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//And/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependency.ecore#//DMQuestion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMQuestion/question"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMQuestion/answer"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

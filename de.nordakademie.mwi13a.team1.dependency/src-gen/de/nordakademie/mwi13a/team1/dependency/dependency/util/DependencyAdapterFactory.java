@@ -75,29 +75,44 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
     new DependencySwitch<Adapter>()
     {
       @Override
-      public Adapter caseSurveyDependencies(SurveyDependencies object)
+      public Adapter caseDependencyModel(DependencyModel object)
       {
-        return createSurveyDependenciesAdapter();
+        return createDependencyModelAdapter();
       }
       @Override
-      public Adapter caseSurveyDependency(SurveyDependency object)
+      public Adapter caseSurveyElements(SurveyElements object)
       {
-        return createSurveyDependencyAdapter();
+        return createSurveyElementsAdapter();
       }
       @Override
-      public Adapter caseSDPart(SDPart object)
+      public Adapter casePartElements(PartElements object)
       {
-        return createSDPartAdapter();
+        return createPartElementsAdapter();
       }
       @Override
-      public Adapter caseSDNextParts(SDNextParts object)
+      public Adapter caseDMNextParts(DMNextParts object)
       {
-        return createSDNextPartsAdapter();
+        return createDMNextPartsAdapter();
       }
       @Override
-      public Adapter caseSDPartDependencies(SDPartDependencies object)
+      public Adapter caseDependency(Dependency object)
       {
-        return createSDPartDependenciesAdapter();
+        return createDependencyAdapter();
+      }
+      @Override
+      public Adapter caseOr(Or object)
+      {
+        return createOrAdapter();
+      }
+      @Override
+      public Adapter caseAnd(And object)
+      {
+        return createAndAdapter();
+      }
+      @Override
+      public Adapter caseDMQuestion(DMQuestion object)
+      {
+        return createDMQuestionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -122,76 +137,121 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependencies <em>Survey Dependencies</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependencies
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel
    * @generated
    */
-  public Adapter createSurveyDependenciesAdapter()
+  public Adapter createDependencyModelAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency <em>Survey Dependency</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements <em>Survey Elements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
    * @generated
    */
-  public Adapter createSurveyDependencyAdapter()
+  public Adapter createSurveyElementsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPart <em>SD Part</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements <em>Part Elements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPart
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
    * @generated
    */
-  public Adapter createSDPartAdapter()
+  public Adapter createPartElementsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts <em>SD Next Parts</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts <em>DM Next Parts</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts
    * @generated
    */
-  public Adapter createSDNextPartsAdapter()
+  public Adapter createDMNextPartsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies <em>SD Part Dependencies</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Dependency <em>Dependency</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.Dependency
    * @generated
    */
-  public Adapter createSDPartDependenciesAdapter()
+  public Adapter createDependencyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.Or
+   * @generated
+   */
+  public Adapter createOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.And
+   * @generated
+   */
+  public Adapter createAndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion <em>DM Question</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
+   * @generated
+   */
+  public Adapter createDMQuestionAdapter()
   {
     return null;
   }

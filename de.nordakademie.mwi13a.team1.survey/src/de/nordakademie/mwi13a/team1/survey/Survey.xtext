@@ -10,7 +10,7 @@ Survey returns Survey:
 /*A Questionnaire must contain at least 1 Part*/
 Questionnaire:
 	'Questionnaire:' name=STRING '{'
-		'ID:' id=Identifier
+		'Questionnaire-ID:' id=Identifier
 		(part+=Part)+
 	'}'
 ;
@@ -18,7 +18,7 @@ Questionnaire:
 /*A Part must contain at least 1 Question*/
 Part:
 	'Part:' name=STRING '{'
-		'ID:' id=Identifier
+		'Part-ID:' id=Identifier
 		(question+=Question)+
 	'}'
 ;
@@ -26,61 +26,51 @@ Part:
 /*For each Question will be defined a type and wether it's a mandatory field or not*/ 
 Question:
 	'Question:' name=STRING '{'
-		'ID:' id=Identifier
-		'Mandatory:' mandatory=Mandatory
-		'Type:' type=Type //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
-		
+		'Question-ID:' id=Identifier
+		mandatory?='Mandatory Field'?
+		'Type:' questionType=SurveyTerminalTypes //(dropdown+=DropDown | combobox=ComboBoxT | radio+=Radio | matrix+=Matrix | textln+=TextLn | textbl+=TextBl)
+
 		/*For each Question can be defined an arbitraty number of Answers. 
 		 *The Question Types TextLn and TextBl don't require any answers because there's an STRING expected by default.*/
-		(answer+=Answer)*
+		
 	'}'
 ;
 
-Answer:
-	'ID:' id=Identifier
-	'Answer:' name=Identifier	
+MatrixQuestion:
+	'Question-ID:' id=Identifier
+	'Question:' name=STRING
 ;
 
+Answer:
+	'Answer-ID:' id=Identifier
+	'Answer:' name=STRING	
+;
+
+SurveyTerminalTypes:
+	{TextLine} name='TextLine' '(' length=INT ')' |
+	{TextBlock} name='TextBlock' '(' length=INT ')' |
+	{Matrix} name='Matrix' '{'
+		'Scale:' '(' Identifier ('|' Identifier)* ')'
+		'Questions:' '(' 
+			matrixQuestion+=MatrixQuestion ('|' 
+			matrixQuestion+=MatrixQuestion)* 
+		')'
+	'}' |
+	{ComboBox} name='ComboBox' '{'
+		(answer+=Answer)+ 
+	'}'|
+	{DropDown} name='DropDown' '{'
+		(answer+=Answer)+ 
+	'}'|
+	{Radio} name='Radio' '{'
+		(answer+=Answer)+
+	'}'
+;
 /*Following Question Types are available:
 *TextLn (Textline) and TextBl (Textblock) require the indication of the maximal length of text input in brackets.*/
-TextLn:
-	'TextLn' '(' length=INT ')'
-;
 
-TextBl:
-	'TextBl' '(' length=INT ')'
-;
-
-/*Question Matrix*/
-Matrix:
-	'Matrix' '('
-		'Scale:' '(' Identifier ('|' Identifier)* ')'
-		'Questions:' '(' answer+=Answer ('|' answer+=Answer)* ')'
-	')'
-;
-
-/*Multiple Choice Question*/
-ComboBox:
-	name='ComboBox'
-;
-
-/*Single Choice Question*/
-DropDown:
-	name='DropDown'
-;
-
-Radio:
-	name='Radio'
-;
 
 Identifier:
 	ID | STRING | INT
 ;
 
-Mandatory:
-	'Yes'|'No'
-;
-
-Type:
-	TextLn | ComboBox | DropDown |TextBl | Matrix | Radio	
-;

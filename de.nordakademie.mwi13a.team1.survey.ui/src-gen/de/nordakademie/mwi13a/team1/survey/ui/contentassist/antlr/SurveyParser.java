@@ -37,18 +37,21 @@ public class SurveyParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getSurveyTerminalTypesAccess().getAlternatives(), "rule__SurveyTerminalTypes__Alternatives");
 					put(grammarAccess.getIdentifierAccess().getAlternatives(), "rule__Identifier__Alternatives");
-					put(grammarAccess.getMandatoryAccess().getAlternatives(), "rule__Mandatory__Alternatives");
-					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getQuestionnaireAccess().getGroup(), "rule__Questionnaire__Group__0");
 					put(grammarAccess.getPartAccess().getGroup(), "rule__Part__Group__0");
 					put(grammarAccess.getQuestionAccess().getGroup(), "rule__Question__Group__0");
+					put(grammarAccess.getMatrixQuestionAccess().getGroup(), "rule__MatrixQuestion__Group__0");
 					put(grammarAccess.getAnswerAccess().getGroup(), "rule__Answer__Group__0");
-					put(grammarAccess.getTextLnAccess().getGroup(), "rule__TextLn__Group__0");
-					put(grammarAccess.getTextBlAccess().getGroup(), "rule__TextBl__Group__0");
-					put(grammarAccess.getMatrixAccess().getGroup(), "rule__Matrix__Group__0");
-					put(grammarAccess.getMatrixAccess().getGroup_5(), "rule__Matrix__Group_5__0");
-					put(grammarAccess.getMatrixAccess().getGroup_10(), "rule__Matrix__Group_10__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_0(), "rule__SurveyTerminalTypes__Group_0__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_1(), "rule__SurveyTerminalTypes__Group_1__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_2(), "rule__SurveyTerminalTypes__Group_2__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_2_6(), "rule__SurveyTerminalTypes__Group_2_6__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_2_11(), "rule__SurveyTerminalTypes__Group_2_11__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_3(), "rule__SurveyTerminalTypes__Group_3__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_4(), "rule__SurveyTerminalTypes__Group_4__0");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getGroup_5(), "rule__SurveyTerminalTypes__Group_5__0");
 					put(grammarAccess.getSurveyAccess().getQuestionnaireAssignment(), "rule__Survey__QuestionnaireAssignment");
 					put(grammarAccess.getQuestionnaireAccess().getNameAssignment_1(), "rule__Questionnaire__NameAssignment_1");
 					put(grammarAccess.getQuestionnaireAccess().getIdAssignment_4(), "rule__Questionnaire__IdAssignment_4");
@@ -58,18 +61,25 @@ public class SurveyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPartAccess().getQuestionAssignment_5(), "rule__Part__QuestionAssignment_5");
 					put(grammarAccess.getQuestionAccess().getNameAssignment_1(), "rule__Question__NameAssignment_1");
 					put(grammarAccess.getQuestionAccess().getIdAssignment_4(), "rule__Question__IdAssignment_4");
-					put(grammarAccess.getQuestionAccess().getMandatoryAssignment_6(), "rule__Question__MandatoryAssignment_6");
-					put(grammarAccess.getQuestionAccess().getTypeAssignment_8(), "rule__Question__TypeAssignment_8");
-					put(grammarAccess.getQuestionAccess().getAnswerAssignment_9(), "rule__Question__AnswerAssignment_9");
+					put(grammarAccess.getQuestionAccess().getMandatoryAssignment_5(), "rule__Question__MandatoryAssignment_5");
+					put(grammarAccess.getQuestionAccess().getQuestionTypeAssignment_7(), "rule__Question__QuestionTypeAssignment_7");
+					put(grammarAccess.getMatrixQuestionAccess().getIdAssignment_1(), "rule__MatrixQuestion__IdAssignment_1");
+					put(grammarAccess.getMatrixQuestionAccess().getNameAssignment_3(), "rule__MatrixQuestion__NameAssignment_3");
 					put(grammarAccess.getAnswerAccess().getIdAssignment_1(), "rule__Answer__IdAssignment_1");
 					put(grammarAccess.getAnswerAccess().getNameAssignment_3(), "rule__Answer__NameAssignment_3");
-					put(grammarAccess.getTextLnAccess().getLengthAssignment_2(), "rule__TextLn__LengthAssignment_2");
-					put(grammarAccess.getTextBlAccess().getLengthAssignment_2(), "rule__TextBl__LengthAssignment_2");
-					put(grammarAccess.getMatrixAccess().getAnswerAssignment_9(), "rule__Matrix__AnswerAssignment_9");
-					put(grammarAccess.getMatrixAccess().getAnswerAssignment_10_1(), "rule__Matrix__AnswerAssignment_10_1");
-					put(grammarAccess.getComboBoxAccess().getNameAssignment(), "rule__ComboBox__NameAssignment");
-					put(grammarAccess.getDropDownAccess().getNameAssignment(), "rule__DropDown__NameAssignment");
-					put(grammarAccess.getRadioAccess().getNameAssignment(), "rule__Radio__NameAssignment");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_0_1(), "rule__SurveyTerminalTypes__NameAssignment_0_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getLengthAssignment_0_3(), "rule__SurveyTerminalTypes__LengthAssignment_0_3");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_1_1(), "rule__SurveyTerminalTypes__NameAssignment_1_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getLengthAssignment_1_3(), "rule__SurveyTerminalTypes__LengthAssignment_1_3");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_2_1(), "rule__SurveyTerminalTypes__NameAssignment_2_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionAssignment_2_10(), "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionAssignment_2_11_1(), "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_3_1(), "rule__SurveyTerminalTypes__NameAssignment_3_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_3_3(), "rule__SurveyTerminalTypes__AnswerAssignment_3_3");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_4_1(), "rule__SurveyTerminalTypes__NameAssignment_4_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_4_3(), "rule__SurveyTerminalTypes__AnswerAssignment_4_3");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_5_1(), "rule__SurveyTerminalTypes__NameAssignment_5_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_5_3(), "rule__SurveyTerminalTypes__AnswerAssignment_5_3");
 				}
 			};
 		}

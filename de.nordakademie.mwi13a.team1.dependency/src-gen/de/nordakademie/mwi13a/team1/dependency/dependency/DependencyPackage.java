@@ -56,97 +56,88 @@ public interface DependencyPackage extends EPackage
   DependencyPackage eINSTANCE = de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependenciesImpl <em>Survey Dependencies</em>}' class.
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyModelImpl <em>Model</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependenciesImpl
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSurveyDependencies()
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyModelImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDependencyModel()
    * @generated
    */
-  int SURVEY_DEPENDENCIES = 0;
+  int DEPENDENCY_MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Survey Dependency</b></em>' containment reference list.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SURVEY_DEPENDENCIES__SURVEY_DEPENDENCY = 0;
+  int DEPENDENCY_MODEL__ELEMENTS = 0;
 
   /**
-   * The number of structural features of the '<em>Survey Dependencies</em>' class.
+   * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SURVEY_DEPENDENCIES_FEATURE_COUNT = 1;
+  int DEPENDENCY_MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependencyImpl <em>Survey Dependency</em>}' class.
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyElementsImpl <em>Survey Elements</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependencyImpl
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSurveyDependency()
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyElementsImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSurveyElements()
    * @generated
    */
-  int SURVEY_DEPENDENCY = 1;
+  int SURVEY_ELEMENTS = 1;
 
   /**
-   * The feature id for the '<em><b>Survey</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SURVEY_DEPENDENCY__SURVEY = 0;
-
-  /**
-   * The feature id for the '<em><b>Part</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SURVEY_DEPENDENCY__PART = 1;
+  int SURVEY_ELEMENTS__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Survey Dependency</em>' class.
+   * The feature id for the '<em><b>Part Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SURVEY_DEPENDENCY_FEATURE_COUNT = 2;
+  int SURVEY_ELEMENTS__PART_ELEMENTS = 1;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartImpl <em>SD Part</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartImpl
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSDPart()
-   * @generated
-   */
-  int SD_PART = 2;
-
-  /**
-   * The feature id for the '<em><b>Part2</b></em>' reference.
+   * The number of structural features of the '<em>Survey Elements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SD_PART__PART2 = 0;
+  int SURVEY_ELEMENTS_FEATURE_COUNT = 2;
 
   /**
-   * The feature id for the '<em><b>Default Next Part</b></em>' reference.
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartElementsImpl <em>Part Elements</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartElementsImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getPartElements()
+   * @generated
+   */
+  int PART_ELEMENTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SD_PART__DEFAULT_NEXT_PART = 1;
+  int PART_ELEMENTS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Next Parts</b></em>' containment reference list.
@@ -155,63 +146,156 @@ public interface DependencyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SD_PART__NEXT_PARTS = 2;
+  int PART_ELEMENTS__NEXT_PARTS = 1;
 
   /**
-   * The number of structural features of the '<em>SD Part</em>' class.
+   * The number of structural features of the '<em>Part Elements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SD_PART_FEATURE_COUNT = 3;
+  int PART_ELEMENTS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDNextPartsImpl <em>SD Next Parts</em>}' class.
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMNextPartsImpl <em>DM Next Parts</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDNextPartsImpl
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSDNextParts()
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMNextPartsImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMNextParts()
    * @generated
    */
-  int SD_NEXT_PARTS = 3;
+  int DM_NEXT_PARTS = 3;
 
   /**
-   * The feature id for the '<em><b>Next Part</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SD_NEXT_PARTS__NEXT_PART = 0;
-
-  /**
-   * The feature id for the '<em><b>Part Dependencies</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SD_NEXT_PARTS__PART_DEPENDENCIES = 1;
+  int DM_NEXT_PARTS__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>SD Next Parts</em>' class.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SD_NEXT_PARTS_FEATURE_COUNT = 2;
+  int DM_NEXT_PARTS__EXPRESSIONS = 1;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartDependenciesImpl <em>SD Part Dependencies</em>}' class.
+   * The number of structural features of the '<em>DM Next Parts</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartDependenciesImpl
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSDPartDependencies()
+   * @generated
+   * @ordered
+   */
+  int DM_NEXT_PARTS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyImpl <em>Dependency</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDependency()
    * @generated
    */
-  int SD_PART_DEPENDENCIES = 4;
+  int DEPENDENCY = 4;
+
+  /**
+   * The number of structural features of the '<em>Dependency</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl <em>Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getOr()
+   * @generated
+   */
+  int OR = 5;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__LEFT = DEPENDENCY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__RIGHT = DEPENDENCY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.AndImpl <em>And</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.AndImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getAnd()
+   * @generated
+   */
+  int AND = 6;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__LEFT = DEPENDENCY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__RIGHT = DEPENDENCY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>And</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMQuestionImpl <em>DM Question</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMQuestionImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMQuestion()
+   * @generated
+   */
+  int DM_QUESTION = 7;
 
   /**
    * The feature id for the '<em><b>Question</b></em>' reference.
@@ -220,7 +304,7 @@ public interface DependencyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SD_PART_DEPENDENCIES__QUESTION = 0;
+  int DM_QUESTION__QUESTION = DEPENDENCY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Answer</b></em>' reference.
@@ -229,177 +313,240 @@ public interface DependencyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SD_PART_DEPENDENCIES__ANSWER = 1;
+  int DM_QUESTION__ANSWER = DEPENDENCY_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>SD Part Dependencies</em>' class.
+   * The number of structural features of the '<em>DM Question</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SD_PART_DEPENDENCIES_FEATURE_COUNT = 2;
+  int DM_QUESTION_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 2;
 
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependencies <em>Survey Dependencies</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Survey Dependencies</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependencies
+   * @return the meta object for class '<em>Model</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel
    * @generated
    */
-  EClass getSurveyDependencies();
+  EClass getDependencyModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependencies#getSurveyDependency <em>Survey Dependency</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Survey Dependency</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependencies#getSurveyDependency()
-   * @see #getSurveyDependencies()
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel#getElements()
+   * @see #getDependencyModel()
    * @generated
    */
-  EReference getSurveyDependencies_SurveyDependency();
+  EReference getDependencyModel_Elements();
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency <em>Survey Dependency</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements <em>Survey Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Survey Dependency</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency
+   * @return the meta object for class '<em>Survey Elements</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
    * @generated
    */
-  EClass getSurveyDependency();
+  EClass getSurveyElements();
 
   /**
-   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency#getSurvey <em>Survey</em>}'.
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Survey</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency#getSurvey()
-   * @see #getSurveyDependency()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements#getName()
+   * @see #getSurveyElements()
    * @generated
    */
-  EReference getSurveyDependency_Survey();
+  EReference getSurveyElements_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency#getPart <em>Part</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements#getPartElements <em>Part Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Part</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency#getPart()
-   * @see #getSurveyDependency()
+   * @return the meta object for the containment reference list '<em>Part Elements</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements#getPartElements()
+   * @see #getSurveyElements()
    * @generated
    */
-  EReference getSurveyDependency_Part();
+  EReference getSurveyElements_PartElements();
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPart <em>SD Part</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements <em>Part Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>SD Part</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPart
+   * @return the meta object for class '<em>Part Elements</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
    * @generated
    */
-  EClass getSDPart();
+  EClass getPartElements();
 
   /**
-   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPart#getPart2 <em>Part2</em>}'.
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Part2</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPart#getPart2()
-   * @see #getSDPart()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getName()
+   * @see #getPartElements()
    * @generated
    */
-  EReference getSDPart_Part2();
+  EReference getPartElements_Name();
 
   /**
-   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPart#getDefaultNextPart <em>Default Next Part</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Default Next Part</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPart#getDefaultNextPart()
-   * @see #getSDPart()
-   * @generated
-   */
-  EReference getSDPart_DefaultNextPart();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPart#getNextParts <em>Next Parts</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getNextParts <em>Next Parts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Next Parts</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPart#getNextParts()
-   * @see #getSDPart()
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getNextParts()
+   * @see #getPartElements()
    * @generated
    */
-  EReference getSDPart_NextParts();
+  EReference getPartElements_NextParts();
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts <em>SD Next Parts</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts <em>DM Next Parts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>SD Next Parts</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts
+   * @return the meta object for class '<em>DM Next Parts</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts
    * @generated
    */
-  EClass getSDNextParts();
+  EClass getDMNextParts();
 
   /**
-   * Returns the meta object for the reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts#getNextPart <em>Next Part</em>}'.
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Next Part</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts#getNextPart()
-   * @see #getSDNextParts()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts#getName()
+   * @see #getDMNextParts()
    * @generated
    */
-  EReference getSDNextParts_NextPart();
+  EReference getDMNextParts_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts#getPartDependencies <em>Part Dependencies</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts#getExpressions <em>Expressions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Part Dependencies</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDNextParts#getPartDependencies()
-   * @see #getSDNextParts()
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts#getExpressions()
+   * @see #getDMNextParts()
    * @generated
    */
-  EReference getSDNextParts_PartDependencies();
+  EReference getDMNextParts_Expressions();
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies <em>SD Part Dependencies</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Dependency <em>Dependency</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>SD Part Dependencies</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies
+   * @return the meta object for class '<em>Dependency</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.Dependency
    * @generated
    */
-  EClass getSDPartDependencies();
+  EClass getDependency();
 
   /**
-   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies#getQuestion <em>Question</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.Or
+   * @generated
+   */
+  EClass getOr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Or#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.Or#getLeft()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Or#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.Or#getRight()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Right();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>And</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.And
+   * @generated
+   */
+  EClass getAnd();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.And#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.And#getLeft()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.And#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.And#getRight()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Right();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion <em>DM Question</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>DM Question</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
+   * @generated
+   */
+  EClass getDMQuestion();
+
+  /**
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion#getQuestion <em>Question</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Question</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies#getQuestion()
-   * @see #getSDPartDependencies()
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion#getQuestion()
+   * @see #getDMQuestion()
    * @generated
    */
-  EReference getSDPartDependencies_Question();
+  EReference getDMQuestion_Question();
 
   /**
-   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies#getAnswer <em>Answer</em>}'.
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion#getAnswer <em>Answer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Answer</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.SDPartDependencies#getAnswer()
-   * @see #getSDPartDependencies()
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion#getAnswer()
+   * @see #getDMQuestion()
    * @generated
    */
-  EReference getSDPartDependencies_Answer();
+  EReference getDMQuestion_Answer();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -425,74 +572,66 @@ public interface DependencyPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependenciesImpl <em>Survey Dependencies</em>}' class.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyModelImpl <em>Model</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependenciesImpl
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSurveyDependencies()
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyModelImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDependencyModel()
      * @generated
      */
-    EClass SURVEY_DEPENDENCIES = eINSTANCE.getSurveyDependencies();
+    EClass DEPENDENCY_MODEL = eINSTANCE.getDependencyModel();
 
     /**
-     * The meta object literal for the '<em><b>Survey Dependency</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SURVEY_DEPENDENCIES__SURVEY_DEPENDENCY = eINSTANCE.getSurveyDependencies_SurveyDependency();
+    EReference DEPENDENCY_MODEL__ELEMENTS = eINSTANCE.getDependencyModel_Elements();
 
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependencyImpl <em>Survey Dependency</em>}' class.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyElementsImpl <em>Survey Elements</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyDependencyImpl
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSurveyDependency()
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SurveyElementsImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSurveyElements()
      * @generated
      */
-    EClass SURVEY_DEPENDENCY = eINSTANCE.getSurveyDependency();
+    EClass SURVEY_ELEMENTS = eINSTANCE.getSurveyElements();
 
     /**
-     * The meta object literal for the '<em><b>Survey</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SURVEY_DEPENDENCY__SURVEY = eINSTANCE.getSurveyDependency_Survey();
+    EReference SURVEY_ELEMENTS__NAME = eINSTANCE.getSurveyElements_Name();
 
     /**
-     * The meta object literal for the '<em><b>Part</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Part Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SURVEY_DEPENDENCY__PART = eINSTANCE.getSurveyDependency_Part();
+    EReference SURVEY_ELEMENTS__PART_ELEMENTS = eINSTANCE.getSurveyElements_PartElements();
 
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartImpl <em>SD Part</em>}' class.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartElementsImpl <em>Part Elements</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartImpl
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSDPart()
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartElementsImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getPartElements()
      * @generated
      */
-    EClass SD_PART = eINSTANCE.getSDPart();
+    EClass PART_ELEMENTS = eINSTANCE.getPartElements();
 
     /**
-     * The meta object literal for the '<em><b>Part2</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SD_PART__PART2 = eINSTANCE.getSDPart_Part2();
-
-    /**
-     * The meta object literal for the '<em><b>Default Next Part</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SD_PART__DEFAULT_NEXT_PART = eINSTANCE.getSDPart_DefaultNextPart();
+    EReference PART_ELEMENTS__NAME = eINSTANCE.getPartElements_Name();
 
     /**
      * The meta object literal for the '<em><b>Next Parts</b></em>' containment reference list feature.
@@ -500,43 +639,105 @@ public interface DependencyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SD_PART__NEXT_PARTS = eINSTANCE.getSDPart_NextParts();
+    EReference PART_ELEMENTS__NEXT_PARTS = eINSTANCE.getPartElements_NextParts();
 
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDNextPartsImpl <em>SD Next Parts</em>}' class.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMNextPartsImpl <em>DM Next Parts</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDNextPartsImpl
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSDNextParts()
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMNextPartsImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMNextParts()
      * @generated
      */
-    EClass SD_NEXT_PARTS = eINSTANCE.getSDNextParts();
+    EClass DM_NEXT_PARTS = eINSTANCE.getDMNextParts();
 
     /**
-     * The meta object literal for the '<em><b>Next Part</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SD_NEXT_PARTS__NEXT_PART = eINSTANCE.getSDNextParts_NextPart();
-
-    /**
-     * The meta object literal for the '<em><b>Part Dependencies</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SD_NEXT_PARTS__PART_DEPENDENCIES = eINSTANCE.getSDNextParts_PartDependencies();
+    EReference DM_NEXT_PARTS__NAME = eINSTANCE.getDMNextParts_Name();
 
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartDependenciesImpl <em>SD Part Dependencies</em>}' class.
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.SDPartDependenciesImpl
-     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getSDPartDependencies()
      * @generated
      */
-    EClass SD_PART_DEPENDENCIES = eINSTANCE.getSDPartDependencies();
+    EReference DM_NEXT_PARTS__EXPRESSIONS = eINSTANCE.getDMNextParts_Expressions();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyImpl <em>Dependency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDependency()
+     * @generated
+     */
+    EClass DEPENDENCY = eINSTANCE.getDependency();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl <em>Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getOr()
+     * @generated
+     */
+    EClass OR = eINSTANCE.getOr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__LEFT = eINSTANCE.getOr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__RIGHT = eINSTANCE.getOr_Right();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.AndImpl <em>And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.AndImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getAnd()
+     * @generated
+     */
+    EClass AND = eINSTANCE.getAnd();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__LEFT = eINSTANCE.getAnd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__RIGHT = eINSTANCE.getAnd_Right();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMQuestionImpl <em>DM Question</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMQuestionImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMQuestion()
+     * @generated
+     */
+    EClass DM_QUESTION = eINSTANCE.getDMQuestion();
 
     /**
      * The meta object literal for the '<em><b>Question</b></em>' reference feature.
@@ -544,7 +745,7 @@ public interface DependencyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SD_PART_DEPENDENCIES__QUESTION = eINSTANCE.getSDPartDependencies_Question();
+    EReference DM_QUESTION__QUESTION = eINSTANCE.getDMQuestion_Question();
 
     /**
      * The meta object literal for the '<em><b>Answer</b></em>' reference feature.
@@ -552,7 +753,7 @@ public interface DependencyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SD_PART_DEPENDENCIES__ANSWER = eINSTANCE.getSDPartDependencies_Answer();
+    EReference DM_QUESTION__ANSWER = eINSTANCE.getDMQuestion_Answer();
 
   }
 

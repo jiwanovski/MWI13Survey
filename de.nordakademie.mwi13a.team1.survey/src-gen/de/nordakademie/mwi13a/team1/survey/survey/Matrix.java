@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getMatrixQuestion <em>Matrix Question</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,22 +20,22 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Matrix extends Type
+public interface Matrix extends SurveyTerminalTypes
 {
   /**
-   * Returns the value of the '<em><b>Answer</b></em>' containment reference list.
-   * The list contents are of type {@link de.nordakademie.mwi13a.team1.survey.survey.Answer}.
+   * Returns the value of the '<em><b>Matrix Question</b></em>' containment reference list.
+   * The list contents are of type {@link de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Answer</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Matrix Question</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Answer</em>' containment reference list.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getMatrix_Answer()
+   * @return the value of the '<em>Matrix Question</em>' containment reference list.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getMatrix_MatrixQuestion()
    * @model containment="true"
    * @generated
    */
-  EList<Answer> getAnswer();
+  EList<MatrixQuestion> getMatrixQuestion();
 
 } // Matrix

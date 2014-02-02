@@ -7,14 +7,15 @@ import de.nordakademie.mwi13a.team1.survey.survey.Answer;
 import de.nordakademie.mwi13a.team1.survey.survey.ComboBox;
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
+import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
 import de.nordakademie.mwi13a.team1.survey.survey.Part;
 import de.nordakademie.mwi13a.team1.survey.survey.Question;
 import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire;
 import de.nordakademie.mwi13a.team1.survey.survey.Radio;
 import de.nordakademie.mwi13a.team1.survey.survey.Survey;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
-import de.nordakademie.mwi13a.team1.survey.survey.TextBl;
-import de.nordakademie.mwi13a.team1.survey.survey.TextLn;
+import de.nordakademie.mwi13a.team1.survey.survey.TextBlock;
+import de.nordakademie.mwi13a.team1.survey.survey.TextLine;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -42,23 +43,26 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case SurveyPackage.COMBO_BOX:
-				if(context == grammarAccess.getComboBoxRule() ||
-				   context == grammarAccess.getTypeRule()) {
-					sequence_ComboBox(context, (ComboBox) semanticObject); 
+				if(context == grammarAccess.getSurveyTerminalTypesRule()) {
+					sequence_SurveyTerminalTypes(context, (ComboBox) semanticObject); 
 					return; 
 				}
 				else break;
 			case SurveyPackage.DROP_DOWN:
-				if(context == grammarAccess.getDropDownRule() ||
-				   context == grammarAccess.getTypeRule()) {
-					sequence_DropDown(context, (DropDown) semanticObject); 
+				if(context == grammarAccess.getSurveyTerminalTypesRule()) {
+					sequence_SurveyTerminalTypes(context, (DropDown) semanticObject); 
 					return; 
 				}
 				else break;
 			case SurveyPackage.MATRIX:
-				if(context == grammarAccess.getMatrixRule() ||
-				   context == grammarAccess.getTypeRule()) {
-					sequence_Matrix(context, (Matrix) semanticObject); 
+				if(context == grammarAccess.getSurveyTerminalTypesRule()) {
+					sequence_SurveyTerminalTypes(context, (Matrix) semanticObject); 
+					return; 
+				}
+				else break;
+			case SurveyPackage.MATRIX_QUESTION:
+				if(context == grammarAccess.getMatrixQuestionRule()) {
+					sequence_MatrixQuestion(context, (MatrixQuestion) semanticObject); 
 					return; 
 				}
 				else break;
@@ -81,9 +85,8 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case SurveyPackage.RADIO:
-				if(context == grammarAccess.getRadioRule() ||
-				   context == grammarAccess.getTypeRule()) {
-					sequence_Radio(context, (Radio) semanticObject); 
+				if(context == grammarAccess.getSurveyTerminalTypesRule()) {
+					sequence_SurveyTerminalTypes(context, (Radio) semanticObject); 
 					return; 
 				}
 				else break;
@@ -93,17 +96,15 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case SurveyPackage.TEXT_BL:
-				if(context == grammarAccess.getTextBlRule() ||
-				   context == grammarAccess.getTypeRule()) {
-					sequence_TextBl(context, (TextBl) semanticObject); 
+			case SurveyPackage.TEXT_BLOCK:
+				if(context == grammarAccess.getSurveyTerminalTypesRule()) {
+					sequence_SurveyTerminalTypes(context, (TextBlock) semanticObject); 
 					return; 
 				}
 				else break;
-			case SurveyPackage.TEXT_LN:
-				if(context == grammarAccess.getTextLnRule() ||
-				   context == grammarAccess.getTypeRule()) {
-					sequence_TextLn(context, (TextLn) semanticObject); 
+			case SurveyPackage.TEXT_LINE:
+				if(context == grammarAccess.getSurveyTerminalTypesRule()) {
+					sequence_SurveyTerminalTypes(context, (TextLine) semanticObject); 
 					return; 
 				}
 				else break;
@@ -113,7 +114,7 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (id=Identifier name=Identifier)
+	 *     (id=Identifier name=STRING)
 	 */
 	protected void sequence_Answer(EObject context, Answer semanticObject) {
 		if(errorAcceptor != null) {
@@ -125,49 +126,27 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getAnswerAccess().getIdIdentifierParserRuleCall_1_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getAnswerAccess().getNameIdentifierParserRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAnswerAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name='ComboBox'
+	 *     (id=Identifier name=STRING)
 	 */
-	protected void sequence_ComboBox(EObject context, ComboBox semanticObject) {
+	protected void sequence_MatrixQuestion(EObject context, MatrixQuestion semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.COMBO_BOX__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.COMBO_BOX__NAME));
+			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.MATRIX_QUESTION__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.MATRIX_QUESTION__ID));
+			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.MATRIX_QUESTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.MATRIX_QUESTION__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getComboBoxAccess().getNameComboBoxKeyword_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getMatrixQuestionAccess().getIdIdentifierParserRuleCall_1_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getMatrixQuestionAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name='DropDown'
-	 */
-	protected void sequence_DropDown(EObject context, DropDown semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.DROP_DOWN__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.DROP_DOWN__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDropDownAccess().getNameDropDownKeyword_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (answer+=Answer answer+=Answer*)
-	 */
-	protected void sequence_Matrix(EObject context, Matrix semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -182,7 +161,7 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING id=Identifier mandatory=Mandatory type=Type answer+=Answer*)
+	 *     (name=STRING id=Identifier mandatory?='Mandatory Field'? questionType=SurveyTerminalTypes)
 	 */
 	protected void sequence_Question(EObject context, Question semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -200,16 +179,74 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     name='Radio'
+	 *     (name='ComboBox' answer+=Answer+)
 	 */
-	protected void sequence_Radio(EObject context, Radio semanticObject) {
+	protected void sequence_SurveyTerminalTypes(EObject context, ComboBox semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name='DropDown' answer+=Answer+)
+	 */
+	protected void sequence_SurveyTerminalTypes(EObject context, DropDown semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name='Matrix' matrixQuestion+=MatrixQuestion matrixQuestion+=MatrixQuestion*)
+	 */
+	protected void sequence_SurveyTerminalTypes(EObject context, Matrix semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name='Radio' answer+=Answer+)
+	 */
+	protected void sequence_SurveyTerminalTypes(EObject context, Radio semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name='TextBlock' length=INT)
+	 */
+	protected void sequence_SurveyTerminalTypes(EObject context, TextBlock semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.RADIO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.RADIO__NAME));
+			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.SURVEY_TERMINAL_TYPES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.SURVEY_TERMINAL_TYPES__NAME));
+			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.TEXT_BLOCK__LENGTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.TEXT_BLOCK__LENGTH));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRadioAccess().getNameRadioKeyword_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSurveyTerminalTypesAccess().getNameTextBlockKeyword_1_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSurveyTerminalTypesAccess().getLengthINTTerminalRuleCall_1_3_0(), semanticObject.getLength());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name='TextLine' length=INT)
+	 */
+	protected void sequence_SurveyTerminalTypes(EObject context, TextLine semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.SURVEY_TERMINAL_TYPES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.SURVEY_TERMINAL_TYPES__NAME));
+			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.TEXT_LINE__LENGTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.TEXT_LINE__LENGTH));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSurveyTerminalTypesAccess().getNameTextLineKeyword_0_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSurveyTerminalTypesAccess().getLengthINTTerminalRuleCall_0_3_0(), semanticObject.getLength());
 		feeder.finish();
 	}
 	
@@ -220,37 +257,5 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_Survey(EObject context, Survey semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     length=INT
-	 */
-	protected void sequence_TextBl(EObject context, TextBl semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.TEXT_BL__LENGTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.TEXT_BL__LENGTH));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTextBlAccess().getLengthINTTerminalRuleCall_2_0(), semanticObject.getLength());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     length=INT
-	 */
-	protected void sequence_TextLn(EObject context, TextLn semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.TEXT_LN__LENGTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.TEXT_LN__LENGTH));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTextLnAccess().getLengthINTTerminalRuleCall_2_0(), semanticObject.getLength());
-		feeder.finish();
 	}
 }

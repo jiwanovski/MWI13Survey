@@ -59,6 +59,15 @@ public interface SurveyFactory extends EFactory
   Question createQuestion();
 
   /**
+   * Returns a new object of class '<em>Matrix Question</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Matrix Question</em>'.
+   * @generated
+   */
+  MatrixQuestion createMatrixQuestion();
+
+  /**
    * Returns a new object of class '<em>Answer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -68,22 +77,31 @@ public interface SurveyFactory extends EFactory
   Answer createAnswer();
 
   /**
-   * Returns a new object of class '<em>Text Ln</em>'.
+   * Returns a new object of class '<em>Terminal Types</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Ln</em>'.
+   * @return a new object of class '<em>Terminal Types</em>'.
    * @generated
    */
-  TextLn createTextLn();
+  SurveyTerminalTypes createSurveyTerminalTypes();
 
   /**
-   * Returns a new object of class '<em>Text Bl</em>'.
+   * Returns a new object of class '<em>Text Line</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Bl</em>'.
+   * @return a new object of class '<em>Text Line</em>'.
    * @generated
    */
-  TextBl createTextBl();
+  TextLine createTextLine();
+
+  /**
+   * Returns a new object of class '<em>Text Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Block</em>'.
+   * @generated
+   */
+  TextBlock createTextBlock();
 
   /**
    * Returns a new object of class '<em>Matrix</em>'.
@@ -120,15 +138,6 @@ public interface SurveyFactory extends EFactory
    * @generated
    */
   Radio createRadio();
-
-  /**
-   * Returns a new object of class '<em>Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type</em>'.
-   * @generated
-   */
-  Type createType();
 
   /**
    * Returns the package supported by this factory.

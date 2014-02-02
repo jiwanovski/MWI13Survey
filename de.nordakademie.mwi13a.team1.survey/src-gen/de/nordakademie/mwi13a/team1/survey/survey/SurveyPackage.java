@@ -214,22 +214,13 @@ public interface SurveyPackage extends EPackage
   int QUESTION__MANDATORY = 2;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Question Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUESTION__TYPE = 3;
-
-  /**
-   * The feature id for the '<em><b>Answer</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUESTION__ANSWER = 4;
+  int QUESTION__QUESTION_TYPE = 3;
 
   /**
    * The number of structural features of the '<em>Question</em>' class.
@@ -238,7 +229,44 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUESTION_FEATURE_COUNT = 5;
+  int QUESTION_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixQuestionImpl <em>Matrix Question</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixQuestionImpl
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getMatrixQuestion()
+   * @generated
+   */
+  int MATRIX_QUESTION = 4;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATRIX_QUESTION__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATRIX_QUESTION__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Matrix Question</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATRIX_QUESTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.AnswerImpl <em>Answer</em>}' class.
@@ -248,7 +276,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getAnswer()
    * @generated
    */
-  int ANSWER = 4;
+  int ANSWER = 5;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -278,33 +306,51 @@ public interface SurveyPackage extends EPackage
   int ANSWER_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TypeImpl <em>Type</em>}' class.
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyTerminalTypesImpl <em>Terminal Types</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TypeImpl
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getType()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyTerminalTypesImpl
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getSurveyTerminalTypes()
    * @generated
    */
-  int TYPE = 11;
+  int SURVEY_TERMINAL_TYPES = 6;
 
   /**
-   * The number of structural features of the '<em>Type</em>' class.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = 0;
+  int SURVEY_TERMINAL_TYPES__NAME = 0;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextLnImpl <em>Text Ln</em>}' class.
+   * The number of structural features of the '<em>Terminal Types</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextLnImpl
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextLn()
+   * @generated
+   * @ordered
+   */
+  int SURVEY_TERMINAL_TYPES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextLineImpl <em>Text Line</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextLineImpl
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextLine()
    * @generated
    */
-  int TEXT_LN = 5;
+  int TEXT_LINE = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_LINE__NAME = SURVEY_TERMINAL_TYPES__NAME;
 
   /**
    * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -313,26 +359,35 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_LN__LENGTH = TYPE_FEATURE_COUNT + 0;
+  int TEXT_LINE__LENGTH = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Text Ln</em>' class.
+   * The number of structural features of the '<em>Text Line</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEXT_LN_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int TEXT_LINE_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlImpl <em>Text Bl</em>}' class.
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlockImpl <em>Text Block</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlImpl
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextBl()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlockImpl
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextBlock()
    * @generated
    */
-  int TEXT_BL = 6;
+  int TEXT_BLOCK = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_BLOCK__NAME = SURVEY_TERMINAL_TYPES__NAME;
 
   /**
    * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -341,16 +396,16 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_BL__LENGTH = TYPE_FEATURE_COUNT + 0;
+  int TEXT_BLOCK__LENGTH = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Text Bl</em>' class.
+   * The number of structural features of the '<em>Text Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEXT_BL_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int TEXT_BLOCK_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl <em>Matrix</em>}' class.
@@ -360,16 +415,25 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getMatrix()
    * @generated
    */
-  int MATRIX = 7;
+  int MATRIX = 9;
 
   /**
-   * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MATRIX__ANSWER = TYPE_FEATURE_COUNT + 0;
+  int MATRIX__NAME = SURVEY_TERMINAL_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Matrix Question</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATRIX__MATRIX_QUESTION = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Matrix</em>' class.
@@ -378,7 +442,7 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MATRIX_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int MATRIX_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl <em>Combo Box</em>}' class.
@@ -388,7 +452,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getComboBox()
    * @generated
    */
-  int COMBO_BOX = 8;
+  int COMBO_BOX = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -397,7 +461,16 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMBO_BOX__NAME = TYPE_FEATURE_COUNT + 0;
+  int COMBO_BOX__NAME = SURVEY_TERMINAL_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMBO_BOX__ANSWER = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Combo Box</em>' class.
@@ -406,7 +479,7 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMBO_BOX_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int COMBO_BOX_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.DropDownImpl <em>Drop Down</em>}' class.
@@ -416,7 +489,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getDropDown()
    * @generated
    */
-  int DROP_DOWN = 9;
+  int DROP_DOWN = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -425,7 +498,16 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DROP_DOWN__NAME = TYPE_FEATURE_COUNT + 0;
+  int DROP_DOWN__NAME = SURVEY_TERMINAL_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DROP_DOWN__ANSWER = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Drop Down</em>' class.
@@ -434,7 +516,7 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DROP_DOWN_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int DROP_DOWN_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.RadioImpl <em>Radio</em>}' class.
@@ -444,7 +526,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getRadio()
    * @generated
    */
-  int RADIO = 10;
+  int RADIO = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -453,7 +535,16 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIO__NAME = TYPE_FEATURE_COUNT + 0;
+  int RADIO__NAME = SURVEY_TERMINAL_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RADIO__ANSWER = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Radio</em>' class.
@@ -462,7 +553,7 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIO_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int RADIO_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
 
   /**
@@ -605,37 +696,58 @@ public interface SurveyPackage extends EPackage
   EAttribute getQuestion_Id();
 
   /**
-   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getMandatory <em>Mandatory</em>}'.
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#isMandatory <em>Mandatory</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Mandatory</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.Question#getMandatory()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.Question#isMandatory()
    * @see #getQuestion()
    * @generated
    */
   EAttribute getQuestion_Mandatory();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getQuestionType <em>Question Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.Question#getType()
+   * @return the meta object for the containment reference '<em>Question Type</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.Question#getQuestionType()
    * @see #getQuestion()
    * @generated
    */
-  EReference getQuestion_Type();
+  EReference getQuestion_QuestionType();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getAnswer <em>Answer</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion <em>Matrix Question</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Answer</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.Question#getAnswer()
-   * @see #getQuestion()
+   * @return the meta object for class '<em>Matrix Question</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion
    * @generated
    */
-  EReference getQuestion_Answer();
+  EClass getMatrixQuestion();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion#getId()
+   * @see #getMatrixQuestion()
+   * @generated
+   */
+  EAttribute getMatrixQuestion_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion#getName()
+   * @see #getMatrixQuestion()
+   * @generated
+   */
+  EAttribute getMatrixQuestion_Name();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.Answer <em>Answer</em>}'.
@@ -670,46 +782,67 @@ public interface SurveyPackage extends EPackage
   EAttribute getAnswer_Name();
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextLn <em>Text Ln</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes <em>Terminal Types</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text Ln</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.TextLn
+   * @return the meta object for class '<em>Terminal Types</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes
    * @generated
    */
-  EClass getTextLn();
+  EClass getSurveyTerminalTypes();
 
   /**
-   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.TextLn#getLength <em>Length</em>}'.
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes#getName()
+   * @see #getSurveyTerminalTypes()
+   * @generated
+   */
+  EAttribute getSurveyTerminalTypes_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextLine <em>Text Line</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text Line</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.TextLine
+   * @generated
+   */
+  EClass getTextLine();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.TextLine#getLength <em>Length</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Length</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.TextLn#getLength()
-   * @see #getTextLn()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.TextLine#getLength()
+   * @see #getTextLine()
    * @generated
    */
-  EAttribute getTextLn_Length();
+  EAttribute getTextLine_Length();
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextBl <em>Text Bl</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextBlock <em>Text Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text Bl</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.TextBl
+   * @return the meta object for class '<em>Text Block</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.TextBlock
    * @generated
    */
-  EClass getTextBl();
+  EClass getTextBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.TextBl#getLength <em>Length</em>}'.
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.TextBlock#getLength <em>Length</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Length</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.TextBl#getLength()
-   * @see #getTextBl()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.TextBlock#getLength()
+   * @see #getTextBlock()
    * @generated
    */
-  EAttribute getTextBl_Length();
+  EAttribute getTextBlock_Length();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix <em>Matrix</em>}'.
@@ -722,15 +855,15 @@ public interface SurveyPackage extends EPackage
   EClass getMatrix();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getAnswer <em>Answer</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getMatrixQuestion <em>Matrix Question</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Answer</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.Matrix#getAnswer()
+   * @return the meta object for the containment reference list '<em>Matrix Question</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.Matrix#getMatrixQuestion()
    * @see #getMatrix()
    * @generated
    */
-  EReference getMatrix_Answer();
+  EReference getMatrix_MatrixQuestion();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.ComboBox <em>Combo Box</em>}'.
@@ -743,15 +876,15 @@ public interface SurveyPackage extends EPackage
   EClass getComboBox();
 
   /**
-   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.ComboBox#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.ComboBox#getAnswer <em>Answer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.ComboBox#getName()
+   * @return the meta object for the containment reference list '<em>Answer</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.ComboBox#getAnswer()
    * @see #getComboBox()
    * @generated
    */
-  EAttribute getComboBox_Name();
+  EReference getComboBox_Answer();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.DropDown <em>Drop Down</em>}'.
@@ -764,15 +897,15 @@ public interface SurveyPackage extends EPackage
   EClass getDropDown();
 
   /**
-   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.DropDown#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.DropDown#getAnswer <em>Answer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.DropDown#getName()
+   * @return the meta object for the containment reference list '<em>Answer</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.DropDown#getAnswer()
    * @see #getDropDown()
    * @generated
    */
-  EAttribute getDropDown_Name();
+  EReference getDropDown_Answer();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.Radio <em>Radio</em>}'.
@@ -785,25 +918,15 @@ public interface SurveyPackage extends EPackage
   EClass getRadio();
 
   /**
-   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.Radio#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.Radio#getAnswer <em>Answer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.Radio#getName()
+   * @return the meta object for the containment reference list '<em>Answer</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.Radio#getAnswer()
    * @see #getRadio()
    * @generated
    */
-  EAttribute getRadio_Name();
-
-  /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.Type <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.Type
-   * @generated
-   */
-  EClass getType();
+  EReference getRadio_Answer();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -949,20 +1072,38 @@ public interface SurveyPackage extends EPackage
     EAttribute QUESTION__MANDATORY = eINSTANCE.getQuestion_Mandatory();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Question Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference QUESTION__TYPE = eINSTANCE.getQuestion_Type();
+    EReference QUESTION__QUESTION_TYPE = eINSTANCE.getQuestion_QuestionType();
 
     /**
-     * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixQuestionImpl <em>Matrix Question</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixQuestionImpl
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getMatrixQuestion()
+     * @generated
+     */
+    EClass MATRIX_QUESTION = eINSTANCE.getMatrixQuestion();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference QUESTION__ANSWER = eINSTANCE.getQuestion_Answer();
+    EAttribute MATRIX_QUESTION__ID = eINSTANCE.getMatrixQuestion_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATRIX_QUESTION__NAME = eINSTANCE.getMatrixQuestion_Name();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.AnswerImpl <em>Answer</em>}' class.
@@ -991,14 +1132,32 @@ public interface SurveyPackage extends EPackage
     EAttribute ANSWER__NAME = eINSTANCE.getAnswer_Name();
 
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextLnImpl <em>Text Ln</em>}' class.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyTerminalTypesImpl <em>Terminal Types</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextLnImpl
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextLn()
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyTerminalTypesImpl
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getSurveyTerminalTypes()
      * @generated
      */
-    EClass TEXT_LN = eINSTANCE.getTextLn();
+    EClass SURVEY_TERMINAL_TYPES = eINSTANCE.getSurveyTerminalTypes();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SURVEY_TERMINAL_TYPES__NAME = eINSTANCE.getSurveyTerminalTypes_Name();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextLineImpl <em>Text Line</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextLineImpl
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextLine()
+     * @generated
+     */
+    EClass TEXT_LINE = eINSTANCE.getTextLine();
 
     /**
      * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
@@ -1006,17 +1165,17 @@ public interface SurveyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEXT_LN__LENGTH = eINSTANCE.getTextLn_Length();
+    EAttribute TEXT_LINE__LENGTH = eINSTANCE.getTextLine_Length();
 
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlImpl <em>Text Bl</em>}' class.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlockImpl <em>Text Block</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlImpl
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextBl()
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TextBlockImpl
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextBlock()
      * @generated
      */
-    EClass TEXT_BL = eINSTANCE.getTextBl();
+    EClass TEXT_BLOCK = eINSTANCE.getTextBlock();
 
     /**
      * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
@@ -1024,7 +1183,7 @@ public interface SurveyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEXT_BL__LENGTH = eINSTANCE.getTextBl_Length();
+    EAttribute TEXT_BLOCK__LENGTH = eINSTANCE.getTextBlock_Length();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl <em>Matrix</em>}' class.
@@ -1037,12 +1196,12 @@ public interface SurveyPackage extends EPackage
     EClass MATRIX = eINSTANCE.getMatrix();
 
     /**
-     * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Matrix Question</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MATRIX__ANSWER = eINSTANCE.getMatrix_Answer();
+    EReference MATRIX__MATRIX_QUESTION = eINSTANCE.getMatrix_MatrixQuestion();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl <em>Combo Box</em>}' class.
@@ -1055,12 +1214,12 @@ public interface SurveyPackage extends EPackage
     EClass COMBO_BOX = eINSTANCE.getComboBox();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMBO_BOX__NAME = eINSTANCE.getComboBox_Name();
+    EReference COMBO_BOX__ANSWER = eINSTANCE.getComboBox_Answer();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.DropDownImpl <em>Drop Down</em>}' class.
@@ -1073,12 +1232,12 @@ public interface SurveyPackage extends EPackage
     EClass DROP_DOWN = eINSTANCE.getDropDown();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DROP_DOWN__NAME = eINSTANCE.getDropDown_Name();
+    EReference DROP_DOWN__ANSWER = eINSTANCE.getDropDown_Answer();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.RadioImpl <em>Radio</em>}' class.
@@ -1091,22 +1250,12 @@ public interface SurveyPackage extends EPackage
     EClass RADIO = eINSTANCE.getRadio();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RADIO__NAME = eINSTANCE.getRadio_Name();
-
-    /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.TypeImpl <em>Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.TypeImpl
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getType()
-     * @generated
-     */
-    EClass TYPE = eINSTANCE.getType();
+    EReference RADIO__ANSWER = eINSTANCE.getRadio_Answer();
 
   }
 

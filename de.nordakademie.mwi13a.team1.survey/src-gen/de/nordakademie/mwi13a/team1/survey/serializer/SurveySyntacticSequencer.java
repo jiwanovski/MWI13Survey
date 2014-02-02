@@ -18,12 +18,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class SurveySyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SurveyGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Matrix___VerticalLineKeyword_5_0_IdentifierParserRuleCall_5_1__a;
+	protected AbstractElementAlias match_SurveyTerminalTypes___VerticalLineKeyword_2_6_0_IdentifierParserRuleCall_2_6_1__a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SurveyGrammarAccess) access;
-		match_Matrix___VerticalLineKeyword_5_0_IdentifierParserRuleCall_5_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getMatrixAccess().getVerticalLineKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getMatrixAccess().getIdentifierParserRuleCall_5_1()));
+		match_SurveyTerminalTypes___VerticalLineKeyword_2_6_0_IdentifierParserRuleCall_2_6_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getSurveyTerminalTypesAccess().getVerticalLineKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_6_1()));
 	}
 	
 	@Override
@@ -50,8 +50,8 @@ public class SurveySyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Matrix___VerticalLineKeyword_5_0_IdentifierParserRuleCall_5_1__a.equals(syntax))
-				emit_Matrix___VerticalLineKeyword_5_0_IdentifierParserRuleCall_5_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_SurveyTerminalTypes___VerticalLineKeyword_2_6_0_IdentifierParserRuleCall_2_6_1__a.equals(syntax))
+				emit_SurveyTerminalTypes___VerticalLineKeyword_2_6_0_IdentifierParserRuleCall_2_6_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -60,7 +60,7 @@ public class SurveySyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     ('|' Identifier)*
 	 */
-	protected void emit_Matrix___VerticalLineKeyword_5_0_IdentifierParserRuleCall_5_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_SurveyTerminalTypes___VerticalLineKeyword_2_6_0_IdentifierParserRuleCall_2_6_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

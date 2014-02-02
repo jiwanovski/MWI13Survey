@@ -3,12 +3,6 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.validation
 
-import de.nordakademie.mwi13a.team1.dependency.dependency.SDPart
-import org.eclipse.xtext.validation.Check
-import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyDependency
-import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
-import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage
-
 //import org.eclipse.xtext.validation.Check
 
 /**
@@ -18,17 +12,35 @@ import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage
  */
 class DependencyValidator extends AbstractDependencyValidator {
 
-	@Check
-	def checkPartSurvey(SDPart part) {
-		val surveyName = (part.eContainer() as SurveyDependency).survey.name
-		val questionaireName = (part.part2.eContainer() as Questionnaire).name
+	//@Check
+	//def checkPartSurvey(SDPart part) {
+	//	val surveyName = (part.eContainer as SurveyDependency).survey.name
+	//	val questionaireName = (part.part2.eContainer as Questionnaire).name
 		
-		if (!surveyName.equals(questionaireName)) {
-			error("Meine Fehlermeldung. Endlich!!!",
-				DependencyPackage.Literals.SD_PART__PART2
-			)
-		}
-	}
+	//	if (!surveyName.equals(questionaireName)) {
+	//		error("Meine Fehlermeldung. Endlich!!!",
+	//			DependencyPackage.Literals.SD_PART__PART2
+	//		)
+	//	}
+	//}
+	
+	//@Check 
+	//def checkDefaultPart(SDPart part) {
+	//	val rootPartName = part.part2.name
+	//	val destinationPartName = part.defaultNextPart.name
+		
+	//	if (rootPartName.equals(destinationPartName)) {
+	//		error("Eine Seite kann nicht auf sich selbst verweisen.",
+	//			DependencyPackage.Literals.SD_PART__DEFAULT_NEXT_PART
+	//		)
+	//	}
+	//}
+	
+	//@Check
+	//def checkNextParts(SDNextParts nextPart) {
+//		val rootPartName = (nextPart.eContainer as SDPart).part2.name
+//		val destinationPartName = (nextPart.)
+//	}
 //  public static val INVALID_NAME = 'invalidName'
 //
 //	@Check

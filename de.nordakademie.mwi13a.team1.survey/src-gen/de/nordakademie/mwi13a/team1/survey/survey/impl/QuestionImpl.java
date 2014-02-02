@@ -2,26 +2,18 @@
  */
 package de.nordakademie.mwi13a.team1.survey.survey.impl;
 
-import de.nordakademie.mwi13a.team1.survey.survey.Answer;
 import de.nordakademie.mwi13a.team1.survey.survey.Question;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
-import de.nordakademie.mwi13a.team1.survey.survey.Type;
-
-import java.util.Collection;
+import de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,9 +24,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.QuestionImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.QuestionImpl#getId <em>Id</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.QuestionImpl#getMandatory <em>Mandatory</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.QuestionImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.QuestionImpl#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.QuestionImpl#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.QuestionImpl#getQuestionType <em>Question Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,44 +74,34 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
   protected String id = ID_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMandatory() <em>Mandatory</em>}' attribute.
+   * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMandatory()
+   * @see #isMandatory()
    * @generated
    * @ordered
    */
-  protected static final String MANDATORY_EDEFAULT = null;
+  protected static final boolean MANDATORY_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getMandatory() <em>Mandatory</em>}' attribute.
+   * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMandatory()
+   * @see #isMandatory()
    * @generated
    * @ordered
    */
-  protected String mandatory = MANDATORY_EDEFAULT;
+  protected boolean mandatory = MANDATORY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The cached value of the '{@link #getQuestionType() <em>Question Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getQuestionType()
    * @generated
    * @ordered
    */
-  protected Type type;
-
-  /**
-   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnswer()
-   * @generated
-   * @ordered
-   */
-  protected EList<Answer> answer;
+  protected SurveyTerminalTypes questionType;
 
   /**
    * <!-- begin-user-doc -->
@@ -194,7 +175,7 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMandatory()
+  public boolean isMandatory()
   {
     return mandatory;
   }
@@ -204,9 +185,9 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMandatory(String newMandatory)
+  public void setMandatory(boolean newMandatory)
   {
-    String oldMandatory = mandatory;
+    boolean oldMandatory = mandatory;
     mandatory = newMandatory;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.QUESTION__MANDATORY, oldMandatory, mandatory));
@@ -217,9 +198,9 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
+  public SurveyTerminalTypes getQuestionType()
   {
-    return type;
+    return questionType;
   }
 
   /**
@@ -227,13 +208,13 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(Type newType, NotificationChain msgs)
+  public NotificationChain basicSetQuestionType(SurveyTerminalTypes newQuestionType, NotificationChain msgs)
   {
-    Type oldType = type;
-    type = newType;
+    SurveyTerminalTypes oldQuestionType = questionType;
+    questionType = newQuestionType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SurveyPackage.QUESTION__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SurveyPackage.QUESTION__QUESTION_TYPE, oldQuestionType, newQuestionType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -244,34 +225,20 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public void setQuestionType(SurveyTerminalTypes newQuestionType)
   {
-    if (newType != type)
+    if (newQuestionType != questionType)
     {
       NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SurveyPackage.QUESTION__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SurveyPackage.QUESTION__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
+      if (questionType != null)
+        msgs = ((InternalEObject)questionType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SurveyPackage.QUESTION__QUESTION_TYPE, null, msgs);
+      if (newQuestionType != null)
+        msgs = ((InternalEObject)newQuestionType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SurveyPackage.QUESTION__QUESTION_TYPE, null, msgs);
+      msgs = basicSetQuestionType(newQuestionType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.QUESTION__TYPE, newType, newType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Answer> getAnswer()
-  {
-    if (answer == null)
-    {
-      answer = new EObjectContainmentEList<Answer>(Answer.class, this, SurveyPackage.QUESTION__ANSWER);
-    }
-    return answer;
+      eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.QUESTION__QUESTION_TYPE, newQuestionType, newQuestionType));
   }
 
   /**
@@ -284,10 +251,8 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
   {
     switch (featureID)
     {
-      case SurveyPackage.QUESTION__TYPE:
-        return basicSetType(null, msgs);
-      case SurveyPackage.QUESTION__ANSWER:
-        return ((InternalEList<?>)getAnswer()).basicRemove(otherEnd, msgs);
+      case SurveyPackage.QUESTION__QUESTION_TYPE:
+        return basicSetQuestionType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -307,11 +272,9 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
       case SurveyPackage.QUESTION__ID:
         return getId();
       case SurveyPackage.QUESTION__MANDATORY:
-        return getMandatory();
-      case SurveyPackage.QUESTION__TYPE:
-        return getType();
-      case SurveyPackage.QUESTION__ANSWER:
-        return getAnswer();
+        return isMandatory();
+      case SurveyPackage.QUESTION__QUESTION_TYPE:
+        return getQuestionType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -321,7 +284,6 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -334,14 +296,10 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
         setId((String)newValue);
         return;
       case SurveyPackage.QUESTION__MANDATORY:
-        setMandatory((String)newValue);
+        setMandatory((Boolean)newValue);
         return;
-      case SurveyPackage.QUESTION__TYPE:
-        setType((Type)newValue);
-        return;
-      case SurveyPackage.QUESTION__ANSWER:
-        getAnswer().clear();
-        getAnswer().addAll((Collection<? extends Answer>)newValue);
+      case SurveyPackage.QUESTION__QUESTION_TYPE:
+        setQuestionType((SurveyTerminalTypes)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -366,11 +324,8 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
       case SurveyPackage.QUESTION__MANDATORY:
         setMandatory(MANDATORY_EDEFAULT);
         return;
-      case SurveyPackage.QUESTION__TYPE:
-        setType((Type)null);
-        return;
-      case SurveyPackage.QUESTION__ANSWER:
-        getAnswer().clear();
+      case SurveyPackage.QUESTION__QUESTION_TYPE:
+        setQuestionType((SurveyTerminalTypes)null);
         return;
     }
     super.eUnset(featureID);
@@ -391,11 +346,9 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
       case SurveyPackage.QUESTION__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case SurveyPackage.QUESTION__MANDATORY:
-        return MANDATORY_EDEFAULT == null ? mandatory != null : !MANDATORY_EDEFAULT.equals(mandatory);
-      case SurveyPackage.QUESTION__TYPE:
-        return type != null;
-      case SurveyPackage.QUESTION__ANSWER:
-        return answer != null && !answer.isEmpty();
+        return mandatory != MANDATORY_EDEFAULT;
+      case SurveyPackage.QUESTION__QUESTION_TYPE:
+        return questionType != null;
     }
     return super.eIsSet(featureID);
   }

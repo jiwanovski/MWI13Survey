@@ -95,19 +95,29 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
         return createQuestionAdapter();
       }
       @Override
+      public Adapter caseMatrixQuestion(MatrixQuestion object)
+      {
+        return createMatrixQuestionAdapter();
+      }
+      @Override
       public Adapter caseAnswer(Answer object)
       {
         return createAnswerAdapter();
       }
       @Override
-      public Adapter caseTextLn(TextLn object)
+      public Adapter caseSurveyTerminalTypes(SurveyTerminalTypes object)
       {
-        return createTextLnAdapter();
+        return createSurveyTerminalTypesAdapter();
       }
       @Override
-      public Adapter caseTextBl(TextBl object)
+      public Adapter caseTextLine(TextLine object)
       {
-        return createTextBlAdapter();
+        return createTextLineAdapter();
+      }
+      @Override
+      public Adapter caseTextBlock(TextBlock object)
+      {
+        return createTextBlockAdapter();
       }
       @Override
       public Adapter caseMatrix(Matrix object)
@@ -128,11 +138,6 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRadio(Radio object)
       {
         return createRadioAdapter();
-      }
-      @Override
-      public Adapter caseType(Type object)
-      {
-        return createTypeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -217,6 +222,21 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion <em>Matrix Question</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion
+   * @generated
+   */
+  public Adapter createMatrixQuestionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.Answer <em>Answer</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -232,31 +252,46 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextLn <em>Text Ln</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes <em>Terminal Types</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.TextLn
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes
    * @generated
    */
-  public Adapter createTextLnAdapter()
+  public Adapter createSurveyTerminalTypesAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextBl <em>Text Bl</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextLine <em>Text Line</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.TextBl
+   * @see de.nordakademie.mwi13a.team1.survey.survey.TextLine
    * @generated
    */
-  public Adapter createTextBlAdapter()
+  public Adapter createTextLineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.TextBlock <em>Text Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.TextBlock
+   * @generated
+   */
+  public Adapter createTextBlockAdapter()
   {
     return null;
   }
@@ -317,21 +352,6 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRadioAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.Type <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.Type
-   * @generated
-   */
-  public Adapter createTypeAdapter()
   {
     return null;
   }

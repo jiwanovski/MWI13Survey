@@ -24,31 +24,36 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Question/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Question/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Question/mandatory"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Question/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Question/answer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Question/questionType"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//MatrixQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//MatrixQuestion/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//MatrixQuestion/name"/>
     </genClasses>
     <genClasses ecoreClass="Survey.ecore#//Answer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Answer/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Answer/name"/>
     </genClasses>
-    <genClasses ecoreClass="Survey.ecore#//TextLn">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//TextLn/length"/>
+    <genClasses ecoreClass="Survey.ecore#//SurveyTerminalTypes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//SurveyTerminalTypes/name"/>
     </genClasses>
-    <genClasses ecoreClass="Survey.ecore#//TextBl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//TextBl/length"/>
+    <genClasses ecoreClass="Survey.ecore#//TextLine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//TextLine/length"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//TextBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//TextBlock/length"/>
     </genClasses>
     <genClasses ecoreClass="Survey.ecore#//Matrix">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Matrix/answer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Matrix/matrixQuestion"/>
     </genClasses>
     <genClasses ecoreClass="Survey.ecore#//ComboBox">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//ComboBox/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//ComboBox/answer"/>
     </genClasses>
     <genClasses ecoreClass="Survey.ecore#//DropDown">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//DropDown/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//DropDown/answer"/>
     </genClasses>
     <genClasses ecoreClass="Survey.ecore#//Radio">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Radio/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Radio/answer"/>
     </genClasses>
-    <genClasses ecoreClass="Survey.ecore#//Type"/>
   </genPackages>
 </genmodel:GenModel>

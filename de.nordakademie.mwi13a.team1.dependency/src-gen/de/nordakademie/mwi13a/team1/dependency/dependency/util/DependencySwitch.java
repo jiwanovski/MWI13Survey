@@ -72,38 +72,62 @@ public class DependencySwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case DependencyPackage.SURVEY_DEPENDENCIES:
+      case DependencyPackage.DEPENDENCY_MODEL:
       {
-        SurveyDependencies surveyDependencies = (SurveyDependencies)theEObject;
-        T result = caseSurveyDependencies(surveyDependencies);
+        DependencyModel dependencyModel = (DependencyModel)theEObject;
+        T result = caseDependencyModel(dependencyModel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DependencyPackage.SURVEY_DEPENDENCY:
+      case DependencyPackage.SURVEY_ELEMENTS:
       {
-        SurveyDependency surveyDependency = (SurveyDependency)theEObject;
-        T result = caseSurveyDependency(surveyDependency);
+        SurveyElements surveyElements = (SurveyElements)theEObject;
+        T result = caseSurveyElements(surveyElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DependencyPackage.SD_PART:
+      case DependencyPackage.PART_ELEMENTS:
       {
-        SDPart sdPart = (SDPart)theEObject;
-        T result = caseSDPart(sdPart);
+        PartElements partElements = (PartElements)theEObject;
+        T result = casePartElements(partElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DependencyPackage.SD_NEXT_PARTS:
+      case DependencyPackage.DM_NEXT_PARTS:
       {
-        SDNextParts sdNextParts = (SDNextParts)theEObject;
-        T result = caseSDNextParts(sdNextParts);
+        DMNextParts dmNextParts = (DMNextParts)theEObject;
+        T result = caseDMNextParts(dmNextParts);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DependencyPackage.SD_PART_DEPENDENCIES:
+      case DependencyPackage.DEPENDENCY:
       {
-        SDPartDependencies sdPartDependencies = (SDPartDependencies)theEObject;
-        T result = caseSDPartDependencies(sdPartDependencies);
+        Dependency dependency = (Dependency)theEObject;
+        T result = caseDependency(dependency);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DependencyPackage.OR:
+      {
+        Or or = (Or)theEObject;
+        T result = caseOr(or);
+        if (result == null) result = caseDependency(or);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DependencyPackage.AND:
+      {
+        And and = (And)theEObject;
+        T result = caseAnd(and);
+        if (result == null) result = caseDependency(and);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DependencyPackage.DM_QUESTION:
+      {
+        DMQuestion dmQuestion = (DMQuestion)theEObject;
+        T result = caseDMQuestion(dmQuestion);
+        if (result == null) result = caseDependency(dmQuestion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -112,81 +136,129 @@ public class DependencySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Survey Dependencies</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Survey Dependencies</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSurveyDependencies(SurveyDependencies object)
+  public T caseDependencyModel(DependencyModel object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Survey Dependency</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Survey Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Survey Dependency</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Survey Elements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSurveyDependency(SurveyDependency object)
+  public T caseSurveyElements(SurveyElements object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>SD Part</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Part Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>SD Part</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Part Elements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSDPart(SDPart object)
+  public T casePartElements(PartElements object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>SD Next Parts</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>DM Next Parts</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>SD Next Parts</em>'.
+   * @return the result of interpreting the object as an instance of '<em>DM Next Parts</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSDNextParts(SDNextParts object)
+  public T caseDMNextParts(DMNextParts object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>SD Part Dependencies</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Dependency</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>SD Part Dependencies</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Dependency</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSDPartDependencies(SDPartDependencies object)
+  public T caseDependency(Dependency object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Or</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOr(Or object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>And</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnd(And object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>DM Question</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>DM Question</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDMQuestion(DMQuestion object)
   {
     return null;
   }

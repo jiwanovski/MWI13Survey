@@ -2,8 +2,8 @@
  */
 package de.nordakademie.mwi13a.team1.survey.survey.impl;
 
-import de.nordakademie.mwi13a.team1.survey.survey.Answer;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
+import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
 
 import java.util.Collection;
@@ -25,23 +25,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl#getMatrixQuestion <em>Matrix Question</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MatrixImpl extends TypeImpl implements Matrix
+public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
 {
   /**
-   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' containment reference list.
+   * The cached value of the '{@link #getMatrixQuestion() <em>Matrix Question</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAnswer()
+   * @see #getMatrixQuestion()
    * @generated
    * @ordered
    */
-  protected EList<Answer> answer;
+  protected EList<MatrixQuestion> matrixQuestion;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +69,13 @@ public class MatrixImpl extends TypeImpl implements Matrix
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Answer> getAnswer()
+  public EList<MatrixQuestion> getMatrixQuestion()
   {
-    if (answer == null)
+    if (matrixQuestion == null)
     {
-      answer = new EObjectContainmentEList<Answer>(Answer.class, this, SurveyPackage.MATRIX__ANSWER);
+      matrixQuestion = new EObjectContainmentEList<MatrixQuestion>(MatrixQuestion.class, this, SurveyPackage.MATRIX__MATRIX_QUESTION);
     }
-    return answer;
+    return matrixQuestion;
   }
 
   /**
@@ -88,8 +88,8 @@ public class MatrixImpl extends TypeImpl implements Matrix
   {
     switch (featureID)
     {
-      case SurveyPackage.MATRIX__ANSWER:
-        return ((InternalEList<?>)getAnswer()).basicRemove(otherEnd, msgs);
+      case SurveyPackage.MATRIX__MATRIX_QUESTION:
+        return ((InternalEList<?>)getMatrixQuestion()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class MatrixImpl extends TypeImpl implements Matrix
   {
     switch (featureID)
     {
-      case SurveyPackage.MATRIX__ANSWER:
-        return getAnswer();
+      case SurveyPackage.MATRIX__MATRIX_QUESTION:
+        return getMatrixQuestion();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class MatrixImpl extends TypeImpl implements Matrix
   {
     switch (featureID)
     {
-      case SurveyPackage.MATRIX__ANSWER:
-        getAnswer().clear();
-        getAnswer().addAll((Collection<? extends Answer>)newValue);
+      case SurveyPackage.MATRIX__MATRIX_QUESTION:
+        getMatrixQuestion().clear();
+        getMatrixQuestion().addAll((Collection<? extends MatrixQuestion>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class MatrixImpl extends TypeImpl implements Matrix
   {
     switch (featureID)
     {
-      case SurveyPackage.MATRIX__ANSWER:
-        getAnswer().clear();
+      case SurveyPackage.MATRIX__MATRIX_QUESTION:
+        getMatrixQuestion().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +156,8 @@ public class MatrixImpl extends TypeImpl implements Matrix
   {
     switch (featureID)
     {
-      case SurveyPackage.MATRIX__ANSWER:
-        return answer != null && !answer.isEmpty();
+      case SurveyPackage.MATRIX__MATRIX_QUESTION:
+        return matrixQuestion != null && !matrixQuestion.isEmpty();
     }
     return super.eIsSet(featureID);
   }

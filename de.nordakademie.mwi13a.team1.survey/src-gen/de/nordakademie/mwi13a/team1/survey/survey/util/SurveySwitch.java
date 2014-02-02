@@ -100,6 +100,13 @@ public class SurveySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SurveyPackage.MATRIX_QUESTION:
+      {
+        MatrixQuestion matrixQuestion = (MatrixQuestion)theEObject;
+        T result = caseMatrixQuestion(matrixQuestion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SurveyPackage.ANSWER:
       {
         Answer answer = (Answer)theEObject;
@@ -107,19 +114,26 @@ public class SurveySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SurveyPackage.TEXT_LN:
+      case SurveyPackage.SURVEY_TERMINAL_TYPES:
       {
-        TextLn textLn = (TextLn)theEObject;
-        T result = caseTextLn(textLn);
-        if (result == null) result = caseType(textLn);
+        SurveyTerminalTypes surveyTerminalTypes = (SurveyTerminalTypes)theEObject;
+        T result = caseSurveyTerminalTypes(surveyTerminalTypes);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SurveyPackage.TEXT_BL:
+      case SurveyPackage.TEXT_LINE:
       {
-        TextBl textBl = (TextBl)theEObject;
-        T result = caseTextBl(textBl);
-        if (result == null) result = caseType(textBl);
+        TextLine textLine = (TextLine)theEObject;
+        T result = caseTextLine(textLine);
+        if (result == null) result = caseSurveyTerminalTypes(textLine);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SurveyPackage.TEXT_BLOCK:
+      {
+        TextBlock textBlock = (TextBlock)theEObject;
+        T result = caseTextBlock(textBlock);
+        if (result == null) result = caseSurveyTerminalTypes(textBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -127,7 +141,7 @@ public class SurveySwitch<T> extends Switch<T>
       {
         Matrix matrix = (Matrix)theEObject;
         T result = caseMatrix(matrix);
-        if (result == null) result = caseType(matrix);
+        if (result == null) result = caseSurveyTerminalTypes(matrix);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -135,7 +149,7 @@ public class SurveySwitch<T> extends Switch<T>
       {
         ComboBox comboBox = (ComboBox)theEObject;
         T result = caseComboBox(comboBox);
-        if (result == null) result = caseType(comboBox);
+        if (result == null) result = caseSurveyTerminalTypes(comboBox);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -143,7 +157,7 @@ public class SurveySwitch<T> extends Switch<T>
       {
         DropDown dropDown = (DropDown)theEObject;
         T result = caseDropDown(dropDown);
-        if (result == null) result = caseType(dropDown);
+        if (result == null) result = caseSurveyTerminalTypes(dropDown);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -151,14 +165,7 @@ public class SurveySwitch<T> extends Switch<T>
       {
         Radio radio = (Radio)theEObject;
         T result = caseRadio(radio);
-        if (result == null) result = caseType(radio);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SurveyPackage.TYPE:
-      {
-        Type type = (Type)theEObject;
-        T result = caseType(type);
+        if (result == null) result = caseSurveyTerminalTypes(radio);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -231,6 +238,22 @@ public class SurveySwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Matrix Question</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Matrix Question</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMatrixQuestion(MatrixQuestion object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Answer</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -247,33 +270,49 @@ public class SurveySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Ln</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Terminal Types</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Ln</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Terminal Types</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTextLn(TextLn object)
+  public T caseSurveyTerminalTypes(SurveyTerminalTypes object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Bl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Text Line</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Bl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Text Line</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTextBl(TextBl object)
+  public T caseTextLine(TextLine object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextBlock(TextBlock object)
   {
     return null;
   }
@@ -338,22 +377,6 @@ public class SurveySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRadio(Radio object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseType(Type object)
   {
     return null;
   }

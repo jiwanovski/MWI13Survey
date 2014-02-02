@@ -64,11 +64,14 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
   {
     switch (eClass.getClassifierID())
     {
-      case DependencyPackage.SURVEY_DEPENDENCIES: return createSurveyDependencies();
-      case DependencyPackage.SURVEY_DEPENDENCY: return createSurveyDependency();
-      case DependencyPackage.SD_PART: return createSDPart();
-      case DependencyPackage.SD_NEXT_PARTS: return createSDNextParts();
-      case DependencyPackage.SD_PART_DEPENDENCIES: return createSDPartDependencies();
+      case DependencyPackage.DEPENDENCY_MODEL: return createDependencyModel();
+      case DependencyPackage.SURVEY_ELEMENTS: return createSurveyElements();
+      case DependencyPackage.PART_ELEMENTS: return createPartElements();
+      case DependencyPackage.DM_NEXT_PARTS: return createDMNextParts();
+      case DependencyPackage.DEPENDENCY: return createDependency();
+      case DependencyPackage.OR: return createOr();
+      case DependencyPackage.AND: return createAnd();
+      case DependencyPackage.DM_QUESTION: return createDMQuestion();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -79,10 +82,10 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public SurveyDependencies createSurveyDependencies()
+  public DependencyModel createDependencyModel()
   {
-    SurveyDependenciesImpl surveyDependencies = new SurveyDependenciesImpl();
-    return surveyDependencies;
+    DependencyModelImpl dependencyModel = new DependencyModelImpl();
+    return dependencyModel;
   }
 
   /**
@@ -90,10 +93,10 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public SurveyDependency createSurveyDependency()
+  public SurveyElements createSurveyElements()
   {
-    SurveyDependencyImpl surveyDependency = new SurveyDependencyImpl();
-    return surveyDependency;
+    SurveyElementsImpl surveyElements = new SurveyElementsImpl();
+    return surveyElements;
   }
 
   /**
@@ -101,10 +104,10 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public SDPart createSDPart()
+  public PartElements createPartElements()
   {
-    SDPartImpl sdPart = new SDPartImpl();
-    return sdPart;
+    PartElementsImpl partElements = new PartElementsImpl();
+    return partElements;
   }
 
   /**
@@ -112,10 +115,10 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public SDNextParts createSDNextParts()
+  public DMNextParts createDMNextParts()
   {
-    SDNextPartsImpl sdNextParts = new SDNextPartsImpl();
-    return sdNextParts;
+    DMNextPartsImpl dmNextParts = new DMNextPartsImpl();
+    return dmNextParts;
   }
 
   /**
@@ -123,10 +126,43 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public SDPartDependencies createSDPartDependencies()
+  public Dependency createDependency()
   {
-    SDPartDependenciesImpl sdPartDependencies = new SDPartDependenciesImpl();
-    return sdPartDependencies;
+    DependencyImpl dependency = new DependencyImpl();
+    return dependency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Or createOr()
+  {
+    OrImpl or = new OrImpl();
+    return or;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public And createAnd()
+  {
+    AndImpl and = new AndImpl();
+    return and;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DMQuestion createDMQuestion()
+  {
+    DMQuestionImpl dmQuestion = new DMQuestionImpl();
+    return dmQuestion;
   }
 
   /**

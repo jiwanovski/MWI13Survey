@@ -37,26 +37,32 @@ public class DependencyParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getSDNextPartsAccess().getAlternatives_4_0(), "rule__SDNextParts__Alternatives_4_0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getSurveyDependencyAccess().getGroup(), "rule__SurveyDependency__Group__0");
-					put(grammarAccess.getSDPartAccess().getGroup(), "rule__SDPart__Group__0");
-					put(grammarAccess.getSDPartAccess().getGroup_5(), "rule__SDPart__Group_5__0");
-					put(grammarAccess.getSDNextPartsAccess().getGroup(), "rule__SDNextParts__Group__0");
-					put(grammarAccess.getSDNextPartsAccess().getGroup_4(), "rule__SDNextParts__Group_4__0");
-					put(grammarAccess.getSDPartDependenciesAccess().getGroup(), "rule__SDPartDependencies__Group__0");
-					put(grammarAccess.getSurveyDependenciesAccess().getSurveyDependencyAssignment(), "rule__SurveyDependencies__SurveyDependencyAssignment");
-					put(grammarAccess.getSurveyDependencyAccess().getSurveyAssignment_1(), "rule__SurveyDependency__SurveyAssignment_1");
-					put(grammarAccess.getSurveyDependencyAccess().getPartAssignment_3(), "rule__SurveyDependency__PartAssignment_3");
-					put(grammarAccess.getSDPartAccess().getPart2Assignment_1(), "rule__SDPart__Part2Assignment_1");
-					put(grammarAccess.getSDPartAccess().getDefaultNextPartAssignment_4(), "rule__SDPart__DefaultNextPartAssignment_4");
-					put(grammarAccess.getSDPartAccess().getNextPartsAssignment_5_1(), "rule__SDPart__NextPartsAssignment_5_1");
-					put(grammarAccess.getSDNextPartsAccess().getNextPartAssignment_1(), "rule__SDNextParts__NextPartAssignment_1");
-					put(grammarAccess.getSDNextPartsAccess().getPartDependenciesAssignment_3(), "rule__SDNextParts__PartDependenciesAssignment_3");
-					put(grammarAccess.getSDNextPartsAccess().getPartDependenciesAssignment_4_1(), "rule__SDNextParts__PartDependenciesAssignment_4_1");
-					put(grammarAccess.getSDPartDependenciesAccess().getQuestionAssignment_1(), "rule__SDPartDependencies__QuestionAssignment_1");
-					put(grammarAccess.getSDPartDependenciesAccess().getAnswerAssignment_3(), "rule__SDPartDependencies__AnswerAssignment_3");
+					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
+					put(grammarAccess.getSurveyElementsAccess().getGroup(), "rule__SurveyElements__Group__0");
+					put(grammarAccess.getPartElementsAccess().getGroup(), "rule__PartElements__Group__0");
+					put(grammarAccess.getPartElementsAccess().getGroup_2(), "rule__PartElements__Group_2__0");
+					put(grammarAccess.getPartElementsAccess().getGroup_2_1(), "rule__PartElements__Group_2_1__0");
+					put(grammarAccess.getPartElementsAccess().getGroup_2_1_1(), "rule__PartElements__Group_2_1_1__0");
+					put(grammarAccess.getDMNextPartsAccess().getGroup(), "rule__DMNextParts__Group__0");
+					put(grammarAccess.getDMNextPartsAccess().getGroup_2(), "rule__DMNextParts__Group_2__0");
+					put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
+					put(grammarAccess.getOrAccess().getGroup_1(), "rule__Or__Group_1__0");
+					put(grammarAccess.getAndAccess().getGroup(), "rule__And__Group__0");
+					put(grammarAccess.getAndAccess().getGroup_1(), "rule__And__Group_1__0");
+					put(grammarAccess.getPrimaryAccess().getGroup_0(), "rule__Primary__Group_0__0");
+					put(grammarAccess.getAtomicAccess().getGroup(), "rule__Atomic__Group__0");
+					put(grammarAccess.getDependencyModelAccess().getElementsAssignment(), "rule__DependencyModel__ElementsAssignment");
+					put(grammarAccess.getSurveyElementsAccess().getNameAssignment_1(), "rule__SurveyElements__NameAssignment_1");
+					put(grammarAccess.getSurveyElementsAccess().getPartElementsAssignment_3(), "rule__SurveyElements__PartElementsAssignment_3");
+					put(grammarAccess.getPartElementsAccess().getNameAssignment_1(), "rule__PartElements__NameAssignment_1");
+					put(grammarAccess.getPartElementsAccess().getNextPartsAssignment_2_1_0(), "rule__PartElements__NextPartsAssignment_2_1_0");
+					put(grammarAccess.getPartElementsAccess().getNextPartsAssignment_2_1_1_1(), "rule__PartElements__NextPartsAssignment_2_1_1_1");
+					put(grammarAccess.getDMNextPartsAccess().getNameAssignment_1(), "rule__DMNextParts__NameAssignment_1");
+					put(grammarAccess.getDMNextPartsAccess().getExpressionsAssignment_2_2(), "rule__DMNextParts__ExpressionsAssignment_2_2");
+					put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");
+					put(grammarAccess.getAndAccess().getRightAssignment_1_2(), "rule__And__RightAssignment_1_2");
+					put(grammarAccess.getAtomicAccess().getQuestionAssignment_2(), "rule__Atomic__QuestionAssignment_2");
+					put(grammarAccess.getAtomicAccess().getAnswerAssignment_4(), "rule__Atomic__AnswerAssignment_4");
 				}
 			};
 		}
@@ -67,7 +73,7 @@ public class DependencyParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			de.nordakademie.mwi13a.team1.dependency.ui.contentassist.antlr.internal.InternalDependencyParser typedParser = (de.nordakademie.mwi13a.team1.dependency.ui.contentassist.antlr.internal.InternalDependencyParser) parser;
-			typedParser.entryRuleSurveyDependencies();
+			typedParser.entryRuleDependencyModel();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

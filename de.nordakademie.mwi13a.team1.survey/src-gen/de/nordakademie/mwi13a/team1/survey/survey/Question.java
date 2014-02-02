@@ -2,8 +2,6 @@
  */
 package de.nordakademie.mwi13a.team1.survey.survey;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,9 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getName <em>Name</em>}</li>
  *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getId <em>Id</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getMandatory <em>Mandatory</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getType <em>Type</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Question#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getQuestionType <em>Question Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -89,63 +86,47 @@ public interface Question extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Mandatory</em>' attribute.
-   * @see #setMandatory(String)
+   * @see #setMandatory(boolean)
    * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getQuestion_Mandatory()
    * @model
    * @generated
    */
-  String getMandatory();
+  boolean isMandatory();
 
   /**
-   * Sets the value of the '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getMandatory <em>Mandatory</em>}' attribute.
+   * Sets the value of the '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#isMandatory <em>Mandatory</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Mandatory</em>' attribute.
-   * @see #getMandatory()
+   * @see #isMandatory()
    * @generated
    */
-  void setMandatory(String value);
+  void setMandatory(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Question Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Question Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(Type)
-   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getQuestion_Type()
+   * @return the value of the '<em>Question Type</em>' containment reference.
+   * @see #setQuestionType(SurveyTerminalTypes)
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getQuestion_QuestionType()
    * @model containment="true"
    * @generated
    */
-  Type getType();
+  SurveyTerminalTypes getQuestionType();
 
   /**
-   * Sets the value of the '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getType <em>Type</em>}' containment reference.
+   * Sets the value of the '{@link de.nordakademie.mwi13a.team1.survey.survey.Question#getQuestionType <em>Question Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
+   * @param value the new value of the '<em>Question Type</em>' containment reference.
+   * @see #getQuestionType()
    * @generated
    */
-  void setType(Type value);
-
-  /**
-   * Returns the value of the '<em><b>Answer</b></em>' containment reference list.
-   * The list contents are of type {@link de.nordakademie.mwi13a.team1.survey.survey.Answer}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Answer</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Answer</em>' containment reference list.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getQuestion_Answer()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Answer> getAnswer();
+  void setQuestionType(SurveyTerminalTypes value);
 
 } // Question

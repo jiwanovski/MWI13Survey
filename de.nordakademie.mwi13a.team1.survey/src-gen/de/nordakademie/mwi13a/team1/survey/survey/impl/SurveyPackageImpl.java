@@ -6,6 +6,7 @@ import de.nordakademie.mwi13a.team1.survey.survey.Answer;
 import de.nordakademie.mwi13a.team1.survey.survey.ComboBox;
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
+import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
 import de.nordakademie.mwi13a.team1.survey.survey.Part;
 import de.nordakademie.mwi13a.team1.survey.survey.Question;
 import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire;
@@ -13,9 +14,9 @@ import de.nordakademie.mwi13a.team1.survey.survey.Radio;
 import de.nordakademie.mwi13a.team1.survey.survey.Survey;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyFactory;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
-import de.nordakademie.mwi13a.team1.survey.survey.TextBl;
-import de.nordakademie.mwi13a.team1.survey.survey.TextLn;
-import de.nordakademie.mwi13a.team1.survey.survey.Type;
+import de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes;
+import de.nordakademie.mwi13a.team1.survey.survey.TextBlock;
+import de.nordakademie.mwi13a.team1.survey.survey.TextLine;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -65,6 +66,13 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass matrixQuestionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass answerEClass = null;
 
   /**
@@ -72,14 +80,21 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass textLnEClass = null;
+  private EClass surveyTerminalTypesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass textBlEClass = null;
+  private EClass textLineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -108,13 +123,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * @generated
    */
   private EClass radioEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass typeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -324,7 +332,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQuestion_Type()
+  public EReference getQuestion_QuestionType()
   {
     return (EReference)questionEClass.getEStructuralFeatures().get(3);
   }
@@ -334,9 +342,29 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQuestion_Answer()
+  public EClass getMatrixQuestion()
   {
-    return (EReference)questionEClass.getEStructuralFeatures().get(4);
+    return matrixQuestionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMatrixQuestion_Id()
+  {
+    return (EAttribute)matrixQuestionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMatrixQuestion_Name()
+  {
+    return (EAttribute)matrixQuestionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -374,9 +402,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTextLn()
+  public EClass getSurveyTerminalTypes()
   {
-    return textLnEClass;
+    return surveyTerminalTypesEClass;
   }
 
   /**
@@ -384,9 +412,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTextLn_Length()
+  public EAttribute getSurveyTerminalTypes_Name()
   {
-    return (EAttribute)textLnEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)surveyTerminalTypesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -394,9 +422,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTextBl()
+  public EClass getTextLine()
   {
-    return textBlEClass;
+    return textLineEClass;
   }
 
   /**
@@ -404,9 +432,29 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTextBl_Length()
+  public EAttribute getTextLine_Length()
   {
-    return (EAttribute)textBlEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)textLineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextBlock()
+  {
+    return textBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTextBlock_Length()
+  {
+    return (EAttribute)textBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -424,7 +472,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMatrix_Answer()
+  public EReference getMatrix_MatrixQuestion()
   {
     return (EReference)matrixEClass.getEStructuralFeatures().get(0);
   }
@@ -444,9 +492,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComboBox_Name()
+  public EReference getComboBox_Answer()
   {
-    return (EAttribute)comboBoxEClass.getEStructuralFeatures().get(0);
+    return (EReference)comboBoxEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -464,9 +512,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDropDown_Name()
+  public EReference getDropDown_Answer()
   {
-    return (EAttribute)dropDownEClass.getEStructuralFeatures().get(0);
+    return (EReference)dropDownEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -484,19 +532,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRadio_Name()
+  public EReference getRadio_Answer()
   {
-    return (EAttribute)radioEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getType()
-  {
-    return typeEClass;
+    return (EReference)radioEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -546,32 +584,36 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     createEAttribute(questionEClass, QUESTION__NAME);
     createEAttribute(questionEClass, QUESTION__ID);
     createEAttribute(questionEClass, QUESTION__MANDATORY);
-    createEReference(questionEClass, QUESTION__TYPE);
-    createEReference(questionEClass, QUESTION__ANSWER);
+    createEReference(questionEClass, QUESTION__QUESTION_TYPE);
+
+    matrixQuestionEClass = createEClass(MATRIX_QUESTION);
+    createEAttribute(matrixQuestionEClass, MATRIX_QUESTION__ID);
+    createEAttribute(matrixQuestionEClass, MATRIX_QUESTION__NAME);
 
     answerEClass = createEClass(ANSWER);
     createEAttribute(answerEClass, ANSWER__ID);
     createEAttribute(answerEClass, ANSWER__NAME);
 
-    textLnEClass = createEClass(TEXT_LN);
-    createEAttribute(textLnEClass, TEXT_LN__LENGTH);
+    surveyTerminalTypesEClass = createEClass(SURVEY_TERMINAL_TYPES);
+    createEAttribute(surveyTerminalTypesEClass, SURVEY_TERMINAL_TYPES__NAME);
 
-    textBlEClass = createEClass(TEXT_BL);
-    createEAttribute(textBlEClass, TEXT_BL__LENGTH);
+    textLineEClass = createEClass(TEXT_LINE);
+    createEAttribute(textLineEClass, TEXT_LINE__LENGTH);
+
+    textBlockEClass = createEClass(TEXT_BLOCK);
+    createEAttribute(textBlockEClass, TEXT_BLOCK__LENGTH);
 
     matrixEClass = createEClass(MATRIX);
-    createEReference(matrixEClass, MATRIX__ANSWER);
+    createEReference(matrixEClass, MATRIX__MATRIX_QUESTION);
 
     comboBoxEClass = createEClass(COMBO_BOX);
-    createEAttribute(comboBoxEClass, COMBO_BOX__NAME);
+    createEReference(comboBoxEClass, COMBO_BOX__ANSWER);
 
     dropDownEClass = createEClass(DROP_DOWN);
-    createEAttribute(dropDownEClass, DROP_DOWN__NAME);
+    createEReference(dropDownEClass, DROP_DOWN__ANSWER);
 
     radioEClass = createEClass(RADIO);
-    createEAttribute(radioEClass, RADIO__NAME);
-
-    typeEClass = createEClass(TYPE);
+    createEReference(radioEClass, RADIO__ANSWER);
   }
 
   /**
@@ -603,12 +645,12 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    textLnEClass.getESuperTypes().add(this.getType());
-    textBlEClass.getESuperTypes().add(this.getType());
-    matrixEClass.getESuperTypes().add(this.getType());
-    comboBoxEClass.getESuperTypes().add(this.getType());
-    dropDownEClass.getESuperTypes().add(this.getType());
-    radioEClass.getESuperTypes().add(this.getType());
+    textLineEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
+    textBlockEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
+    matrixEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
+    comboBoxEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
+    dropDownEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
+    radioEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
 
     // Initialize classes and features; add operations and parameters
     initEClass(surveyEClass, Survey.class, "Survey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -627,33 +669,37 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQuestion_Name(), ecorePackage.getEString(), "name", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getQuestion_Id(), ecorePackage.getEString(), "id", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getQuestion_Mandatory(), ecorePackage.getEString(), "mandatory", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getQuestion_Type(), this.getType(), null, "type", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getQuestion_Answer(), this.getAnswer(), null, "answer", null, 0, -1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuestion_Mandatory(), ecorePackage.getEBoolean(), "mandatory", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQuestion_QuestionType(), this.getSurveyTerminalTypes(), null, "questionType", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(matrixQuestionEClass, MatrixQuestion.class, "MatrixQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMatrixQuestion_Id(), ecorePackage.getEString(), "id", null, 0, 1, MatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMatrixQuestion_Name(), ecorePackage.getEString(), "name", null, 0, 1, MatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(answerEClass, Answer.class, "Answer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAnswer_Id(), ecorePackage.getEString(), "id", null, 0, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAnswer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(textLnEClass, TextLn.class, "TextLn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextLn_Length(), ecorePackage.getEInt(), "length", null, 0, 1, TextLn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(surveyTerminalTypesEClass, SurveyTerminalTypes.class, "SurveyTerminalTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSurveyTerminalTypes_Name(), ecorePackage.getEString(), "name", null, 0, 1, SurveyTerminalTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(textBlEClass, TextBl.class, "TextBl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextBl_Length(), ecorePackage.getEInt(), "length", null, 0, 1, TextBl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(textLineEClass, TextLine.class, "TextLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTextLine_Length(), ecorePackage.getEInt(), "length", null, 0, 1, TextLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textBlockEClass, TextBlock.class, "TextBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTextBlock_Length(), ecorePackage.getEInt(), "length", null, 0, 1, TextBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(matrixEClass, Matrix.class, "Matrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMatrix_Answer(), this.getAnswer(), null, "answer", null, 0, -1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMatrix_MatrixQuestion(), this.getMatrixQuestion(), null, "matrixQuestion", null, 0, -1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comboBoxEClass, ComboBox.class, "ComboBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComboBox_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComboBox_Answer(), this.getAnswer(), null, "answer", null, 0, -1, ComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dropDownEClass, DropDown.class, "DropDown", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDropDown_Name(), ecorePackage.getEString(), "name", null, 0, 1, DropDown.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDropDown_Answer(), this.getAnswer(), null, "answer", null, 0, -1, DropDown.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(radioEClass, Radio.class, "Radio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRadio_Name(), ecorePackage.getEString(), "name", null, 0, 1, Radio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRadio_Answer(), this.getAnswer(), null, "answer", null, 0, -1, Radio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
