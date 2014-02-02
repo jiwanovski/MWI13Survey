@@ -1,0 +1,39 @@
+grammar de.nordakademie.mwi13a.team1.dependency.Dependency with org.eclipse.xtext.common.Terminals
+import "http://www.nordakademie.de/mwi13a/team1/survey/Survey" as surveyImp
+
+generate dependency "http://www.nordakademie.de/mwi13a/team1/dependency/Dependency"
+
+SurveyDependencies:
+	surveyDependency+=SurveyDependency+;
+
+QualifiedName:
+	STRING ('.' STRING)*
+;
+		
+SurveyDependency:
+	'Survey:' survey=[surveyImp::Questionnaire|STRING] '{'
+		(part+=SDPart)+
+	'}'	 
+;
+
+SDPart:
+	'Part:' part2=[surveyImp::Part|STRING] '{'
+		'Next part (default):' defaultNextPart=[surveyImp::Part|STRING]
+		('Next parts {' 
+			(nextParts+=SDNextParts)*
+		'}')?
+	'}'
+;
+
+SDNextParts:
+	'Next part:' nextPart+=[surveyImp::Part|STRING]
+	'Part dependencies {' 
+		partDependencies+=SDPartDependencies
+		(('AND'|'OR') partDependencies+=SDPartDependencies)*
+	'}'
+;
+
+SDPartDependencies:
+	'Question:' question=[surveyImp::Question|STRING]
+	'Answer:' answer=[surveyImp::Answer|STRING]
+;

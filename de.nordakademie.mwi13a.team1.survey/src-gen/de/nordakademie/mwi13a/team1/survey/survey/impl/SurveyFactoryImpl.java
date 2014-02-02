@@ -1,0 +1,238 @@
+/**
+ */
+package de.nordakademie.mwi13a.team1.survey.survey.impl;
+
+import de.nordakademie.mwi13a.team1.survey.survey.*;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
+{
+  /**
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public static SurveyFactory init()
+  {
+    try
+    {
+      SurveyFactory theSurveyFactory = (SurveyFactory)EPackage.Registry.INSTANCE.getEFactory(SurveyPackage.eNS_URI);
+      if (theSurveyFactory != null)
+      {
+        return theSurveyFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new SurveyFactoryImpl();
+  }
+
+  /**
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SurveyFactoryImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EObject create(EClass eClass)
+  {
+    switch (eClass.getClassifierID())
+    {
+      case SurveyPackage.SURVEY: return createSurvey();
+      case SurveyPackage.QUESTIONNAIRE: return createQuestionnaire();
+      case SurveyPackage.PART: return createPart();
+      case SurveyPackage.QUESTION: return createQuestion();
+      case SurveyPackage.ANSWER: return createAnswer();
+      case SurveyPackage.TEXT_LN: return createTextLn();
+      case SurveyPackage.TEXT_BL: return createTextBl();
+      case SurveyPackage.MATRIX: return createMatrix();
+      case SurveyPackage.COMBO_BOX: return createComboBox();
+      case SurveyPackage.DROP_DOWN: return createDropDown();
+      case SurveyPackage.RADIO: return createRadio();
+      case SurveyPackage.TYPE: return createType();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Survey createSurvey()
+  {
+    SurveyImpl survey = new SurveyImpl();
+    return survey;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Questionnaire createQuestionnaire()
+  {
+    QuestionnaireImpl questionnaire = new QuestionnaireImpl();
+    return questionnaire;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Part createPart()
+  {
+    PartImpl part = new PartImpl();
+    return part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Question createQuestion()
+  {
+    QuestionImpl question = new QuestionImpl();
+    return question;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Answer createAnswer()
+  {
+    AnswerImpl answer = new AnswerImpl();
+    return answer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextLn createTextLn()
+  {
+    TextLnImpl textLn = new TextLnImpl();
+    return textLn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextBl createTextBl()
+  {
+    TextBlImpl textBl = new TextBlImpl();
+    return textBl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Matrix createMatrix()
+  {
+    MatrixImpl matrix = new MatrixImpl();
+    return matrix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComboBox createComboBox()
+  {
+    ComboBoxImpl comboBox = new ComboBoxImpl();
+    return comboBox;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DropDown createDropDown()
+  {
+    DropDownImpl dropDown = new DropDownImpl();
+    return dropDown;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Radio createRadio()
+  {
+    RadioImpl radio = new RadioImpl();
+    return radio;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SurveyPackage getSurveyPackage()
+  {
+    return (SurveyPackage)getEPackage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @deprecated
+   * @generated
+   */
+  @Deprecated
+  public static SurveyPackage getPackage()
+  {
+    return SurveyPackage.eINSTANCE;
+  }
+
+} //SurveyFactoryImpl

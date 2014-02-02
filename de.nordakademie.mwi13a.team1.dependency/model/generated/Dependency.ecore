@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dependency" nsURI="http://www.nordakademie.de/mwi13a/team1/dependency/Dependency"
+    nsPrefix="dependency">
+  <eClassifiers xsi:type="ecore:EClass" name="SurveyDependencies">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="surveyDependency" upperBound="-1"
+        eType="#//SurveyDependency" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SurveyDependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="survey" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Questionnaire"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="part" upperBound="-1" eType="#//SDPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="part2" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Part"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultNextPart" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Part"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextParts" upperBound="-1"
+        eType="#//SDNextParts" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDNextParts">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextPart" unique="false"
+        upperBound="-1" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Part"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partDependencies" upperBound="-1"
+        eType="#//SDPartDependencies" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDPartDependencies">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="question" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Question"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="answer" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Answer"/>
+  </eClassifiers>
+</ecore:EPackage>
