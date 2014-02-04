@@ -100,6 +100,11 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
         return createDependencyAdapter();
       }
       @Override
+      public Adapter caseDMMatrixQuestion(DMMatrixQuestion object)
+      {
+        return createDMMatrixQuestionAdapter();
+      }
+      @Override
       public Adapter caseOr(Or object)
       {
         return createOrAdapter();
@@ -113,6 +118,11 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDMQuestion(DMQuestion object)
       {
         return createDMQuestionAdapter();
+      }
+      @Override
+      public Adapter caseDMMatrix(DMMatrix object)
+      {
+        return createDMMatrixAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -212,6 +222,21 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion <em>DM Matrix Question</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
+   * @generated
+   */
+  public Adapter createDMMatrixQuestionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Or <em>Or</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -252,6 +277,21 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDMQuestionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix <em>DM Matrix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix
+   * @generated
+   */
+  public Adapter createDMMatrixAdapter()
   {
     return null;
   }

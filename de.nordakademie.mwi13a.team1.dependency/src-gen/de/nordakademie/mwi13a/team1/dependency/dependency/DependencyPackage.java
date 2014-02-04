@@ -214,6 +214,43 @@ public interface DependencyPackage extends EPackage
   int DEPENDENCY_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl <em>DM Matrix Question</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMMatrixQuestion()
+   * @generated
+   */
+  int DM_MATRIX_QUESTION = 5;
+
+  /**
+   * The feature id for the '<em><b>Matrix Question</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DM_MATRIX_QUESTION__MATRIX_QUESTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Matrix Scale</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DM_MATRIX_QUESTION__MATRIX_SCALE = 1;
+
+  /**
+   * The number of structural features of the '<em>DM Matrix Question</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DM_MATRIX_QUESTION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl <em>Or</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -221,7 +258,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getOr()
    * @generated
    */
-  int OR = 5;
+  int OR = 6;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -258,7 +295,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getAnd()
    * @generated
    */
-  int AND = 6;
+  int AND = 7;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -295,7 +332,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMQuestion()
    * @generated
    */
-  int DM_QUESTION = 7;
+  int DM_QUESTION = 8;
 
   /**
    * The feature id for the '<em><b>Question</b></em>' reference.
@@ -323,6 +360,43 @@ public interface DependencyPackage extends EPackage
    * @ordered
    */
   int DM_QUESTION_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixImpl <em>DM Matrix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMMatrix()
+   * @generated
+   */
+  int DM_MATRIX = 9;
+
+  /**
+   * The feature id for the '<em><b>Matrix</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DM_MATRIX__MATRIX = DEPENDENCY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Dm Matrix Question</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DM_MATRIX__DM_MATRIX_QUESTION = DEPENDENCY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>DM Matrix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DM_MATRIX_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 2;
 
 
   /**
@@ -453,6 +527,38 @@ public interface DependencyPackage extends EPackage
   EClass getDependency();
 
   /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion <em>DM Matrix Question</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>DM Matrix Question</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
+   * @generated
+   */
+  EClass getDMMatrixQuestion();
+
+  /**
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion#getMatrixQuestion <em>Matrix Question</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Matrix Question</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion#getMatrixQuestion()
+   * @see #getDMMatrixQuestion()
+   * @generated
+   */
+  EReference getDMMatrixQuestion_MatrixQuestion();
+
+  /**
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion#getMatrixScale <em>Matrix Scale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Matrix Scale</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion#getMatrixScale()
+   * @see #getDMMatrixQuestion()
+   * @generated
+   */
+  EReference getDMMatrixQuestion_MatrixScale();
+
+  /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Or <em>Or</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -547,6 +653,38 @@ public interface DependencyPackage extends EPackage
    * @generated
    */
   EReference getDMQuestion_Answer();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix <em>DM Matrix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>DM Matrix</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix
+   * @generated
+   */
+  EClass getDMMatrix();
+
+  /**
+   * Returns the meta object for the reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix#getMatrix <em>Matrix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Matrix</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix#getMatrix()
+   * @see #getDMMatrix()
+   * @generated
+   */
+  EReference getDMMatrix_Matrix();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix#getDmMatrixQuestion <em>Dm Matrix Question</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Dm Matrix Question</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix#getDmMatrixQuestion()
+   * @see #getDMMatrix()
+   * @generated
+   */
+  EReference getDMMatrix_DmMatrixQuestion();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -678,6 +816,32 @@ public interface DependencyPackage extends EPackage
     EClass DEPENDENCY = eINSTANCE.getDependency();
 
     /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl <em>DM Matrix Question</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMMatrixQuestion()
+     * @generated
+     */
+    EClass DM_MATRIX_QUESTION = eINSTANCE.getDMMatrixQuestion();
+
+    /**
+     * The meta object literal for the '<em><b>Matrix Question</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DM_MATRIX_QUESTION__MATRIX_QUESTION = eINSTANCE.getDMMatrixQuestion_MatrixQuestion();
+
+    /**
+     * The meta object literal for the '<em><b>Matrix Scale</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DM_MATRIX_QUESTION__MATRIX_SCALE = eINSTANCE.getDMMatrixQuestion_MatrixScale();
+
+    /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl <em>Or</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -754,6 +918,32 @@ public interface DependencyPackage extends EPackage
      * @generated
      */
     EReference DM_QUESTION__ANSWER = eINSTANCE.getDMQuestion_Answer();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixImpl <em>DM Matrix</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMMatrix()
+     * @generated
+     */
+    EClass DM_MATRIX = eINSTANCE.getDMMatrix();
+
+    /**
+     * The meta object literal for the '<em><b>Matrix</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DM_MATRIX__MATRIX = eINSTANCE.getDMMatrix_Matrix();
+
+    /**
+     * The meta object literal for the '<em><b>Dm Matrix Question</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DM_MATRIX__DM_MATRIX_QUESTION = eINSTANCE.getDMMatrix_DmMatrixQuestion();
 
   }
 

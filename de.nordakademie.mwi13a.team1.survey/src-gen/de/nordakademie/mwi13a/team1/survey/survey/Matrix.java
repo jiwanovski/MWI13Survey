@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getMatrixScale <em>Matrix Scale</em>}</li>
  *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getMatrixQuestion <em>Matrix Question</em>}</li>
  * </ul>
  * </p>
@@ -22,6 +23,22 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Matrix extends SurveyTerminalTypes
 {
+  /**
+   * Returns the value of the '<em><b>Matrix Scale</b></em>' containment reference list.
+   * The list contents are of type {@link de.nordakademie.mwi13a.team1.survey.survey.MatrixScale}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Matrix Scale</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Matrix Scale</em>' containment reference list.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getMatrix_MatrixScale()
+   * @model containment="true"
+   * @generated
+   */
+  EList<MatrixScale> getMatrixScale();
+
   /**
    * Returns the value of the '<em><b>Matrix Question</b></em>' containment reference list.
    * The list contents are of type {@link de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion}.

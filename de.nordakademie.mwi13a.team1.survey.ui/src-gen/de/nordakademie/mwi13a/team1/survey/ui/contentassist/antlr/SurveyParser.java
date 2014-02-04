@@ -65,6 +65,7 @@ public class SurveyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQuestionAccess().getQuestionTypeAssignment_7(), "rule__Question__QuestionTypeAssignment_7");
 					put(grammarAccess.getMatrixQuestionAccess().getIdAssignment_1(), "rule__MatrixQuestion__IdAssignment_1");
 					put(grammarAccess.getMatrixQuestionAccess().getNameAssignment_3(), "rule__MatrixQuestion__NameAssignment_3");
+					put(grammarAccess.getMatrixScaleAccess().getNameAssignment(), "rule__MatrixScale__NameAssignment");
 					put(grammarAccess.getAnswerAccess().getIdAssignment_1(), "rule__Answer__IdAssignment_1");
 					put(grammarAccess.getAnswerAccess().getNameAssignment_3(), "rule__Answer__NameAssignment_3");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_0_1(), "rule__SurveyTerminalTypes__NameAssignment_0_1");
@@ -72,6 +73,8 @@ public class SurveyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_1_1(), "rule__SurveyTerminalTypes__NameAssignment_1_1");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getLengthAssignment_1_3(), "rule__SurveyTerminalTypes__LengthAssignment_1_3");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_2_1(), "rule__SurveyTerminalTypes__NameAssignment_2_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixScaleAssignment_2_5(), "rule__SurveyTerminalTypes__MatrixScaleAssignment_2_5");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixScaleAssignment_2_6_1(), "rule__SurveyTerminalTypes__MatrixScaleAssignment_2_6_1");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionAssignment_2_10(), "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionAssignment_2_11_1(), "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_3_1(), "rule__SurveyTerminalTypes__NameAssignment_3_1");

@@ -100,6 +100,11 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
         return createMatrixQuestionAdapter();
       }
       @Override
+      public Adapter caseMatrixScale(MatrixScale object)
+      {
+        return createMatrixScaleAdapter();
+      }
+      @Override
       public Adapter caseAnswer(Answer object)
       {
         return createAnswerAdapter();
@@ -232,6 +237,21 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMatrixQuestionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.MatrixScale <em>Matrix Scale</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.MatrixScale
+   * @generated
+   */
+  public Adapter createMatrixScaleAdapter()
   {
     return null;
   }

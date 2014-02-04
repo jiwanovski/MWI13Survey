@@ -41,6 +41,10 @@ MatrixQuestion:
 	'Question:' name=STRING
 ;
 
+MatrixScale:
+	name=Identifier
+;
+
 Answer:
 	'Answer-ID:' id=Identifier
 	'Answer:' name=STRING	
@@ -50,7 +54,9 @@ SurveyTerminalTypes:
 	{TextLine} name='TextLine' '(' length=INT ')' |
 	{TextBlock} name='TextBlock' '(' length=INT ')' |
 	{Matrix} name='Matrix' '{'
-		'Scale:' '(' Identifier ('|' Identifier)* ')'
+		'Scale:' '(' matrixScale+=MatrixScale ('|' 
+			matrixScale+=MatrixScale)* 
+		')'
 		'Questions:' '(' 
 			matrixQuestion+=MatrixQuestion ('|' 
 			matrixQuestion+=MatrixQuestion)* 

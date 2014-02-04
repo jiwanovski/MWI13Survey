@@ -459,6 +459,45 @@ ruleMatrixQuestion returns [EObject current=null]
 
 
 
+// Entry rule entryRuleMatrixScale
+entryRuleMatrixScale returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMatrixScaleRule()); }
+	 iv_ruleMatrixScale=ruleMatrixScale 
+	 { $current=$iv_ruleMatrixScale.current; } 
+	 EOF 
+;
+
+// Rule MatrixScale
+ruleMatrixScale returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMatrixScaleAccess().getNameIdentifierParserRuleCall_0()); 
+	    }
+		lv_name_0_0=ruleIdentifier		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMatrixScaleRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"Identifier");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+;
+
+
+
+
+
 // Entry rule entryRuleAnswer
 entryRuleAnswer returns [EObject current=null] 
 	:
@@ -667,27 +706,47 @@ ruleSurveyTerminalTypes returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getSurveyTerminalTypesAccess().getLeftParenthesisKeyword_2_4());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getMatrixScaleMatrixScaleParserRuleCall_2_5_0()); 
+	    }
+		lv_matrixScale_15_0=ruleMatrixScale		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSurveyTerminalTypesRule());
+	        }
+       		add(
+       			$current, 
+       			"matrixScale",
+        		lv_matrixScale_15_0, 
+        		"MatrixScale");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    { 
-        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_5()); 
-    }
-ruleIdentifier
-    { 
-        afterParserOrEnumRuleCall();
-    }
-(	otherlv_16='|' 
+)
+)(	otherlv_16='|' 
     {
     	newLeafNode(otherlv_16, grammarAccess.getSurveyTerminalTypesAccess().getVerticalLineKeyword_2_6_0());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getMatrixScaleMatrixScaleParserRuleCall_2_6_1_0()); 
+	    }
+		lv_matrixScale_17_0=ruleMatrixScale		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSurveyTerminalTypesRule());
+	        }
+       		add(
+       			$current, 
+       			"matrixScale",
+        		lv_matrixScale_17_0, 
+        		"MatrixScale");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    { 
-        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_6_1()); 
-    }
-ruleIdentifier
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)*	otherlv_18=')' 
+)
+))*	otherlv_18=')' 
     {
     	newLeafNode(otherlv_18, grammarAccess.getSurveyTerminalTypesAccess().getRightParenthesisKeyword_2_7());
     }

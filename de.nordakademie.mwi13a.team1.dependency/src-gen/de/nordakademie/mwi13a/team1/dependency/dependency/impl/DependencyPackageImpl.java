@@ -3,6 +3,8 @@
 package de.nordakademie.mwi13a.team1.dependency.dependency.impl;
 
 import de.nordakademie.mwi13a.team1.dependency.dependency.And;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.Dependency;
@@ -69,6 +71,13 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass dmMatrixQuestionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass orEClass = null;
 
   /**
@@ -84,6 +93,13 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * @generated
    */
   private EClass dmQuestionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dmMatrixEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -276,6 +292,36 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDMMatrixQuestion()
+  {
+    return dmMatrixQuestionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMMatrixQuestion_MatrixQuestion()
+  {
+    return (EReference)dmMatrixQuestionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMMatrixQuestion_MatrixScale()
+  {
+    return (EReference)dmMatrixQuestionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getOr()
   {
     return orEClass;
@@ -366,6 +412,36 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDMMatrix()
+  {
+    return dmMatrixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMMatrix_Matrix()
+  {
+    return (EReference)dmMatrixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMMatrix_DmMatrixQuestion()
+  {
+    return (EReference)dmMatrixEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DependencyFactory getDependencyFactory()
   {
     return (DependencyFactory)getEFactoryInstance();
@@ -408,6 +484,10 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
 
     dependencyEClass = createEClass(DEPENDENCY);
 
+    dmMatrixQuestionEClass = createEClass(DM_MATRIX_QUESTION);
+    createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__MATRIX_QUESTION);
+    createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__MATRIX_SCALE);
+
     orEClass = createEClass(OR);
     createEReference(orEClass, OR__LEFT);
     createEReference(orEClass, OR__RIGHT);
@@ -419,6 +499,10 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     dmQuestionEClass = createEClass(DM_QUESTION);
     createEReference(dmQuestionEClass, DM_QUESTION__QUESTION);
     createEReference(dmQuestionEClass, DM_QUESTION__ANSWER);
+
+    dmMatrixEClass = createEClass(DM_MATRIX);
+    createEReference(dmMatrixEClass, DM_MATRIX__MATRIX);
+    createEReference(dmMatrixEClass, DM_MATRIX__DM_MATRIX_QUESTION);
   }
 
   /**
@@ -456,6 +540,7 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     orEClass.getESuperTypes().add(this.getDependency());
     andEClass.getESuperTypes().add(this.getDependency());
     dmQuestionEClass.getESuperTypes().add(this.getDependency());
+    dmMatrixEClass.getESuperTypes().add(this.getDependency());
 
     // Initialize classes and features; add operations and parameters
     initEClass(dependencyModelEClass, DependencyModel.class, "DependencyModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -475,6 +560,10 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
 
     initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(dmMatrixQuestionEClass, DMMatrixQuestion.class, "DMMatrixQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDMMatrixQuestion_MatrixQuestion(), theSurveyPackage.getMatrixQuestion(), null, "matrixQuestion", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDMMatrixQuestion_MatrixScale(), theSurveyPackage.getMatrixScale(), null, "matrixScale", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Left(), this.getDependency(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOr_Right(), this.getDependency(), null, "right", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -486,6 +575,10 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     initEClass(dmQuestionEClass, DMQuestion.class, "DMQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDMQuestion_Question(), theSurveyPackage.getQuestion(), null, "question", null, 0, 1, DMQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDMQuestion_Answer(), theSurveyPackage.getAnswer(), null, "answer", null, 0, 1, DMQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dmMatrixEClass, DMMatrix.class, "DMMatrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDMMatrix_Matrix(), theSurveyPackage.getQuestion(), null, "matrix", null, 0, 1, DMMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDMMatrix_DmMatrixQuestion(), this.getDMMatrixQuestion(), null, "dmMatrixQuestion", null, 0, -1, DMMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

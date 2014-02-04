@@ -69,9 +69,11 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
       case DependencyPackage.PART_ELEMENTS: return createPartElements();
       case DependencyPackage.DM_NEXT_PARTS: return createDMNextParts();
       case DependencyPackage.DEPENDENCY: return createDependency();
+      case DependencyPackage.DM_MATRIX_QUESTION: return createDMMatrixQuestion();
       case DependencyPackage.OR: return createOr();
       case DependencyPackage.AND: return createAnd();
       case DependencyPackage.DM_QUESTION: return createDMQuestion();
+      case DependencyPackage.DM_MATRIX: return createDMMatrix();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -137,6 +139,17 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
    * <!-- end-user-doc -->
    * @generated
    */
+  public DMMatrixQuestion createDMMatrixQuestion()
+  {
+    DMMatrixQuestionImpl dmMatrixQuestion = new DMMatrixQuestionImpl();
+    return dmMatrixQuestion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Or createOr()
   {
     OrImpl or = new OrImpl();
@@ -163,6 +176,17 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
   {
     DMQuestionImpl dmQuestion = new DMQuestionImpl();
     return dmQuestion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DMMatrix createDMMatrix()
+  {
+    DMMatrixImpl dmMatrix = new DMMatrixImpl();
+    return dmMatrix;
   }
 
   /**

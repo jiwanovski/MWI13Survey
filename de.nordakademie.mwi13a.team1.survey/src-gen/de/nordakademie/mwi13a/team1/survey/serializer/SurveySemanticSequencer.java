@@ -8,6 +8,7 @@ import de.nordakademie.mwi13a.team1.survey.survey.ComboBox;
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
+import de.nordakademie.mwi13a.team1.survey.survey.MatrixScale;
 import de.nordakademie.mwi13a.team1.survey.survey.Part;
 import de.nordakademie.mwi13a.team1.survey.survey.Question;
 import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire;
@@ -63,6 +64,12 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case SurveyPackage.MATRIX_QUESTION:
 				if(context == grammarAccess.getMatrixQuestionRule()) {
 					sequence_MatrixQuestion(context, (MatrixQuestion) semanticObject); 
+					return; 
+				}
+				else break;
+			case SurveyPackage.MATRIX_SCALE:
+				if(context == grammarAccess.getMatrixScaleRule()) {
+					sequence_MatrixScale(context, (MatrixScale) semanticObject); 
 					return; 
 				}
 				else break;
@@ -152,6 +159,22 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     name=Identifier
+	 */
+	protected void sequence_MatrixScale(EObject context, MatrixScale semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SurveyPackage.Literals.MATRIX_SCALE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SurveyPackage.Literals.MATRIX_SCALE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMatrixScaleAccess().getNameIdentifierParserRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=STRING id=Identifier question+=Question+)
 	 */
 	protected void sequence_Part(EObject context, Part semanticObject) {
@@ -197,7 +220,7 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name='Matrix' matrixQuestion+=MatrixQuestion matrixQuestion+=MatrixQuestion*)
+	 *     (name='Matrix' matrixScale+=MatrixScale matrixScale+=MatrixScale* matrixQuestion+=MatrixQuestion matrixQuestion+=MatrixQuestion*)
 	 */
 	protected void sequence_SurveyTerminalTypes(EObject context, Matrix semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

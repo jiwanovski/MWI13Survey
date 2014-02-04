@@ -25,6 +25,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMNextParts/expressions"/>
     </genClasses>
     <genClasses ecoreClass="Dependency.ecore#//Dependency"/>
+    <genClasses ecoreClass="Dependency.ecore#//DMMatrixQuestion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMMatrixQuestion/matrixQuestion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMMatrixQuestion/matrixScale"/>
+    </genClasses>
     <genClasses ecoreClass="Dependency.ecore#//Or">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//Or/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//Or/right"/>
@@ -36,6 +40,10 @@
     <genClasses ecoreClass="Dependency.ecore#//DMQuestion">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMQuestion/question"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMQuestion/answer"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependency.ecore#//DMMatrix">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMMatrix/matrix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMMatrix/dmMatrixQuestion"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

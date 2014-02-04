@@ -69,6 +69,7 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
       case SurveyPackage.PART: return createPart();
       case SurveyPackage.QUESTION: return createQuestion();
       case SurveyPackage.MATRIX_QUESTION: return createMatrixQuestion();
+      case SurveyPackage.MATRIX_SCALE: return createMatrixScale();
       case SurveyPackage.ANSWER: return createAnswer();
       case SurveyPackage.SURVEY_TERMINAL_TYPES: return createSurveyTerminalTypes();
       case SurveyPackage.TEXT_LINE: return createTextLine();
@@ -135,6 +136,17 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
   {
     MatrixQuestionImpl matrixQuestion = new MatrixQuestionImpl();
     return matrixQuestion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MatrixScale createMatrixScale()
+  {
+    MatrixScaleImpl matrixScale = new MatrixScaleImpl();
+    return matrixScale;
   }
 
   /**

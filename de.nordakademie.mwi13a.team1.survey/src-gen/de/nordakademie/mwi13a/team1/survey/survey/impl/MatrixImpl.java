@@ -4,6 +4,7 @@ package de.nordakademie.mwi13a.team1.survey.survey.impl;
 
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
+import de.nordakademie.mwi13a.team1.survey.survey.MatrixScale;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
 
 import java.util.Collection;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl#getMatrixScale <em>Matrix Scale</em>}</li>
  *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl#getMatrixQuestion <em>Matrix Question</em>}</li>
  * </ul>
  * </p>
@@ -33,6 +35,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
 {
+  /**
+   * The cached value of the '{@link #getMatrixScale() <em>Matrix Scale</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMatrixScale()
+   * @generated
+   * @ordered
+   */
+  protected EList<MatrixScale> matrixScale;
+
   /**
    * The cached value of the '{@link #getMatrixQuestion() <em>Matrix Question</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -69,6 +81,20 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<MatrixScale> getMatrixScale()
+  {
+    if (matrixScale == null)
+    {
+      matrixScale = new EObjectContainmentEList<MatrixScale>(MatrixScale.class, this, SurveyPackage.MATRIX__MATRIX_SCALE);
+    }
+    return matrixScale;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<MatrixQuestion> getMatrixQuestion()
   {
     if (matrixQuestion == null)
@@ -88,6 +114,8 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__MATRIX_SCALE:
+        return ((InternalEList<?>)getMatrixScale()).basicRemove(otherEnd, msgs);
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         return ((InternalEList<?>)getMatrixQuestion()).basicRemove(otherEnd, msgs);
     }
@@ -104,6 +132,8 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__MATRIX_SCALE:
+        return getMatrixScale();
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         return getMatrixQuestion();
     }
@@ -121,6 +151,10 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__MATRIX_SCALE:
+        getMatrixScale().clear();
+        getMatrixScale().addAll((Collection<? extends MatrixScale>)newValue);
+        return;
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         getMatrixQuestion().clear();
         getMatrixQuestion().addAll((Collection<? extends MatrixQuestion>)newValue);
@@ -139,6 +173,9 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__MATRIX_SCALE:
+        getMatrixScale().clear();
+        return;
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         getMatrixQuestion().clear();
         return;
@@ -156,6 +193,8 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__MATRIX_SCALE:
+        return matrixScale != null && !matrixScale.isEmpty();
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         return matrixQuestion != null && !matrixQuestion.isEmpty();
     }
