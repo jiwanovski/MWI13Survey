@@ -30,6 +30,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//MatrixQuestion/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//MatrixQuestion/name"/>
     </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//MatrixScale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//MatrixScale/name"/>
+    </genClasses>
     <genClasses ecoreClass="Survey.ecore#//Answer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Answer/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Answer/name"/>

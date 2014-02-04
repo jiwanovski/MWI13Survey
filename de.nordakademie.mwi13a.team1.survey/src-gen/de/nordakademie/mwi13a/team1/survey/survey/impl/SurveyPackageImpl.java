@@ -7,6 +7,7 @@ import de.nordakademie.mwi13a.team1.survey.survey.ComboBox;
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
+import de.nordakademie.mwi13a.team1.survey.survey.MatrixScale;
 import de.nordakademie.mwi13a.team1.survey.survey.Part;
 import de.nordakademie.mwi13a.team1.survey.survey.Question;
 import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire;
@@ -67,6 +68,13 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * @generated
    */
   private EClass matrixQuestionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass matrixScaleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -372,6 +380,26 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMatrixScale()
+  {
+    return matrixScaleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMatrixScale_Name()
+  {
+    return (EAttribute)matrixScaleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAnswer()
   {
     return answerEClass;
@@ -600,6 +628,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     createEAttribute(matrixQuestionEClass, MATRIX_QUESTION__ID);
     createEAttribute(matrixQuestionEClass, MATRIX_QUESTION__NAME);
 
+    matrixScaleEClass = createEClass(MATRIX_SCALE);
+    createEAttribute(matrixScaleEClass, MATRIX_SCALE__NAME);
+
     answerEClass = createEClass(ANSWER);
     createEAttribute(answerEClass, ANSWER__ID);
     createEAttribute(answerEClass, ANSWER__NAME);
@@ -686,6 +717,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     initEClass(matrixQuestionEClass, MatrixQuestion.class, "MatrixQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMatrixQuestion_Id(), ecorePackage.getEString(), "id", null, 0, 1, MatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMatrixQuestion_Name(), ecorePackage.getEString(), "name", null, 0, 1, MatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(matrixScaleEClass, MatrixScale.class, "MatrixScale", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMatrixScale_Name(), ecorePackage.getEString(), "name", null, 0, 1, MatrixScale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(answerEClass, Answer.class, "Answer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAnswer_Id(), ecorePackage.getEString(), "id", null, 0, 1, Answer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

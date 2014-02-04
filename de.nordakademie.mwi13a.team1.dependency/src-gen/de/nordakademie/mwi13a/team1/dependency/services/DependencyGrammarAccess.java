@@ -316,50 +316,201 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class AtomicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Atomic");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cDMQuestionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cQuestionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cQuestionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cQuestionQuestionCrossReference_2_0 = (CrossReference)cQuestionAssignment_2.eContents().get(0);
-		private final RuleCall cQuestionQuestionSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cQuestionQuestionCrossReference_2_0.eContents().get(1);
-		private final Keyword cAnswerKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cAnswerAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cAnswerAnswerCrossReference_4_0 = (CrossReference)cAnswerAssignment_4.eContents().get(0);
-		private final RuleCall cAnswerAnswerSTRINGTerminalRuleCall_4_0_1 = (RuleCall)cAnswerAnswerCrossReference_4_0.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cDMQuestionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cQuestionKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cQuestionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final CrossReference cQuestionQuestionCrossReference_0_2_0 = (CrossReference)cQuestionAssignment_0_2.eContents().get(0);
+		private final RuleCall cQuestionQuestionSTRINGTerminalRuleCall_0_2_0_1 = (RuleCall)cQuestionQuestionCrossReference_0_2_0.eContents().get(1);
+		private final Keyword cAnswerKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cAnswerAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final CrossReference cAnswerAnswerCrossReference_0_4_0 = (CrossReference)cAnswerAssignment_0_4.eContents().get(0);
+		private final RuleCall cAnswerAnswerSTRINGTerminalRuleCall_0_4_0_1 = (RuleCall)cAnswerAnswerCrossReference_0_4_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cDMMatrixAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cMatrixKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cMatrixAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final CrossReference cMatrixQuestionCrossReference_1_2_0 = (CrossReference)cMatrixAssignment_1_2.eContents().get(0);
+		private final RuleCall cMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1 = (RuleCall)cMatrixQuestionCrossReference_1_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Assignment cDmMatrixQuestionAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0 = (RuleCall)cDmMatrixQuestionAssignment_1_4.eContents().get(0);
+		private final Group cGroup_1_5 = (Group)cGroup_1.eContents().get(5);
+		private final Keyword cVerticalLineKeyword_1_5_0 = (Keyword)cGroup_1_5.eContents().get(0);
+		private final Assignment cDmMatrixQuestionAssignment_1_5_1 = (Assignment)cGroup_1_5.eContents().get(1);
+		private final RuleCall cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0 = (RuleCall)cDmMatrixQuestionAssignment_1_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_6 = (Keyword)cGroup_1.eContents().get(6);
 		
+		////Atomic returns Dependeny:
+		////	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING]
+		////		answer=[DMAnswer]
+		////;
+		////DMAnswer:
+		////	NormalQuestion | MatrixQuestion
+		////;
+		////NormalQuestion:
+		////	'Answer:' answer=[surveyImp::Answer|STRING]
+		////;
+		////MatrixQuestion:
+		////	'{'
+		////		dmMatrixQuestion+=DMMatrixQuestion ('|' 
+		////		dmMatrixQuestion+=DMMatrixQuestion)*
+		////	'}'
+		////;
 		//Atomic returns Dependency:
-		//	{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING];
+		//	{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING] |
+		//	{DMMatrix} "Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
+		//	dmMatrixQuestion+=DMMatrixQuestion)* "}";
 		public ParserRule getRule() { return rule; }
 
+		//{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING] | {DMMatrix}
+		//"Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
+		//dmMatrixQuestion+=DMMatrixQuestion)* "}"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING]
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 
 		//{DMQuestion}
-		public Action getDMQuestionAction_0() { return cDMQuestionAction_0; }
+		public Action getDMQuestionAction_0_0() { return cDMQuestionAction_0_0; }
 
 		//"Question:"
-		public Keyword getQuestionKeyword_1() { return cQuestionKeyword_1; }
+		public Keyword getQuestionKeyword_0_1() { return cQuestionKeyword_0_1; }
 
 		//question=[surveyImp::Question|STRING]
-		public Assignment getQuestionAssignment_2() { return cQuestionAssignment_2; }
+		public Assignment getQuestionAssignment_0_2() { return cQuestionAssignment_0_2; }
 
 		//[surveyImp::Question|STRING]
-		public CrossReference getQuestionQuestionCrossReference_2_0() { return cQuestionQuestionCrossReference_2_0; }
+		public CrossReference getQuestionQuestionCrossReference_0_2_0() { return cQuestionQuestionCrossReference_0_2_0; }
 
 		//STRING
-		public RuleCall getQuestionQuestionSTRINGTerminalRuleCall_2_0_1() { return cQuestionQuestionSTRINGTerminalRuleCall_2_0_1; }
+		public RuleCall getQuestionQuestionSTRINGTerminalRuleCall_0_2_0_1() { return cQuestionQuestionSTRINGTerminalRuleCall_0_2_0_1; }
 
 		//"Answer:"
-		public Keyword getAnswerKeyword_3() { return cAnswerKeyword_3; }
+		public Keyword getAnswerKeyword_0_3() { return cAnswerKeyword_0_3; }
 
 		//answer=[surveyImp::Answer|STRING]
-		public Assignment getAnswerAssignment_4() { return cAnswerAssignment_4; }
+		public Assignment getAnswerAssignment_0_4() { return cAnswerAssignment_0_4; }
 
 		//[surveyImp::Answer|STRING]
-		public CrossReference getAnswerAnswerCrossReference_4_0() { return cAnswerAnswerCrossReference_4_0; }
+		public CrossReference getAnswerAnswerCrossReference_0_4_0() { return cAnswerAnswerCrossReference_0_4_0; }
 
 		//STRING
-		public RuleCall getAnswerAnswerSTRINGTerminalRuleCall_4_0_1() { return cAnswerAnswerSTRINGTerminalRuleCall_4_0_1; }
+		public RuleCall getAnswerAnswerSTRINGTerminalRuleCall_0_4_0_1() { return cAnswerAnswerSTRINGTerminalRuleCall_0_4_0_1; }
+
+		//{DMMatrix} "Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
+		//dmMatrixQuestion+=DMMatrixQuestion)* "}"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{DMMatrix}
+		public Action getDMMatrixAction_1_0() { return cDMMatrixAction_1_0; }
+
+		//"Matrix:"
+		public Keyword getMatrixKeyword_1_1() { return cMatrixKeyword_1_1; }
+
+		//matrix=[surveyImp::Question|STRING]
+		public Assignment getMatrixAssignment_1_2() { return cMatrixAssignment_1_2; }
+
+		//[surveyImp::Question|STRING]
+		public CrossReference getMatrixQuestionCrossReference_1_2_0() { return cMatrixQuestionCrossReference_1_2_0; }
+
+		//STRING
+		public RuleCall getMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1() { return cMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_3() { return cLeftCurlyBracketKeyword_1_3; }
+
+		//dmMatrixQuestion+=DMMatrixQuestion
+		public Assignment getDmMatrixQuestionAssignment_1_4() { return cDmMatrixQuestionAssignment_1_4; }
+
+		//DMMatrixQuestion
+		public RuleCall getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0() { return cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0; }
+
+		//("|" dmMatrixQuestion+=DMMatrixQuestion)*
+		public Group getGroup_1_5() { return cGroup_1_5; }
+
+		//"|"
+		public Keyword getVerticalLineKeyword_1_5_0() { return cVerticalLineKeyword_1_5_0; }
+
+		//dmMatrixQuestion+=DMMatrixQuestion
+		public Assignment getDmMatrixQuestionAssignment_1_5_1() { return cDmMatrixQuestionAssignment_1_5_1; }
+
+		//DMMatrixQuestion
+		public RuleCall getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0() { return cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_6() { return cRightCurlyBracketKeyword_1_6; }
+	}
+
+	public class DMMatrixQuestionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DMMatrixQuestion");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMatrixQuestionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMatrixQuestionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cMatrixQuestionMatrixQuestionCrossReference_1_0 = (CrossReference)cMatrixQuestionAssignment_1.eContents().get(0);
+		private final RuleCall cMatrixQuestionMatrixQuestionSTRINGTerminalRuleCall_1_0_1 = (RuleCall)cMatrixQuestionMatrixQuestionCrossReference_1_0.eContents().get(1);
+		private final Keyword cMatrixScaleKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMatrixScaleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cMatrixScaleMatrixScaleCrossReference_3_0 = (CrossReference)cMatrixScaleAssignment_3.eContents().get(0);
+		private final RuleCall cMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1 = (RuleCall)cMatrixScaleMatrixScaleCrossReference_3_0.eContents().get(1);
+		
+		//DMMatrixQuestion:
+		//	"Matrix Question:" matrixQuestion=[surveyImp::MatrixQuestion|STRING] "Matrix Scale:"
+		//	matrixScale=[surveyImp::MatrixScale|STRING];
+		public ParserRule getRule() { return rule; }
+
+		//"Matrix Question:" matrixQuestion=[surveyImp::MatrixQuestion|STRING] "Matrix Scale:"
+		//matrixScale=[surveyImp::MatrixScale|STRING]
+		public Group getGroup() { return cGroup; }
+
+		//"Matrix Question:"
+		public Keyword getMatrixQuestionKeyword_0() { return cMatrixQuestionKeyword_0; }
+
+		//matrixQuestion=[surveyImp::MatrixQuestion|STRING]
+		public Assignment getMatrixQuestionAssignment_1() { return cMatrixQuestionAssignment_1; }
+
+		//[surveyImp::MatrixQuestion|STRING]
+		public CrossReference getMatrixQuestionMatrixQuestionCrossReference_1_0() { return cMatrixQuestionMatrixQuestionCrossReference_1_0; }
+
+		//STRING
+		public RuleCall getMatrixQuestionMatrixQuestionSTRINGTerminalRuleCall_1_0_1() { return cMatrixQuestionMatrixQuestionSTRINGTerminalRuleCall_1_0_1; }
+
+		//"Matrix Scale:"
+		public Keyword getMatrixScaleKeyword_2() { return cMatrixScaleKeyword_2; }
+
+		//matrixScale=[surveyImp::MatrixScale|STRING]
+		public Assignment getMatrixScaleAssignment_3() { return cMatrixScaleAssignment_3; }
+
+		//[surveyImp::MatrixScale|STRING]
+		public CrossReference getMatrixScaleMatrixScaleCrossReference_3_0() { return cMatrixScaleMatrixScaleCrossReference_3_0; }
+
+		//STRING
+		public RuleCall getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1() { return cMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1; }
+	}
+
+	public class IdentifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Identifier");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Identifier:
+		//	ID | STRING | INT;
+		public ParserRule getRule() { return rule; }
+
+		//ID | STRING | INT
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
 	
 	
@@ -372,6 +523,8 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 	private AndElements pAnd;
 	private PrimaryElements pPrimary;
 	private AtomicElements pAtomic;
+	private DMMatrixQuestionElements pDMMatrixQuestion;
+	private IdentifierElements pIdentifier;
 	
 	private final Grammar grammar;
 
@@ -491,14 +644,53 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		return getPrimaryAccess().getRule();
 	}
 
+	////Atomic returns Dependeny:
+	////	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING]
+	////		answer=[DMAnswer]
+	////;
+	////DMAnswer:
+	////	NormalQuestion | MatrixQuestion
+	////;
+	////NormalQuestion:
+	////	'Answer:' answer=[surveyImp::Answer|STRING]
+	////;
+	////MatrixQuestion:
+	////	'{'
+	////		dmMatrixQuestion+=DMMatrixQuestion ('|' 
+	////		dmMatrixQuestion+=DMMatrixQuestion)*
+	////	'}'
+	////;
 	//Atomic returns Dependency:
-	//	{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING];
+	//	{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING] |
+	//	{DMMatrix} "Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
+	//	dmMatrixQuestion+=DMMatrixQuestion)* "}";
 	public AtomicElements getAtomicAccess() {
 		return (pAtomic != null) ? pAtomic : (pAtomic = new AtomicElements());
 	}
 	
 	public ParserRule getAtomicRule() {
 		return getAtomicAccess().getRule();
+	}
+
+	//DMMatrixQuestion:
+	//	"Matrix Question:" matrixQuestion=[surveyImp::MatrixQuestion|STRING] "Matrix Scale:"
+	//	matrixScale=[surveyImp::MatrixScale|STRING];
+	public DMMatrixQuestionElements getDMMatrixQuestionAccess() {
+		return (pDMMatrixQuestion != null) ? pDMMatrixQuestion : (pDMMatrixQuestion = new DMMatrixQuestionElements());
+	}
+	
+	public ParserRule getDMMatrixQuestionRule() {
+		return getDMMatrixQuestionAccess().getRule();
+	}
+
+	//Identifier:
+	//	ID | STRING | INT;
+	public IdentifierElements getIdentifierAccess() {
+		return (pIdentifier != null) ? pIdentifier : (pIdentifier = new IdentifierElements());
+	}
+	
+	public ParserRule getIdentifierRule() {
+		return getIdentifierAccess().getRule();
 	}
 
 	//terminal ID:

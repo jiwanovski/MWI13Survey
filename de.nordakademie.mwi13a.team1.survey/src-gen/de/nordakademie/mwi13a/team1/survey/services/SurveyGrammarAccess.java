@@ -245,6 +245,22 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 	}
 
+	public class MatrixScaleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MatrixScale");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIdentifierParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//MatrixScale:
+		//	name=Identifier;
+		public ParserRule getRule() { return rule; }
+
+		//name=Identifier
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//Identifier
+		public RuleCall getNameIdentifierParserRuleCall_0() { return cNameIdentifierParserRuleCall_0; }
+	}
+
 	public class AnswerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Answer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -588,6 +604,7 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 	private PartElements pPart;
 	private QuestionElements pQuestion;
 	private MatrixQuestionElements pMatrixQuestion;
+	private MatrixScaleElements pMatrixScale;
 	private AnswerElements pAnswer;
 	private SurveyTerminalTypesElements pSurveyTerminalTypes;
 	private IdentifierElements pIdentifier;
@@ -680,6 +697,16 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMatrixQuestionRule() {
 		return getMatrixQuestionAccess().getRule();
+	}
+
+	//MatrixScale:
+	//	name=Identifier;
+	public MatrixScaleElements getMatrixScaleAccess() {
+		return (pMatrixScale != null) ? pMatrixScale : (pMatrixScale = new MatrixScaleElements());
+	}
+	
+	public ParserRule getMatrixScaleRule() {
+		return getMatrixScaleAccess().getRule();
 	}
 
 	//Answer:

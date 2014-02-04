@@ -3,6 +3,8 @@ package de.nordakademie.mwi13a.team1.dependency.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import de.nordakademie.mwi13a.team1.dependency.dependency.And;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel;
@@ -39,6 +41,24 @@ public class DependencySemanticSequencer extends AbstractDelegatingSemanticSeque
 				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryRule()) {
 					sequence_And(context, (And) semanticObject); 
+					return; 
+				}
+				else break;
+			case DependencyPackage.DM_MATRIX:
+				if(context == grammarAccess.getAndRule() ||
+				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0() ||
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getDependencyRule() ||
+				   context == grammarAccess.getOrRule() ||
+				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0() ||
+				   context == grammarAccess.getPrimaryRule()) {
+					sequence_Atomic(context, (DMMatrix) semanticObject); 
+					return; 
+				}
+				else break;
+			case DependencyPackage.DM_MATRIX_QUESTION:
+				if(context == grammarAccess.getDMMatrixQuestionRule()) {
+					sequence_DMMatrixQuestion(context, (DMMatrixQuestion) semanticObject); 
 					return; 
 				}
 				else break;
@@ -114,6 +134,15 @@ public class DependencySemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     (matrix=[Question|STRING] dmMatrixQuestion+=DMMatrixQuestion dmMatrixQuestion+=DMMatrixQuestion*)
+	 */
+	protected void sequence_Atomic(EObject context, DMMatrix semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (question=[Question|STRING] answer=[Answer|STRING])
 	 */
 	protected void sequence_Atomic(EObject context, DMQuestion semanticObject) {
@@ -125,8 +154,27 @@ public class DependencySemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getQuestionQuestionSTRINGTerminalRuleCall_2_0_1(), semanticObject.getQuestion());
-		feeder.accept(grammarAccess.getAtomicAccess().getAnswerAnswerSTRINGTerminalRuleCall_4_0_1(), semanticObject.getAnswer());
+		feeder.accept(grammarAccess.getAtomicAccess().getQuestionQuestionSTRINGTerminalRuleCall_0_2_0_1(), semanticObject.getQuestion());
+		feeder.accept(grammarAccess.getAtomicAccess().getAnswerAnswerSTRINGTerminalRuleCall_0_4_0_1(), semanticObject.getAnswer());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (matrixQuestion=[MatrixQuestion|STRING] matrixScale=[MatrixScale|STRING])
+	 */
+	protected void sequence_DMMatrixQuestion(EObject context, DMMatrixQuestion semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DependencyPackage.Literals.DM_MATRIX_QUESTION__MATRIX_QUESTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DependencyPackage.Literals.DM_MATRIX_QUESTION__MATRIX_QUESTION));
+			if(transientValues.isValueTransient(semanticObject, DependencyPackage.Literals.DM_MATRIX_QUESTION__MATRIX_SCALE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DependencyPackage.Literals.DM_MATRIX_QUESTION__MATRIX_SCALE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionMatrixQuestionSTRINGTerminalRuleCall_1_0_1(), semanticObject.getMatrixQuestion());
+		feeder.accept(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1(), semanticObject.getMatrixScale());
 		feeder.finish();
 	}
 	

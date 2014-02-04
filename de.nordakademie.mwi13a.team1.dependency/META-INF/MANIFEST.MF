@@ -22,15 +22,16 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.nordakademie.mwi13a.team1.dependency,
- de.nordakademie.mwi13a.team1.dependency.services,
  de.nordakademie.mwi13a.team1.dependency.dependency,
  de.nordakademie.mwi13a.team1.dependency.dependency.impl,
  de.nordakademie.mwi13a.team1.dependency.dependency.util,
- de.nordakademie.mwi13a.team1.dependency.serializer,
+ de.nordakademie.mwi13a.team1.dependency.formatting,
+ de.nordakademie.mwi13a.team1.dependency.generator,
  de.nordakademie.mwi13a.team1.dependency.parser.antlr,
  de.nordakademie.mwi13a.team1.dependency.parser.antlr.internal,
- de.nordakademie.mwi13a.team1.dependency.validation,
  de.nordakademie.mwi13a.team1.dependency.scoping,
- de.nordakademie.mwi13a.team1.dependency.generator,
- de.nordakademie.mwi13a.team1.dependency.formatting
+ de.nordakademie.mwi13a.team1.dependency.serializer,
+ de.nordakademie.mwi13a.team1.dependency.services,
+ de.nordakademie.mwi13a.team1.dependency.util,
+ de.nordakademie.mwi13a.team1.dependency.validation
 

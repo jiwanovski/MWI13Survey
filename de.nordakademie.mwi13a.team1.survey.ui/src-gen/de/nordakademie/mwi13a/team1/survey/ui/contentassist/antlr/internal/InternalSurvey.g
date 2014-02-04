@@ -203,6 +203,8 @@ finally {
 
 
 
+
+
 // Entry rule entryRuleAnswer
 entryRuleAnswer 
 :
@@ -2969,6 +2971,7 @@ rule__MatrixQuestion__NameAssignment_3
 finally {
 	restoreStackSize(stackSize);
 }
+
 
 rule__Answer__IdAssignment_1
     @init {

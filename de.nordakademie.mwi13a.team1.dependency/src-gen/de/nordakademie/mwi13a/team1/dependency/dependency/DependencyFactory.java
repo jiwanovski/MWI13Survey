@@ -68,6 +68,15 @@ public interface DependencyFactory extends EFactory
   Dependency createDependency();
 
   /**
+   * Returns a new object of class '<em>DM Matrix Question</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DM Matrix Question</em>'.
+   * @generated
+   */
+  DMMatrixQuestion createDMMatrixQuestion();
+
+  /**
    * Returns a new object of class '<em>Or</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,6 +102,15 @@ public interface DependencyFactory extends EFactory
    * @generated
    */
   DMQuestion createDMQuestion();
+
+  /**
+   * Returns a new object of class '<em>DM Matrix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DM Matrix</em>'.
+   * @generated
+   */
+  DMMatrix createDMMatrix();
 
   /**
    * Returns the package supported by this factory.

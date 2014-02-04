@@ -21,9 +21,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDependencyParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Survey:'", "'{'", "'}'", "'Part:'", "'Next parts {'", "'OR'", "'Next part:'", "'Part dependencies'", "'AND'", "'('", "')'", "'Question:'", "'Answer:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Survey:'", "'{'", "'}'", "'Part:'", "'Next parts {'", "'OR'", "'Next part:'", "'Part dependencies'", "'AND'", "'('", "')'", "'Question:'", "'Answer:'", "'Matrix:'", "'|'", "'Matrix Question:'", "'Matrix Scale:'"
     };
     public static final int RULE_ID=5;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
     public static final int RULE_ANY_OTHER=10;
@@ -715,7 +719,7 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
                         int alt5=2;
                         int LA5_0 = input.LA(1);
 
-                        if ( (LA5_0==20||LA5_0==22) ) {
+                        if ( (LA5_0==20||LA5_0==22||LA5_0==24) ) {
                             alt5=1;
                         }
 
@@ -1248,7 +1252,7 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
             if ( (LA9_0==20) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==22) ) {
+            else if ( (LA9_0==22||LA9_0==24) ) {
                 alt9=2;
             }
             else {
@@ -1365,7 +1369,7 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:527:1: ruleAtomic returns [EObject current=null] : ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) ) ;
+    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:527:1: ruleAtomic returns [EObject current=null] : ( ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) ) | ( () otherlv_6= 'Matrix:' ( (otherlv_7= RULE_STRING ) ) otherlv_8= '{' ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) ) (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )* otherlv_12= '}' ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -1373,45 +1377,351 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        EObject lv_dmMatrixQuestion_9_0 = null;
+
+        EObject lv_dmMatrixQuestion_11_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:530:28: ( ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) ) )
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:1: ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:530:28: ( ( ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) ) | ( () otherlv_6= 'Matrix:' ( (otherlv_7= RULE_STRING ) ) otherlv_8= '{' ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) ) (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )* otherlv_12= '}' ) ) )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:1: ( ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) ) | ( () otherlv_6= 'Matrix:' ( (otherlv_7= RULE_STRING ) ) otherlv_8= '{' ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) ) (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )* otherlv_12= '}' ) )
             {
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:1: ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) )
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:2: () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) )
-            {
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:2: ()
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:532:5: 
-            {
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:1: ( ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) ) | ( () otherlv_6= 'Matrix:' ( (otherlv_7= RULE_STRING ) ) otherlv_8= '{' ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) ) (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )* otherlv_12= '}' ) )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getAtomicAccess().getDMQuestionAction_0(),
-                        current);
-                
+            if ( (LA11_0==22) ) {
+                alt11=1;
+            }
+            else if ( (LA11_0==24) ) {
+                alt11=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 11, 0, input);
+
+                throw nvae;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:2: ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) )
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:2: ( () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) ) )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:3: () otherlv_1= 'Question:' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'Answer:' ( (otherlv_4= RULE_STRING ) )
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:531:3: ()
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:532:5: 
+                    {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getAtomicAccess().getDMQuestionAction_0_0(),
+                                current);
+                        
+
+                    }
+
+                    otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleAtomic1234); 
+
+                        	newLeafNode(otherlv_1, grammarAccess.getAtomicAccess().getQuestionKeyword_0_1());
+                        
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:541:1: ( (otherlv_2= RULE_STRING ) )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:542:1: (otherlv_2= RULE_STRING )
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:542:1: (otherlv_2= RULE_STRING )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:543:3: otherlv_2= RULE_STRING
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getAtomicRule());
+                    	        }
+                            
+                    otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomic1254); 
+
+                    		newLeafNode(otherlv_2, grammarAccess.getAtomicAccess().getQuestionQuestionCrossReference_0_2_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+                    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleAtomic1266); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getAtomicAccess().getAnswerKeyword_0_3());
+                        
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:558:1: ( (otherlv_4= RULE_STRING ) )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:559:1: (otherlv_4= RULE_STRING )
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:559:1: (otherlv_4= RULE_STRING )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:560:3: otherlv_4= RULE_STRING
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getAtomicRule());
+                    	        }
+                            
+                    otherlv_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomic1286); 
+
+                    		newLeafNode(otherlv_4, grammarAccess.getAtomicAccess().getAnswerAnswerCrossReference_0_4_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:572:6: ( () otherlv_6= 'Matrix:' ( (otherlv_7= RULE_STRING ) ) otherlv_8= '{' ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) ) (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )* otherlv_12= '}' )
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:572:6: ( () otherlv_6= 'Matrix:' ( (otherlv_7= RULE_STRING ) ) otherlv_8= '{' ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) ) (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )* otherlv_12= '}' )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:572:7: () otherlv_6= 'Matrix:' ( (otherlv_7= RULE_STRING ) ) otherlv_8= '{' ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) ) (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )* otherlv_12= '}'
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:572:7: ()
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:573:5: 
+                    {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getAtomicAccess().getDMMatrixAction_1_0(),
+                                current);
+                        
+
+                    }
+
+                    otherlv_6=(Token)match(input,24,FOLLOW_24_in_ruleAtomic1315); 
+
+                        	newLeafNode(otherlv_6, grammarAccess.getAtomicAccess().getMatrixKeyword_1_1());
+                        
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:582:1: ( (otherlv_7= RULE_STRING ) )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:583:1: (otherlv_7= RULE_STRING )
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:583:1: (otherlv_7= RULE_STRING )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:584:3: otherlv_7= RULE_STRING
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getAtomicRule());
+                    	        }
+                            
+                    otherlv_7=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomic1335); 
+
+                    		newLeafNode(otherlv_7, grammarAccess.getAtomicAccess().getMatrixQuestionCrossReference_1_2_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+                    otherlv_8=(Token)match(input,12,FOLLOW_12_in_ruleAtomic1347); 
+
+                        	newLeafNode(otherlv_8, grammarAccess.getAtomicAccess().getLeftCurlyBracketKeyword_1_3());
+                        
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:599:1: ( (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion ) )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:600:1: (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion )
+                    {
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:600:1: (lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion )
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:601:3: lv_dmMatrixQuestion_9_0= ruleDMMatrixQuestion
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getAtomicAccess().getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleDMMatrixQuestion_in_ruleAtomic1368);
+                    lv_dmMatrixQuestion_9_0=ruleDMMatrixQuestion();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getAtomicRule());
+                    	        }
+                           		add(
+                           			current, 
+                           			"dmMatrixQuestion",
+                            		lv_dmMatrixQuestion_9_0, 
+                            		"DMMatrixQuestion");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:617:2: (otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) ) )*
+                    loop10:
+                    do {
+                        int alt10=2;
+                        int LA10_0 = input.LA(1);
+
+                        if ( (LA10_0==25) ) {
+                            alt10=1;
+                        }
+
+
+                        switch (alt10) {
+                    	case 1 :
+                    	    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:617:4: otherlv_10= '|' ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) )
+                    	    {
+                    	    otherlv_10=(Token)match(input,25,FOLLOW_25_in_ruleAtomic1381); 
+
+                    	        	newLeafNode(otherlv_10, grammarAccess.getAtomicAccess().getVerticalLineKeyword_1_5_0());
+                    	        
+                    	    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:621:1: ( (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion ) )
+                    	    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:622:1: (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion )
+                    	    {
+                    	    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:622:1: (lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion )
+                    	    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:623:3: lv_dmMatrixQuestion_11_0= ruleDMMatrixQuestion
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getAtomicAccess().getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0()); 
+                    	    	    
+                    	    pushFollow(FOLLOW_ruleDMMatrixQuestion_in_ruleAtomic1402);
+                    	    lv_dmMatrixQuestion_11_0=ruleDMMatrixQuestion();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getAtomicRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"dmMatrixQuestion",
+                    	            		lv_dmMatrixQuestion_11_0, 
+                    	            		"DMMatrixQuestion");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop10;
+                        }
+                    } while (true);
+
+                    otherlv_12=(Token)match(input,13,FOLLOW_13_in_ruleAtomic1416); 
+
+                        	newLeafNode(otherlv_12, grammarAccess.getAtomicAccess().getRightCurlyBracketKeyword_1_6());
+                        
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleAtomic1233); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getAtomicAccess().getQuestionKeyword_1());
-                
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:541:1: ( (otherlv_2= RULE_STRING ) )
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:542:1: (otherlv_2= RULE_STRING )
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAtomic"
+
+
+    // $ANTLR start "entryRuleDMMatrixQuestion"
+    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:651:1: entryRuleDMMatrixQuestion returns [EObject current=null] : iv_ruleDMMatrixQuestion= ruleDMMatrixQuestion EOF ;
+    public final EObject entryRuleDMMatrixQuestion() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDMMatrixQuestion = null;
+
+
+        try {
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:652:2: (iv_ruleDMMatrixQuestion= ruleDMMatrixQuestion EOF )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:653:2: iv_ruleDMMatrixQuestion= ruleDMMatrixQuestion EOF
             {
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:542:1: (otherlv_2= RULE_STRING )
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:543:3: otherlv_2= RULE_STRING
+             newCompositeNode(grammarAccess.getDMMatrixQuestionRule()); 
+            pushFollow(FOLLOW_ruleDMMatrixQuestion_in_entryRuleDMMatrixQuestion1453);
+            iv_ruleDMMatrixQuestion=ruleDMMatrixQuestion();
+
+            state._fsp--;
+
+             current =iv_ruleDMMatrixQuestion; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDMMatrixQuestion1463); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDMMatrixQuestion"
+
+
+    // $ANTLR start "ruleDMMatrixQuestion"
+    // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:660:1: ruleDMMatrixQuestion returns [EObject current=null] : (otherlv_0= 'Matrix Question:' ( (otherlv_1= RULE_STRING ) ) otherlv_2= 'Matrix Scale:' ( (otherlv_3= RULE_STRING ) ) ) ;
+    public final EObject ruleDMMatrixQuestion() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+
+         enterRule(); 
+            
+        try {
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:663:28: ( (otherlv_0= 'Matrix Question:' ( (otherlv_1= RULE_STRING ) ) otherlv_2= 'Matrix Scale:' ( (otherlv_3= RULE_STRING ) ) ) )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:664:1: (otherlv_0= 'Matrix Question:' ( (otherlv_1= RULE_STRING ) ) otherlv_2= 'Matrix Scale:' ( (otherlv_3= RULE_STRING ) ) )
+            {
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:664:1: (otherlv_0= 'Matrix Question:' ( (otherlv_1= RULE_STRING ) ) otherlv_2= 'Matrix Scale:' ( (otherlv_3= RULE_STRING ) ) )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:664:3: otherlv_0= 'Matrix Question:' ( (otherlv_1= RULE_STRING ) ) otherlv_2= 'Matrix Scale:' ( (otherlv_3= RULE_STRING ) )
+            {
+            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleDMMatrixQuestion1500); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionKeyword_0());
+                
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:668:1: ( (otherlv_1= RULE_STRING ) )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:669:1: (otherlv_1= RULE_STRING )
+            {
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:669:1: (otherlv_1= RULE_STRING )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:670:3: otherlv_1= RULE_STRING
             {
 
             			if (current==null) {
-            	            current = createModelElement(grammarAccess.getAtomicRule());
+            	            current = createModelElement(grammarAccess.getDMMatrixQuestionRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomic1253); 
+            otherlv_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDMMatrixQuestion1520); 
 
-            		newLeafNode(otherlv_2, grammarAccess.getAtomicAccess().getQuestionQuestionCrossReference_2_0()); 
+            		newLeafNode(otherlv_1, grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionMatrixQuestionCrossReference_1_0()); 
             	
 
             }
@@ -1419,24 +1729,24 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleAtomic1265); 
+            otherlv_2=(Token)match(input,27,FOLLOW_27_in_ruleDMMatrixQuestion1532); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getAtomicAccess().getAnswerKeyword_3());
+                	newLeafNode(otherlv_2, grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleKeyword_2());
                 
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:558:1: ( (otherlv_4= RULE_STRING ) )
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:559:1: (otherlv_4= RULE_STRING )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:685:1: ( (otherlv_3= RULE_STRING ) )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:686:1: (otherlv_3= RULE_STRING )
             {
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:559:1: (otherlv_4= RULE_STRING )
-            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:560:3: otherlv_4= RULE_STRING
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:686:1: (otherlv_3= RULE_STRING )
+            // ../de.nordakademie.mwi13a.team1.dependency/src-gen/de/nordakademie/mwi13a/team1/dependency/parser/antlr/internal/InternalDependency.g:687:3: otherlv_3= RULE_STRING
             {
 
             			if (current==null) {
-            	            current = createModelElement(grammarAccess.getAtomicRule());
+            	            current = createModelElement(grammarAccess.getDMMatrixQuestionRule());
             	        }
                     
-            otherlv_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomic1285); 
+            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDMMatrixQuestion1552); 
 
-            		newLeafNode(otherlv_4, grammarAccess.getAtomicAccess().getAnswerAnswerCrossReference_4_0()); 
+            		newLeafNode(otherlv_3, grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleCrossReference_3_0()); 
             	
 
             }
@@ -1461,7 +1771,7 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleAtomic"
+    // $ANTLR end "ruleDMMatrixQuestion"
 
     // Delegated rules
 
@@ -1492,8 +1802,8 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_17_in_ruleDMNextParts551 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleDMNextParts571 = new BitSet(new long[]{0x0000000000040002L});
     public static final BitSet FOLLOW_18_in_ruleDMNextParts584 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleDMNextParts596 = new BitSet(new long[]{0x0000000000500000L});
-    public static final BitSet FOLLOW_ruleDependency_in_ruleDMNextParts617 = new BitSet(new long[]{0x0000000000502000L});
+    public static final BitSet FOLLOW_12_in_ruleDMNextParts596 = new BitSet(new long[]{0x0000000001500000L});
+    public static final BitSet FOLLOW_ruleDependency_in_ruleDMNextParts617 = new BitSet(new long[]{0x0000000001502000L});
     public static final BitSet FOLLOW_13_in_ruleDMNextParts630 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDependency_in_entryRuleDependency668 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDependency678 = new BitSet(new long[]{0x0000000000000002L});
@@ -1501,24 +1811,37 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleOr_in_entryRuleOr758 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOr768 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAnd_in_ruleOr815 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_16_in_ruleOr836 = new BitSet(new long[]{0x0000000000500000L});
+    public static final BitSet FOLLOW_16_in_ruleOr836 = new BitSet(new long[]{0x0000000001500000L});
     public static final BitSet FOLLOW_ruleAnd_in_ruleOr857 = new BitSet(new long[]{0x0000000000010002L});
     public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd895 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAnd905 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePrimary_in_ruleAnd952 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_19_in_ruleAnd973 = new BitSet(new long[]{0x0000000000500000L});
+    public static final BitSet FOLLOW_19_in_ruleAnd973 = new BitSet(new long[]{0x0000000001500000L});
     public static final BitSet FOLLOW_rulePrimary_in_ruleAnd994 = new BitSet(new long[]{0x0000000000080002L});
     public static final BitSet FOLLOW_rulePrimary_in_entryRulePrimary1032 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePrimary1042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rulePrimary1080 = new BitSet(new long[]{0x0000000000500000L});
+    public static final BitSet FOLLOW_20_in_rulePrimary1080 = new BitSet(new long[]{0x0000000001500000L});
     public static final BitSet FOLLOW_ruleDependency_in_rulePrimary1102 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_21_in_rulePrimary1113 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtomic_in_rulePrimary1142 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic1177 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAtomic1187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleAtomic1233 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomic1253 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleAtomic1265 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomic1285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleAtomic1234 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomic1254 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleAtomic1266 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomic1286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleAtomic1315 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomic1335 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleAtomic1347 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_ruleDMMatrixQuestion_in_ruleAtomic1368 = new BitSet(new long[]{0x0000000002002000L});
+    public static final BitSet FOLLOW_25_in_ruleAtomic1381 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_ruleDMMatrixQuestion_in_ruleAtomic1402 = new BitSet(new long[]{0x0000000002002000L});
+    public static final BitSet FOLLOW_13_in_ruleAtomic1416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDMMatrixQuestion_in_entryRuleDMMatrixQuestion1453 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDMMatrixQuestion1463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleDMMatrixQuestion1500 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleDMMatrixQuestion1520 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleDMMatrixQuestion1532 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleDMMatrixQuestion1552 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -269,6 +269,34 @@ public interface SurveyPackage extends EPackage
   int MATRIX_QUESTION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixScaleImpl <em>Matrix Scale</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixScaleImpl
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getMatrixScale()
+   * @generated
+   */
+  int MATRIX_SCALE = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATRIX_SCALE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Matrix Scale</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATRIX_SCALE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.AnswerImpl <em>Answer</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -276,7 +304,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getAnswer()
    * @generated
    */
-  int ANSWER = 5;
+  int ANSWER = 6;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -313,7 +341,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getSurveyTerminalTypes()
    * @generated
    */
-  int SURVEY_TERMINAL_TYPES = 6;
+  int SURVEY_TERMINAL_TYPES = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -341,7 +369,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextLine()
    * @generated
    */
-  int TEXT_LINE = 7;
+  int TEXT_LINE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -378,7 +406,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getTextBlock()
    * @generated
    */
-  int TEXT_BLOCK = 8;
+  int TEXT_BLOCK = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -415,7 +443,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getMatrix()
    * @generated
    */
-  int MATRIX = 9;
+  int MATRIX = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,7 +489,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getComboBox()
    * @generated
    */
-  int COMBO_BOX = 10;
+  int COMBO_BOX = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -498,7 +526,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getDropDown()
    * @generated
    */
-  int DROP_DOWN = 11;
+  int DROP_DOWN = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -535,7 +563,7 @@ public interface SurveyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getRadio()
    * @generated
    */
-  int RADIO = 12;
+  int RADIO = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -757,6 +785,27 @@ public interface SurveyPackage extends EPackage
    * @generated
    */
   EAttribute getMatrixQuestion_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.MatrixScale <em>Matrix Scale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Matrix Scale</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.MatrixScale
+   * @generated
+   */
+  EClass getMatrixScale();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.survey.survey.MatrixScale#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.MatrixScale#getName()
+   * @see #getMatrixScale()
+   * @generated
+   */
+  EAttribute getMatrixScale_Name();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.Answer <em>Answer</em>}'.
@@ -1124,6 +1173,24 @@ public interface SurveyPackage extends EPackage
      * @generated
      */
     EAttribute MATRIX_QUESTION__NAME = eINSTANCE.getMatrixQuestion_Name();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixScaleImpl <em>Matrix Scale</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixScaleImpl
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getMatrixScale()
+     * @generated
+     */
+    EClass MATRIX_SCALE = eINSTANCE.getMatrixScale();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATRIX_SCALE__NAME = eINSTANCE.getMatrixScale_Name();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.AnswerImpl <em>Answer</em>}' class.

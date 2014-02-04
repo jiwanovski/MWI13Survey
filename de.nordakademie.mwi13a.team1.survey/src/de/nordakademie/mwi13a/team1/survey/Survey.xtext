@@ -41,6 +41,10 @@ MatrixQuestion:
 	'Question:' name=STRING
 ;
 
+MatrixScale:
+	name=Identifier
+;
+
 Answer:
 	'Answer-ID:' id=Identifier
 	'Answer:' name=STRING	

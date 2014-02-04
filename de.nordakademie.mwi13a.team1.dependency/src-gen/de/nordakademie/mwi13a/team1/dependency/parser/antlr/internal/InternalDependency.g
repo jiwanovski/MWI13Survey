@@ -528,15 +528,15 @@ ruleAtomic returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getAtomicAccess().getDMQuestionAction_0(),
+            grammarAccess.getAtomicAccess().getDMQuestionAction_0_0(),
             $current);
     }
 )	otherlv_1='Question:' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getAtomicAccess().getQuestionKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getAtomicAccess().getQuestionKeyword_0_1());
     }
 (
 (
@@ -547,13 +547,13 @@ ruleAtomic returns [EObject current=null]
         }
 	otherlv_2=RULE_STRING
 	{
-		newLeafNode(otherlv_2, grammarAccess.getAtomicAccess().getQuestionQuestionCrossReference_2_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getAtomicAccess().getQuestionQuestionCrossReference_0_2_0()); 
 	}
 
 )
 )	otherlv_3='Answer:' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getAtomicAccess().getAnswerKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getAtomicAccess().getAnswerKeyword_0_3());
     }
 (
 (
@@ -564,12 +564,141 @@ ruleAtomic returns [EObject current=null]
         }
 	otherlv_4=RULE_STRING
 	{
-		newLeafNode(otherlv_4, grammarAccess.getAtomicAccess().getAnswerAnswerCrossReference_4_0()); 
+		newLeafNode(otherlv_4, grammarAccess.getAtomicAccess().getAnswerAnswerCrossReference_0_4_0()); 
+	}
+
+)
+))
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getAtomicAccess().getDMMatrixAction_1_0(),
+            $current);
+    }
+)	otherlv_6='Matrix:' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getAtomicAccess().getMatrixKeyword_1_1());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAtomicRule());
+	        }
+        }
+	otherlv_7=RULE_STRING
+	{
+		newLeafNode(otherlv_7, grammarAccess.getAtomicAccess().getMatrixQuestionCrossReference_1_2_0()); 
+	}
+
+)
+)	otherlv_8='{' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getAtomicAccess().getLeftCurlyBracketKeyword_1_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAtomicAccess().getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0()); 
+	    }
+		lv_dmMatrixQuestion_9_0=ruleDMMatrixQuestion		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAtomicRule());
+	        }
+       		add(
+       			$current, 
+       			"dmMatrixQuestion",
+        		lv_dmMatrixQuestion_9_0, 
+        		"DMMatrixQuestion");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_10='|' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getAtomicAccess().getVerticalLineKeyword_1_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAtomicAccess().getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0()); 
+	    }
+		lv_dmMatrixQuestion_11_0=ruleDMMatrixQuestion		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAtomicRule());
+	        }
+       		add(
+       			$current, 
+       			"dmMatrixQuestion",
+        		lv_dmMatrixQuestion_11_0, 
+        		"DMMatrixQuestion");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_12='}' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getAtomicAccess().getRightCurlyBracketKeyword_1_6());
+    }
+))
+;
+
+
+
+
+
+// Entry rule entryRuleDMMatrixQuestion
+entryRuleDMMatrixQuestion returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDMMatrixQuestionRule()); }
+	 iv_ruleDMMatrixQuestion=ruleDMMatrixQuestion 
+	 { $current=$iv_ruleDMMatrixQuestion.current; } 
+	 EOF 
+;
+
+// Rule DMMatrixQuestion
+ruleDMMatrixQuestion returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='Matrix Question:' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionKeyword_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDMMatrixQuestionRule());
+	        }
+        }
+	otherlv_1=RULE_STRING
+	{
+		newLeafNode(otherlv_1, grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionMatrixQuestionCrossReference_1_0()); 
+	}
+
+)
+)	otherlv_2='Matrix Scale:' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleKeyword_2());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDMMatrixQuestionRule());
+	        }
+        }
+	otherlv_3=RULE_STRING
+	{
+		newLeafNode(otherlv_3, grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleCrossReference_3_0()); 
 	}
 
 )
 ))
 ;
+
+
 
 
 

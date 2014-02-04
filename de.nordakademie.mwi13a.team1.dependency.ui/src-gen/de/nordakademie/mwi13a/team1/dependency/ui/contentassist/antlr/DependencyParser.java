@@ -38,6 +38,8 @@ public class DependencyParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
+					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
+					put(grammarAccess.getIdentifierAccess().getAlternatives(), "rule__Identifier__Alternatives");
 					put(grammarAccess.getSurveyElementsAccess().getGroup(), "rule__SurveyElements__Group__0");
 					put(grammarAccess.getPartElementsAccess().getGroup(), "rule__PartElements__Group__0");
 					put(grammarAccess.getPartElementsAccess().getGroup_2(), "rule__PartElements__Group_2__0");
@@ -50,7 +52,10 @@ public class DependencyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAndAccess().getGroup(), "rule__And__Group__0");
 					put(grammarAccess.getAndAccess().getGroup_1(), "rule__And__Group_1__0");
 					put(grammarAccess.getPrimaryAccess().getGroup_0(), "rule__Primary__Group_0__0");
-					put(grammarAccess.getAtomicAccess().getGroup(), "rule__Atomic__Group__0");
+					put(grammarAccess.getAtomicAccess().getGroup_0(), "rule__Atomic__Group_0__0");
+					put(grammarAccess.getAtomicAccess().getGroup_1(), "rule__Atomic__Group_1__0");
+					put(grammarAccess.getAtomicAccess().getGroup_1_5(), "rule__Atomic__Group_1_5__0");
+					put(grammarAccess.getDMMatrixQuestionAccess().getGroup(), "rule__DMMatrixQuestion__Group__0");
 					put(grammarAccess.getDependencyModelAccess().getElementsAssignment(), "rule__DependencyModel__ElementsAssignment");
 					put(grammarAccess.getSurveyElementsAccess().getNameAssignment_1(), "rule__SurveyElements__NameAssignment_1");
 					put(grammarAccess.getSurveyElementsAccess().getPartElementsAssignment_3(), "rule__SurveyElements__PartElementsAssignment_3");
@@ -61,8 +66,13 @@ public class DependencyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDMNextPartsAccess().getExpressionsAssignment_2_2(), "rule__DMNextParts__ExpressionsAssignment_2_2");
 					put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");
 					put(grammarAccess.getAndAccess().getRightAssignment_1_2(), "rule__And__RightAssignment_1_2");
-					put(grammarAccess.getAtomicAccess().getQuestionAssignment_2(), "rule__Atomic__QuestionAssignment_2");
-					put(grammarAccess.getAtomicAccess().getAnswerAssignment_4(), "rule__Atomic__AnswerAssignment_4");
+					put(grammarAccess.getAtomicAccess().getQuestionAssignment_0_2(), "rule__Atomic__QuestionAssignment_0_2");
+					put(grammarAccess.getAtomicAccess().getAnswerAssignment_0_4(), "rule__Atomic__AnswerAssignment_0_4");
+					put(grammarAccess.getAtomicAccess().getMatrixAssignment_1_2(), "rule__Atomic__MatrixAssignment_1_2");
+					put(grammarAccess.getAtomicAccess().getDmMatrixQuestionAssignment_1_4(), "rule__Atomic__DmMatrixQuestionAssignment_1_4");
+					put(grammarAccess.getAtomicAccess().getDmMatrixQuestionAssignment_1_5_1(), "rule__Atomic__DmMatrixQuestionAssignment_1_5_1");
+					put(grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionAssignment_1(), "rule__DMMatrixQuestion__MatrixQuestionAssignment_1");
+					put(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAssignment_3(), "rule__DMMatrixQuestion__MatrixScaleAssignment_3");
 				}
 			};
 		}

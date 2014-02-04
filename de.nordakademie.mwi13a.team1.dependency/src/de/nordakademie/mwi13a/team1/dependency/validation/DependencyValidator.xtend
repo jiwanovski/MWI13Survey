@@ -3,6 +3,18 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.validation
 
+import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
+import static extension org.eclipse.xtext.EcoreUtil2.*
+
+import org.eclipse.xtext.validation.Check
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts
+import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
+import de.nordakademie.mwi13a.team1.survey.survey.Part
+import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage
+import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
+import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
+import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
 //import org.eclipse.xtext.validation.Check
 
 /**
@@ -11,7 +23,28 @@ package de.nordakademie.mwi13a.team1.dependency.validation
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class DependencyValidator extends AbstractDependencyValidator {
-
+		
+	@Check
+	def checkNextPart(DMNextParts nextPart) {
+		val previousPart = (nextPart.eContainer as PartElements).name
+		val destinationPart = (nextPart.name as Part)
+		if (previousPart.equals(destinationPart)) {
+			error("Ein Abschnitt darf nicht auf sich selbst verweisen!",
+				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
+			)
+		}
+	}
+	
+	@Check
+	def checkPartMembership(PartElements partElement) {
+		val survey = (partElement.eContainer as SurveyElements).name
+		val part = (partElement.name as Part)
+		if (!survey.equals(part.eContainer)) {
+			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
+				DependencyPackage.Literals.PART_ELEMENTS__NAME
+			)
+		}
+	}
 	//@Check
 	//def checkPartSurvey(SDPart part) {
 	//	val surveyName = (part.eContainer as SurveyDependency).survey.name

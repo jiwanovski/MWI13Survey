@@ -44,6 +44,40 @@ Primary returns Dependency:
 	Atomic 
 ;
 
+//Atomic returns Dependeny:
+//	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING]
+//		answer=[DMAnswer]
+//;
+
+//DMAnswer:
+//	NormalQuestion | MatrixQuestion
+//;
+
+//NormalQuestion:
+//	'Answer:' answer=[surveyImp::Answer|STRING]
+//;
+
+//MatrixQuestion:
+//	'{'
+//		dmMatrixQuestion+=DMMatrixQuestion ('|' 
+//		dmMatrixQuestion+=DMMatrixQuestion)*
+//	'}'
+//;
+
 Atomic returns Dependency:
-	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING] 'Answer:' answer=[surveyImp::Answer|STRING] 
+	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING] 
+		'Answer:' answer=[surveyImp::Answer|STRING] |
+	{DMMatrix} 'Matrix:' matrix=[surveyImp::Question|STRING] '{'
+			dmMatrixQuestion+=DMMatrixQuestion ('|' 
+			dmMatrixQuestion+=DMMatrixQuestion)*
+		'}'
+;
+
+DMMatrixQuestion:
+	'Matrix Question:' matrixQuestion=[surveyImp::MatrixQuestion|STRING]
+	'Matrix Scale:' matrixScale=[surveyImp::MatrixScale|STRING]
+;
+
+Identifier:
+	ID | STRING | INT
 ;

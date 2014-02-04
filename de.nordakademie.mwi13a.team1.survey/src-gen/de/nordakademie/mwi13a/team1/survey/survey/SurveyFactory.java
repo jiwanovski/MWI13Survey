@@ -68,6 +68,15 @@ public interface SurveyFactory extends EFactory
   MatrixQuestion createMatrixQuestion();
 
   /**
+   * Returns a new object of class '<em>Matrix Scale</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Matrix Scale</em>'.
+   * @generated
+   */
+  MatrixScale createMatrixScale();
+
+  /**
    * Returns a new object of class '<em>Answer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
