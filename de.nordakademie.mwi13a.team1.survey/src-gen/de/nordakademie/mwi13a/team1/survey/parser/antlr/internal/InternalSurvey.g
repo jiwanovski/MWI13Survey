@@ -667,27 +667,47 @@ ruleSurveyTerminalTypes returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getSurveyTerminalTypesAccess().getLeftParenthesisKeyword_2_4());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_2_5_0()); 
+	    }
+		lv_answer_15_0=ruleAnswer		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSurveyTerminalTypesRule());
+	        }
+       		add(
+       			$current, 
+       			"answer",
+        		lv_answer_15_0, 
+        		"Answer");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    { 
-        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_5()); 
-    }
-ruleIdentifier
-    { 
-        afterParserOrEnumRuleCall();
-    }
-(	otherlv_16='|' 
+)
+)(	otherlv_16='|' 
     {
     	newLeafNode(otherlv_16, grammarAccess.getSurveyTerminalTypesAccess().getVerticalLineKeyword_2_6_0());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_2_6_1_0()); 
+	    }
+		lv_answer_17_0=ruleAnswer		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSurveyTerminalTypesRule());
+	        }
+       		add(
+       			$current, 
+       			"answer",
+        		lv_answer_17_0, 
+        		"Answer");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    { 
-        newCompositeNode(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_6_1()); 
-    }
-ruleIdentifier
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)*	otherlv_18=')' 
+)
+))*	otherlv_18=')' 
     {
     	newLeafNode(otherlv_18, grammarAccess.getSurveyTerminalTypesAccess().getRightParenthesisKeyword_2_7());
     }

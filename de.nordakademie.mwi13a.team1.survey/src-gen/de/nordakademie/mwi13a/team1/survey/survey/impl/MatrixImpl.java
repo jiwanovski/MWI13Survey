@@ -2,6 +2,7 @@
  */
 package de.nordakademie.mwi13a.team1.survey.survey.impl;
 
+import de.nordakademie.mwi13a.team1.survey.survey.Answer;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl#getAnswer <em>Answer</em>}</li>
  *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.MatrixImpl#getMatrixQuestion <em>Matrix Question</em>}</li>
  * </ul>
  * </p>
@@ -33,6 +35,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
 {
+  /**
+   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnswer()
+   * @generated
+   * @ordered
+   */
+  protected EList<Answer> answer;
+
   /**
    * The cached value of the '{@link #getMatrixQuestion() <em>Matrix Question</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -69,6 +81,20 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Answer> getAnswer()
+  {
+    if (answer == null)
+    {
+      answer = new EObjectContainmentEList<Answer>(Answer.class, this, SurveyPackage.MATRIX__ANSWER);
+    }
+    return answer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<MatrixQuestion> getMatrixQuestion()
   {
     if (matrixQuestion == null)
@@ -88,6 +114,8 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__ANSWER:
+        return ((InternalEList<?>)getAnswer()).basicRemove(otherEnd, msgs);
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         return ((InternalEList<?>)getMatrixQuestion()).basicRemove(otherEnd, msgs);
     }
@@ -104,6 +132,8 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__ANSWER:
+        return getAnswer();
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         return getMatrixQuestion();
     }
@@ -121,6 +151,10 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__ANSWER:
+        getAnswer().clear();
+        getAnswer().addAll((Collection<? extends Answer>)newValue);
+        return;
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         getMatrixQuestion().clear();
         getMatrixQuestion().addAll((Collection<? extends MatrixQuestion>)newValue);
@@ -139,6 +173,9 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__ANSWER:
+        getAnswer().clear();
+        return;
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         getMatrixQuestion().clear();
         return;
@@ -156,6 +193,8 @@ public class MatrixImpl extends SurveyTerminalTypesImpl implements Matrix
   {
     switch (featureID)
     {
+      case SurveyPackage.MATRIX__ANSWER:
+        return answer != null && !answer.isEmpty();
       case SurveyPackage.MATRIX__MATRIX_QUESTION:
         return matrixQuestion != null && !matrixQuestion.isEmpty();
     }

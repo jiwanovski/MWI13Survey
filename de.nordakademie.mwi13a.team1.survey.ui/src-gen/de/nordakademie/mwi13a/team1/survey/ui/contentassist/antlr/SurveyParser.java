@@ -72,6 +72,8 @@ public class SurveyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_1_1(), "rule__SurveyTerminalTypes__NameAssignment_1_1");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getLengthAssignment_1_3(), "rule__SurveyTerminalTypes__LengthAssignment_1_3");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_2_1(), "rule__SurveyTerminalTypes__NameAssignment_2_1");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_2_5(), "rule__SurveyTerminalTypes__AnswerAssignment_2_5");
+					put(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_2_6_1(), "rule__SurveyTerminalTypes__AnswerAssignment_2_6_1");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionAssignment_2_10(), "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionAssignment_2_11_1(), "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1");
 					put(grammarAccess.getSurveyTerminalTypesAccess().getNameAssignment_3_1(), "rule__SurveyTerminalTypes__NameAssignment_3_1");

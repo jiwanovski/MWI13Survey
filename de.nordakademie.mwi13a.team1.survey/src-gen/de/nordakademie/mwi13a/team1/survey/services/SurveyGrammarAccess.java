@@ -307,10 +307,12 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		private final Keyword cScaleKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		private final Keyword cLeftParenthesisKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
-		private final RuleCall cIdentifierParserRuleCall_2_5 = (RuleCall)cGroup_2.eContents().get(5);
+		private final Assignment cAnswerAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
+		private final RuleCall cAnswerAnswerParserRuleCall_2_5_0 = (RuleCall)cAnswerAssignment_2_5.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
 		private final Keyword cVerticalLineKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cIdentifierParserRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
+		private final Assignment cAnswerAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cAnswerAnswerParserRuleCall_2_6_1_0 = (RuleCall)cAnswerAssignment_2_6_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		private final Keyword cQuestionsKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
 		private final Keyword cLeftParenthesisKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
@@ -349,13 +351,14 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//SurveyTerminalTypes:
 		//	{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix}
-		//	name="Matrix" "{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
-		//	matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{" answer+=Answer+ "}" | {DropDown}
-		//	name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+ "}";
+		//	name="Matrix" "{" "Scale:" "(" answer+=Answer ("|" answer+=Answer)* ")" "Questions:" "("
+		//	matrixQuestion+=MatrixQuestion ("|" matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{"
+		//	answer+=Answer+ "}" | {DropDown} name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+
+		//	"}";
 		public ParserRule getRule() { return rule; }
 
 		//{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix} name="Matrix"
-		//"{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
+		//"{" "Scale:" "(" answer+=Answer ("|" answer+=Answer)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
 		//matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{" answer+=Answer+ "}" | {DropDown}
 		//name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+ "}"
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -408,8 +411,8 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_1_4() { return cRightParenthesisKeyword_1_4; }
 
-		//{Matrix} name="Matrix" "{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion
-		//("|" matrixQuestion+=MatrixQuestion)* ")" "}"
+		//{Matrix} name="Matrix" "{" "Scale:" "(" answer+=Answer ("|" answer+=Answer)* ")" "Questions:" "("
+		//matrixQuestion+=MatrixQuestion ("|" matrixQuestion+=MatrixQuestion)* ")" "}"
 		public Group getGroup_2() { return cGroup_2; }
 
 		//{Matrix}
@@ -430,17 +433,23 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_2_4() { return cLeftParenthesisKeyword_2_4; }
 
-		//Identifier
-		public RuleCall getIdentifierParserRuleCall_2_5() { return cIdentifierParserRuleCall_2_5; }
+		//answer+=Answer
+		public Assignment getAnswerAssignment_2_5() { return cAnswerAssignment_2_5; }
 
-		//("|" Identifier)*
+		//Answer
+		public RuleCall getAnswerAnswerParserRuleCall_2_5_0() { return cAnswerAnswerParserRuleCall_2_5_0; }
+
+		//("|" answer+=Answer)*
 		public Group getGroup_2_6() { return cGroup_2_6; }
 
 		//"|"
 		public Keyword getVerticalLineKeyword_2_6_0() { return cVerticalLineKeyword_2_6_0; }
 
-		//Identifier
-		public RuleCall getIdentifierParserRuleCall_2_6_1() { return cIdentifierParserRuleCall_2_6_1; }
+		//answer+=Answer
+		public Assignment getAnswerAssignment_2_6_1() { return cAnswerAssignment_2_6_1; }
+
+		//Answer
+		public RuleCall getAnswerAnswerParserRuleCall_2_6_1_0() { return cAnswerAnswerParserRuleCall_2_6_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_2_7() { return cRightParenthesisKeyword_2_7; }
@@ -685,9 +694,10 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 
 	//SurveyTerminalTypes:
 	//	{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix}
-	//	name="Matrix" "{" "Scale:" "(" Identifier ("|" Identifier)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
-	//	matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{" answer+=Answer+ "}" | {DropDown}
-	//	name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+ "}";
+	//	name="Matrix" "{" "Scale:" "(" answer+=Answer ("|" answer+=Answer)* ")" "Questions:" "("
+	//	matrixQuestion+=MatrixQuestion ("|" matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{"
+	//	answer+=Answer+ "}" | {DropDown} name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+
+	//	"}";
 	public SurveyTerminalTypesElements getSurveyTerminalTypesAccess() {
 		return (pSurveyTerminalTypes != null) ? pSurveyTerminalTypes : (pSurveyTerminalTypes = new SurveyTerminalTypesElements());
 	}

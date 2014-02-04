@@ -197,7 +197,7 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name='Matrix' matrixQuestion+=MatrixQuestion matrixQuestion+=MatrixQuestion*)
+	 *     (name='Matrix' answer+=Answer answer+=Answer* matrixQuestion+=MatrixQuestion matrixQuestion+=MatrixQuestion*)
 	 */
 	protected void sequence_SurveyTerminalTypes(EObject context, Matrix semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -44,6 +44,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//TextBlock/length"/>
     </genClasses>
     <genClasses ecoreClass="Survey.ecore#//Matrix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Matrix/answer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Matrix/matrixQuestion"/>
     </genClasses>
     <genClasses ecoreClass="Survey.ecore#//ComboBox">

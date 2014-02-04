@@ -6,6 +6,16 @@ package de.nordakademie.mwi13a.team1.survey.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import de.nordakademie.mwi13a.team1.survey.survey.Survey
+import de.nordakademie.mwi13a.team1.survey.survey.Part
+import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
+import de.nordakademie.mwi13a.team1.survey.survey.Question
+import de.nordakademie.mwi13a.team1.survey.survey.TextBlock
+import de.nordakademie.mwi13a.team1.survey.survey.TextLine
+import de.nordakademie.mwi13a.team1.survey.survey.ComboBox
+import de.nordakademie.mwi13a.team1.survey.survey.DropDown
+import de.nordakademie.mwi13a.team1.survey.survey.Radio
+import de.nordakademie.mwi13a.team1.survey.survey.Matrix
 
 /**
  * Generates code from your model files on save.
@@ -15,10 +25,185 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 class SurveyGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+			val survey = resource.contents.head as Survey
+		if (survey !=null) {
+		fsa.generateFile("../WebContent/"+ "index.jsp", toOverview( survey))
+			for (questionnaire : survey.questionnaire){
+				for (part : questionnaire.part){
+					val fileName = part.name
+					fsa.generateFile("../WebContent/"+ fileName + ".jsp", toJSP( questionnaire , part))
+				}	
+				
+			}
+		}
+
 	}
+	
+def toOverview(Survey survey) ''' 
+		<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1"%>
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+			<head>
+				  <title>«survey.toString»</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<link rel="stylesheet" type="text/css" href="css/default.css" />
+			</head>
+			<body>    
+				<form>
+				<div>
+					<h1>«survey.toString»</h1>
+					<fieldset class="part">
+					<legend>Your Questionnairies</legend>
+					<p>
+						«FOR questionnaire : survey.questionnaire»
+							«IF !questionnaire.name.empty»
+								«val partname = questionnaire.part.head»
+								<p> 
+								<a href="«partname.name».jsp">«questionnaire.name»</a><br>
+							«ENDIF»
+						«ENDFOR»
+					</p>
+					</fieldset>
+					</div>
+				</form>
+			</body>
+		</html>
+	'''
+
+	def toJSP(Questionnaire questionnaire, Part part) ''' 
+		<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1"%>
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+			<head>
+				  <title>«questionnaire.name»</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<link rel="stylesheet" type="text/css" href="css/default.css" />
+			</head>
+			<body>    
+				<form action="«part.name».jsp" method="post">
+				<div>
+					<h1>«questionnaire.name»</h1>
+					<fieldset class="part">
+					<legend>«part.name»</legend>
+					<p>
+						«FOR question : part.question»
+							«IF !question.name.empty»
+								«val questiontype = question.questionType»
+								«questiongenerate(questiontype, question)»
+							«ENDIF»
+						«ENDFOR»
+					</p>
+					</fieldset>
+					<p>
+					<fieldset class="buttons">
+						<input class="button" type="reset" value=" Cancel">
+						<input class="button" type="submit" value=" Next &raquo;">
+					</fieldset>
+					</p>
+					</div>
+				</form>
+			</body>
+		</html>
+	'''
+			
+// def dispatch questiongenerate(TextBlock questiontype, Question question) ''' 
+//		«switch question.questionType.name {
+//			case 'TextLine': textline(question)
+//			default: "this is default"
+//		}»
+//			«questiontype.length»
+//		
+//	''' 
+ 
+def dispatch  questiongenerate(TextLine questiontype , Question question)''' 
+								<p>
+								<label class="lblQuestion">«question.name»
+								</label>
+								</p><p>
+								<input name= "«question.id»" class="textLine" type="text" maxlength="«questiontype.length»"/>
+								</p>
+
+ '''
+ 
+ def dispatch  questiongenerate(TextBlock questiontype , Question question)''' 
+								<p>
+								<label class="lblQuestion">«question.name»
+								</label>
+								</p><p>
+								<textarea name="«question.id»" maxlength="«questiontype.length»" rows="10" cols="50"></textarea>
+								</p>
+
+ '''
+ def dispatch  questiongenerate(ComboBox questiontype , Question question)''' 
+								<p>
+								<label class="lblQuestion">«question.name»
+								</label>
+								</p><p>
+								«FOR answer: questiontype.answer»
+									<input type="checkbox" name="«question.id»" value="«answer.id»"> «answer.name»<br>
+								«ENDFOR»
+								</p>
+
+ '''
+ 
+  def dispatch  questiongenerate(DropDown questiontype , Question question)''' 
+								<p>
+								<label class="lblQuestion">«question.name»
+								</label>
+								</p><p>
+								<select name"«question.id» class="«question.id»">
+								«FOR answer: questiontype.answer»
+									<option value="«answer.id»">«answer.name»
+									</option>
+								«ENDFOR»
+								</select>
+								</p>
+
+ '''
+ 
+  def dispatch  questiongenerate(Radio questiontype , Question question)''' 
+								<p>
+								<label class="lblQuestion">«question.name»
+								</label>
+								</p><p>
+								«FOR answer: questiontype.answer»
+									<p>
+									<input type="radio" name="«question.id»" value="«answer.id»"/>«answer.name»
+									</p>
+								«ENDFOR»
+								</p>
+
+ '''
+   def dispatch  questiongenerate(Matrix questiontype , Question question)''' 
+								<p>
+								<label class="lblQuestion">«question.name»
+								</label>
+								</p><p>
+									<table cellspacing="5">
+									<tr>
+									<td>&nbsp;</td>
+									«FOR answer: questiontype.answer»
+									<td>«answer.name»
+									</td>
+									«ENDFOR»
+									</tr>
+									
+									<tr>
+									«FOR matrixquestion: questiontype.matrixQuestion»
+									<tr>
+									<td> «matrixquestion.name»</td>
+											«FOR answer: questiontype.answer»
+											<td class="radio">
+											<input class="matrix" type="radio" name="«matrixquestion.id»" value="«answer.id»"/>
+											</td>
+											«ENDFOR»
+									</tr>
+									«ENDFOR»
+									</table>
+								</p>
+ '''
+ 
+ 
 }

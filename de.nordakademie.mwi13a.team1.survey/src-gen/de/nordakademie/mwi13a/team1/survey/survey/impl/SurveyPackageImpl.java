@@ -472,9 +472,19 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMatrix_MatrixQuestion()
+  public EReference getMatrix_Answer()
   {
     return (EReference)matrixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMatrix_MatrixQuestion()
+  {
+    return (EReference)matrixEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -604,6 +614,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     createEAttribute(textBlockEClass, TEXT_BLOCK__LENGTH);
 
     matrixEClass = createEClass(MATRIX);
+    createEReference(matrixEClass, MATRIX__ANSWER);
     createEReference(matrixEClass, MATRIX__MATRIX_QUESTION);
 
     comboBoxEClass = createEClass(COMBO_BOX);
@@ -690,6 +701,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     initEAttribute(getTextBlock_Length(), ecorePackage.getEInt(), "length", null, 0, 1, TextBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(matrixEClass, Matrix.class, "Matrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMatrix_Answer(), this.getAnswer(), null, "answer", null, 0, -1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMatrix_MatrixQuestion(), this.getMatrixQuestion(), null, "matrixQuestion", null, 0, -1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comboBoxEClass, ComboBox.class, "ComboBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

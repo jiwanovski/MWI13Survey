@@ -427,13 +427,22 @@ public interface SurveyPackage extends EPackage
   int MATRIX__NAME = SURVEY_TERMINAL_TYPES__NAME;
 
   /**
+   * The feature id for the '<em><b>Answer</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATRIX__ANSWER = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Matrix Question</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MATRIX__MATRIX_QUESTION = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
+  int MATRIX__MATRIX_QUESTION = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Matrix</em>' class.
@@ -442,7 +451,7 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MATRIX_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
+  int MATRIX_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl <em>Combo Box</em>}' class.
@@ -855,6 +864,17 @@ public interface SurveyPackage extends EPackage
   EClass getMatrix();
 
   /**
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getAnswer <em>Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Answer</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.Matrix#getAnswer()
+   * @see #getMatrix()
+   * @generated
+   */
+  EReference getMatrix_Answer();
+
+  /**
    * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.Matrix#getMatrixQuestion <em>Matrix Question</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1194,6 +1214,14 @@ public interface SurveyPackage extends EPackage
      * @generated
      */
     EClass MATRIX = eINSTANCE.getMatrix();
+
+    /**
+     * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MATRIX__ANSWER = eINSTANCE.getMatrix_Answer();
 
     /**
      * The meta object literal for the '<em><b>Matrix Question</b></em>' containment reference list feature.

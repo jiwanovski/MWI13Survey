@@ -4803,25 +4803,31 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__Group_2__5__Impl"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1856:1: rule__SurveyTerminalTypes__Group_2__5__Impl : ( ruleIdentifier ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1856:1: rule__SurveyTerminalTypes__Group_2__5__Impl : ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_5 ) ) ;
     public final void rule__SurveyTerminalTypes__Group_2__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1860:1: ( ( ruleIdentifier ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1861:1: ( ruleIdentifier )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1860:1: ( ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_5 ) ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1861:1: ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_5 ) )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1861:1: ( ruleIdentifier )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1862:1: ruleIdentifier
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1861:1: ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_5 ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1862:1: ( rule__SurveyTerminalTypes__AnswerAssignment_2_5 )
             {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_5()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_rule__SurveyTerminalTypes__Group_2__5__Impl3691);
-            ruleIdentifier();
+             before(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_2_5()); 
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1863:1: ( rule__SurveyTerminalTypes__AnswerAssignment_2_5 )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1863:2: rule__SurveyTerminalTypes__AnswerAssignment_2_5
+            {
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_2_5_in_rule__SurveyTerminalTypes__Group_2__5__Impl3691);
+            rule__SurveyTerminalTypes__AnswerAssignment_2_5();
 
             state._fsp--;
 
-             after(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_5()); 
+
+            }
+
+             after(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_2_5()); 
 
             }
 
@@ -4853,12 +4859,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1877:1: ( rule__SurveyTerminalTypes__Group_2__6__Impl rule__SurveyTerminalTypes__Group_2__7 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1878:2: rule__SurveyTerminalTypes__Group_2__6__Impl rule__SurveyTerminalTypes__Group_2__7
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__6__Impl_in_rule__SurveyTerminalTypes__Group_2__63720);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__6__Impl_in_rule__SurveyTerminalTypes__Group_2__63721);
             rule__SurveyTerminalTypes__Group_2__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__7_in_rule__SurveyTerminalTypes__Group_2__63723);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__7_in_rule__SurveyTerminalTypes__Group_2__63724);
             rule__SurveyTerminalTypes__Group_2__7();
 
             state._fsp--;
@@ -4910,7 +4916,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1892:2: rule__SurveyTerminalTypes__Group_2_6__0
             	    {
-            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0_in_rule__SurveyTerminalTypes__Group_2__6__Impl3750);
+            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0_in_rule__SurveyTerminalTypes__Group_2__6__Impl3751);
             	    rule__SurveyTerminalTypes__Group_2_6__0();
 
             	    state._fsp--;
@@ -4956,12 +4962,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1906:1: ( rule__SurveyTerminalTypes__Group_2__7__Impl rule__SurveyTerminalTypes__Group_2__8 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1907:2: rule__SurveyTerminalTypes__Group_2__7__Impl rule__SurveyTerminalTypes__Group_2__8
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__7__Impl_in_rule__SurveyTerminalTypes__Group_2__73781);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__7__Impl_in_rule__SurveyTerminalTypes__Group_2__73782);
             rule__SurveyTerminalTypes__Group_2__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__8_in_rule__SurveyTerminalTypes__Group_2__73784);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__8_in_rule__SurveyTerminalTypes__Group_2__73785);
             rule__SurveyTerminalTypes__Group_2__8();
 
             state._fsp--;
@@ -4998,7 +5004,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1920:1: ')'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getRightParenthesisKeyword_2_7()); 
-            match(input,23,FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__7__Impl3812); 
+            match(input,23,FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__7__Impl3813); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getRightParenthesisKeyword_2_7()); 
 
             }
@@ -5031,12 +5037,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1937:1: ( rule__SurveyTerminalTypes__Group_2__8__Impl rule__SurveyTerminalTypes__Group_2__9 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1938:2: rule__SurveyTerminalTypes__Group_2__8__Impl rule__SurveyTerminalTypes__Group_2__9
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__8__Impl_in_rule__SurveyTerminalTypes__Group_2__83843);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__8__Impl_in_rule__SurveyTerminalTypes__Group_2__83844);
             rule__SurveyTerminalTypes__Group_2__8__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__9_in_rule__SurveyTerminalTypes__Group_2__83846);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__9_in_rule__SurveyTerminalTypes__Group_2__83847);
             rule__SurveyTerminalTypes__Group_2__9();
 
             state._fsp--;
@@ -5073,7 +5079,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1951:1: 'Questions:'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getQuestionsKeyword_2_8()); 
-            match(input,25,FOLLOW_25_in_rule__SurveyTerminalTypes__Group_2__8__Impl3874); 
+            match(input,25,FOLLOW_25_in_rule__SurveyTerminalTypes__Group_2__8__Impl3875); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getQuestionsKeyword_2_8()); 
 
             }
@@ -5106,12 +5112,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1968:1: ( rule__SurveyTerminalTypes__Group_2__9__Impl rule__SurveyTerminalTypes__Group_2__10 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1969:2: rule__SurveyTerminalTypes__Group_2__9__Impl rule__SurveyTerminalTypes__Group_2__10
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__9__Impl_in_rule__SurveyTerminalTypes__Group_2__93905);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__9__Impl_in_rule__SurveyTerminalTypes__Group_2__93906);
             rule__SurveyTerminalTypes__Group_2__9__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__10_in_rule__SurveyTerminalTypes__Group_2__93908);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__10_in_rule__SurveyTerminalTypes__Group_2__93909);
             rule__SurveyTerminalTypes__Group_2__10();
 
             state._fsp--;
@@ -5148,7 +5154,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1982:1: '('
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getLeftParenthesisKeyword_2_9()); 
-            match(input,22,FOLLOW_22_in_rule__SurveyTerminalTypes__Group_2__9__Impl3936); 
+            match(input,22,FOLLOW_22_in_rule__SurveyTerminalTypes__Group_2__9__Impl3937); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getLeftParenthesisKeyword_2_9()); 
 
             }
@@ -5181,12 +5187,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:1999:1: ( rule__SurveyTerminalTypes__Group_2__10__Impl rule__SurveyTerminalTypes__Group_2__11 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2000:2: rule__SurveyTerminalTypes__Group_2__10__Impl rule__SurveyTerminalTypes__Group_2__11
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__10__Impl_in_rule__SurveyTerminalTypes__Group_2__103967);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__10__Impl_in_rule__SurveyTerminalTypes__Group_2__103968);
             rule__SurveyTerminalTypes__Group_2__10__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__11_in_rule__SurveyTerminalTypes__Group_2__103970);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__11_in_rule__SurveyTerminalTypes__Group_2__103971);
             rule__SurveyTerminalTypes__Group_2__11();
 
             state._fsp--;
@@ -5226,7 +5232,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2014:1: ( rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2014:2: rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10_in_rule__SurveyTerminalTypes__Group_2__10__Impl3997);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10_in_rule__SurveyTerminalTypes__Group_2__10__Impl3998);
             rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10();
 
             state._fsp--;
@@ -5266,12 +5272,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2028:1: ( rule__SurveyTerminalTypes__Group_2__11__Impl rule__SurveyTerminalTypes__Group_2__12 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2029:2: rule__SurveyTerminalTypes__Group_2__11__Impl rule__SurveyTerminalTypes__Group_2__12
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__11__Impl_in_rule__SurveyTerminalTypes__Group_2__114027);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__11__Impl_in_rule__SurveyTerminalTypes__Group_2__114028);
             rule__SurveyTerminalTypes__Group_2__11__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__12_in_rule__SurveyTerminalTypes__Group_2__114030);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__12_in_rule__SurveyTerminalTypes__Group_2__114031);
             rule__SurveyTerminalTypes__Group_2__12();
 
             state._fsp--;
@@ -5323,7 +5329,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2043:2: rule__SurveyTerminalTypes__Group_2_11__0
             	    {
-            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0_in_rule__SurveyTerminalTypes__Group_2__11__Impl4057);
+            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0_in_rule__SurveyTerminalTypes__Group_2__11__Impl4058);
             	    rule__SurveyTerminalTypes__Group_2_11__0();
 
             	    state._fsp--;
@@ -5369,12 +5375,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2057:1: ( rule__SurveyTerminalTypes__Group_2__12__Impl rule__SurveyTerminalTypes__Group_2__13 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2058:2: rule__SurveyTerminalTypes__Group_2__12__Impl rule__SurveyTerminalTypes__Group_2__13
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__12__Impl_in_rule__SurveyTerminalTypes__Group_2__124088);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__12__Impl_in_rule__SurveyTerminalTypes__Group_2__124089);
             rule__SurveyTerminalTypes__Group_2__12__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__13_in_rule__SurveyTerminalTypes__Group_2__124091);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__13_in_rule__SurveyTerminalTypes__Group_2__124092);
             rule__SurveyTerminalTypes__Group_2__13();
 
             state._fsp--;
@@ -5411,7 +5417,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2071:1: ')'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getRightParenthesisKeyword_2_12()); 
-            match(input,23,FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__12__Impl4119); 
+            match(input,23,FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__12__Impl4120); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getRightParenthesisKeyword_2_12()); 
 
             }
@@ -5444,7 +5450,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2088:1: ( rule__SurveyTerminalTypes__Group_2__13__Impl )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2089:2: rule__SurveyTerminalTypes__Group_2__13__Impl
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__13__Impl_in_rule__SurveyTerminalTypes__Group_2__134150);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2__13__Impl_in_rule__SurveyTerminalTypes__Group_2__134151);
             rule__SurveyTerminalTypes__Group_2__13__Impl();
 
             state._fsp--;
@@ -5481,7 +5487,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2101:1: '}'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_2_13()); 
-            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_2__13__Impl4178); 
+            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_2__13__Impl4179); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_2_13()); 
 
             }
@@ -5514,12 +5520,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2146:1: ( rule__SurveyTerminalTypes__Group_2_6__0__Impl rule__SurveyTerminalTypes__Group_2_6__1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2147:2: rule__SurveyTerminalTypes__Group_2_6__0__Impl rule__SurveyTerminalTypes__Group_2_6__1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0__Impl_in_rule__SurveyTerminalTypes__Group_2_6__04237);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0__Impl_in_rule__SurveyTerminalTypes__Group_2_6__04238);
             rule__SurveyTerminalTypes__Group_2_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1_in_rule__SurveyTerminalTypes__Group_2_6__04240);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1_in_rule__SurveyTerminalTypes__Group_2_6__04241);
             rule__SurveyTerminalTypes__Group_2_6__1();
 
             state._fsp--;
@@ -5556,7 +5562,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2160:1: '|'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getVerticalLineKeyword_2_6_0()); 
-            match(input,26,FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_6__0__Impl4268); 
+            match(input,26,FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_6__0__Impl4269); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getVerticalLineKeyword_2_6_0()); 
 
             }
@@ -5589,7 +5595,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2177:1: ( rule__SurveyTerminalTypes__Group_2_6__1__Impl )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2178:2: rule__SurveyTerminalTypes__Group_2_6__1__Impl
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1__Impl_in_rule__SurveyTerminalTypes__Group_2_6__14299);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1__Impl_in_rule__SurveyTerminalTypes__Group_2_6__14300);
             rule__SurveyTerminalTypes__Group_2_6__1__Impl();
 
             state._fsp--;
@@ -5613,25 +5619,31 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__Group_2_6__1__Impl"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2184:1: rule__SurveyTerminalTypes__Group_2_6__1__Impl : ( ruleIdentifier ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2184:1: rule__SurveyTerminalTypes__Group_2_6__1__Impl : ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_6_1 ) ) ;
     public final void rule__SurveyTerminalTypes__Group_2_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2188:1: ( ( ruleIdentifier ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2189:1: ( ruleIdentifier )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2188:1: ( ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_6_1 ) ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2189:1: ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_6_1 ) )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2189:1: ( ruleIdentifier )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2190:1: ruleIdentifier
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2189:1: ( ( rule__SurveyTerminalTypes__AnswerAssignment_2_6_1 ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2190:1: ( rule__SurveyTerminalTypes__AnswerAssignment_2_6_1 )
             {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_6_1()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_rule__SurveyTerminalTypes__Group_2_6__1__Impl4326);
-            ruleIdentifier();
+             before(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_2_6_1()); 
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2191:1: ( rule__SurveyTerminalTypes__AnswerAssignment_2_6_1 )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2191:2: rule__SurveyTerminalTypes__AnswerAssignment_2_6_1
+            {
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_2_6_1_in_rule__SurveyTerminalTypes__Group_2_6__1__Impl4327);
+            rule__SurveyTerminalTypes__AnswerAssignment_2_6_1();
 
             state._fsp--;
 
-             after(grammarAccess.getSurveyTerminalTypesAccess().getIdentifierParserRuleCall_2_6_1()); 
+
+            }
+
+             after(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAssignment_2_6_1()); 
 
             }
 
@@ -5663,12 +5675,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2209:1: ( rule__SurveyTerminalTypes__Group_2_11__0__Impl rule__SurveyTerminalTypes__Group_2_11__1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2210:2: rule__SurveyTerminalTypes__Group_2_11__0__Impl rule__SurveyTerminalTypes__Group_2_11__1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0__Impl_in_rule__SurveyTerminalTypes__Group_2_11__04359);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0__Impl_in_rule__SurveyTerminalTypes__Group_2_11__04361);
             rule__SurveyTerminalTypes__Group_2_11__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1_in_rule__SurveyTerminalTypes__Group_2_11__04362);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1_in_rule__SurveyTerminalTypes__Group_2_11__04364);
             rule__SurveyTerminalTypes__Group_2_11__1();
 
             state._fsp--;
@@ -5705,7 +5717,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2223:1: '|'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getVerticalLineKeyword_2_11_0()); 
-            match(input,26,FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_11__0__Impl4390); 
+            match(input,26,FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_11__0__Impl4392); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getVerticalLineKeyword_2_11_0()); 
 
             }
@@ -5738,7 +5750,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2240:1: ( rule__SurveyTerminalTypes__Group_2_11__1__Impl )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2241:2: rule__SurveyTerminalTypes__Group_2_11__1__Impl
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1__Impl_in_rule__SurveyTerminalTypes__Group_2_11__14421);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1__Impl_in_rule__SurveyTerminalTypes__Group_2_11__14423);
             rule__SurveyTerminalTypes__Group_2_11__1__Impl();
 
             state._fsp--;
@@ -5778,7 +5790,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2254:1: ( rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2254:2: rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1_in_rule__SurveyTerminalTypes__Group_2_11__1__Impl4448);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1_in_rule__SurveyTerminalTypes__Group_2_11__1__Impl4450);
             rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1();
 
             state._fsp--;
@@ -5818,12 +5830,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2272:1: ( rule__SurveyTerminalTypes__Group_3__0__Impl rule__SurveyTerminalTypes__Group_3__1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2273:2: rule__SurveyTerminalTypes__Group_3__0__Impl rule__SurveyTerminalTypes__Group_3__1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__0__Impl_in_rule__SurveyTerminalTypes__Group_3__04482);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__0__Impl_in_rule__SurveyTerminalTypes__Group_3__04484);
             rule__SurveyTerminalTypes__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__1_in_rule__SurveyTerminalTypes__Group_3__04485);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__1_in_rule__SurveyTerminalTypes__Group_3__04487);
             rule__SurveyTerminalTypes__Group_3__1();
 
             state._fsp--;
@@ -5893,12 +5905,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2303:1: ( rule__SurveyTerminalTypes__Group_3__1__Impl rule__SurveyTerminalTypes__Group_3__2 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2304:2: rule__SurveyTerminalTypes__Group_3__1__Impl rule__SurveyTerminalTypes__Group_3__2
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__1__Impl_in_rule__SurveyTerminalTypes__Group_3__14543);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__1__Impl_in_rule__SurveyTerminalTypes__Group_3__14545);
             rule__SurveyTerminalTypes__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__2_in_rule__SurveyTerminalTypes__Group_3__14546);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__2_in_rule__SurveyTerminalTypes__Group_3__14548);
             rule__SurveyTerminalTypes__Group_3__2();
 
             state._fsp--;
@@ -5938,7 +5950,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2318:1: ( rule__SurveyTerminalTypes__NameAssignment_3_1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2318:2: rule__SurveyTerminalTypes__NameAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__NameAssignment_3_1_in_rule__SurveyTerminalTypes__Group_3__1__Impl4573);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__NameAssignment_3_1_in_rule__SurveyTerminalTypes__Group_3__1__Impl4575);
             rule__SurveyTerminalTypes__NameAssignment_3_1();
 
             state._fsp--;
@@ -5978,12 +5990,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2332:1: ( rule__SurveyTerminalTypes__Group_3__2__Impl rule__SurveyTerminalTypes__Group_3__3 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2333:2: rule__SurveyTerminalTypes__Group_3__2__Impl rule__SurveyTerminalTypes__Group_3__3
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__2__Impl_in_rule__SurveyTerminalTypes__Group_3__24603);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__2__Impl_in_rule__SurveyTerminalTypes__Group_3__24605);
             rule__SurveyTerminalTypes__Group_3__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__3_in_rule__SurveyTerminalTypes__Group_3__24606);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__3_in_rule__SurveyTerminalTypes__Group_3__24608);
             rule__SurveyTerminalTypes__Group_3__3();
 
             state._fsp--;
@@ -6020,7 +6032,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2346:1: '{'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getLeftCurlyBracketKeyword_3_2()); 
-            match(input,12,FOLLOW_12_in_rule__SurveyTerminalTypes__Group_3__2__Impl4634); 
+            match(input,12,FOLLOW_12_in_rule__SurveyTerminalTypes__Group_3__2__Impl4636); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getLeftCurlyBracketKeyword_3_2()); 
 
             }
@@ -6053,12 +6065,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2363:1: ( rule__SurveyTerminalTypes__Group_3__3__Impl rule__SurveyTerminalTypes__Group_3__4 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2364:2: rule__SurveyTerminalTypes__Group_3__3__Impl rule__SurveyTerminalTypes__Group_3__4
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__3__Impl_in_rule__SurveyTerminalTypes__Group_3__34665);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__3__Impl_in_rule__SurveyTerminalTypes__Group_3__34667);
             rule__SurveyTerminalTypes__Group_3__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__4_in_rule__SurveyTerminalTypes__Group_3__34668);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__4_in_rule__SurveyTerminalTypes__Group_3__34670);
             rule__SurveyTerminalTypes__Group_3__4();
 
             state._fsp--;
@@ -6101,7 +6113,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2379:1: ( rule__SurveyTerminalTypes__AnswerAssignment_3_3 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2379:2: rule__SurveyTerminalTypes__AnswerAssignment_3_3
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4697);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4699);
             rule__SurveyTerminalTypes__AnswerAssignment_3_3();
 
             state._fsp--;
@@ -6132,7 +6144,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2384:2: rule__SurveyTerminalTypes__AnswerAssignment_3_3
             	    {
-            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4709);
+            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4711);
             	    rule__SurveyTerminalTypes__AnswerAssignment_3_3();
 
             	    state._fsp--;
@@ -6181,7 +6193,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2399:1: ( rule__SurveyTerminalTypes__Group_3__4__Impl )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2400:2: rule__SurveyTerminalTypes__Group_3__4__Impl
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__4__Impl_in_rule__SurveyTerminalTypes__Group_3__44742);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_3__4__Impl_in_rule__SurveyTerminalTypes__Group_3__44744);
             rule__SurveyTerminalTypes__Group_3__4__Impl();
 
             state._fsp--;
@@ -6218,7 +6230,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2412:1: '}'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_3_4()); 
-            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_3__4__Impl4770); 
+            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_3__4__Impl4772); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_3_4()); 
 
             }
@@ -6251,12 +6263,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2439:1: ( rule__SurveyTerminalTypes__Group_4__0__Impl rule__SurveyTerminalTypes__Group_4__1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2440:2: rule__SurveyTerminalTypes__Group_4__0__Impl rule__SurveyTerminalTypes__Group_4__1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__0__Impl_in_rule__SurveyTerminalTypes__Group_4__04811);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__0__Impl_in_rule__SurveyTerminalTypes__Group_4__04813);
             rule__SurveyTerminalTypes__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__1_in_rule__SurveyTerminalTypes__Group_4__04814);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__1_in_rule__SurveyTerminalTypes__Group_4__04816);
             rule__SurveyTerminalTypes__Group_4__1();
 
             state._fsp--;
@@ -6326,12 +6338,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2470:1: ( rule__SurveyTerminalTypes__Group_4__1__Impl rule__SurveyTerminalTypes__Group_4__2 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2471:2: rule__SurveyTerminalTypes__Group_4__1__Impl rule__SurveyTerminalTypes__Group_4__2
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__1__Impl_in_rule__SurveyTerminalTypes__Group_4__14872);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__1__Impl_in_rule__SurveyTerminalTypes__Group_4__14874);
             rule__SurveyTerminalTypes__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__2_in_rule__SurveyTerminalTypes__Group_4__14875);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__2_in_rule__SurveyTerminalTypes__Group_4__14877);
             rule__SurveyTerminalTypes__Group_4__2();
 
             state._fsp--;
@@ -6371,7 +6383,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2485:1: ( rule__SurveyTerminalTypes__NameAssignment_4_1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2485:2: rule__SurveyTerminalTypes__NameAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__NameAssignment_4_1_in_rule__SurveyTerminalTypes__Group_4__1__Impl4902);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__NameAssignment_4_1_in_rule__SurveyTerminalTypes__Group_4__1__Impl4904);
             rule__SurveyTerminalTypes__NameAssignment_4_1();
 
             state._fsp--;
@@ -6411,12 +6423,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2499:1: ( rule__SurveyTerminalTypes__Group_4__2__Impl rule__SurveyTerminalTypes__Group_4__3 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2500:2: rule__SurveyTerminalTypes__Group_4__2__Impl rule__SurveyTerminalTypes__Group_4__3
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__2__Impl_in_rule__SurveyTerminalTypes__Group_4__24932);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__2__Impl_in_rule__SurveyTerminalTypes__Group_4__24934);
             rule__SurveyTerminalTypes__Group_4__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__3_in_rule__SurveyTerminalTypes__Group_4__24935);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__3_in_rule__SurveyTerminalTypes__Group_4__24937);
             rule__SurveyTerminalTypes__Group_4__3();
 
             state._fsp--;
@@ -6453,7 +6465,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2513:1: '{'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getLeftCurlyBracketKeyword_4_2()); 
-            match(input,12,FOLLOW_12_in_rule__SurveyTerminalTypes__Group_4__2__Impl4963); 
+            match(input,12,FOLLOW_12_in_rule__SurveyTerminalTypes__Group_4__2__Impl4965); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getLeftCurlyBracketKeyword_4_2()); 
 
             }
@@ -6486,12 +6498,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2530:1: ( rule__SurveyTerminalTypes__Group_4__3__Impl rule__SurveyTerminalTypes__Group_4__4 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2531:2: rule__SurveyTerminalTypes__Group_4__3__Impl rule__SurveyTerminalTypes__Group_4__4
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__3__Impl_in_rule__SurveyTerminalTypes__Group_4__34994);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__3__Impl_in_rule__SurveyTerminalTypes__Group_4__34996);
             rule__SurveyTerminalTypes__Group_4__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__4_in_rule__SurveyTerminalTypes__Group_4__34997);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__4_in_rule__SurveyTerminalTypes__Group_4__34999);
             rule__SurveyTerminalTypes__Group_4__4();
 
             state._fsp--;
@@ -6534,7 +6546,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2546:1: ( rule__SurveyTerminalTypes__AnswerAssignment_4_3 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2546:2: rule__SurveyTerminalTypes__AnswerAssignment_4_3
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5026);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5028);
             rule__SurveyTerminalTypes__AnswerAssignment_4_3();
 
             state._fsp--;
@@ -6565,7 +6577,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2551:2: rule__SurveyTerminalTypes__AnswerAssignment_4_3
             	    {
-            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5038);
+            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5040);
             	    rule__SurveyTerminalTypes__AnswerAssignment_4_3();
 
             	    state._fsp--;
@@ -6614,7 +6626,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2566:1: ( rule__SurveyTerminalTypes__Group_4__4__Impl )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2567:2: rule__SurveyTerminalTypes__Group_4__4__Impl
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__4__Impl_in_rule__SurveyTerminalTypes__Group_4__45071);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_4__4__Impl_in_rule__SurveyTerminalTypes__Group_4__45073);
             rule__SurveyTerminalTypes__Group_4__4__Impl();
 
             state._fsp--;
@@ -6651,7 +6663,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2579:1: '}'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_4_4()); 
-            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_4__4__Impl5099); 
+            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_4__4__Impl5101); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_4_4()); 
 
             }
@@ -6684,12 +6696,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2606:1: ( rule__SurveyTerminalTypes__Group_5__0__Impl rule__SurveyTerminalTypes__Group_5__1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2607:2: rule__SurveyTerminalTypes__Group_5__0__Impl rule__SurveyTerminalTypes__Group_5__1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__0__Impl_in_rule__SurveyTerminalTypes__Group_5__05140);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__0__Impl_in_rule__SurveyTerminalTypes__Group_5__05142);
             rule__SurveyTerminalTypes__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__1_in_rule__SurveyTerminalTypes__Group_5__05143);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__1_in_rule__SurveyTerminalTypes__Group_5__05145);
             rule__SurveyTerminalTypes__Group_5__1();
 
             state._fsp--;
@@ -6759,12 +6771,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2637:1: ( rule__SurveyTerminalTypes__Group_5__1__Impl rule__SurveyTerminalTypes__Group_5__2 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2638:2: rule__SurveyTerminalTypes__Group_5__1__Impl rule__SurveyTerminalTypes__Group_5__2
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__1__Impl_in_rule__SurveyTerminalTypes__Group_5__15201);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__1__Impl_in_rule__SurveyTerminalTypes__Group_5__15203);
             rule__SurveyTerminalTypes__Group_5__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__2_in_rule__SurveyTerminalTypes__Group_5__15204);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__2_in_rule__SurveyTerminalTypes__Group_5__15206);
             rule__SurveyTerminalTypes__Group_5__2();
 
             state._fsp--;
@@ -6804,7 +6816,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2652:1: ( rule__SurveyTerminalTypes__NameAssignment_5_1 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2652:2: rule__SurveyTerminalTypes__NameAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__NameAssignment_5_1_in_rule__SurveyTerminalTypes__Group_5__1__Impl5231);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__NameAssignment_5_1_in_rule__SurveyTerminalTypes__Group_5__1__Impl5233);
             rule__SurveyTerminalTypes__NameAssignment_5_1();
 
             state._fsp--;
@@ -6844,12 +6856,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2666:1: ( rule__SurveyTerminalTypes__Group_5__2__Impl rule__SurveyTerminalTypes__Group_5__3 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2667:2: rule__SurveyTerminalTypes__Group_5__2__Impl rule__SurveyTerminalTypes__Group_5__3
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__2__Impl_in_rule__SurveyTerminalTypes__Group_5__25261);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__2__Impl_in_rule__SurveyTerminalTypes__Group_5__25263);
             rule__SurveyTerminalTypes__Group_5__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__3_in_rule__SurveyTerminalTypes__Group_5__25264);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__3_in_rule__SurveyTerminalTypes__Group_5__25266);
             rule__SurveyTerminalTypes__Group_5__3();
 
             state._fsp--;
@@ -6886,7 +6898,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2680:1: '{'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getLeftCurlyBracketKeyword_5_2()); 
-            match(input,12,FOLLOW_12_in_rule__SurveyTerminalTypes__Group_5__2__Impl5292); 
+            match(input,12,FOLLOW_12_in_rule__SurveyTerminalTypes__Group_5__2__Impl5294); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getLeftCurlyBracketKeyword_5_2()); 
 
             }
@@ -6919,12 +6931,12 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2697:1: ( rule__SurveyTerminalTypes__Group_5__3__Impl rule__SurveyTerminalTypes__Group_5__4 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2698:2: rule__SurveyTerminalTypes__Group_5__3__Impl rule__SurveyTerminalTypes__Group_5__4
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__3__Impl_in_rule__SurveyTerminalTypes__Group_5__35323);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__3__Impl_in_rule__SurveyTerminalTypes__Group_5__35325);
             rule__SurveyTerminalTypes__Group_5__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__4_in_rule__SurveyTerminalTypes__Group_5__35326);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__4_in_rule__SurveyTerminalTypes__Group_5__35328);
             rule__SurveyTerminalTypes__Group_5__4();
 
             state._fsp--;
@@ -6967,7 +6979,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2713:1: ( rule__SurveyTerminalTypes__AnswerAssignment_5_3 )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2713:2: rule__SurveyTerminalTypes__AnswerAssignment_5_3
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5355);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5357);
             rule__SurveyTerminalTypes__AnswerAssignment_5_3();
 
             state._fsp--;
@@ -6998,7 +7010,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2718:2: rule__SurveyTerminalTypes__AnswerAssignment_5_3
             	    {
-            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5367);
+            	    pushFollow(FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5369);
             	    rule__SurveyTerminalTypes__AnswerAssignment_5_3();
 
             	    state._fsp--;
@@ -7047,7 +7059,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2733:1: ( rule__SurveyTerminalTypes__Group_5__4__Impl )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2734:2: rule__SurveyTerminalTypes__Group_5__4__Impl
             {
-            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__4__Impl_in_rule__SurveyTerminalTypes__Group_5__45400);
+            pushFollow(FOLLOW_rule__SurveyTerminalTypes__Group_5__4__Impl_in_rule__SurveyTerminalTypes__Group_5__45402);
             rule__SurveyTerminalTypes__Group_5__4__Impl();
 
             state._fsp--;
@@ -7084,7 +7096,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2746:1: '}'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_5_4()); 
-            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_5__4__Impl5428); 
+            match(input,14,FOLLOW_14_in_rule__SurveyTerminalTypes__Group_5__4__Impl5430); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getRightCurlyBracketKeyword_5_4()); 
 
             }
@@ -7121,7 +7133,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2776:1: ruleQuestionnaire
             {
              before(grammarAccess.getSurveyAccess().getQuestionnaireQuestionnaireParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleQuestionnaire_in_rule__Survey__QuestionnaireAssignment5474);
+            pushFollow(FOLLOW_ruleQuestionnaire_in_rule__Survey__QuestionnaireAssignment5476);
             ruleQuestionnaire();
 
             state._fsp--;
@@ -7162,7 +7174,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2791:1: RULE_STRING
             {
              before(grammarAccess.getQuestionnaireAccess().getNameSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Questionnaire__NameAssignment_15505); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Questionnaire__NameAssignment_15507); 
              after(grammarAccess.getQuestionnaireAccess().getNameSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -7199,7 +7211,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2806:1: ruleIdentifier
             {
              before(grammarAccess.getQuestionnaireAccess().getIdIdentifierParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_rule__Questionnaire__IdAssignment_45536);
+            pushFollow(FOLLOW_ruleIdentifier_in_rule__Questionnaire__IdAssignment_45538);
             ruleIdentifier();
 
             state._fsp--;
@@ -7240,7 +7252,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2821:1: rulePart
             {
              before(grammarAccess.getQuestionnaireAccess().getPartPartParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_rulePart_in_rule__Questionnaire__PartAssignment_55567);
+            pushFollow(FOLLOW_rulePart_in_rule__Questionnaire__PartAssignment_55569);
             rulePart();
 
             state._fsp--;
@@ -7281,7 +7293,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2836:1: RULE_STRING
             {
              before(grammarAccess.getPartAccess().getNameSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Part__NameAssignment_15598); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Part__NameAssignment_15600); 
              after(grammarAccess.getPartAccess().getNameSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -7318,7 +7330,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2851:1: ruleIdentifier
             {
              before(grammarAccess.getPartAccess().getIdIdentifierParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_rule__Part__IdAssignment_45629);
+            pushFollow(FOLLOW_ruleIdentifier_in_rule__Part__IdAssignment_45631);
             ruleIdentifier();
 
             state._fsp--;
@@ -7359,7 +7371,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2866:1: ruleQuestion
             {
              before(grammarAccess.getPartAccess().getQuestionQuestionParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleQuestion_in_rule__Part__QuestionAssignment_55660);
+            pushFollow(FOLLOW_ruleQuestion_in_rule__Part__QuestionAssignment_55662);
             ruleQuestion();
 
             state._fsp--;
@@ -7400,7 +7412,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2881:1: RULE_STRING
             {
              before(grammarAccess.getQuestionAccess().getNameSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Question__NameAssignment_15691); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Question__NameAssignment_15693); 
              after(grammarAccess.getQuestionAccess().getNameSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -7437,7 +7449,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2896:1: ruleIdentifier
             {
              before(grammarAccess.getQuestionAccess().getIdIdentifierParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_rule__Question__IdAssignment_45722);
+            pushFollow(FOLLOW_ruleIdentifier_in_rule__Question__IdAssignment_45724);
             ruleIdentifier();
 
             state._fsp--;
@@ -7482,7 +7494,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2913:1: 'Mandatory Field'
             {
              before(grammarAccess.getQuestionAccess().getMandatoryMandatoryFieldKeyword_5_0()); 
-            match(input,27,FOLLOW_27_in_rule__Question__MandatoryAssignment_55758); 
+            match(input,27,FOLLOW_27_in_rule__Question__MandatoryAssignment_55760); 
              after(grammarAccess.getQuestionAccess().getMandatoryMandatoryFieldKeyword_5_0()); 
 
             }
@@ -7523,7 +7535,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2934:1: ruleSurveyTerminalTypes
             {
              before(grammarAccess.getQuestionAccess().getQuestionTypeSurveyTerminalTypesParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleSurveyTerminalTypes_in_rule__Question__QuestionTypeAssignment_75797);
+            pushFollow(FOLLOW_ruleSurveyTerminalTypes_in_rule__Question__QuestionTypeAssignment_75799);
             ruleSurveyTerminalTypes();
 
             state._fsp--;
@@ -7564,7 +7576,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2949:1: ruleIdentifier
             {
              before(grammarAccess.getMatrixQuestionAccess().getIdIdentifierParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_rule__MatrixQuestion__IdAssignment_15828);
+            pushFollow(FOLLOW_ruleIdentifier_in_rule__MatrixQuestion__IdAssignment_15830);
             ruleIdentifier();
 
             state._fsp--;
@@ -7605,7 +7617,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2964:1: RULE_STRING
             {
              before(grammarAccess.getMatrixQuestionAccess().getNameSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MatrixQuestion__NameAssignment_35859); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__MatrixQuestion__NameAssignment_35861); 
              after(grammarAccess.getMatrixQuestionAccess().getNameSTRINGTerminalRuleCall_3_0()); 
 
             }
@@ -7642,7 +7654,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2979:1: ruleIdentifier
             {
              before(grammarAccess.getAnswerAccess().getIdIdentifierParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_rule__Answer__IdAssignment_15890);
+            pushFollow(FOLLOW_ruleIdentifier_in_rule__Answer__IdAssignment_15892);
             ruleIdentifier();
 
             state._fsp--;
@@ -7683,7 +7695,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2994:1: RULE_STRING
             {
              before(grammarAccess.getAnswerAccess().getNameSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Answer__NameAssignment_35921); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Answer__NameAssignment_35923); 
              after(grammarAccess.getAnswerAccess().getNameSTRINGTerminalRuleCall_3_0()); 
 
             }
@@ -7724,7 +7736,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3011:1: 'TextLine'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getNameTextLineKeyword_0_1_0()); 
-            match(input,28,FOLLOW_28_in_rule__SurveyTerminalTypes__NameAssignment_0_15957); 
+            match(input,28,FOLLOW_28_in_rule__SurveyTerminalTypes__NameAssignment_0_15959); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getNameTextLineKeyword_0_1_0()); 
 
             }
@@ -7765,7 +7777,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3032:1: RULE_INT
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getLengthINTTerminalRuleCall_0_3_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_0_35996); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_0_35998); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getLengthINTTerminalRuleCall_0_3_0()); 
 
             }
@@ -7806,7 +7818,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3049:1: 'TextBlock'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getNameTextBlockKeyword_1_1_0()); 
-            match(input,29,FOLLOW_29_in_rule__SurveyTerminalTypes__NameAssignment_1_16032); 
+            match(input,29,FOLLOW_29_in_rule__SurveyTerminalTypes__NameAssignment_1_16034); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getNameTextBlockKeyword_1_1_0()); 
 
             }
@@ -7847,7 +7859,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3070:1: RULE_INT
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getLengthINTTerminalRuleCall_1_3_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_1_36071); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_1_36073); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getLengthINTTerminalRuleCall_1_3_0()); 
 
             }
@@ -7888,7 +7900,7 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3087:1: 'Matrix'
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getNameMatrixKeyword_2_1_0()); 
-            match(input,30,FOLLOW_30_in_rule__SurveyTerminalTypes__NameAssignment_2_16107); 
+            match(input,30,FOLLOW_30_in_rule__SurveyTerminalTypes__NameAssignment_2_16109); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getNameMatrixKeyword_2_1_0()); 
 
             }
@@ -7915,21 +7927,103 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SurveyTerminalTypes__NameAssignment_2_1"
 
 
+    // $ANTLR start "rule__SurveyTerminalTypes__AnswerAssignment_2_5"
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3102:1: rule__SurveyTerminalTypes__AnswerAssignment_2_5 : ( ruleAnswer ) ;
+    public final void rule__SurveyTerminalTypes__AnswerAssignment_2_5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3106:1: ( ( ruleAnswer ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3107:1: ( ruleAnswer )
+            {
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3107:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3108:1: ruleAnswer
+            {
+             before(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_2_5_0()); 
+            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_2_56148);
+            ruleAnswer();
+
+            state._fsp--;
+
+             after(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_2_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SurveyTerminalTypes__AnswerAssignment_2_5"
+
+
+    // $ANTLR start "rule__SurveyTerminalTypes__AnswerAssignment_2_6_1"
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3117:1: rule__SurveyTerminalTypes__AnswerAssignment_2_6_1 : ( ruleAnswer ) ;
+    public final void rule__SurveyTerminalTypes__AnswerAssignment_2_6_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3121:1: ( ( ruleAnswer ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3122:1: ( ruleAnswer )
+            {
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3122:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3123:1: ruleAnswer
+            {
+             before(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_2_6_1_0()); 
+            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_2_6_16179);
+            ruleAnswer();
+
+            state._fsp--;
+
+             after(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_2_6_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SurveyTerminalTypes__AnswerAssignment_2_6_1"
+
+
     // $ANTLR start "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3102:1: rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10 : ( ruleMatrixQuestion ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3132:1: rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10 : ( ruleMatrixQuestion ) ;
     public final void rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3106:1: ( ( ruleMatrixQuestion ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3107:1: ( ruleMatrixQuestion )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3136:1: ( ( ruleMatrixQuestion ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3137:1: ( ruleMatrixQuestion )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3107:1: ( ruleMatrixQuestion )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3108:1: ruleMatrixQuestion
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3137:1: ( ruleMatrixQuestion )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3138:1: ruleMatrixQuestion
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionMatrixQuestionParserRuleCall_2_10_0()); 
-            pushFollow(FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_106146);
+            pushFollow(FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_106210);
             ruleMatrixQuestion();
 
             state._fsp--;
@@ -7957,20 +8051,20 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3117:1: rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1 : ( ruleMatrixQuestion ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3147:1: rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1 : ( ruleMatrixQuestion ) ;
     public final void rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3121:1: ( ( ruleMatrixQuestion ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3122:1: ( ruleMatrixQuestion )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3151:1: ( ( ruleMatrixQuestion ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3152:1: ( ruleMatrixQuestion )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3122:1: ( ruleMatrixQuestion )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3123:1: ruleMatrixQuestion
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3152:1: ( ruleMatrixQuestion )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3153:1: ruleMatrixQuestion
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getMatrixQuestionMatrixQuestionParserRuleCall_2_11_1_0()); 
-            pushFollow(FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_16177);
+            pushFollow(FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_16241);
             ruleMatrixQuestion();
 
             state._fsp--;
@@ -7998,24 +8092,24 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__NameAssignment_3_1"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3132:1: rule__SurveyTerminalTypes__NameAssignment_3_1 : ( ( 'ComboBox' ) ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3162:1: rule__SurveyTerminalTypes__NameAssignment_3_1 : ( ( 'ComboBox' ) ) ;
     public final void rule__SurveyTerminalTypes__NameAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3136:1: ( ( ( 'ComboBox' ) ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3137:1: ( ( 'ComboBox' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3166:1: ( ( ( 'ComboBox' ) ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3167:1: ( ( 'ComboBox' ) )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3137:1: ( ( 'ComboBox' ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3138:1: ( 'ComboBox' )
-            {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3139:1: ( 'ComboBox' )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3140:1: 'ComboBox'
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3167:1: ( ( 'ComboBox' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3168:1: ( 'ComboBox' )
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
-            match(input,31,FOLLOW_31_in_rule__SurveyTerminalTypes__NameAssignment_3_16213); 
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3169:1: ( 'ComboBox' )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3170:1: 'ComboBox'
+            {
+             before(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
+            match(input,31,FOLLOW_31_in_rule__SurveyTerminalTypes__NameAssignment_3_16277); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
 
             }
@@ -8043,20 +8137,20 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__AnswerAssignment_3_3"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3155:1: rule__SurveyTerminalTypes__AnswerAssignment_3_3 : ( ruleAnswer ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3185:1: rule__SurveyTerminalTypes__AnswerAssignment_3_3 : ( ruleAnswer ) ;
     public final void rule__SurveyTerminalTypes__AnswerAssignment_3_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3159:1: ( ( ruleAnswer ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3160:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3189:1: ( ( ruleAnswer ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3190:1: ( ruleAnswer )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3160:1: ( ruleAnswer )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3161:1: ruleAnswer
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3190:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3191:1: ruleAnswer
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_3_3_0()); 
-            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_3_36252);
+            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_3_36316);
             ruleAnswer();
 
             state._fsp--;
@@ -8084,24 +8178,24 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__NameAssignment_4_1"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3170:1: rule__SurveyTerminalTypes__NameAssignment_4_1 : ( ( 'DropDown' ) ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3200:1: rule__SurveyTerminalTypes__NameAssignment_4_1 : ( ( 'DropDown' ) ) ;
     public final void rule__SurveyTerminalTypes__NameAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3174:1: ( ( ( 'DropDown' ) ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3175:1: ( ( 'DropDown' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3204:1: ( ( ( 'DropDown' ) ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3205:1: ( ( 'DropDown' ) )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3175:1: ( ( 'DropDown' ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3176:1: ( 'DropDown' )
-            {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getNameDropDownKeyword_4_1_0()); 
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3177:1: ( 'DropDown' )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3178:1: 'DropDown'
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3205:1: ( ( 'DropDown' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3206:1: ( 'DropDown' )
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getNameDropDownKeyword_4_1_0()); 
-            match(input,32,FOLLOW_32_in_rule__SurveyTerminalTypes__NameAssignment_4_16288); 
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3207:1: ( 'DropDown' )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3208:1: 'DropDown'
+            {
+             before(grammarAccess.getSurveyTerminalTypesAccess().getNameDropDownKeyword_4_1_0()); 
+            match(input,32,FOLLOW_32_in_rule__SurveyTerminalTypes__NameAssignment_4_16352); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getNameDropDownKeyword_4_1_0()); 
 
             }
@@ -8129,20 +8223,20 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__AnswerAssignment_4_3"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3193:1: rule__SurveyTerminalTypes__AnswerAssignment_4_3 : ( ruleAnswer ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3223:1: rule__SurveyTerminalTypes__AnswerAssignment_4_3 : ( ruleAnswer ) ;
     public final void rule__SurveyTerminalTypes__AnswerAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3197:1: ( ( ruleAnswer ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3198:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3227:1: ( ( ruleAnswer ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3228:1: ( ruleAnswer )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3198:1: ( ruleAnswer )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3199:1: ruleAnswer
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3228:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3229:1: ruleAnswer
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_4_3_0()); 
-            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_4_36327);
+            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_4_36391);
             ruleAnswer();
 
             state._fsp--;
@@ -8170,24 +8264,24 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__NameAssignment_5_1"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3208:1: rule__SurveyTerminalTypes__NameAssignment_5_1 : ( ( 'Radio' ) ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3238:1: rule__SurveyTerminalTypes__NameAssignment_5_1 : ( ( 'Radio' ) ) ;
     public final void rule__SurveyTerminalTypes__NameAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3212:1: ( ( ( 'Radio' ) ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3213:1: ( ( 'Radio' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3242:1: ( ( ( 'Radio' ) ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3243:1: ( ( 'Radio' ) )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3213:1: ( ( 'Radio' ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3214:1: ( 'Radio' )
-            {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getNameRadioKeyword_5_1_0()); 
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3215:1: ( 'Radio' )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3216:1: 'Radio'
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3243:1: ( ( 'Radio' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3244:1: ( 'Radio' )
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getNameRadioKeyword_5_1_0()); 
-            match(input,33,FOLLOW_33_in_rule__SurveyTerminalTypes__NameAssignment_5_16363); 
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3245:1: ( 'Radio' )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3246:1: 'Radio'
+            {
+             before(grammarAccess.getSurveyTerminalTypesAccess().getNameRadioKeyword_5_1_0()); 
+            match(input,33,FOLLOW_33_in_rule__SurveyTerminalTypes__NameAssignment_5_16427); 
              after(grammarAccess.getSurveyTerminalTypesAccess().getNameRadioKeyword_5_1_0()); 
 
             }
@@ -8215,20 +8309,20 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__AnswerAssignment_5_3"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3231:1: rule__SurveyTerminalTypes__AnswerAssignment_5_3 : ( ruleAnswer ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3261:1: rule__SurveyTerminalTypes__AnswerAssignment_5_3 : ( ruleAnswer ) ;
     public final void rule__SurveyTerminalTypes__AnswerAssignment_5_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3235:1: ( ( ruleAnswer ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3236:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3265:1: ( ( ruleAnswer ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3266:1: ( ruleAnswer )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3236:1: ( ruleAnswer )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3237:1: ruleAnswer
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3266:1: ( ruleAnswer )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3267:1: ruleAnswer
             {
              before(grammarAccess.getSurveyTerminalTypesAccess().getAnswerAnswerParserRuleCall_5_3_0()); 
-            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_5_36402);
+            pushFollow(FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_5_36466);
             ruleAnswer();
 
             state._fsp--;
@@ -8420,114 +8514,116 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__3__Impl_in_rule__SurveyTerminalTypes__Group_2__33537 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__4_in_rule__SurveyTerminalTypes__Group_2__33540 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_24_in_rule__SurveyTerminalTypes__Group_2__3__Impl3568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__4__Impl_in_rule__SurveyTerminalTypes__Group_2__43599 = new BitSet(new long[]{0x0000000000000070L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__4__Impl_in_rule__SurveyTerminalTypes__Group_2__43599 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__5_in_rule__SurveyTerminalTypes__Group_2__43602 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_rule__SurveyTerminalTypes__Group_2__4__Impl3630 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__5__Impl_in_rule__SurveyTerminalTypes__Group_2__53661 = new BitSet(new long[]{0x0000000004800000L});
     public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__6_in_rule__SurveyTerminalTypes__Group_2__53664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__SurveyTerminalTypes__Group_2__5__Impl3691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__6__Impl_in_rule__SurveyTerminalTypes__Group_2__63720 = new BitSet(new long[]{0x0000000004800000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__7_in_rule__SurveyTerminalTypes__Group_2__63723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0_in_rule__SurveyTerminalTypes__Group_2__6__Impl3750 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__7__Impl_in_rule__SurveyTerminalTypes__Group_2__73781 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__8_in_rule__SurveyTerminalTypes__Group_2__73784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__7__Impl3812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__8__Impl_in_rule__SurveyTerminalTypes__Group_2__83843 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__9_in_rule__SurveyTerminalTypes__Group_2__83846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__SurveyTerminalTypes__Group_2__8__Impl3874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__9__Impl_in_rule__SurveyTerminalTypes__Group_2__93905 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__10_in_rule__SurveyTerminalTypes__Group_2__93908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__SurveyTerminalTypes__Group_2__9__Impl3936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__10__Impl_in_rule__SurveyTerminalTypes__Group_2__103967 = new BitSet(new long[]{0x0000000004800000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__11_in_rule__SurveyTerminalTypes__Group_2__103970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10_in_rule__SurveyTerminalTypes__Group_2__10__Impl3997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__11__Impl_in_rule__SurveyTerminalTypes__Group_2__114027 = new BitSet(new long[]{0x0000000004800000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__12_in_rule__SurveyTerminalTypes__Group_2__114030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0_in_rule__SurveyTerminalTypes__Group_2__11__Impl4057 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__12__Impl_in_rule__SurveyTerminalTypes__Group_2__124088 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__13_in_rule__SurveyTerminalTypes__Group_2__124091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__12__Impl4119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__13__Impl_in_rule__SurveyTerminalTypes__Group_2__134150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_2__13__Impl4178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0__Impl_in_rule__SurveyTerminalTypes__Group_2_6__04237 = new BitSet(new long[]{0x0000000000000070L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1_in_rule__SurveyTerminalTypes__Group_2_6__04240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_6__0__Impl4268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1__Impl_in_rule__SurveyTerminalTypes__Group_2_6__14299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__SurveyTerminalTypes__Group_2_6__1__Impl4326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0__Impl_in_rule__SurveyTerminalTypes__Group_2_11__04359 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1_in_rule__SurveyTerminalTypes__Group_2_11__04362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_11__0__Impl4390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1__Impl_in_rule__SurveyTerminalTypes__Group_2_11__14421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1_in_rule__SurveyTerminalTypes__Group_2_11__1__Impl4448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__0__Impl_in_rule__SurveyTerminalTypes__Group_3__04482 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__1_in_rule__SurveyTerminalTypes__Group_3__04485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__1__Impl_in_rule__SurveyTerminalTypes__Group_3__14543 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__2_in_rule__SurveyTerminalTypes__Group_3__14546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__NameAssignment_3_1_in_rule__SurveyTerminalTypes__Group_3__1__Impl4573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__2__Impl_in_rule__SurveyTerminalTypes__Group_3__24603 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__3_in_rule__SurveyTerminalTypes__Group_3__24606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__SurveyTerminalTypes__Group_3__2__Impl4634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__3__Impl_in_rule__SurveyTerminalTypes__Group_3__34665 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__4_in_rule__SurveyTerminalTypes__Group_3__34668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4697 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4709 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__4__Impl_in_rule__SurveyTerminalTypes__Group_3__44742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_3__4__Impl4770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__0__Impl_in_rule__SurveyTerminalTypes__Group_4__04811 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__1_in_rule__SurveyTerminalTypes__Group_4__04814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__1__Impl_in_rule__SurveyTerminalTypes__Group_4__14872 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__2_in_rule__SurveyTerminalTypes__Group_4__14875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__NameAssignment_4_1_in_rule__SurveyTerminalTypes__Group_4__1__Impl4902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__2__Impl_in_rule__SurveyTerminalTypes__Group_4__24932 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__3_in_rule__SurveyTerminalTypes__Group_4__24935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__SurveyTerminalTypes__Group_4__2__Impl4963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__3__Impl_in_rule__SurveyTerminalTypes__Group_4__34994 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__4_in_rule__SurveyTerminalTypes__Group_4__34997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5026 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5038 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__4__Impl_in_rule__SurveyTerminalTypes__Group_4__45071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_4__4__Impl5099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__0__Impl_in_rule__SurveyTerminalTypes__Group_5__05140 = new BitSet(new long[]{0x00000003F0000000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__1_in_rule__SurveyTerminalTypes__Group_5__05143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__1__Impl_in_rule__SurveyTerminalTypes__Group_5__15201 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__2_in_rule__SurveyTerminalTypes__Group_5__15204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__NameAssignment_5_1_in_rule__SurveyTerminalTypes__Group_5__1__Impl5231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__2__Impl_in_rule__SurveyTerminalTypes__Group_5__25261 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__3_in_rule__SurveyTerminalTypes__Group_5__25264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__SurveyTerminalTypes__Group_5__2__Impl5292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__3__Impl_in_rule__SurveyTerminalTypes__Group_5__35323 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__4_in_rule__SurveyTerminalTypes__Group_5__35326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5355 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5367 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__4__Impl_in_rule__SurveyTerminalTypes__Group_5__45400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_5__4__Impl5428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuestionnaire_in_rule__Survey__QuestionnaireAssignment5474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Questionnaire__NameAssignment_15505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Questionnaire__IdAssignment_45536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePart_in_rule__Questionnaire__PartAssignment_55567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Part__NameAssignment_15598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Part__IdAssignment_45629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuestion_in_rule__Part__QuestionAssignment_55660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Question__NameAssignment_15691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Question__IdAssignment_45722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Question__MandatoryAssignment_55758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSurveyTerminalTypes_in_rule__Question__QuestionTypeAssignment_75797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__MatrixQuestion__IdAssignment_15828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__MatrixQuestion__NameAssignment_35859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Answer__IdAssignment_15890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Answer__NameAssignment_35921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__SurveyTerminalTypes__NameAssignment_0_15957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_0_35996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__SurveyTerminalTypes__NameAssignment_1_16032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_1_36071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__SurveyTerminalTypes__NameAssignment_2_16107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_106146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_16177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__SurveyTerminalTypes__NameAssignment_3_16213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_3_36252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__SurveyTerminalTypes__NameAssignment_4_16288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_4_36327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__SurveyTerminalTypes__NameAssignment_5_16363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_5_36402 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_2_5_in_rule__SurveyTerminalTypes__Group_2__5__Impl3691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__6__Impl_in_rule__SurveyTerminalTypes__Group_2__63721 = new BitSet(new long[]{0x0000000004800000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__7_in_rule__SurveyTerminalTypes__Group_2__63724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0_in_rule__SurveyTerminalTypes__Group_2__6__Impl3751 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__7__Impl_in_rule__SurveyTerminalTypes__Group_2__73782 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__8_in_rule__SurveyTerminalTypes__Group_2__73785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__7__Impl3813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__8__Impl_in_rule__SurveyTerminalTypes__Group_2__83844 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__9_in_rule__SurveyTerminalTypes__Group_2__83847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__SurveyTerminalTypes__Group_2__8__Impl3875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__9__Impl_in_rule__SurveyTerminalTypes__Group_2__93906 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__10_in_rule__SurveyTerminalTypes__Group_2__93909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__SurveyTerminalTypes__Group_2__9__Impl3937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__10__Impl_in_rule__SurveyTerminalTypes__Group_2__103968 = new BitSet(new long[]{0x0000000004800000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__11_in_rule__SurveyTerminalTypes__Group_2__103971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_10_in_rule__SurveyTerminalTypes__Group_2__10__Impl3998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__11__Impl_in_rule__SurveyTerminalTypes__Group_2__114028 = new BitSet(new long[]{0x0000000004800000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__12_in_rule__SurveyTerminalTypes__Group_2__114031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0_in_rule__SurveyTerminalTypes__Group_2__11__Impl4058 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__12__Impl_in_rule__SurveyTerminalTypes__Group_2__124089 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__13_in_rule__SurveyTerminalTypes__Group_2__124092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__SurveyTerminalTypes__Group_2__12__Impl4120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2__13__Impl_in_rule__SurveyTerminalTypes__Group_2__134151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_2__13__Impl4179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__0__Impl_in_rule__SurveyTerminalTypes__Group_2_6__04238 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1_in_rule__SurveyTerminalTypes__Group_2_6__04241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_6__0__Impl4269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_6__1__Impl_in_rule__SurveyTerminalTypes__Group_2_6__14300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_2_6_1_in_rule__SurveyTerminalTypes__Group_2_6__1__Impl4327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__0__Impl_in_rule__SurveyTerminalTypes__Group_2_11__04361 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1_in_rule__SurveyTerminalTypes__Group_2_11__04364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__SurveyTerminalTypes__Group_2_11__0__Impl4392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_2_11__1__Impl_in_rule__SurveyTerminalTypes__Group_2_11__14423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_1_in_rule__SurveyTerminalTypes__Group_2_11__1__Impl4450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__0__Impl_in_rule__SurveyTerminalTypes__Group_3__04484 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__1_in_rule__SurveyTerminalTypes__Group_3__04487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__1__Impl_in_rule__SurveyTerminalTypes__Group_3__14545 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__2_in_rule__SurveyTerminalTypes__Group_3__14548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__NameAssignment_3_1_in_rule__SurveyTerminalTypes__Group_3__1__Impl4575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__2__Impl_in_rule__SurveyTerminalTypes__Group_3__24605 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__3_in_rule__SurveyTerminalTypes__Group_3__24608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__SurveyTerminalTypes__Group_3__2__Impl4636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__3__Impl_in_rule__SurveyTerminalTypes__Group_3__34667 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__4_in_rule__SurveyTerminalTypes__Group_3__34670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4699 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_3_3_in_rule__SurveyTerminalTypes__Group_3__3__Impl4711 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_3__4__Impl_in_rule__SurveyTerminalTypes__Group_3__44744 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_3__4__Impl4772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__0__Impl_in_rule__SurveyTerminalTypes__Group_4__04813 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__1_in_rule__SurveyTerminalTypes__Group_4__04816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__1__Impl_in_rule__SurveyTerminalTypes__Group_4__14874 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__2_in_rule__SurveyTerminalTypes__Group_4__14877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__NameAssignment_4_1_in_rule__SurveyTerminalTypes__Group_4__1__Impl4904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__2__Impl_in_rule__SurveyTerminalTypes__Group_4__24934 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__3_in_rule__SurveyTerminalTypes__Group_4__24937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__SurveyTerminalTypes__Group_4__2__Impl4965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__3__Impl_in_rule__SurveyTerminalTypes__Group_4__34996 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__4_in_rule__SurveyTerminalTypes__Group_4__34999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5028 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_4_3_in_rule__SurveyTerminalTypes__Group_4__3__Impl5040 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_4__4__Impl_in_rule__SurveyTerminalTypes__Group_4__45073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_4__4__Impl5101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__0__Impl_in_rule__SurveyTerminalTypes__Group_5__05142 = new BitSet(new long[]{0x00000003F0000000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__1_in_rule__SurveyTerminalTypes__Group_5__05145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__1__Impl_in_rule__SurveyTerminalTypes__Group_5__15203 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__2_in_rule__SurveyTerminalTypes__Group_5__15206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__NameAssignment_5_1_in_rule__SurveyTerminalTypes__Group_5__1__Impl5233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__2__Impl_in_rule__SurveyTerminalTypes__Group_5__25263 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__3_in_rule__SurveyTerminalTypes__Group_5__25266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__SurveyTerminalTypes__Group_5__2__Impl5294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__3__Impl_in_rule__SurveyTerminalTypes__Group_5__35325 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__4_in_rule__SurveyTerminalTypes__Group_5__35328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5357 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__AnswerAssignment_5_3_in_rule__SurveyTerminalTypes__Group_5__3__Impl5369 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_rule__SurveyTerminalTypes__Group_5__4__Impl_in_rule__SurveyTerminalTypes__Group_5__45402 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__SurveyTerminalTypes__Group_5__4__Impl5430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuestionnaire_in_rule__Survey__QuestionnaireAssignment5476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Questionnaire__NameAssignment_15507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Questionnaire__IdAssignment_45538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePart_in_rule__Questionnaire__PartAssignment_55569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Part__NameAssignment_15600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Part__IdAssignment_45631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuestion_in_rule__Part__QuestionAssignment_55662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Question__NameAssignment_15693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Question__IdAssignment_45724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Question__MandatoryAssignment_55760 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSurveyTerminalTypes_in_rule__Question__QuestionTypeAssignment_75799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdentifier_in_rule__MatrixQuestion__IdAssignment_15830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__MatrixQuestion__NameAssignment_35861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Answer__IdAssignment_15892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Answer__NameAssignment_35923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__SurveyTerminalTypes__NameAssignment_0_15959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_0_35998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__SurveyTerminalTypes__NameAssignment_1_16034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SurveyTerminalTypes__LengthAssignment_1_36073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__SurveyTerminalTypes__NameAssignment_2_16109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_2_56148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_2_6_16179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_106210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMatrixQuestion_in_rule__SurveyTerminalTypes__MatrixQuestionAssignment_2_11_16241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__SurveyTerminalTypes__NameAssignment_3_16277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_3_36316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__SurveyTerminalTypes__NameAssignment_4_16352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_4_36391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__SurveyTerminalTypes__NameAssignment_5_16427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnswer_in_rule__SurveyTerminalTypes__AnswerAssignment_5_36466 = new BitSet(new long[]{0x0000000000000002L});
 
 }
