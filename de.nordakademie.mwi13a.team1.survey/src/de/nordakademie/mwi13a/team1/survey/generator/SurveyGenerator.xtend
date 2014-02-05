@@ -82,7 +82,7 @@ def toOverview(Survey survey) '''
 			<link rel="stylesheet" type="text/css" href="css/default.css" />
 			</head>
 			<body>    
-				<form action="«part.name».jsp" method="post">
+				<form action="«(part.name.replace(" ","_"))»Servlet" method="post">
 				<div>
 					<h1>«questionnaire.name»</h1>
 					<fieldset class="part">
@@ -123,6 +123,7 @@ def dispatch  questiongenerate(TextLine questiontype , Question question)'''
 								</label>
 								</p><p>
 								<input name= "«question.id»" class="textLine" type="text" maxlength="«questiontype.length»"/>
+								<span class="error">${messages.«question.name»}</span>
 								</p>
 
  '''
@@ -133,6 +134,7 @@ def dispatch  questiongenerate(TextLine questiontype , Question question)'''
 								</label>
 								</p><p>
 								<textarea name="«question.id»" maxlength="«questiontype.length»" rows="10" cols="50"></textarea>
+								<span class="error">${messages.«question.name»}</span>
 								</p>
 
  '''
