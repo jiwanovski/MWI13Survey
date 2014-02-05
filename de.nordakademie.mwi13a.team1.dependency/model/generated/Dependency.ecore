@@ -24,7 +24,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Dependency"/>
   <eClassifiers xsi:type="ecore:EClass" name="DMMatrixQuestion">
     <eStructuralFeatures xsi:type="ecore:EReference" name="matrixQuestion" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//MatrixQuestion"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="matrixScale" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//MatrixScale"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matrixScale" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Answer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//Dependency">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Dependency"

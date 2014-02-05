@@ -75,7 +75,7 @@ Atomic returns Dependency:
 
 DMMatrixQuestion:
 	'Matrix Question:' matrixQuestion=[surveyImp::MatrixQuestion|STRING]
-	'Matrix Scale:' matrixScale=[surveyImp::MatrixScale|STRING]
+	'Matrix Scale:' matrixScale=[surveyImp::Answer|STRING]
 ;
 
 Identifier:

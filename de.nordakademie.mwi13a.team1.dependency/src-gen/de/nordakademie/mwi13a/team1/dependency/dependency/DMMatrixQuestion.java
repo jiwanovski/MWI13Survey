@@ -2,8 +2,8 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.dependency;
 
+import de.nordakademie.mwi13a.team1.survey.survey.Answer;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
-import de.nordakademie.mwi13a.team1.survey.survey.MatrixScale;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -61,12 +61,12 @@ public interface DMMatrixQuestion extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Matrix Scale</em>' reference.
-   * @see #setMatrixScale(MatrixScale)
+   * @see #setMatrixScale(Answer)
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage#getDMMatrixQuestion_MatrixScale()
    * @model
    * @generated
    */
-  MatrixScale getMatrixScale();
+  Answer getMatrixScale();
 
   /**
    * Sets the value of the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion#getMatrixScale <em>Matrix Scale</em>}' reference.
@@ -76,6 +76,6 @@ public interface DMMatrixQuestion extends EObject
    * @see #getMatrixScale()
    * @generated
    */
-  void setMatrixScale(MatrixScale value);
+  void setMatrixScale(Answer value);
 
 } // DMMatrixQuestion

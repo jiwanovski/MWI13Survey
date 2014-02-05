@@ -452,16 +452,16 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMatrixQuestionMatrixQuestionSTRINGTerminalRuleCall_1_0_1 = (RuleCall)cMatrixQuestionMatrixQuestionCrossReference_1_0.eContents().get(1);
 		private final Keyword cMatrixScaleKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cMatrixScaleAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cMatrixScaleMatrixScaleCrossReference_3_0 = (CrossReference)cMatrixScaleAssignment_3.eContents().get(0);
-		private final RuleCall cMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1 = (RuleCall)cMatrixScaleMatrixScaleCrossReference_3_0.eContents().get(1);
+		private final CrossReference cMatrixScaleAnswerCrossReference_3_0 = (CrossReference)cMatrixScaleAssignment_3.eContents().get(0);
+		private final RuleCall cMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1 = (RuleCall)cMatrixScaleAnswerCrossReference_3_0.eContents().get(1);
 		
 		//DMMatrixQuestion:
 		//	"Matrix Question:" matrixQuestion=[surveyImp::MatrixQuestion|STRING] "Matrix Scale:"
-		//	matrixScale=[surveyImp::MatrixScale|STRING];
+		//	matrixScale=[surveyImp::Answer|STRING];
 		public ParserRule getRule() { return rule; }
 
 		//"Matrix Question:" matrixQuestion=[surveyImp::MatrixQuestion|STRING] "Matrix Scale:"
-		//matrixScale=[surveyImp::MatrixScale|STRING]
+		//matrixScale=[surveyImp::Answer|STRING]
 		public Group getGroup() { return cGroup; }
 
 		//"Matrix Question:"
@@ -479,14 +479,14 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		//"Matrix Scale:"
 		public Keyword getMatrixScaleKeyword_2() { return cMatrixScaleKeyword_2; }
 
-		//matrixScale=[surveyImp::MatrixScale|STRING]
+		//matrixScale=[surveyImp::Answer|STRING]
 		public Assignment getMatrixScaleAssignment_3() { return cMatrixScaleAssignment_3; }
 
-		//[surveyImp::MatrixScale|STRING]
-		public CrossReference getMatrixScaleMatrixScaleCrossReference_3_0() { return cMatrixScaleMatrixScaleCrossReference_3_0; }
+		//[surveyImp::Answer|STRING]
+		public CrossReference getMatrixScaleAnswerCrossReference_3_0() { return cMatrixScaleAnswerCrossReference_3_0; }
 
 		//STRING
-		public RuleCall getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1() { return cMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1; }
+		public RuleCall getMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1() { return cMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1; }
 	}
 
 	public class IdentifierElements extends AbstractParserRuleElementFinder {
@@ -674,7 +674,7 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 
 	//DMMatrixQuestion:
 	//	"Matrix Question:" matrixQuestion=[surveyImp::MatrixQuestion|STRING] "Matrix Scale:"
-	//	matrixScale=[surveyImp::MatrixScale|STRING];
+	//	matrixScale=[surveyImp::Answer|STRING];
 	public DMMatrixQuestionElements getDMMatrixQuestionAccess() {
 		return (pDMMatrixQuestion != null) ? pDMMatrixQuestion : (pDMMatrixQuestion = new DMMatrixQuestionElements());
 	}

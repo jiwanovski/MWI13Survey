@@ -5,8 +5,8 @@ package de.nordakademie.mwi13a.team1.dependency.dependency.impl;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage;
 
+import de.nordakademie.mwi13a.team1.survey.survey.Answer;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
-import de.nordakademie.mwi13a.team1.survey.survey.MatrixScale;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -50,7 +50,7 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected MatrixScale matrixScale;
+  protected Answer matrixScale;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,12 +121,12 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public MatrixScale getMatrixScale()
+  public Answer getMatrixScale()
   {
     if (matrixScale != null && matrixScale.eIsProxy())
     {
       InternalEObject oldMatrixScale = (InternalEObject)matrixScale;
-      matrixScale = (MatrixScale)eResolveProxy(oldMatrixScale);
+      matrixScale = (Answer)eResolveProxy(oldMatrixScale);
       if (matrixScale != oldMatrixScale)
       {
         if (eNotificationRequired())
@@ -141,7 +141,7 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public MatrixScale basicGetMatrixScale()
+  public Answer basicGetMatrixScale()
   {
     return matrixScale;
   }
@@ -151,9 +151,9 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMatrixScale(MatrixScale newMatrixScale)
+  public void setMatrixScale(Answer newMatrixScale)
   {
-    MatrixScale oldMatrixScale = matrixScale;
+    Answer oldMatrixScale = matrixScale;
     matrixScale = newMatrixScale;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DependencyPackage.DM_MATRIX_QUESTION__MATRIX_SCALE, oldMatrixScale, matrixScale));
@@ -193,7 +193,7 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
         setMatrixQuestion((MatrixQuestion)newValue);
         return;
       case DependencyPackage.DM_MATRIX_QUESTION__MATRIX_SCALE:
-        setMatrixScale((MatrixScale)newValue);
+        setMatrixScale((Answer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,7 +213,7 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
         setMatrixQuestion((MatrixQuestion)null);
         return;
       case DependencyPackage.DM_MATRIX_QUESTION__MATRIX_SCALE:
-        setMatrixScale((MatrixScale)null);
+        setMatrixScale((Answer)null);
         return;
     }
     super.eUnset(featureID);

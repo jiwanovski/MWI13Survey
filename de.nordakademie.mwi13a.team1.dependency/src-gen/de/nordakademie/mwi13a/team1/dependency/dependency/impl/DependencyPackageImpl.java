@@ -562,7 +562,7 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
 
     initEClass(dmMatrixQuestionEClass, DMMatrixQuestion.class, "DMMatrixQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDMMatrixQuestion_MatrixQuestion(), theSurveyPackage.getMatrixQuestion(), null, "matrixQuestion", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDMMatrixQuestion_MatrixScale(), theSurveyPackage.getMatrixScale(), null, "matrixScale", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDMMatrixQuestion_MatrixScale(), theSurveyPackage.getAnswer(), null, "matrixScale", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Left(), this.getDependency(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

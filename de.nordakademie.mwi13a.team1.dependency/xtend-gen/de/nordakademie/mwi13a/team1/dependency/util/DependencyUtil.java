@@ -19,13 +19,15 @@ public class DependencyUtil {
       final EList<Dependency> allQuestions = _containerOfType.getExpressions();
       final Function1<Dependency,Boolean> _function = new Function1<Dependency,Boolean>() {
         public Boolean apply(final Dependency it) {
-          return Boolean.valueOf(EcoreUtil.isAncestor(it, e));
+          boolean _isAncestor = EcoreUtil.isAncestor(it, e);
+          return Boolean.valueOf(_isAncestor);
         }
       };
       final Dependency containingPart = IterableExtensions.<Dependency>findFirst(allQuestions, _function);
       int _indexOf = allQuestions.indexOf(containingPart);
       List<Dependency> _subList = allQuestions.subList(0, _indexOf);
-      _xblockexpression = (EcoreUtil2.<DMQuestion>typeSelect(_subList, DMQuestion.class));
+      List<DMQuestion> _typeSelect = EcoreUtil2.<DMQuestion>typeSelect(_subList, DMQuestion.class);
+      _xblockexpression = (_typeSelect);
     }
     return _xblockexpression;
   }

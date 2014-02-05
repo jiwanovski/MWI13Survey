@@ -6116,17 +6116,17 @@ public class InternalDependencyParser extends AbstractInternalContentAssistParse
             // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:2372:1: ( ( RULE_STRING ) )
             // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:2373:1: ( RULE_STRING )
             {
-             before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleCrossReference_3_0()); 
+             before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerCrossReference_3_0()); 
             // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:2374:1: ( RULE_STRING )
             // ../de.nordakademie.mwi13a.team1.dependency.ui/src-gen/de/nordakademie/mwi13a/team1/dependency/ui/contentassist/antlr/internal/InternalDependency.g:2375:1: RULE_STRING
             {
-             before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1()); 
+             before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1()); 
             match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__DMMatrixQuestion__MatrixScaleAssignment_34690); 
-             after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1()); 
+             after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleCrossReference_3_0()); 
+             after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerCrossReference_3_0()); 
 
             }
 

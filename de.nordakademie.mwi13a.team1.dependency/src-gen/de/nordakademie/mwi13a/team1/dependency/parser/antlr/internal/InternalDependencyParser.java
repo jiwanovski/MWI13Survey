@@ -1746,7 +1746,7 @@ public class InternalDependencyParser extends AbstractInternalAntlrParser {
                     
             otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDMMatrixQuestion1552); 
 
-            		newLeafNode(otherlv_3, grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleCrossReference_3_0()); 
+            		newLeafNode(otherlv_3, grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerCrossReference_3_0()); 
             	
 
             }

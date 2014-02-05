@@ -2370,12 +2370,12 @@ rule__DMMatrixQuestion__MatrixScaleAssignment_3
     }
 :
 (
-{ before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleCrossReference_3_0()); }
+{ before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerCrossReference_3_0()); }
 (
-{ before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1()); }
-	RULE_STRING{ after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1()); }
+{ before(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1()); }
+	RULE_STRING{ after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1()); }
 )
-{ after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleCrossReference_3_0()); }
+{ after(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerCrossReference_3_0()); }
 )
 
 ;

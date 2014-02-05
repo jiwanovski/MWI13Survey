@@ -162,7 +162,7 @@ public class DependencySemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (matrixQuestion=[MatrixQuestion|STRING] matrixScale=[MatrixScale|STRING])
+	 *     (matrixQuestion=[MatrixQuestion|STRING] matrixScale=[Answer|STRING])
 	 */
 	protected void sequence_DMMatrixQuestion(EObject context, DMMatrixQuestion semanticObject) {
 		if(errorAcceptor != null) {
@@ -174,7 +174,7 @@ public class DependencySemanticSequencer extends AbstractDelegatingSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionMatrixQuestionSTRINGTerminalRuleCall_1_0_1(), semanticObject.getMatrixQuestion());
-		feeder.accept(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleMatrixScaleSTRINGTerminalRuleCall_3_0_1(), semanticObject.getMatrixScale());
+		feeder.accept(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAnswerSTRINGTerminalRuleCall_3_0_1(), semanticObject.getMatrixScale());
 		feeder.finish();
 	}
 	
