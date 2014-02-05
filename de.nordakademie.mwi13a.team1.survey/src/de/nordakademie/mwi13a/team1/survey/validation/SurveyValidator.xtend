@@ -3,12 +3,16 @@
  */
 package de.nordakademie.mwi13a.team1.survey.validation
 
-import org.eclipse.xtext.validation.CheckType
-import org.eclipse.xtext.validation.Check
-import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage
-import de.nordakademie.mwi13a.team1.survey.survey.Survey
-import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
+import de.nordakademie.mwi13a.team1.survey.survey.DropDown
 import de.nordakademie.mwi13a.team1.survey.survey.Part
+import de.nordakademie.mwi13a.team1.survey.survey.Question
+import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
+import de.nordakademie.mwi13a.team1.survey.survey.Survey
+import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage
+import java.util.ArrayList
+import org.eclipse.xtext.validation.Check
+import org.eclipse.xtext.validation.CheckType
+
 //import de.nordakademie.mwi13a.team1.survey.survey.Question
 //import de.nordakademie.mwi13a.team1.survey.survey.DropDown
 
@@ -27,7 +31,7 @@ class SurveyValidator extends AbstractSurveyValidator {
 		if(questionnaire.part.empty) 
 			warning("A Questionnaire must contain at least 1 Part!", 
 				SurveyPackage.Literals.QUESTIONNAIRE__NAME
-			)
+			)              
 	}
 	
 	@Check(CheckType.FAST)
@@ -38,28 +42,55 @@ class SurveyValidator extends AbstractSurveyValidator {
 			)
 	}
 			
-//	@Check(CheckType.FAST)
-//	def IDQuestionnaire (Survey survey) {
-//		//var listeFragebogen = new ArrayList[Umfrage.fragebogen]
-//		
+	@Check(CheckType.FAST)
+	def IDQuestionnaire (Questionnaire questionnaire) {
+//		var listeFragebogen = new ArrayList()[survey.questionnaire]
 //		for(id : survey.questionnaire.id)
+//		val duplicate = survey.questionnaire.findFirst[]
+//		if (duplicate != null)
+//			error("Doppelte ID in Umfrage", MyDSLPackage.Literals.FRAGEBOGEN__NAME)
 //		
-//		var duplicate = survey.questionnaire.findFirst[]
-//		//if (duplicate != null)
-//		//	error("Doppelte ID in Umfrage", MyDSLPackage.Literals.FRAGEBOGEN__NAME)
-//		
+		
+		val survey = (questionnaire.eContainer as Survey)		
+		if (!survey.questionnaire.empty){
+			//val numberquestionnaires = survey.questionnaire.length
+			val IDquestionnaire = (survey.questionnaire as Questionnaire).id
+			survey.questionnaire.forEach[
+				if (it.id.equals(IDquestionnaire)){
+					error("Duplicate ID in Questionnaires" + it.name + "and", SurveyPackage.Literals.QUESTIONNAIRE__NAME)
+				}
+			]
+				//val IDcurrent = (survey.questionnaire as Questionnaire).id
+				
+		
+		}
 //		if (survey.questionnaire.exists[it == survey.questionnaire && it.id == survey.questionnaire.id])
 //			error("Doppelte ID in Fragebogen", SurveyPackage.Literals.QUESTIONNAIRE__NAME)
-//	}
+	}
 		
+		
+	@Check
+	def DropboxWith2Answers (DropDown dropdown) {
+		//if (frage.dropdown != null)
+		
+		//if (surveyterminaltypes.name == 'DropDown'){
+		//	val countanswers = (dropdown.eContainer as Answer)
+		//if(surveyterminaltypes == typeof(DropDown)){
+			if (dropdown.answer.size <= 2){
+				error("A DropDown must contain at least 2 Answers!", 
+				SurveyPackage.Literals.QUESTIONNAIRE__NAME)
+			}
+		}
+	}
+	
 //	@Check(CheckType.FAST)
 //	def DropboxWith2Answers (Question question) {
-//		//if (frage.dropdown != null)
-//		if(question.type == DropDown){
-//			if (question.answer.size <= 2){
+//		if(question.questionType == 'DropDown'){
+//			val dropDown = DropDown
+//			if (dropDown.answer.size <= 2){
 //				error("A DropDown must contain at least 2 Answers!", 
 //				SurveyPackage.Literals.QUESTION__NAME)
 //			}
 //		}
 //	}
-}
+//}
