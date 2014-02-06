@@ -10,7 +10,7 @@ Survey returns Survey:
 /*A Questionnaire must contain at least 1 Part*/
 Questionnaire:
 	'Questionnaire:' name=STRING '{'
-		'Questionnaire-ID:' id=Identifier
+		'Questionnaire-ID:' id= Identifier
 		(part+=Part)+
 	'}'
 ;
