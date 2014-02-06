@@ -16,7 +16,7 @@ SurveyElements:
 PartElements:
 	'Part:' name=[surveyImp::Part|STRING]
 	('Next parts {'
-		(nextParts+=DMNextParts ('OR' nextParts+=DMNextParts)*)
+		(nextParts+=DMNextParts)+
 	'}')+
 ;
 
@@ -40,37 +40,13 @@ And returns Dependency:
 ;
 
 Primary returns Dependency:
-	'(' Dependency ')' |	
+	{Bracket} "(" dependency=Or ")" |
 	Atomic 
 ;
 
-//Atomic returns Dependeny:
-//	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING]
-//		answer=[DMAnswer]
-//;
-
-//DMAnswer:
-//	NormalQuestion | MatrixQuestion
-//;
-
-//NormalQuestion:
-//	'Answer:' answer=[surveyImp::Answer|STRING]
-//;
-
-//MatrixQuestion:
-//	'{'
-//		dmMatrixQuestion+=DMMatrixQuestion ('|' 
-//		dmMatrixQuestion+=DMMatrixQuestion)*
-//	'}'
-//;
-
 Atomic returns Dependency:
-	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING] 
-		'Answer:' answer=[surveyImp::Answer|STRING] |
-	{DMMatrix} 'Matrix:' matrix=[surveyImp::Question|STRING] '{'
-			dmMatrixQuestion+=DMMatrixQuestion ('|' 
-			dmMatrixQuestion+=DMMatrixQuestion)*
-		'}'
+	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING] 'Answer:' answer=[surveyImp::Answer|STRING] |
+	{DMMatrixQuestion} 'Matrix Question:' question=[surveyImp::MatrixQuestion|STRING] 'Answer:' answer=[surveyImp::Answer|STRING]
 ;
 
 DMMatrixQuestion:

@@ -87,20 +87,15 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamePartSTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNamePartCrossReference_1_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cNextPartsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
-		private final Assignment cNextPartsAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
-		private final RuleCall cNextPartsDMNextPartsParserRuleCall_2_1_0_0 = (RuleCall)cNextPartsAssignment_2_1_0.eContents().get(0);
-		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
-		private final Keyword cORKeyword_2_1_1_0 = (Keyword)cGroup_2_1_1.eContents().get(0);
-		private final Assignment cNextPartsAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
-		private final RuleCall cNextPartsDMNextPartsParserRuleCall_2_1_1_1_0 = (RuleCall)cNextPartsAssignment_2_1_1_1.eContents().get(0);
+		private final Assignment cNextPartsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNextPartsDMNextPartsParserRuleCall_2_1_0 = (RuleCall)cNextPartsAssignment_2_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//PartElements:
-		//	"Part:" name=[surveyImp::Part|STRING] ("Next parts {" (nextParts+=DMNextParts ("OR" nextParts+=DMNextParts)*) "}")+;
+		//	"Part:" name=[surveyImp::Part|STRING] ("Next parts {" nextParts+=DMNextParts+ "}")+;
 		public ParserRule getRule() { return rule; }
 
-		//"Part:" name=[surveyImp::Part|STRING] ("Next parts {" (nextParts+=DMNextParts ("OR" nextParts+=DMNextParts)*) "}")+
+		//"Part:" name=[surveyImp::Part|STRING] ("Next parts {" nextParts+=DMNextParts+ "}")+
 		public Group getGroup() { return cGroup; }
 
 		//"Part:"
@@ -115,32 +110,17 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNamePartSTRINGTerminalRuleCall_1_0_1() { return cNamePartSTRINGTerminalRuleCall_1_0_1; }
 
-		//("Next parts {" (nextParts+=DMNextParts ("OR" nextParts+=DMNextParts)*) "}")+
+		//("Next parts {" nextParts+=DMNextParts+ "}")+
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"Next parts {"
 		public Keyword getNextPartsKeyword_2_0() { return cNextPartsKeyword_2_0; }
 
-		//nextParts+=DMNextParts ("OR" nextParts+=DMNextParts)*
-		public Group getGroup_2_1() { return cGroup_2_1; }
-
-		//nextParts+=DMNextParts
-		public Assignment getNextPartsAssignment_2_1_0() { return cNextPartsAssignment_2_1_0; }
+		//nextParts+=DMNextParts+
+		public Assignment getNextPartsAssignment_2_1() { return cNextPartsAssignment_2_1; }
 
 		//DMNextParts
-		public RuleCall getNextPartsDMNextPartsParserRuleCall_2_1_0_0() { return cNextPartsDMNextPartsParserRuleCall_2_1_0_0; }
-
-		//("OR" nextParts+=DMNextParts)*
-		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
-
-		//"OR"
-		public Keyword getORKeyword_2_1_1_0() { return cORKeyword_2_1_1_0; }
-
-		//nextParts+=DMNextParts
-		public Assignment getNextPartsAssignment_2_1_1_1() { return cNextPartsAssignment_2_1_1_1; }
-
-		//DMNextParts
-		public RuleCall getNextPartsDMNextPartsParserRuleCall_2_1_1_1_0() { return cNextPartsDMNextPartsParserRuleCall_2_1_1_1_0; }
+		public RuleCall getNextPartsDMNextPartsParserRuleCall_2_1_0() { return cNextPartsDMNextPartsParserRuleCall_2_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
@@ -286,29 +266,37 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Primary");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cDependencyParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Action cBracketAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cDependencyAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cDependencyOrParserRuleCall_0_2_0 = (RuleCall)cDependencyAssignment_0_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final RuleCall cAtomicParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Primary returns Dependency:
-		//	"(" Dependency ")" | Atomic;
+		//	{Bracket} "(" dependency=Or ")" | Atomic;
 		public ParserRule getRule() { return rule; }
 
-		//"(" Dependency ")" | Atomic
+		//{Bracket} "(" dependency=Or ")" | Atomic
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"(" Dependency ")"
+		//{Bracket} "(" dependency=Or ")"
 		public Group getGroup_0() { return cGroup_0; }
 
-		//"("
-		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
+		//{Bracket}
+		public Action getBracketAction_0_0() { return cBracketAction_0_0; }
 
-		//Dependency
-		public RuleCall getDependencyParserRuleCall_0_1() { return cDependencyParserRuleCall_0_1; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
+
+		//dependency=Or
+		public Assignment getDependencyAssignment_0_2() { return cDependencyAssignment_0_2; }
+
+		//Or
+		public RuleCall getDependencyOrParserRuleCall_0_2_0() { return cDependencyOrParserRuleCall_0_2_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
+		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
 
 		//Atomic
 		public RuleCall getAtomicParserRuleCall_1() { return cAtomicParserRuleCall_1; }
@@ -328,45 +316,25 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAnswerAnswerCrossReference_0_4_0 = (CrossReference)cAnswerAssignment_0_4.eContents().get(0);
 		private final RuleCall cAnswerAnswerSTRINGTerminalRuleCall_0_4_0_1 = (RuleCall)cAnswerAnswerCrossReference_0_4_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cDMMatrixAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cMatrixKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cMatrixAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final CrossReference cMatrixQuestionCrossReference_1_2_0 = (CrossReference)cMatrixAssignment_1_2.eContents().get(0);
-		private final RuleCall cMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1 = (RuleCall)cMatrixQuestionCrossReference_1_2_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
-		private final Assignment cDmMatrixQuestionAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
-		private final RuleCall cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0 = (RuleCall)cDmMatrixQuestionAssignment_1_4.eContents().get(0);
-		private final Group cGroup_1_5 = (Group)cGroup_1.eContents().get(5);
-		private final Keyword cVerticalLineKeyword_1_5_0 = (Keyword)cGroup_1_5.eContents().get(0);
-		private final Assignment cDmMatrixQuestionAssignment_1_5_1 = (Assignment)cGroup_1_5.eContents().get(1);
-		private final RuleCall cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0 = (RuleCall)cDmMatrixQuestionAssignment_1_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_1_6 = (Keyword)cGroup_1.eContents().get(6);
+		private final Action cDMMatrixQuestionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cMatrixQuestionKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cQuestionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final CrossReference cQuestionMatrixQuestionCrossReference_1_2_0 = (CrossReference)cQuestionAssignment_1_2.eContents().get(0);
+		private final RuleCall cQuestionMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1 = (RuleCall)cQuestionMatrixQuestionCrossReference_1_2_0.eContents().get(1);
+		private final Keyword cAnswerKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Assignment cAnswerAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final CrossReference cAnswerAnswerCrossReference_1_4_0 = (CrossReference)cAnswerAssignment_1_4.eContents().get(0);
+		private final RuleCall cAnswerAnswerSTRINGTerminalRuleCall_1_4_0_1 = (RuleCall)cAnswerAnswerCrossReference_1_4_0.eContents().get(1);
 		
-		////Atomic returns Dependeny:
-		////	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING]
-		////		answer=[DMAnswer]
-		////;
-		////DMAnswer:
-		////	NormalQuestion | MatrixQuestion
-		////;
-		////NormalQuestion:
-		////	'Answer:' answer=[surveyImp::Answer|STRING]
-		////;
-		////MatrixQuestion:
-		////	'{'
-		////		dmMatrixQuestion+=DMMatrixQuestion ('|' 
-		////		dmMatrixQuestion+=DMMatrixQuestion)*
-		////	'}'
-		////;
 		//Atomic returns Dependency:
 		//	{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING] |
-		//	{DMMatrix} "Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
-		//	dmMatrixQuestion+=DMMatrixQuestion)* "}";
+		//	{DMMatrixQuestion} "Matrix Question:" question=[surveyImp::MatrixQuestion|STRING] "Answer:"
+		//	answer=[surveyImp::Answer|STRING];
 		public ParserRule getRule() { return rule; }
 
-		//{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING] | {DMMatrix}
-		//"Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
-		//dmMatrixQuestion+=DMMatrixQuestion)* "}"
+		//{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING] |
+		//{DMMatrixQuestion} "Matrix Question:" question=[surveyImp::MatrixQuestion|STRING] "Answer:"
+		//answer=[surveyImp::Answer|STRING]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING]
@@ -399,48 +367,36 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAnswerAnswerSTRINGTerminalRuleCall_0_4_0_1() { return cAnswerAnswerSTRINGTerminalRuleCall_0_4_0_1; }
 
-		//{DMMatrix} "Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
-		//dmMatrixQuestion+=DMMatrixQuestion)* "}"
+		//{DMMatrixQuestion} "Matrix Question:" question=[surveyImp::MatrixQuestion|STRING] "Answer:"
+		//answer=[surveyImp::Answer|STRING]
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{DMMatrix}
-		public Action getDMMatrixAction_1_0() { return cDMMatrixAction_1_0; }
+		//{DMMatrixQuestion}
+		public Action getDMMatrixQuestionAction_1_0() { return cDMMatrixQuestionAction_1_0; }
 
-		//"Matrix:"
-		public Keyword getMatrixKeyword_1_1() { return cMatrixKeyword_1_1; }
+		//"Matrix Question:"
+		public Keyword getMatrixQuestionKeyword_1_1() { return cMatrixQuestionKeyword_1_1; }
 
-		//matrix=[surveyImp::Question|STRING]
-		public Assignment getMatrixAssignment_1_2() { return cMatrixAssignment_1_2; }
+		//question=[surveyImp::MatrixQuestion|STRING]
+		public Assignment getQuestionAssignment_1_2() { return cQuestionAssignment_1_2; }
 
-		//[surveyImp::Question|STRING]
-		public CrossReference getMatrixQuestionCrossReference_1_2_0() { return cMatrixQuestionCrossReference_1_2_0; }
+		//[surveyImp::MatrixQuestion|STRING]
+		public CrossReference getQuestionMatrixQuestionCrossReference_1_2_0() { return cQuestionMatrixQuestionCrossReference_1_2_0; }
 
 		//STRING
-		public RuleCall getMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1() { return cMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1; }
+		public RuleCall getQuestionMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1() { return cQuestionMatrixQuestionSTRINGTerminalRuleCall_1_2_0_1; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1_3() { return cLeftCurlyBracketKeyword_1_3; }
+		//"Answer:"
+		public Keyword getAnswerKeyword_1_3() { return cAnswerKeyword_1_3; }
 
-		//dmMatrixQuestion+=DMMatrixQuestion
-		public Assignment getDmMatrixQuestionAssignment_1_4() { return cDmMatrixQuestionAssignment_1_4; }
+		//answer=[surveyImp::Answer|STRING]
+		public Assignment getAnswerAssignment_1_4() { return cAnswerAssignment_1_4; }
 
-		//DMMatrixQuestion
-		public RuleCall getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0() { return cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_4_0; }
+		//[surveyImp::Answer|STRING]
+		public CrossReference getAnswerAnswerCrossReference_1_4_0() { return cAnswerAnswerCrossReference_1_4_0; }
 
-		//("|" dmMatrixQuestion+=DMMatrixQuestion)*
-		public Group getGroup_1_5() { return cGroup_1_5; }
-
-		//"|"
-		public Keyword getVerticalLineKeyword_1_5_0() { return cVerticalLineKeyword_1_5_0; }
-
-		//dmMatrixQuestion+=DMMatrixQuestion
-		public Assignment getDmMatrixQuestionAssignment_1_5_1() { return cDmMatrixQuestionAssignment_1_5_1; }
-
-		//DMMatrixQuestion
-		public RuleCall getDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0() { return cDmMatrixQuestionDMMatrixQuestionParserRuleCall_1_5_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_1_6() { return cRightCurlyBracketKeyword_1_6; }
+		//STRING
+		public RuleCall getAnswerAnswerSTRINGTerminalRuleCall_1_4_0_1() { return cAnswerAnswerSTRINGTerminalRuleCall_1_4_0_1; }
 	}
 
 	public class DMMatrixQuestionElements extends AbstractParserRuleElementFinder {
@@ -585,7 +541,7 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PartElements:
-	//	"Part:" name=[surveyImp::Part|STRING] ("Next parts {" (nextParts+=DMNextParts ("OR" nextParts+=DMNextParts)*) "}")+;
+	//	"Part:" name=[surveyImp::Part|STRING] ("Next parts {" nextParts+=DMNextParts+ "}")+;
 	public PartElementsElements getPartElementsAccess() {
 		return (pPartElements != null) ? pPartElements : (pPartElements = new PartElementsElements());
 	}
@@ -635,7 +591,7 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Primary returns Dependency:
-	//	"(" Dependency ")" | Atomic;
+	//	{Bracket} "(" dependency=Or ")" | Atomic;
 	public PrimaryElements getPrimaryAccess() {
 		return (pPrimary != null) ? pPrimary : (pPrimary = new PrimaryElements());
 	}
@@ -644,26 +600,10 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		return getPrimaryAccess().getRule();
 	}
 
-	////Atomic returns Dependeny:
-	////	{DMQuestion} 'Question:' question=[surveyImp::Question|STRING]
-	////		answer=[DMAnswer]
-	////;
-	////DMAnswer:
-	////	NormalQuestion | MatrixQuestion
-	////;
-	////NormalQuestion:
-	////	'Answer:' answer=[surveyImp::Answer|STRING]
-	////;
-	////MatrixQuestion:
-	////	'{'
-	////		dmMatrixQuestion+=DMMatrixQuestion ('|' 
-	////		dmMatrixQuestion+=DMMatrixQuestion)*
-	////	'}'
-	////;
 	//Atomic returns Dependency:
 	//	{DMQuestion} "Question:" question=[surveyImp::Question|STRING] "Answer:" answer=[surveyImp::Answer|STRING] |
-	//	{DMMatrix} "Matrix:" matrix=[surveyImp::Question|STRING] "{" dmMatrixQuestion+=DMMatrixQuestion ("|"
-	//	dmMatrixQuestion+=DMMatrixQuestion)* "}";
+	//	{DMMatrixQuestion} "Matrix Question:" question=[surveyImp::MatrixQuestion|STRING] "Answer:"
+	//	answer=[surveyImp::Answer|STRING];
 	public AtomicElements getAtomicAccess() {
 		return (pAtomic != null) ? pAtomic : (pAtomic = new AtomicElements());
 	}

@@ -95,6 +95,15 @@ public interface DependencyFactory extends EFactory
   And createAnd();
 
   /**
+   * Returns a new object of class '<em>Bracket</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bracket</em>'.
+   * @generated
+   */
+  Bracket createBracket();
+
+  /**
    * Returns a new object of class '<em>DM Question</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,15 +111,6 @@ public interface DependencyFactory extends EFactory
    * @generated
    */
   DMQuestion createDMQuestion();
-
-  /**
-   * Returns a new object of class '<em>DM Matrix</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>DM Matrix</em>'.
-   * @generated
-   */
-  DMMatrix createDMMatrix();
 
   /**
    * Returns the package supported by this factory.

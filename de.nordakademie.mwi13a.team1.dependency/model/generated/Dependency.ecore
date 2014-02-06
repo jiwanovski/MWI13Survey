@@ -22,7 +22,9 @@
         eType="#//Dependency" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dependency"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DMMatrixQuestion">
+  <eClassifiers xsi:type="ecore:EClass" name="DMMatrixQuestion" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="question" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//MatrixQuestion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="answer" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Answer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matrixQuestion" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//MatrixQuestion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matrixScale" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Answer"/>
   </eClassifiers>
@@ -38,13 +40,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Dependency"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bracket" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependency" eType="#//Dependency"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DMQuestion" eSuperTypes="#//Dependency">
     <eStructuralFeatures xsi:type="ecore:EReference" name="question" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Question"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="answer" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Answer"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DMMatrix" eSuperTypes="#//Dependency">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="matrix" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Question"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dmMatrixQuestion" upperBound="-1"
-        eType="#//DMMatrixQuestion" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

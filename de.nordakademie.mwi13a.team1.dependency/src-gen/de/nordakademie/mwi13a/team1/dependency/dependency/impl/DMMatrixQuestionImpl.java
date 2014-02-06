@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl#getQuestion <em>Question</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl#getAnswer <em>Answer</em>}</li>
  *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl#getMatrixQuestion <em>Matrix Question</em>}</li>
  *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMMatrixQuestionImpl#getMatrixScale <em>Matrix Scale</em>}</li>
  * </ul>
@@ -30,8 +31,28 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implements DMMatrixQuestion
+public class DMMatrixQuestionImpl extends DependencyImpl implements DMMatrixQuestion
 {
+  /**
+   * The cached value of the '{@link #getQuestion() <em>Question</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQuestion()
+   * @generated
+   * @ordered
+   */
+  protected MatrixQuestion question;
+
+  /**
+   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnswer()
+   * @generated
+   * @ordered
+   */
+  protected Answer answer;
+
   /**
    * The cached value of the '{@link #getMatrixQuestion() <em>Matrix Question</em>}' reference.
    * <!-- begin-user-doc -->
@@ -71,6 +92,92 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
   protected EClass eStaticClass()
   {
     return DependencyPackage.Literals.DM_MATRIX_QUESTION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MatrixQuestion getQuestion()
+  {
+    if (question != null && question.eIsProxy())
+    {
+      InternalEObject oldQuestion = (InternalEObject)question;
+      question = (MatrixQuestion)eResolveProxy(oldQuestion);
+      if (question != oldQuestion)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependencyPackage.DM_MATRIX_QUESTION__QUESTION, oldQuestion, question));
+      }
+    }
+    return question;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MatrixQuestion basicGetQuestion()
+  {
+    return question;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setQuestion(MatrixQuestion newQuestion)
+  {
+    MatrixQuestion oldQuestion = question;
+    question = newQuestion;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DependencyPackage.DM_MATRIX_QUESTION__QUESTION, oldQuestion, question));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Answer getAnswer()
+  {
+    if (answer != null && answer.eIsProxy())
+    {
+      InternalEObject oldAnswer = (InternalEObject)answer;
+      answer = (Answer)eResolveProxy(oldAnswer);
+      if (answer != oldAnswer)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependencyPackage.DM_MATRIX_QUESTION__ANSWER, oldAnswer, answer));
+      }
+    }
+    return answer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Answer basicGetAnswer()
+  {
+    return answer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnswer(Answer newAnswer)
+  {
+    Answer oldAnswer = answer;
+    answer = newAnswer;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DependencyPackage.DM_MATRIX_QUESTION__ANSWER, oldAnswer, answer));
   }
 
   /**
@@ -169,6 +276,12 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DependencyPackage.DM_MATRIX_QUESTION__QUESTION:
+        if (resolve) return getQuestion();
+        return basicGetQuestion();
+      case DependencyPackage.DM_MATRIX_QUESTION__ANSWER:
+        if (resolve) return getAnswer();
+        return basicGetAnswer();
       case DependencyPackage.DM_MATRIX_QUESTION__MATRIX_QUESTION:
         if (resolve) return getMatrixQuestion();
         return basicGetMatrixQuestion();
@@ -189,6 +302,12 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DependencyPackage.DM_MATRIX_QUESTION__QUESTION:
+        setQuestion((MatrixQuestion)newValue);
+        return;
+      case DependencyPackage.DM_MATRIX_QUESTION__ANSWER:
+        setAnswer((Answer)newValue);
+        return;
       case DependencyPackage.DM_MATRIX_QUESTION__MATRIX_QUESTION:
         setMatrixQuestion((MatrixQuestion)newValue);
         return;
@@ -209,6 +328,12 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DependencyPackage.DM_MATRIX_QUESTION__QUESTION:
+        setQuestion((MatrixQuestion)null);
+        return;
+      case DependencyPackage.DM_MATRIX_QUESTION__ANSWER:
+        setAnswer((Answer)null);
+        return;
       case DependencyPackage.DM_MATRIX_QUESTION__MATRIX_QUESTION:
         setMatrixQuestion((MatrixQuestion)null);
         return;
@@ -229,6 +354,10 @@ public class DMMatrixQuestionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DependencyPackage.DM_MATRIX_QUESTION__QUESTION:
+        return question != null;
+      case DependencyPackage.DM_MATRIX_QUESTION__ANSWER:
+        return answer != null;
       case DependencyPackage.DM_MATRIX_QUESTION__MATRIX_QUESTION:
         return matrixQuestion != null;
       case DependencyPackage.DM_MATRIX_QUESTION__MATRIX_SCALE:

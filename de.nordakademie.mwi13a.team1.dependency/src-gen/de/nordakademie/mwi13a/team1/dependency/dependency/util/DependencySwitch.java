@@ -111,6 +111,7 @@ public class DependencySwitch<T> extends Switch<T>
       {
         DMMatrixQuestion dmMatrixQuestion = (DMMatrixQuestion)theEObject;
         T result = caseDMMatrixQuestion(dmMatrixQuestion);
+        if (result == null) result = caseDependency(dmMatrixQuestion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -130,19 +131,19 @@ public class DependencySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DependencyPackage.BRACKET:
+      {
+        Bracket bracket = (Bracket)theEObject;
+        T result = caseBracket(bracket);
+        if (result == null) result = caseDependency(bracket);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DependencyPackage.DM_QUESTION:
       {
         DMQuestion dmQuestion = (DMQuestion)theEObject;
         T result = caseDMQuestion(dmQuestion);
         if (result == null) result = caseDependency(dmQuestion);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DependencyPackage.DM_MATRIX:
-      {
-        DMMatrix dmMatrix = (DMMatrix)theEObject;
-        T result = caseDMMatrix(dmMatrix);
-        if (result == null) result = caseDependency(dmMatrix);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -279,6 +280,22 @@ public class DependencySwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Bracket</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bracket</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBracket(Bracket object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>DM Question</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -290,22 +307,6 @@ public class DependencySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDMQuestion(DMQuestion object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>DM Matrix</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>DM Matrix</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDMMatrix(DMMatrix object)
   {
     return null;
   }

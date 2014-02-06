@@ -3,7 +3,7 @@
 package de.nordakademie.mwi13a.team1.dependency.dependency.impl;
 
 import de.nordakademie.mwi13a.team1.dependency.dependency.And;
-import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix;
+import de.nordakademie.mwi13a.team1.dependency.dependency.Bracket;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion;
@@ -92,14 +92,14 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dmQuestionEClass = null;
+  private EClass bracketEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dmMatrixEClass = null;
+  private EClass dmQuestionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -302,7 +302,7 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDMMatrixQuestion_MatrixQuestion()
+  public EReference getDMMatrixQuestion_Question()
   {
     return (EReference)dmMatrixQuestionEClass.getEStructuralFeatures().get(0);
   }
@@ -312,9 +312,29 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDMMatrixQuestion_MatrixScale()
+  public EReference getDMMatrixQuestion_Answer()
   {
     return (EReference)dmMatrixQuestionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMMatrixQuestion_MatrixQuestion()
+  {
+    return (EReference)dmMatrixQuestionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDMMatrixQuestion_MatrixScale()
+  {
+    return (EReference)dmMatrixQuestionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -382,6 +402,26 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getBracket()
+  {
+    return bracketEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBracket_Dependency()
+  {
+    return (EReference)bracketEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDMQuestion()
   {
     return dmQuestionEClass;
@@ -405,36 +445,6 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
   public EReference getDMQuestion_Answer()
   {
     return (EReference)dmQuestionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDMMatrix()
-  {
-    return dmMatrixEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDMMatrix_Matrix()
-  {
-    return (EReference)dmMatrixEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDMMatrix_DmMatrixQuestion()
-  {
-    return (EReference)dmMatrixEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -485,6 +495,8 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     dependencyEClass = createEClass(DEPENDENCY);
 
     dmMatrixQuestionEClass = createEClass(DM_MATRIX_QUESTION);
+    createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__QUESTION);
+    createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__ANSWER);
     createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__MATRIX_QUESTION);
     createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__MATRIX_SCALE);
 
@@ -496,13 +508,12 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     createEReference(andEClass, AND__LEFT);
     createEReference(andEClass, AND__RIGHT);
 
+    bracketEClass = createEClass(BRACKET);
+    createEReference(bracketEClass, BRACKET__DEPENDENCY);
+
     dmQuestionEClass = createEClass(DM_QUESTION);
     createEReference(dmQuestionEClass, DM_QUESTION__QUESTION);
     createEReference(dmQuestionEClass, DM_QUESTION__ANSWER);
-
-    dmMatrixEClass = createEClass(DM_MATRIX);
-    createEReference(dmMatrixEClass, DM_MATRIX__MATRIX);
-    createEReference(dmMatrixEClass, DM_MATRIX__DM_MATRIX_QUESTION);
   }
 
   /**
@@ -537,10 +548,11 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    dmMatrixQuestionEClass.getESuperTypes().add(this.getDependency());
     orEClass.getESuperTypes().add(this.getDependency());
     andEClass.getESuperTypes().add(this.getDependency());
+    bracketEClass.getESuperTypes().add(this.getDependency());
     dmQuestionEClass.getESuperTypes().add(this.getDependency());
-    dmMatrixEClass.getESuperTypes().add(this.getDependency());
 
     // Initialize classes and features; add operations and parameters
     initEClass(dependencyModelEClass, DependencyModel.class, "DependencyModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -561,6 +573,8 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(dmMatrixQuestionEClass, DMMatrixQuestion.class, "DMMatrixQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDMMatrixQuestion_Question(), theSurveyPackage.getMatrixQuestion(), null, "question", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDMMatrixQuestion_Answer(), theSurveyPackage.getAnswer(), null, "answer", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDMMatrixQuestion_MatrixQuestion(), theSurveyPackage.getMatrixQuestion(), null, "matrixQuestion", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDMMatrixQuestion_MatrixScale(), theSurveyPackage.getAnswer(), null, "matrixScale", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -572,13 +586,12 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     initEReference(getAnd_Left(), this.getDependency(), null, "left", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAnd_Right(), this.getDependency(), null, "right", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(bracketEClass, Bracket.class, "Bracket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBracket_Dependency(), this.getDependency(), null, "dependency", null, 0, 1, Bracket.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(dmQuestionEClass, DMQuestion.class, "DMQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDMQuestion_Question(), theSurveyPackage.getQuestion(), null, "question", null, 0, 1, DMQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDMQuestion_Answer(), theSurveyPackage.getAnswer(), null, "answer", null, 0, 1, DMQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dmMatrixEClass, DMMatrix.class, "DMMatrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDMMatrix_Matrix(), theSurveyPackage.getQuestion(), null, "matrix", null, 0, 1, DMMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDMMatrix_DmMatrixQuestion(), this.getDMMatrixQuestion(), null, "dmMatrixQuestion", null, 0, -1, DMMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

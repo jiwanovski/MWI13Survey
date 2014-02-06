@@ -43,8 +43,6 @@ public class DependencyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSurveyElementsAccess().getGroup(), "rule__SurveyElements__Group__0");
 					put(grammarAccess.getPartElementsAccess().getGroup(), "rule__PartElements__Group__0");
 					put(grammarAccess.getPartElementsAccess().getGroup_2(), "rule__PartElements__Group_2__0");
-					put(grammarAccess.getPartElementsAccess().getGroup_2_1(), "rule__PartElements__Group_2_1__0");
-					put(grammarAccess.getPartElementsAccess().getGroup_2_1_1(), "rule__PartElements__Group_2_1_1__0");
 					put(grammarAccess.getDMNextPartsAccess().getGroup(), "rule__DMNextParts__Group__0");
 					put(grammarAccess.getDMNextPartsAccess().getGroup_2(), "rule__DMNextParts__Group_2__0");
 					put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
@@ -54,23 +52,21 @@ public class DependencyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimaryAccess().getGroup_0(), "rule__Primary__Group_0__0");
 					put(grammarAccess.getAtomicAccess().getGroup_0(), "rule__Atomic__Group_0__0");
 					put(grammarAccess.getAtomicAccess().getGroup_1(), "rule__Atomic__Group_1__0");
-					put(grammarAccess.getAtomicAccess().getGroup_1_5(), "rule__Atomic__Group_1_5__0");
 					put(grammarAccess.getDMMatrixQuestionAccess().getGroup(), "rule__DMMatrixQuestion__Group__0");
 					put(grammarAccess.getDependencyModelAccess().getElementsAssignment(), "rule__DependencyModel__ElementsAssignment");
 					put(grammarAccess.getSurveyElementsAccess().getNameAssignment_1(), "rule__SurveyElements__NameAssignment_1");
 					put(grammarAccess.getSurveyElementsAccess().getPartElementsAssignment_3(), "rule__SurveyElements__PartElementsAssignment_3");
 					put(grammarAccess.getPartElementsAccess().getNameAssignment_1(), "rule__PartElements__NameAssignment_1");
-					put(grammarAccess.getPartElementsAccess().getNextPartsAssignment_2_1_0(), "rule__PartElements__NextPartsAssignment_2_1_0");
-					put(grammarAccess.getPartElementsAccess().getNextPartsAssignment_2_1_1_1(), "rule__PartElements__NextPartsAssignment_2_1_1_1");
+					put(grammarAccess.getPartElementsAccess().getNextPartsAssignment_2_1(), "rule__PartElements__NextPartsAssignment_2_1");
 					put(grammarAccess.getDMNextPartsAccess().getNameAssignment_1(), "rule__DMNextParts__NameAssignment_1");
 					put(grammarAccess.getDMNextPartsAccess().getExpressionsAssignment_2_2(), "rule__DMNextParts__ExpressionsAssignment_2_2");
 					put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");
 					put(grammarAccess.getAndAccess().getRightAssignment_1_2(), "rule__And__RightAssignment_1_2");
+					put(grammarAccess.getPrimaryAccess().getDependencyAssignment_0_2(), "rule__Primary__DependencyAssignment_0_2");
 					put(grammarAccess.getAtomicAccess().getQuestionAssignment_0_2(), "rule__Atomic__QuestionAssignment_0_2");
 					put(grammarAccess.getAtomicAccess().getAnswerAssignment_0_4(), "rule__Atomic__AnswerAssignment_0_4");
-					put(grammarAccess.getAtomicAccess().getMatrixAssignment_1_2(), "rule__Atomic__MatrixAssignment_1_2");
-					put(grammarAccess.getAtomicAccess().getDmMatrixQuestionAssignment_1_4(), "rule__Atomic__DmMatrixQuestionAssignment_1_4");
-					put(grammarAccess.getAtomicAccess().getDmMatrixQuestionAssignment_1_5_1(), "rule__Atomic__DmMatrixQuestionAssignment_1_5_1");
+					put(grammarAccess.getAtomicAccess().getQuestionAssignment_1_2(), "rule__Atomic__QuestionAssignment_1_2");
+					put(grammarAccess.getAtomicAccess().getAnswerAssignment_1_4(), "rule__Atomic__AnswerAssignment_1_4");
 					put(grammarAccess.getDMMatrixQuestionAccess().getMatrixQuestionAssignment_1(), "rule__DMMatrixQuestion__MatrixQuestionAssignment_1");
 					put(grammarAccess.getDMMatrixQuestionAccess().getMatrixScaleAssignment_3(), "rule__DMMatrixQuestion__MatrixScaleAssignment_3");
 				}

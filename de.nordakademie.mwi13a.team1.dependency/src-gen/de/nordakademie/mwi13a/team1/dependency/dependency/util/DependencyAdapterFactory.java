@@ -115,14 +115,14 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
         return createAndAdapter();
       }
       @Override
+      public Adapter caseBracket(Bracket object)
+      {
+        return createBracketAdapter();
+      }
+      @Override
       public Adapter caseDMQuestion(DMQuestion object)
       {
         return createDMQuestionAdapter();
-      }
-      @Override
-      public Adapter caseDMMatrix(DMMatrix object)
-      {
-        return createDMMatrixAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -267,6 +267,21 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Bracket <em>Bracket</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.Bracket
+   * @generated
+   */
+  public Adapter createBracketAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion <em>DM Question</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -277,21 +292,6 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDMQuestionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix <em>DM Matrix</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrix
-   * @generated
-   */
-  public Adapter createDMMatrixAdapter()
   {
     return null;
   }
