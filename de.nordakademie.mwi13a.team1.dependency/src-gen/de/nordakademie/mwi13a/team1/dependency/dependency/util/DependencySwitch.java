@@ -93,6 +93,13 @@ public class DependencySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DependencyPackage.PART_OPTIONS:
+      {
+        PartOptions partOptions = (PartOptions)theEObject;
+        T result = casePartOptions(partOptions);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DependencyPackage.DM_NEXT_PARTS:
       {
         DMNextParts dmNextParts = (DMNextParts)theEObject;
@@ -112,6 +119,22 @@ public class DependencySwitch<T> extends Switch<T>
         DMMatrixQuestion dmMatrixQuestion = (DMMatrixQuestion)theEObject;
         T result = caseDMMatrixQuestion(dmMatrixQuestion);
         if (result == null) result = caseDependency(dmMatrixQuestion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DependencyPackage.DEFINE_NEXT_PART:
+      {
+        DefineNextPart defineNextPart = (DefineNextPart)theEObject;
+        T result = caseDefineNextPart(defineNextPart);
+        if (result == null) result = casePartOptions(defineNextPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DependencyPackage.LAST_PART:
+      {
+        LastPart lastPart = (LastPart)theEObject;
+        T result = caseLastPart(lastPart);
+        if (result == null) result = casePartOptions(lastPart);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -200,6 +223,22 @@ public class DependencySwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Part Options</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Part Options</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePartOptions(PartOptions object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>DM Next Parts</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -243,6 +282,38 @@ public class DependencySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDMMatrixQuestion(DMMatrixQuestion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Define Next Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Define Next Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefineNextPart(DefineNextPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Last Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Last Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLastPart(LastPart object)
   {
     return null;
   }

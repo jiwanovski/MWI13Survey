@@ -42,8 +42,8 @@ class SurveyValidator extends AbstractSurveyValidator {
 			)
 	}
 			
-	@Check(CheckType.FAST)
-	def IDQuestionnaire (Questionnaire questionnaire) {
+//	@Check(CheckType.FAST)
+//	def IDQuestionnaire (Questionnaire questionnaire) {
 //		var listeFragebogen = new ArrayList()[survey.questionnaire]
 //		for(id : survey.questionnaire.id)
 //		val duplicate = survey.questionnaire.findFirst[]
@@ -51,36 +51,36 @@ class SurveyValidator extends AbstractSurveyValidator {
 //			error("Doppelte ID in Umfrage", MyDSLPackage.Literals.FRAGEBOGEN__NAME)
 //		
 		
-		val survey = (questionnaire.eContainer as Survey)		
-		if (!survey.questionnaire.empty){
+//		val survey = (questionnaire.eContainer as Survey)		
+//		if (!survey.questionnaire.empty){
 			//val numberquestionnaires = survey.questionnaire.length
-			val IDquestionnaire = (survey.questionnaire as Questionnaire).id
-			survey.questionnaire.forEach[
-				if (it.id.equals(IDquestionnaire)){
-					error("Duplicate ID in Questionnaires" + it.name + "and", SurveyPackage.Literals.QUESTIONNAIRE__NAME)
-				}
-			]
+//			val IDquestionnaire = (survey.questionnaire as Questionnaire).id
+//			survey.questionnaire.forEach[
+//				if (it.id.equals(IDquestionnaire)){
+//					error("Duplicate ID in Questionnaires" + it.name + "and", SurveyPackage.Literals.QUESTIONNAIRE__NAME)
+//				}
+//			]
 				//val IDcurrent = (survey.questionnaire as Questionnaire).id
 				
 		
-		}
+//		}
 //		if (survey.questionnaire.exists[it == survey.questionnaire && it.id == survey.questionnaire.id])
 //			error("Doppelte ID in Fragebogen", SurveyPackage.Literals.QUESTIONNAIRE__NAME)
-	}
+//	}
 		
-		
-	@Check
-	def DropboxWith2Answers (DropDown dropdown) {
+// JIW OUT		
+//	@Check
+//	def DropboxWith2Answers (DropDown dropdown) {
 		//if (frage.dropdown != null)
 		
 		//if (surveyterminaltypes.name == 'DropDown'){
 		//	val countanswers = (dropdown.eContainer as Answer)
 		//if(surveyterminaltypes == typeof(DropDown)){
-			if (dropdown.answer.size <= 2){
-				error("A DropDown must contain at least 2 Answers!", 
-				SurveyPackage.Literals.QUESTIONNAIRE__NAME)
-			}
-		}
+//			if (dropdown.answer.size <= 2){
+//				error("A DropDown must contain at least 2 Answers!", 
+//				SurveyPackage.Literals.QUESTIONNAIRE__NAME)
+//			}
+//		}
 	}
 	
 //	@Check(CheckType.FAST)

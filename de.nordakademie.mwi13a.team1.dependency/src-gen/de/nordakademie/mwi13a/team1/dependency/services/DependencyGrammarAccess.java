@@ -85,17 +85,14 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cNamePartCrossReference_1_0 = (CrossReference)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cNamePartSTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNamePartCrossReference_1_0.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNextPartsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNextPartsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNextPartsDMNextPartsParserRuleCall_2_1_0 = (RuleCall)cNextPartsAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cOptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOptionPartOptionsParserRuleCall_2_0 = (RuleCall)cOptionAssignment_2.eContents().get(0);
 		
 		//PartElements:
-		//	"Part:" name=[surveyImp::Part|STRING] ("Next parts {" nextParts+=DMNextParts+ "}")+;
+		//	"Part:" name=[surveyImp::Part|STRING] option=PartOptions;
 		public ParserRule getRule() { return rule; }
 
-		//"Part:" name=[surveyImp::Part|STRING] ("Next parts {" nextParts+=DMNextParts+ "}")+
+		//"Part:" name=[surveyImp::Part|STRING] option=PartOptions
 		public Group getGroup() { return cGroup; }
 
 		//"Part:"
@@ -110,20 +107,63 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNamePartSTRINGTerminalRuleCall_1_0_1() { return cNamePartSTRINGTerminalRuleCall_1_0_1; }
 
-		//("Next parts {" nextParts+=DMNextParts+ "}")+
-		public Group getGroup_2() { return cGroup_2; }
+		//option=PartOptions
+		public Assignment getOptionAssignment_2() { return cOptionAssignment_2; }
+
+		//PartOptions
+		public RuleCall getOptionPartOptionsParserRuleCall_2_0() { return cOptionPartOptionsParserRuleCall_2_0; }
+	}
+
+	public class PartOptionsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PartOptions");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cDefineNextPartAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cNextPartsKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cNextPartsAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cNextPartsDMNextPartsParserRuleCall_0_2_0 = (RuleCall)cNextPartsAssignment_0_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cLastPartAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cLastPartAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Keyword cLastPartLastPartKeyword_1_1_0 = (Keyword)cLastPartAssignment_1_1.eContents().get(0);
+		
+		//PartOptions:
+		//	{DefineNextPart} "Next parts {" nextParts+=DMNextParts+ "}" | {LastPart} lastPart?="LastPart";
+		public ParserRule getRule() { return rule; }
+
+		//{DefineNextPart} "Next parts {" nextParts+=DMNextParts+ "}" | {LastPart} lastPart?="LastPart"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//{DefineNextPart} "Next parts {" nextParts+=DMNextParts+ "}"
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{DefineNextPart}
+		public Action getDefineNextPartAction_0_0() { return cDefineNextPartAction_0_0; }
 
 		//"Next parts {"
-		public Keyword getNextPartsKeyword_2_0() { return cNextPartsKeyword_2_0; }
+		public Keyword getNextPartsKeyword_0_1() { return cNextPartsKeyword_0_1; }
 
 		//nextParts+=DMNextParts+
-		public Assignment getNextPartsAssignment_2_1() { return cNextPartsAssignment_2_1; }
+		public Assignment getNextPartsAssignment_0_2() { return cNextPartsAssignment_0_2; }
 
 		//DMNextParts
-		public RuleCall getNextPartsDMNextPartsParserRuleCall_2_1_0() { return cNextPartsDMNextPartsParserRuleCall_2_1_0; }
+		public RuleCall getNextPartsDMNextPartsParserRuleCall_0_2_0() { return cNextPartsDMNextPartsParserRuleCall_0_2_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
+		public Keyword getRightCurlyBracketKeyword_0_3() { return cRightCurlyBracketKeyword_0_3; }
+
+		//{LastPart} lastPart?="LastPart"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{LastPart}
+		public Action getLastPartAction_1_0() { return cLastPartAction_1_0; }
+
+		//lastPart?="LastPart"
+		public Assignment getLastPartAssignment_1_1() { return cLastPartAssignment_1_1; }
+
+		//"LastPart"
+		public Keyword getLastPartLastPartKeyword_1_1_0() { return cLastPartLastPartKeyword_1_1_0; }
 	}
 
 	public class DMNextPartsElements extends AbstractParserRuleElementFinder {
@@ -473,6 +513,7 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 	private DependencyModelElements pDependencyModel;
 	private SurveyElementsElements pSurveyElements;
 	private PartElementsElements pPartElements;
+	private PartOptionsElements pPartOptions;
 	private DMNextPartsElements pDMNextParts;
 	private DependencyElements pDependency;
 	private OrElements pOr;
@@ -541,13 +582,23 @@ public class DependencyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PartElements:
-	//	"Part:" name=[surveyImp::Part|STRING] ("Next parts {" nextParts+=DMNextParts+ "}")+;
+	//	"Part:" name=[surveyImp::Part|STRING] option=PartOptions;
 	public PartElementsElements getPartElementsAccess() {
 		return (pPartElements != null) ? pPartElements : (pPartElements = new PartElementsElements());
 	}
 	
 	public ParserRule getPartElementsRule() {
 		return getPartElementsAccess().getRule();
+	}
+
+	//PartOptions:
+	//	{DefineNextPart} "Next parts {" nextParts+=DMNextParts+ "}" | {LastPart} lastPart?="LastPart";
+	public PartOptionsElements getPartOptionsAccess() {
+		return (pPartOptions != null) ? pPartOptions : (pPartOptions = new PartOptionsElements());
+	}
+	
+	public ParserRule getPartOptionsRule() {
+		return getPartOptionsAccess().getRule();
 	}
 
 	//DMNextParts:

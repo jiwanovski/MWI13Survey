@@ -2,27 +2,20 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.dependency.impl;
 
-import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage;
 import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements;
+import de.nordakademie.mwi13a.team1.dependency.dependency.PartOptions;
 
 import de.nordakademie.mwi13a.team1.survey.survey.Part;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartElementsImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartElementsImpl#getNextParts <em>Next Parts</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartElementsImpl#getOption <em>Option</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,14 +44,14 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
   protected Part name;
 
   /**
-   * The cached value of the '{@link #getNextParts() <em>Next Parts</em>}' containment reference list.
+   * The cached value of the '{@link #getOption() <em>Option</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNextParts()
+   * @see #getOption()
    * @generated
    * @ordered
    */
-  protected EList<DMNextParts> nextParts;
+  protected PartOptions option;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,13 +122,47 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DMNextParts> getNextParts()
+  public PartOptions getOption()
   {
-    if (nextParts == null)
+    return option;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOption(PartOptions newOption, NotificationChain msgs)
+  {
+    PartOptions oldOption = option;
+    option = newOption;
+    if (eNotificationRequired())
     {
-      nextParts = new EObjectContainmentEList<DMNextParts>(DMNextParts.class, this, DependencyPackage.PART_ELEMENTS__NEXT_PARTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependencyPackage.PART_ELEMENTS__OPTION, oldOption, newOption);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return nextParts;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOption(PartOptions newOption)
+  {
+    if (newOption != option)
+    {
+      NotificationChain msgs = null;
+      if (option != null)
+        msgs = ((InternalEObject)option).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependencyPackage.PART_ELEMENTS__OPTION, null, msgs);
+      if (newOption != null)
+        msgs = ((InternalEObject)newOption).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependencyPackage.PART_ELEMENTS__OPTION, null, msgs);
+      msgs = basicSetOption(newOption, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DependencyPackage.PART_ELEMENTS__OPTION, newOption, newOption));
   }
 
   /**
@@ -148,8 +175,8 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
   {
     switch (featureID)
     {
-      case DependencyPackage.PART_ELEMENTS__NEXT_PARTS:
-        return ((InternalEList<?>)getNextParts()).basicRemove(otherEnd, msgs);
+      case DependencyPackage.PART_ELEMENTS__OPTION:
+        return basicSetOption(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -167,8 +194,8 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
       case DependencyPackage.PART_ELEMENTS__NAME:
         if (resolve) return getName();
         return basicGetName();
-      case DependencyPackage.PART_ELEMENTS__NEXT_PARTS:
-        return getNextParts();
+      case DependencyPackage.PART_ELEMENTS__OPTION:
+        return getOption();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,7 +205,6 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -187,9 +213,8 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
       case DependencyPackage.PART_ELEMENTS__NAME:
         setName((Part)newValue);
         return;
-      case DependencyPackage.PART_ELEMENTS__NEXT_PARTS:
-        getNextParts().clear();
-        getNextParts().addAll((Collection<? extends DMNextParts>)newValue);
+      case DependencyPackage.PART_ELEMENTS__OPTION:
+        setOption((PartOptions)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -208,8 +233,8 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
       case DependencyPackage.PART_ELEMENTS__NAME:
         setName((Part)null);
         return;
-      case DependencyPackage.PART_ELEMENTS__NEXT_PARTS:
-        getNextParts().clear();
+      case DependencyPackage.PART_ELEMENTS__OPTION:
+        setOption((PartOptions)null);
         return;
     }
     super.eUnset(featureID);
@@ -227,8 +252,8 @@ public class PartElementsImpl extends MinimalEObjectImpl.Container implements Pa
     {
       case DependencyPackage.PART_ELEMENTS__NAME:
         return name != null;
-      case DependencyPackage.PART_ELEMENTS__NEXT_PARTS:
-        return nextParts != null && !nextParts.isEmpty();
+      case DependencyPackage.PART_ELEMENTS__OPTION:
+        return option != null;
     }
     return super.eIsSet(featureID);
   }

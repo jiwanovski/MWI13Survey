@@ -2,6 +2,7 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.dependency;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -140,13 +141,13 @@ public interface DependencyPackage extends EPackage
   int PART_ELEMENTS__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Next Parts</b></em>' containment reference list.
+   * The feature id for the '<em><b>Option</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PART_ELEMENTS__NEXT_PARTS = 1;
+  int PART_ELEMENTS__OPTION = 1;
 
   /**
    * The number of structural features of the '<em>Part Elements</em>' class.
@@ -158,6 +159,25 @@ public interface DependencyPackage extends EPackage
   int PART_ELEMENTS_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartOptionsImpl <em>Part Options</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartOptionsImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getPartOptions()
+   * @generated
+   */
+  int PART_OPTIONS = 3;
+
+  /**
+   * The number of structural features of the '<em>Part Options</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PART_OPTIONS_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMNextPartsImpl <em>DM Next Parts</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -165,7 +185,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMNextParts()
    * @generated
    */
-  int DM_NEXT_PARTS = 3;
+  int DM_NEXT_PARTS = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -202,7 +222,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDependency()
    * @generated
    */
-  int DEPENDENCY = 4;
+  int DEPENDENCY = 5;
 
   /**
    * The number of structural features of the '<em>Dependency</em>' class.
@@ -221,7 +241,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMMatrixQuestion()
    * @generated
    */
-  int DM_MATRIX_QUESTION = 5;
+  int DM_MATRIX_QUESTION = 6;
 
   /**
    * The feature id for the '<em><b>Question</b></em>' reference.
@@ -269,6 +289,62 @@ public interface DependencyPackage extends EPackage
   int DM_MATRIX_QUESTION_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DefineNextPartImpl <em>Define Next Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DefineNextPartImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDefineNextPart()
+   * @generated
+   */
+  int DEFINE_NEXT_PART = 7;
+
+  /**
+   * The feature id for the '<em><b>Next Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE_NEXT_PART__NEXT_PARTS = PART_OPTIONS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Define Next Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE_NEXT_PART_FEATURE_COUNT = PART_OPTIONS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.LastPartImpl <em>Last Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.LastPartImpl
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getLastPart()
+   * @generated
+   */
+  int LAST_PART = 8;
+
+  /**
+   * The feature id for the '<em><b>Last Part</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAST_PART__LAST_PART = PART_OPTIONS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Last Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAST_PART_FEATURE_COUNT = PART_OPTIONS_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl <em>Or</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -276,7 +352,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getOr()
    * @generated
    */
-  int OR = 6;
+  int OR = 9;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -313,7 +389,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getAnd()
    * @generated
    */
-  int AND = 7;
+  int AND = 10;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -350,7 +426,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getBracket()
    * @generated
    */
-  int BRACKET = 8;
+  int BRACKET = 11;
 
   /**
    * The feature id for the '<em><b>Dependency</b></em>' containment reference.
@@ -378,7 +454,7 @@ public interface DependencyPackage extends EPackage
    * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDMQuestion()
    * @generated
    */
-  int DM_QUESTION = 9;
+  int DM_QUESTION = 12;
 
   /**
    * The feature id for the '<em><b>Question</b></em>' reference.
@@ -483,15 +559,25 @@ public interface DependencyPackage extends EPackage
   EReference getPartElements_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getNextParts <em>Next Parts</em>}'.
+   * Returns the meta object for the containment reference '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getOption <em>Option</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Next Parts</em>'.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getNextParts()
+   * @return the meta object for the containment reference '<em>Option</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getOption()
    * @see #getPartElements()
    * @generated
    */
-  EReference getPartElements_NextParts();
+  EReference getPartElements_Option();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartOptions <em>Part Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Part Options</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartOptions
+   * @generated
+   */
+  EClass getPartOptions();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts <em>DM Next Parts</em>}'.
@@ -588,6 +674,48 @@ public interface DependencyPackage extends EPackage
    * @generated
    */
   EReference getDMMatrixQuestion_MatrixScale();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart <em>Define Next Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Define Next Part</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
+   * @generated
+   */
+  EClass getDefineNextPart();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart#getNextParts <em>Next Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Next Parts</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart#getNextParts()
+   * @see #getDefineNextPart()
+   * @generated
+   */
+  EReference getDefineNextPart_NextParts();
+
+  /**
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.LastPart <em>Last Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Last Part</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.LastPart
+   * @generated
+   */
+  EClass getLastPart();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.nordakademie.mwi13a.team1.dependency.dependency.LastPart#isLastPart <em>Last Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Last Part</em>'.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.LastPart#isLastPart()
+   * @see #getLastPart()
+   * @generated
+   */
+  EAttribute getLastPart_LastPart();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.Or <em>Or</em>}'.
@@ -792,12 +920,22 @@ public interface DependencyPackage extends EPackage
     EReference PART_ELEMENTS__NAME = eINSTANCE.getPartElements_Name();
 
     /**
-     * The meta object literal for the '<em><b>Next Parts</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Option</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PART_ELEMENTS__NEXT_PARTS = eINSTANCE.getPartElements_NextParts();
+    EReference PART_ELEMENTS__OPTION = eINSTANCE.getPartElements_Option();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartOptionsImpl <em>Part Options</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.PartOptionsImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getPartOptions()
+     * @generated
+     */
+    EClass PART_OPTIONS = eINSTANCE.getPartOptions();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DMNextPartsImpl <em>DM Next Parts</em>}' class.
@@ -876,6 +1014,42 @@ public interface DependencyPackage extends EPackage
      * @generated
      */
     EReference DM_MATRIX_QUESTION__MATRIX_SCALE = eINSTANCE.getDMMatrixQuestion_MatrixScale();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.DefineNextPartImpl <em>Define Next Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DefineNextPartImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getDefineNextPart()
+     * @generated
+     */
+    EClass DEFINE_NEXT_PART = eINSTANCE.getDefineNextPart();
+
+    /**
+     * The meta object literal for the '<em><b>Next Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINE_NEXT_PART__NEXT_PARTS = eINSTANCE.getDefineNextPart_NextParts();
+
+    /**
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.LastPartImpl <em>Last Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.LastPartImpl
+     * @see de.nordakademie.mwi13a.team1.dependency.dependency.impl.DependencyPackageImpl#getLastPart()
+     * @generated
+     */
+    EClass LAST_PART = eINSTANCE.getLastPart();
+
+    /**
+     * The meta object literal for the '<em><b>Last Part</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LAST_PART__LAST_PART = eINSTANCE.getLastPart_LastPart();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.impl.OrImpl <em>Or</em>}' class.

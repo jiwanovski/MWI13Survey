@@ -7,16 +7,20 @@ import de.nordakademie.mwi13a.team1.dependency.dependency.Bracket;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart;
 import de.nordakademie.mwi13a.team1.dependency.dependency.Dependency;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyFactory;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage;
+import de.nordakademie.mwi13a.team1.dependency.dependency.LastPart;
 import de.nordakademie.mwi13a.team1.dependency.dependency.Or;
 import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements;
+import de.nordakademie.mwi13a.team1.dependency.dependency.PartOptions;
 import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements;
 
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -57,6 +61,13 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass partOptionsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass dmNextPartsEClass = null;
 
   /**
@@ -72,6 +83,20 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * @generated
    */
   private EClass dmMatrixQuestionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defineNextPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lastPartEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -242,9 +267,19 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPartElements_NextParts()
+  public EReference getPartElements_Option()
   {
     return (EReference)partElementsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPartOptions()
+  {
+    return partOptionsEClass;
   }
 
   /**
@@ -335,6 +370,46 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
   public EReference getDMMatrixQuestion_MatrixScale()
   {
     return (EReference)dmMatrixQuestionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDefineNextPart()
+  {
+    return defineNextPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefineNextPart_NextParts()
+  {
+    return (EReference)defineNextPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLastPart()
+  {
+    return lastPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLastPart_LastPart()
+  {
+    return (EAttribute)lastPartEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -486,7 +561,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
 
     partElementsEClass = createEClass(PART_ELEMENTS);
     createEReference(partElementsEClass, PART_ELEMENTS__NAME);
-    createEReference(partElementsEClass, PART_ELEMENTS__NEXT_PARTS);
+    createEReference(partElementsEClass, PART_ELEMENTS__OPTION);
+
+    partOptionsEClass = createEClass(PART_OPTIONS);
 
     dmNextPartsEClass = createEClass(DM_NEXT_PARTS);
     createEReference(dmNextPartsEClass, DM_NEXT_PARTS__NAME);
@@ -499,6 +576,12 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__ANSWER);
     createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__MATRIX_QUESTION);
     createEReference(dmMatrixQuestionEClass, DM_MATRIX_QUESTION__MATRIX_SCALE);
+
+    defineNextPartEClass = createEClass(DEFINE_NEXT_PART);
+    createEReference(defineNextPartEClass, DEFINE_NEXT_PART__NEXT_PARTS);
+
+    lastPartEClass = createEClass(LAST_PART);
+    createEAttribute(lastPartEClass, LAST_PART__LAST_PART);
 
     orEClass = createEClass(OR);
     createEReference(orEClass, OR__LEFT);
@@ -549,6 +632,8 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
 
     // Add supertypes to classes
     dmMatrixQuestionEClass.getESuperTypes().add(this.getDependency());
+    defineNextPartEClass.getESuperTypes().add(this.getPartOptions());
+    lastPartEClass.getESuperTypes().add(this.getPartOptions());
     orEClass.getESuperTypes().add(this.getDependency());
     andEClass.getESuperTypes().add(this.getDependency());
     bracketEClass.getESuperTypes().add(this.getDependency());
@@ -564,7 +649,9 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
 
     initEClass(partElementsEClass, PartElements.class, "PartElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPartElements_Name(), theSurveyPackage.getPart(), null, "name", null, 0, 1, PartElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPartElements_NextParts(), this.getDMNextParts(), null, "nextParts", null, 0, -1, PartElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPartElements_Option(), this.getPartOptions(), null, "option", null, 0, 1, PartElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(partOptionsEClass, PartOptions.class, "PartOptions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(dmNextPartsEClass, DMNextParts.class, "DMNextParts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDMNextParts_Name(), theSurveyPackage.getPart(), null, "name", null, 0, 1, DMNextParts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -577,6 +664,12 @@ public class DependencyPackageImpl extends EPackageImpl implements DependencyPac
     initEReference(getDMMatrixQuestion_Answer(), theSurveyPackage.getAnswer(), null, "answer", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDMMatrixQuestion_MatrixQuestion(), theSurveyPackage.getMatrixQuestion(), null, "matrixQuestion", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDMMatrixQuestion_MatrixScale(), theSurveyPackage.getAnswer(), null, "matrixScale", null, 0, 1, DMMatrixQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defineNextPartEClass, DefineNextPart.class, "DefineNextPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDefineNextPart_NextParts(), this.getDMNextParts(), null, "nextParts", null, 0, -1, DefineNextPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lastPartEClass, LastPart.class, "LastPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLastPart_LastPart(), ecorePackage.getEBoolean(), "lastPart", null, 0, 1, LastPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Left(), this.getDependency(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -90,6 +90,11 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
         return createPartElementsAdapter();
       }
       @Override
+      public Adapter casePartOptions(PartOptions object)
+      {
+        return createPartOptionsAdapter();
+      }
+      @Override
       public Adapter caseDMNextParts(DMNextParts object)
       {
         return createDMNextPartsAdapter();
@@ -103,6 +108,16 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDMMatrixQuestion(DMMatrixQuestion object)
       {
         return createDMMatrixQuestionAdapter();
+      }
+      @Override
+      public Adapter caseDefineNextPart(DefineNextPart object)
+      {
+        return createDefineNextPartAdapter();
+      }
+      @Override
+      public Adapter caseLastPart(LastPart object)
+      {
+        return createLastPartAdapter();
       }
       @Override
       public Adapter caseOr(Or object)
@@ -192,6 +207,21 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartOptions <em>Part Options</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.PartOptions
+   * @generated
+   */
+  public Adapter createPartOptionsAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts <em>DM Next Parts</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -232,6 +262,36 @@ public class DependencyAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDMMatrixQuestionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart <em>Define Next Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
+   * @generated
+   */
+  public Adapter createDefineNextPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.dependency.dependency.LastPart <em>Last Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.LastPart
+   * @generated
+   */
+  public Adapter createLastPartAdapter()
   {
     return null;
   }

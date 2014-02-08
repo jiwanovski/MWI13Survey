@@ -18,8 +18,9 @@
     </genClasses>
     <genClasses ecoreClass="Dependency.ecore#//PartElements">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//PartElements/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//PartElements/nextParts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//PartElements/option"/>
     </genClasses>
+    <genClasses ecoreClass="Dependency.ecore#//PartOptions"/>
     <genClasses ecoreClass="Dependency.ecore#//DMNextParts">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMNextParts/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMNextParts/expressions"/>
@@ -30,6 +31,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMMatrixQuestion/answer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMMatrixQuestion/matrixQuestion"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependency.ecore#//DMMatrixQuestion/matrixScale"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependency.ecore#//DefineNextPart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//DefineNextPart/nextParts"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependency.ecore#//LastPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependency.ecore#//LastPart/lastPart"/>
     </genClasses>
     <genClasses ecoreClass="Dependency.ecore#//Or">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependency.ecore#//Or/left"/>

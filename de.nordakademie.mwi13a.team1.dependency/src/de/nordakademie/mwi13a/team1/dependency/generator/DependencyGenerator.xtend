@@ -3,23 +3,28 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
-import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel
-import de.nordakademie.mwi13a.team1.survey.survey.Part
-import de.nordakademie.mwi13a.team1.dependency.dependency.Dependency
+import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
+import de.nordakademie.mwi13a.team1.dependency.DependencyOutputConfiguration
 import de.nordakademie.mwi13a.team1.dependency.dependency.And
-import de.nordakademie.mwi13a.team1.dependency.dependency.Or
-import org.eclipse.xtend2.lib.StringConcatenation
-import de.nordakademie.mwi13a.team1.survey.survey.Question
-import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
-import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion
-import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
-import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
-import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
-import de.nordakademie.mwi13a.team1.survey.survey.Matrix
 import de.nordakademie.mwi13a.team1.dependency.dependency.Bracket
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
+import de.nordakademie.mwi13a.team1.dependency.dependency.Dependency
+import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel
+import de.nordakademie.mwi13a.team1.dependency.dependency.Or
+import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
+import de.nordakademie.mwi13a.team1.survey.survey.Matrix
+import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion
+import de.nordakademie.mwi13a.team1.survey.survey.Part
+import de.nordakademie.mwi13a.team1.survey.survey.Question
+import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtend2.lib.StringConcatenation
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
+import de.nordakademie.mwi13a.team1.dependency.dependency.LastPart
 
 /**
  * Generates code from your model files on save.
@@ -32,10 +37,15 @@ class DependencyGenerator implements IGenerator {
 		
 		val dm = resource.contents.head as DependencyModel
 		if (dm !=null) {
-			for (survey: dm.elements) {
+			// Generate the web.xml
+			fsa.generateFile("web.xml", DependencyOutputConfiguration::GEN_WEBXML_OUTPUT, dm.toWebXml)
+			// Generate the StartEmbeddedApache.java
+			fsa.generateFile("StartEmbeddedApache.java", DependencyOutputConfiguration::GEN_EMBEDDED_APACHE_OUTPUT, dm.toStartEmbeddedApache)
+			for (survey: dm.elements) {				
 				for (part: survey.partElements) {
-					val fileName = (survey.name as Questionnaire).name + "_" + (part.name as Part).name 
-					fsa.generateFile(fileName + ".java",toServlet(part))
+					val fileName = (survey.name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue") + (part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue") + "Servlet"
+					// Generate the Servlets
+					fsa.generateFile(fileName + ".java", DependencyOutputConfiguration::GEN_SERVLET_OUTPUT, part.toServlet)
 				}			
 			}
 		}
@@ -44,8 +54,7 @@ class DependencyGenerator implements IGenerator {
 	def toServlet(PartElements part) '''		
 		«generalServletHead»
 		
-		@WebServlet("/«(part.name as Part).name.replace(" ","_")»Servlet")
-		public class «(part.name as Part).name.replace(" ","_")» extends HttpServlet {
+		public class «((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet extends HttpServlet {
 			private static final long serialVersionUID = 1L;
 			
 			@Override
@@ -54,22 +63,99 @@ class DependencyGenerator implements IGenerator {
 				Map<String, String> messages = new HashMap<String, String>();
 				request.setAttribute("messages", messages);
 						
-				String nextPart;
-				«FOR parameter: part.nextParts»
-					«FOR expression: parameter.expressions»
-						«getParameter(expression)»
-					«ENDFOR»
-				«ENDFOR»		
-				«FOR dependency: part.nextParts»
-					«FOR expression: dependency.expressions»
-						// Check next page dependencies
-						if («solveDependencies(expression)») {
-							nextPart = "«(dependency.name as Part).name.replace(" ","_")».jsp";
-						}
-					«ENDFOR»					
+				String nextPart = "";
+				«switch(part.option) {
+					DefineNextPart: {
+						printNextParts((part.option as DefineNextPart))
+					}
+					
+					LastPart: {
+						printLastPart
+					}
+				}
+				»
+			}
+		}
+	'''
+	
+	def toWebXml(DependencyModel dm) '''
+		<?xml version="1.0" encoding="ISO-8859-1"?>
+
+		<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+			http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+			version="3.0"
+			metadata-complete="true">  
+
+			<display-name>Survey WebApp</display-name>
+		«FOR survey: dm.elements»		
+			«FOR part: survey.partElements»
+				<servlet>
+					<servlet-name>«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet</servlet-name>
+					<servlet-class>servlets.«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet</servlet-class>
+				</servlet>
+				<servlet-mapping>
+					<servlet-name>«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet</servlet-name>
+					<url-pattern>/«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»</url-pattern>
+				</servlet-mapping>
+			«ENDFOR»							
+		«ENDFOR»	
+			<welcome-file-list>
+				<welcome-file>index.jsp</welcome-file>  	
+			</welcome-file-list>
+		</web-app>
+	'''
+	
+	def printNextParts(DefineNextPart np) '''
+		«FOR parameter: np.nextParts»
+			«IF (parameter.expressions.length == 0)»
+				nextPart = "«parameter.name.name.replace(" ","_")».jsp";
+			«ELSE»
+				«FOR expression: parameter.expressions»
+					«getParameter(expression)»
 				«ENDFOR»
-				// call next page
-				request.getRequestDispatcher(nextPart).forward(request, response);
+			«ENDIF»	
+		«ENDFOR»		
+		«FOR dependency: np.nextParts»
+			«FOR expression: dependency.expressions»
+				// Check next page dependencies
+				if («solveDependencies(expression)») {
+					nextPart = "«(dependency.name as Part).name.replace(" ","_").replace("ä","ae").replace("ö","oe").replace("ü","ue")».jsp";
+				}
+			«ENDFOR»					
+		«ENDFOR»
+		// call next page
+		request.getRequestDispatcher(nextPart).forward(request, response);
+	'''
+	
+	def printLastPart() '''
+		request.getRequestDispatcher("final.jsp").forward(request, response);
+	'''
+	
+	def toStartEmbeddedApache(DependencyModel dm) '''
+		package startServer;
+		import java.awt.Desktop;
+		import java.net.URI;
+
+		import org.apache.catalina.startup.Tomcat;
+
+		public class StartEmbeddedApache {
+			static private final String CONTEXT_PATH = "/survey";
+			static private final String PROJECT_HOME = "webapp";
+			static public final int PORT = 7576;
+			private static Tomcat tomcat;
+
+			public static void main(String[] args) throws Exception {
+				tomcat = new Tomcat();
+				tomcat.setPort(PORT);
+		
+				tomcat.setBaseDir(".");
+				tomcat.addWebapp(CONTEXT_PATH, PROJECT_HOME);
+
+				tomcat.start();
+				Desktop.getDesktop().browse(new URI("http://localhost:" + PORT + CONTEXT_PATH));
+				tomcat.getServer().await();
 			}
 		}
 	'''
@@ -87,11 +173,16 @@ class DependencyGenerator implements IGenerator {
 			}
 			
 			DMQuestion: {
-				printVariableBlock(d.question.id, (d.question as Question).mandatory)			
+				if (!d.question.addedQuestionParameters) {
+					printVariableBlock(d.question.id, (d.question as Question).mandatory)
+				}
+															
 			}
 			
 			DMMatrixQuestion: {
-				printVariableBlock(d.question.id, (((d.question as MatrixQuestion).eContainer as Matrix).eContainer as Question).mandatory)				
+				if (!d.question.addedMatrixQuestionParameters) {
+					printVariableBlock(d.question.id, (((d.question as MatrixQuestion).eContainer as Matrix).eContainer as Question).mandatory)				
+				}				
 			}
 		}»
 	'''
@@ -146,15 +237,14 @@ class DependencyGenerator implements IGenerator {
 		// get and validate «id»
 		String «id» = request.getParameter("«id»");
 		«IF mandatory»
-		if («id» == null || «id».trim().isEmpty()) {
-			messages.put("«id»","Please enter a value");
-		}
+			if («id» == null || «id».trim().isEmpty()) {
+				messages.put("«id»","Please enter a value");
+			}
 		«ENDIF»	
 	'''
 	
 	def generalServletHead() '''
-		package de.helloworld2;
-
+		package servlets;
 		import java.io.IOException;
 		import java.util.HashMap;
 		import java.util.Map;

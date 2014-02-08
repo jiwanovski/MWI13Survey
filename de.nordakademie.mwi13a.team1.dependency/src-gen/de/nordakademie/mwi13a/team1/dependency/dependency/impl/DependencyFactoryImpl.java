@@ -67,9 +67,12 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
       case DependencyPackage.DEPENDENCY_MODEL: return createDependencyModel();
       case DependencyPackage.SURVEY_ELEMENTS: return createSurveyElements();
       case DependencyPackage.PART_ELEMENTS: return createPartElements();
+      case DependencyPackage.PART_OPTIONS: return createPartOptions();
       case DependencyPackage.DM_NEXT_PARTS: return createDMNextParts();
       case DependencyPackage.DEPENDENCY: return createDependency();
       case DependencyPackage.DM_MATRIX_QUESTION: return createDMMatrixQuestion();
+      case DependencyPackage.DEFINE_NEXT_PART: return createDefineNextPart();
+      case DependencyPackage.LAST_PART: return createLastPart();
       case DependencyPackage.OR: return createOr();
       case DependencyPackage.AND: return createAnd();
       case DependencyPackage.BRACKET: return createBracket();
@@ -117,6 +120,17 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
    * <!-- end-user-doc -->
    * @generated
    */
+  public PartOptions createPartOptions()
+  {
+    PartOptionsImpl partOptions = new PartOptionsImpl();
+    return partOptions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DMNextParts createDMNextParts()
   {
     DMNextPartsImpl dmNextParts = new DMNextPartsImpl();
@@ -143,6 +157,28 @@ public class DependencyFactoryImpl extends EFactoryImpl implements DependencyFac
   {
     DMMatrixQuestionImpl dmMatrixQuestion = new DMMatrixQuestionImpl();
     return dmMatrixQuestion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DefineNextPart createDefineNextPart()
+  {
+    DefineNextPartImpl defineNextPart = new DefineNextPartImpl();
+    return defineNextPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LastPart createLastPart()
+  {
+    LastPartImpl lastPart = new LastPartImpl();
+    return lastPart;
   }
 
   /**

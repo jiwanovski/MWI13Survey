@@ -4,8 +4,6 @@ package de.nordakademie.mwi13a.team1.dependency.dependency;
 
 import de.nordakademie.mwi13a.team1.survey.survey.Part;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getName <em>Name</em>}</li>
- *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getNextParts <em>Next Parts</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getOption <em>Option</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,19 +52,29 @@ public interface PartElements extends EObject
   void setName(Part value);
 
   /**
-   * Returns the value of the '<em><b>Next Parts</b></em>' containment reference list.
-   * The list contents are of type {@link de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts}.
+   * Returns the value of the '<em><b>Option</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Next Parts</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Option</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Next Parts</em>' containment reference list.
-   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage#getPartElements_NextParts()
+   * @return the value of the '<em>Option</em>' containment reference.
+   * @see #setOption(PartOptions)
+   * @see de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage#getPartElements_Option()
    * @model containment="true"
    * @generated
    */
-  EList<DMNextParts> getNextParts();
+  PartOptions getOption();
+
+  /**
+   * Sets the value of the '{@link de.nordakademie.mwi13a.team1.dependency.dependency.PartElements#getOption <em>Option</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Option</em>' containment reference.
+   * @see #getOption()
+   * @generated
+   */
+  void setOption(PartOptions value);
 
 } // PartElements

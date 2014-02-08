@@ -15,9 +15,15 @@ SurveyElements:
 
 PartElements:
 	'Part:' name=[surveyImp::Part|STRING]
-	('Next parts {'
+	option=PartOptions
+	
+;
+
+PartOptions:
+	{DefineNextPart} 'Next parts {'
 		(nextParts+=DMNextParts)+
-	'}')+
+	'}' |
+	{LastPart} lastPart?='LastPart'
 ;
 
 DMNextParts:

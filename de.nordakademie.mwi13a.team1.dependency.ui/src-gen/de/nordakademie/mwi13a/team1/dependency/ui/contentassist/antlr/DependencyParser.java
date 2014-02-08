@@ -37,12 +37,14 @@ public class DependencyParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getPartOptionsAccess().getAlternatives(), "rule__PartOptions__Alternatives");
 					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
 					put(grammarAccess.getIdentifierAccess().getAlternatives(), "rule__Identifier__Alternatives");
 					put(grammarAccess.getSurveyElementsAccess().getGroup(), "rule__SurveyElements__Group__0");
 					put(grammarAccess.getPartElementsAccess().getGroup(), "rule__PartElements__Group__0");
-					put(grammarAccess.getPartElementsAccess().getGroup_2(), "rule__PartElements__Group_2__0");
+					put(grammarAccess.getPartOptionsAccess().getGroup_0(), "rule__PartOptions__Group_0__0");
+					put(grammarAccess.getPartOptionsAccess().getGroup_1(), "rule__PartOptions__Group_1__0");
 					put(grammarAccess.getDMNextPartsAccess().getGroup(), "rule__DMNextParts__Group__0");
 					put(grammarAccess.getDMNextPartsAccess().getGroup_2(), "rule__DMNextParts__Group_2__0");
 					put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
@@ -57,7 +59,9 @@ public class DependencyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSurveyElementsAccess().getNameAssignment_1(), "rule__SurveyElements__NameAssignment_1");
 					put(grammarAccess.getSurveyElementsAccess().getPartElementsAssignment_3(), "rule__SurveyElements__PartElementsAssignment_3");
 					put(grammarAccess.getPartElementsAccess().getNameAssignment_1(), "rule__PartElements__NameAssignment_1");
-					put(grammarAccess.getPartElementsAccess().getNextPartsAssignment_2_1(), "rule__PartElements__NextPartsAssignment_2_1");
+					put(grammarAccess.getPartElementsAccess().getOptionAssignment_2(), "rule__PartElements__OptionAssignment_2");
+					put(grammarAccess.getPartOptionsAccess().getNextPartsAssignment_0_2(), "rule__PartOptions__NextPartsAssignment_0_2");
+					put(grammarAccess.getPartOptionsAccess().getLastPartAssignment_1_1(), "rule__PartOptions__LastPartAssignment_1_1");
 					put(grammarAccess.getDMNextPartsAccess().getNameAssignment_1(), "rule__DMNextParts__NameAssignment_1");
 					put(grammarAccess.getDMNextPartsAccess().getExpressionsAssignment_2_2(), "rule__DMNextParts__ExpressionsAssignment_2_2");
 					put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");

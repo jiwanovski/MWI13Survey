@@ -25,13 +25,15 @@ import de.nordakademie.mwi13a.team1.survey.survey.Matrix
 class SurveyGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-			val survey = resource.contents.head as Survey
-		if (survey !=null) {
-		fsa.generateFile("../WebContent/"+ "index.jsp", toOverview( survey))
+		val survey = resource.contents.head as Survey
+		if (survey != null) {
+		fsa.generateFile("../webapps/webapp/css/" + "default.css", toCSS)	
+		fsa.generateFile("../webapps/webapp/"+ "index.jsp", toOverview( survey))
+		fsa.generateFile("../webapps/webapp/"+ "final.jsp", toFinalJSP(survey))
 			for (questionnaire : survey.questionnaire){
 				for (part : questionnaire.part){
-					val fileName = part.name
-					fsa.generateFile("../WebContent/"+ fileName + ".jsp", toJSP( questionnaire , part))
+					val fileName = part.name.replace(" ","_").replace("ä","ae").replace("ö","oe").replace("ü","ue")
+					fsa.generateFile("../webapps/webapp/"+ fileName + ".jsp", toJSP( questionnaire , part))
 				}	
 				
 			}
@@ -39,7 +41,7 @@ class SurveyGenerator implements IGenerator {
 
 	}
 	
-def toOverview(Survey survey) ''' 
+	def toOverview(Survey survey) ''' 
 		<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 		pageEncoding="ISO-8859-1"%>
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -82,7 +84,7 @@ def toOverview(Survey survey) '''
 			<link rel="stylesheet" type="text/css" href="css/default.css" />
 			</head>
 			<body>    
-				<form action="«(part.name.replace(" ","_"))»Servlet" method="post">
+				<form action="«questionnaire.name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue"))»" method="post">
 				<div>
 					<h1>«questionnaire.name»</h1>
 					<fieldset class="part">
@@ -108,14 +110,204 @@ def toOverview(Survey survey) '''
 		</html>
 	'''
 			
-// def dispatch questiongenerate(TextBlock questiontype, Question question) ''' 
-//		«switch question.questionType.name {
-//			case 'TextLine': textline(question)
-//			default: "this is default"
-//		}»
-//			«questiontype.length»
-//		
-//	''' 
+	def toCSS() '''
+		*
+		/*general CSS and boxes/frames----------------------------------------------------*/
+
+		* /*Set's border, padding and margin to 0 for all values*/ {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+		
+		h1 /*Header: name of questionnaire*/ {
+			font-weight: 200;
+			color: #888888;
+			background: transparent url(../img/h1.png) no-repeat center left;
+			padding-left: 33px;
+			margin: 7px 5px 8px 8px;
+		}
+		
+		body,html {
+			color: #373C40;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			height: auto;
+			background-color: #f0f0f0;
+			margin: 10px;
+		}
+		
+		p /*Sets formats for all line breaks*/ {
+			padding: 7px 0 7px 0;
+			font-weight: 500;
+			font-size: 10pt;
+			margin-top: 10px font-size:   8pt;
+			clear: both;
+			margin-top: 0px;
+			color: black;
+			padding: 4px;
+		}
+		
+		.part /*Borders of middle Part*/ {
+			height: auto;
+			padding: 5px;
+			border-top: 2px solid #F5F5F5;
+			margin: 5px 10px auto 10px;
+		}
+		
+		form /*Defines the formats of the form*/ {
+			width: auto;
+			margin: 20px 100px 20px 100px;
+			height: auto;
+			background-color: #fff;
+			padding: 5px;
+			border-radius: 300px;
+			border-radius: 20px;
+			box-shadow: 3px 3px 5px 6px #ccc;
+		
+		}
+		
+		div {
+			margin: 20px 20px auto 50px;
+		}
+		
+		legend /*Defines color of headline of a part*/ {
+			color: #abda0f;
+			padding: 2px;
+			font-weight: bold;
+			font-size: 14px;
+			font-weight: 1000;
+		}
+		
+		*
+			/*Questions and elements----------------------------------------------------*/
+			
+			
+		
+		.lblQuestion /*Label format for all questions*/ {
+			width: auto;
+			float: left;
+			text-align: left;
+			font-weight: 700;
+			margin-right: 0px;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		
+		.lblBox /*Label format for all questions*/ {
+			width: auto;
+			margin-left: 15px
+		}
+		
+		input.textLine /*Format for all inputs with class textLine*/ {
+			width: 250px;
+			color: #505050;
+			border: 1px solid #E1E1E1;
+			height: 18px;
+		}
+		
+		select.dropdown /*Format for all inputs with class dropdown*/ {
+			min-width: 253px;
+			color: #505050;
+		}
+		
+		textarea /*Format for all textareas*/ {
+			border-style: solid;
+			border-width: 2px;
+			border-color: #F1F1F1
+		}
+		
+		td /*Defines distances after table columns*/ {
+			margin-left: auto;
+			margin-right: auto;
+			padding-right: 10px;
+			text-align: right;
+			font-size: 70%;
+		}
+		
+		input:focus,select:focus /*Defines color while selecting*/ {
+			background-color: #EFFFE0;
+		}
+		
+		select /*Defines border of all dropdowns*/ {
+			border: 1px solid #E1E1E1;
+			width: 130px;
+			float: left;
+			margin-bottom: 3px;
+			color: #505050;
+			margin-right: 5px;
+		}
+		
+		input /*Defines all input fields*/ {
+			border-bottom-width: 2px;
+			border-left-width: 2px;
+			border-right-width: 10px;
+			border-top-width: 2px;
+			color: #000000;
+			font-family: use-lang-def;
+			font-size: 13px;
+			font-weight: 400;
+			padding: 2px;
+			text-indent: 0px;
+			text-transform: none;
+		}
+		
+		input.matrix {
+			margin: auto 50px auto 50px;
+		}
+		
+		*
+			/*Buttons and footer----------------------------------------------------*/
+			
+			
+		
+		fieldset.buttons {
+			height: auto;
+			padding: 5px;
+			border-top: 2px solid #F5F5F5;
+			margin: 5px 10px auto 10px;
+		}
+		
+		.button {
+			background: #abda0f url(../img/overlay.png) repeat-x;
+			padding: 8px 10px 8px;
+			color: #fff;
+			text-decoration: none;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+			text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+			cursor: pointer;
+			float: left;
+			font-size: 18px;
+			margin: 10px;
+			width: 150px;
+		}
+	'''
+ 
+ 	def toFinalJSP(Survey survey) '''
+ 		<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1"%>
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+			<head>
+				  <title>«survey.toString»</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<link rel="stylesheet" type="text/css" href="css/default.css" />
+			</head>
+			<body>    
+				<form>
+				<div>
+					<h1>«survey.toString»</h1>
+					<fieldset class="part">
+					<h2>Vielen Dank für Ihre Teilnahme.</h2><br>
+					<a href="index.jsp">Zurück zur Startseite</a>
+					</fieldset>
+					</div>
+				</form>
+			</body>
+		</html>
+ 	'''
  
 def dispatch  questiongenerate(TextLine questiontype , Question question)''' 
 								<p>
@@ -123,7 +315,7 @@ def dispatch  questiongenerate(TextLine questiontype , Question question)'''
 								</label>
 								</p><p>
 								<input name= "«question.id»" class="textLine" type="text" maxlength="«questiontype.length»"/>
-								<span class="error">${messages.«question.name»}</span>
+								<span class="error">${messages.«question.id»}</span>
 								</p>
 
  '''
@@ -134,7 +326,7 @@ def dispatch  questiongenerate(TextLine questiontype , Question question)'''
 								</label>
 								</p><p>
 								<textarea name="«question.id»" maxlength="«questiontype.length»" rows="10" cols="50"></textarea>
-								<span class="error">${messages.«question.name»}</span>
+								<span class="error">${messages.«question.id»}</span>
 								</p>
 
  '''
@@ -155,7 +347,7 @@ def dispatch  questiongenerate(TextLine questiontype , Question question)'''
 								<label class="lblQuestion">«question.name»
 								</label>
 								</p><p>
-								<select name"«question.id» class="«question.id»">
+								<select name="«question.id»" class="«question.id»">
 								«FOR answer: questiontype.answer»
 									<option value="«answer.id»">«answer.name»
 									</option>

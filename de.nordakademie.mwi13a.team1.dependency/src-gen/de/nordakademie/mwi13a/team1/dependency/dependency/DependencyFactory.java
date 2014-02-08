@@ -50,6 +50,15 @@ public interface DependencyFactory extends EFactory
   PartElements createPartElements();
 
   /**
+   * Returns a new object of class '<em>Part Options</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Part Options</em>'.
+   * @generated
+   */
+  PartOptions createPartOptions();
+
+  /**
    * Returns a new object of class '<em>DM Next Parts</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,6 +84,24 @@ public interface DependencyFactory extends EFactory
    * @generated
    */
   DMMatrixQuestion createDMMatrixQuestion();
+
+  /**
+   * Returns a new object of class '<em>Define Next Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Define Next Part</em>'.
+   * @generated
+   */
+  DefineNextPart createDefineNextPart();
+
+  /**
+   * Returns a new object of class '<em>Last Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Last Part</em>'.
+   * @generated
+   */
+  LastPart createLastPart();
 
   /**
    * Returns a new object of class '<em>Or</em>'.

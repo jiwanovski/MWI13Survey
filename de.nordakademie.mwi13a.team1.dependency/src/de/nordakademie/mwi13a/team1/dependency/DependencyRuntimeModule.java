@@ -3,9 +3,19 @@
  */
 package de.nordakademie.mwi13a.team1.dependency;
 
+import org.eclipse.xtext.generator.IOutputConfigurationProvider;
+
+import com.google.inject.Binder;
+import com.google.inject.Singleton;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class DependencyRuntimeModule extends de.nordakademie.mwi13a.team1.dependency.AbstractDependencyRuntimeModule {
-
+	@Override
+	public void configure(Binder binder) {
+		super.configure(binder);
+		
+		binder.bind(IOutputConfigurationProvider.class).to(DependencyOutputConfiguration.class).in(Singleton.class);
+	}
 }

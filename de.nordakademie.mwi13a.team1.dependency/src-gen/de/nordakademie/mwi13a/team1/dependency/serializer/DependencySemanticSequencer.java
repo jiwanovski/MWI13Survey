@@ -7,8 +7,10 @@ import de.nordakademie.mwi13a.team1.dependency.dependency.Bracket;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage;
+import de.nordakademie.mwi13a.team1.dependency.dependency.LastPart;
 import de.nordakademie.mwi13a.team1.dependency.dependency.Or;
 import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements;
 import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements;
@@ -88,9 +90,21 @@ public class DependencySemanticSequencer extends AbstractDelegatingSemanticSeque
 					return; 
 				}
 				else break;
+			case DependencyPackage.DEFINE_NEXT_PART:
+				if(context == grammarAccess.getPartOptionsRule()) {
+					sequence_PartOptions(context, (DefineNextPart) semanticObject); 
+					return; 
+				}
+				else break;
 			case DependencyPackage.DEPENDENCY_MODEL:
 				if(context == grammarAccess.getDependencyModelRule()) {
 					sequence_DependencyModel(context, (DependencyModel) semanticObject); 
+					return; 
+				}
+				else break;
+			case DependencyPackage.LAST_PART:
+				if(context == grammarAccess.getPartOptionsRule()) {
+					sequence_PartOptions(context, (LastPart) semanticObject); 
 					return; 
 				}
 				else break;
@@ -213,10 +227,45 @@ public class DependencySemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=[Part|STRING] nextParts+=DMNextParts+)
+	 *     (name=[Part|STRING] option=PartOptions)
 	 */
 	protected void sequence_PartElements(EObject context, PartElements semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DependencyPackage.Literals.PART_ELEMENTS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DependencyPackage.Literals.PART_ELEMENTS__NAME));
+			if(transientValues.isValueTransient(semanticObject, DependencyPackage.Literals.PART_ELEMENTS__OPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DependencyPackage.Literals.PART_ELEMENTS__OPTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPartElementsAccess().getNamePartSTRINGTerminalRuleCall_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPartElementsAccess().getOptionPartOptionsParserRuleCall_2_0(), semanticObject.getOption());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     nextParts+=DMNextParts+
+	 */
+	protected void sequence_PartOptions(EObject context, DefineNextPart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     lastPart?='LastPart'
+	 */
+	protected void sequence_PartOptions(EObject context, LastPart semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DependencyPackage.Literals.LAST_PART__LAST_PART) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DependencyPackage.Literals.LAST_PART__LAST_PART));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPartOptionsAccess().getLastPartLastPartKeyword_1_1_0(), semanticObject.isLastPart());
+		feeder.finish();
 	}
 	
 	

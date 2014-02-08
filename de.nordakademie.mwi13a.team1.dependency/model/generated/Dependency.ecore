@@ -13,9 +13,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PartElements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Part"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nextParts" upperBound="-1"
-        eType="#//DMNextParts" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="#//PartOptions"
+        containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartOptions"/>
   <eClassifiers xsi:type="ecore:EClass" name="DMNextParts">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Part"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
@@ -27,6 +28,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="answer" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Answer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matrixQuestion" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//MatrixQuestion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matrixScale" eType="ecore:EClass ../../../de.nordakademie.mwi13a.team1.survey/model/generated/Survey.ecore#//Answer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefineNextPart" eSuperTypes="#//PartOptions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextParts" upperBound="-1"
+        eType="#//DMNextParts" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LastPart" eSuperTypes="#//PartOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastPart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//Dependency">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Dependency"

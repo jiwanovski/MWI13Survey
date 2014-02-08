@@ -15,6 +15,8 @@ import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
 import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
 import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
+import java.util.ArrayList
+
 //import org.eclipse.xtext.validation.Check
 
 /**
@@ -24,27 +26,96 @@ import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyU
  */
 class DependencyValidator extends AbstractDependencyValidator {
 		
-	@Check
-	def checkNextPart(DMNextParts nextPart) {
-		val previousPart = (nextPart.eContainer as PartElements).name
-		val destinationPart = (nextPart.name as Part)
-		if (previousPart.equals(destinationPart)) {
-			error("Ein Abschnitt darf nicht auf sich selbst verweisen!",
-				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
-			)
-		}
-	}
+//	@Check
+//	def checkNextPart(DMNextParts nextPart) {
+//		val previousPart = (nextPart.eContainer as PartElements).name
+//		val destinationPart = (nextPart.name as Part)
+//		if (previousPart.equals(destinationPart)) {
+//			error("Ein Abschnitt darf nicht auf sich selbst verweisen!",
+//				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
+//			)
+//		}
+//	}
 	
-	@Check
-	def checkPartMembership(PartElements partElement) {
-		val survey = (partElement.eContainer as SurveyElements).name
-		val part = (partElement.name as Part)
-		if (!survey.equals(part.eContainer)) {
-			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
-				DependencyPackage.Literals.PART_ELEMENTS__NAME
-			)
-		}
-	}
+//	@Check
+//	def checkNextPartExists(DMNextParts nextPart) {
+//		var i = 0
+//		for (part: (nextPart.eContainer as PartElements).nextParts) {			
+//			if (nextPart.name.equals(part.name)) {				
+//				i = i + 1
+//				if (i == 2) {
+//					error("Der Next Part ist mehrfach definiert.",
+//						DependencyPackage.Literals.DM_NEXT_PARTS__NAME
+//					)
+//				}
+//			}			
+//		}
+//	}
+	
+//	@Check
+//	def checkPartHierarchy(PartElements element) {
+//		val visited = <Part>newArrayList()
+//		partHierarchyHelper(element, visited)
+//		//var current = element.name
+//		//while (current != null && !visited.contains(current)) {
+//		//	visited.add(current)
+//		//	for (next: element.nextParts) {
+//				
+//		//	}
+//		//	current =
+//		//}
+//		//visited
+//	}
+	
+//	def partHierarchyHelper(PartElements neededElement, ArrayList<Part> visited) {
+//		for (e: (neededElement.eContainer as SurveyElements).partElements) {
+//			if (e.name.equals(neededElement.name)) {
+//				if (!visited.contains(neededElement.name)) {
+//					visited.add(neededElement.name)
+//					
+//					for (n: neededElement.nextParts) {
+//						if (n.name != null) {
+//							//partHierarchyHelper(n.name.,visited)						
+//							
+//						}
+//					}
+//				} else {
+//					// ERROR
+//				}
+//			}
+//			
+//		}
+//		if (neededElement.name != null) {
+//			if (!visited.contains(neededElement.name)) {
+//				visited.add(neededElement.name)
+//				
+//				for (next: neededElement.nextParts) {
+//					if (next.name != null) {
+//						val g = (next.name as Part)
+//					}				
+//				}
+//			} else {
+//				
+//			}
+//			
+//		} 
+//			
+//			
+//			
+//		}
+		
+	
+	
+//	@Check
+//	def checkPartMembership(PartElements partElement) {
+//		val survey = (partElement.eContainer as SurveyElements).name
+//		val part = (partElement.name as Part)
+//		if (!survey.equals(part.eContainer)) {
+//			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
+//				DependencyPackage.Literals.PART_ELEMENTS__NAME
+//			)
+//		}
+//	}
 	//@Check
 	//def checkPartSurvey(SDPart part) {
 	//	val surveyName = (part.eContainer as SurveyDependency).survey.name
