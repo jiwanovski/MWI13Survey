@@ -482,14 +482,14 @@ public interface SurveyPackage extends EPackage
   int MATRIX_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl <em>Combo Box</em>}' class.
+   * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.CheckBoxImpl <em>Check Box</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl
-   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getComboBox()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.CheckBoxImpl
+   * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getCheckBox()
    * @generated
    */
-  int COMBO_BOX = 11;
+  int CHECK_BOX = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -498,7 +498,7 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMBO_BOX__NAME = SURVEY_TERMINAL_TYPES__NAME;
+  int CHECK_BOX__NAME = SURVEY_TERMINAL_TYPES__NAME;
 
   /**
    * The feature id for the '<em><b>Answer</b></em>' containment reference list.
@@ -507,16 +507,16 @@ public interface SurveyPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMBO_BOX__ANSWER = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
+  int CHECK_BOX__ANSWER = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Combo Box</em>' class.
+   * The number of structural features of the '<em>Check Box</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMBO_BOX_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
+  int CHECK_BOX_FEATURE_COUNT = SURVEY_TERMINAL_TYPES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.DropDownImpl <em>Drop Down</em>}' class.
@@ -935,25 +935,25 @@ public interface SurveyPackage extends EPackage
   EReference getMatrix_MatrixQuestion();
 
   /**
-   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.ComboBox <em>Combo Box</em>}'.
+   * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.CheckBox <em>Check Box</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Combo Box</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.ComboBox
+   * @return the meta object for class '<em>Check Box</em>'.
+   * @see de.nordakademie.mwi13a.team1.survey.survey.CheckBox
    * @generated
    */
-  EClass getComboBox();
+  EClass getCheckBox();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.ComboBox#getAnswer <em>Answer</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.nordakademie.mwi13a.team1.survey.survey.CheckBox#getAnswer <em>Answer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Answer</em>'.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.ComboBox#getAnswer()
-   * @see #getComboBox()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.CheckBox#getAnswer()
+   * @see #getCheckBox()
    * @generated
    */
-  EReference getComboBox_Answer();
+  EReference getCheckBox_Answer();
 
   /**
    * Returns the meta object for class '{@link de.nordakademie.mwi13a.team1.survey.survey.DropDown <em>Drop Down</em>}'.
@@ -1299,14 +1299,14 @@ public interface SurveyPackage extends EPackage
     EReference MATRIX__MATRIX_QUESTION = eINSTANCE.getMatrix_MatrixQuestion();
 
     /**
-     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl <em>Combo Box</em>}' class.
+     * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.CheckBoxImpl <em>Check Box</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl
-     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getComboBox()
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.CheckBoxImpl
+     * @see de.nordakademie.mwi13a.team1.survey.survey.impl.SurveyPackageImpl#getCheckBox()
      * @generated
      */
-    EClass COMBO_BOX = eINSTANCE.getComboBox();
+    EClass CHECK_BOX = eINSTANCE.getCheckBox();
 
     /**
      * The meta object literal for the '<em><b>Answer</b></em>' containment reference list feature.
@@ -1314,7 +1314,7 @@ public interface SurveyPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMBO_BOX__ANSWER = eINSTANCE.getComboBox_Answer();
+    EReference CHECK_BOX__ANSWER = eINSTANCE.getCheckBox_Answer();
 
     /**
      * The meta object literal for the '{@link de.nordakademie.mwi13a.team1.survey.survey.impl.DropDownImpl <em>Drop Down</em>}' class.

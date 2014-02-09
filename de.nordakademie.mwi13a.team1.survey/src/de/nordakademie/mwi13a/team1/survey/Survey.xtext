@@ -63,7 +63,7 @@ SurveyTerminalTypes:
 			matrixQuestion+=MatrixQuestion)* 
 		')'
 	'}' |
-	{ComboBox} name='ComboBox' '{'
+	{CheckBox} name='CheckBox' '{'
 		(answer+=Answer)+ 
 	'}'|
 	{DropDown} name='DropDown' '{'

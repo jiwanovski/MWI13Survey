@@ -152,11 +152,11 @@ public class SurveySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SurveyPackage.COMBO_BOX:
+      case SurveyPackage.CHECK_BOX:
       {
-        ComboBox comboBox = (ComboBox)theEObject;
-        T result = caseComboBox(comboBox);
-        if (result == null) result = caseSurveyTerminalTypes(comboBox);
+        CheckBox checkBox = (CheckBox)theEObject;
+        T result = caseCheckBox(checkBox);
+        if (result == null) result = caseSurveyTerminalTypes(checkBox);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -357,17 +357,17 @@ public class SurveySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Combo Box</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Check Box</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Combo Box</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Check Box</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComboBox(ComboBox object)
+  public T caseCheckBox(CheckBox object)
   {
     return null;
   }

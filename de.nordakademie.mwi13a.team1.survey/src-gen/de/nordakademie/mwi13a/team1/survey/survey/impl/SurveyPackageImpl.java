@@ -3,7 +3,7 @@
 package de.nordakademie.mwi13a.team1.survey.survey.impl;
 
 import de.nordakademie.mwi13a.team1.survey.survey.Answer;
-import de.nordakademie.mwi13a.team1.survey.survey.ComboBox;
+import de.nordakademie.mwi13a.team1.survey.survey.CheckBox;
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
@@ -116,7 +116,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass comboBoxEClass = null;
+  private EClass checkBoxEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -520,9 +520,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComboBox()
+  public EClass getCheckBox()
   {
-    return comboBoxEClass;
+    return checkBoxEClass;
   }
 
   /**
@@ -530,9 +530,9 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComboBox_Answer()
+  public EReference getCheckBox_Answer()
   {
-    return (EReference)comboBoxEClass.getEStructuralFeatures().get(0);
+    return (EReference)checkBoxEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -648,8 +648,8 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     createEReference(matrixEClass, MATRIX__ANSWER);
     createEReference(matrixEClass, MATRIX__MATRIX_QUESTION);
 
-    comboBoxEClass = createEClass(COMBO_BOX);
-    createEReference(comboBoxEClass, COMBO_BOX__ANSWER);
+    checkBoxEClass = createEClass(CHECK_BOX);
+    createEReference(checkBoxEClass, CHECK_BOX__ANSWER);
 
     dropDownEClass = createEClass(DROP_DOWN);
     createEReference(dropDownEClass, DROP_DOWN__ANSWER);
@@ -690,7 +690,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     textLineEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
     textBlockEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
     matrixEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
-    comboBoxEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
+    checkBoxEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
     dropDownEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
     radioEClass.getESuperTypes().add(this.getSurveyTerminalTypes());
 
@@ -738,8 +738,8 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage
     initEReference(getMatrix_Answer(), this.getAnswer(), null, "answer", null, 0, -1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMatrix_MatrixQuestion(), this.getMatrixQuestion(), null, "matrixQuestion", null, 0, -1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(comboBoxEClass, ComboBox.class, "ComboBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComboBox_Answer(), this.getAnswer(), null, "answer", null, 0, -1, ComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCheckBox_Answer(), this.getAnswer(), null, "answer", null, 0, -1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dropDownEClass, DropDown.class, "DropDown", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDropDown_Answer(), this.getAnswer(), null, "answer", null, 0, -1, DropDown.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -773,21 +773,21 @@ ruleSurveyTerminalTypes returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSurveyTerminalTypesAccess().getComboBoxAction_3_0(),
+            grammarAccess.getSurveyTerminalTypesAccess().getCheckBoxAction_3_0(),
             $current);
     }
 )(
 (
-		lv_name_27_0=	'ComboBox' 
+		lv_name_27_0=	'CheckBox' 
     {
-        newLeafNode(lv_name_27_0, grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0());
+        newLeafNode(lv_name_27_0, grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getSurveyTerminalTypesRule());
 	        }
-       		setWithLastConsumed($current, "name", lv_name_27_0, "ComboBox");
+       		setWithLastConsumed($current, "name", lv_name_27_0, "CheckBox");
 	    }
 
 )

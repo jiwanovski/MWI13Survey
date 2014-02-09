@@ -3,21 +3,27 @@
  */
 package de.nordakademie.mwi13a.team1.survey.validation
 
+import static extension de.nordakademie.mwi13a.team1.survey.util.SurveyUtil.*
+import de.nordakademie.mwi13a.team1.survey.survey.Answer
+import de.nordakademie.mwi13a.team1.survey.survey.CheckBox
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown
+import de.nordakademie.mwi13a.team1.survey.survey.Matrix
 import de.nordakademie.mwi13a.team1.survey.survey.Part
 import de.nordakademie.mwi13a.team1.survey.survey.Question
 import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
+import de.nordakademie.mwi13a.team1.survey.survey.Radio
 import de.nordakademie.mwi13a.team1.survey.survey.Survey
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage
-import java.util.ArrayList
+import de.nordakademie.mwi13a.team1.survey.survey.SurveyTerminalTypes
+import de.nordakademie.mwi13a.team1.survey.survey.TextBlock
+import de.nordakademie.mwi13a.team1.survey.survey.TextLine
+import java.util.List
 import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.validation.CheckType
 
-//import de.nordakademie.mwi13a.team1.survey.survey.Question
-//import de.nordakademie.mwi13a.team1.survey.survey.DropDown
-
 class SurveyValidator extends AbstractSurveyValidator {
 
+	//Every Survey must contain at least 1 Questionnaire
 	@Check(CheckType.FAST)
 	def SurveyContainsQuestionnaire (Survey survey) {
 		if(survey.questionnaire.empty) 
@@ -26,6 +32,8 @@ class SurveyValidator extends AbstractSurveyValidator {
 			)
 	}
 	
+	
+	//Every Questionnaire must contain at least 1 Part
 	@Check(CheckType.FAST)
 	def QuestionnaireContainsPart (Questionnaire questionnaire) {
 		if(questionnaire.part.empty) 
@@ -34,6 +42,8 @@ class SurveyValidator extends AbstractSurveyValidator {
 			)              
 	}
 	
+	
+	//Every Part must contain at least 1 Question
 	@Check(CheckType.FAST)
 	def PartContainsQuestion (Part part) {
 		if(part.question.empty) 
@@ -41,56 +51,130 @@ class SurveyValidator extends AbstractSurveyValidator {
 				SurveyPackage.Literals.PART__NAME
 			)
 	}
-			
-//	@Check(CheckType.FAST)
-//	def IDQuestionnaire (Questionnaire questionnaire) {
-//		var listeFragebogen = new ArrayList()[survey.questionnaire]
-//		for(id : survey.questionnaire.id)
-//		val duplicate = survey.questionnaire.findFirst[]
-//		if (duplicate != null)
-//			error("Doppelte ID in Umfrage", MyDSLPackage.Literals.FRAGEBOGEN__NAME)
-//		
-		
-//		val survey = (questionnaire.eContainer as Survey)		
-//		if (!survey.questionnaire.empty){
-			//val numberquestionnaires = survey.questionnaire.length
-//			val IDquestionnaire = (survey.questionnaire as Questionnaire).id
-//			survey.questionnaire.forEach[
-//				if (it.id.equals(IDquestionnaire)){
-//					error("Duplicate ID in Questionnaires" + it.name + "and", SurveyPackage.Literals.QUESTIONNAIRE__NAME)
-//				}
-//			]
-				//val IDcurrent = (survey.questionnaire as Questionnaire).id
-				
-		
-//		}
-//		if (survey.questionnaire.exists[it == survey.questionnaire && it.id == survey.questionnaire.id])
-//			error("Doppelte ID in Fragebogen", SurveyPackage.Literals.QUESTIONNAIRE__NAME)
-//	}
-		
-// JIW OUT		
-//	@Check
-//	def DropboxWith2Answers (DropDown dropdown) {
-		//if (frage.dropdown != null)
-		
-		//if (surveyterminaltypes.name == 'DropDown'){
-		//	val countanswers = (dropdown.eContainer as Answer)
-		//if(surveyterminaltypes == typeof(DropDown)){
-//			if (dropdown.answer.size <= 2){
-//				error("A DropDown must contain at least 2 Answers!", 
-//				SurveyPackage.Literals.QUESTIONNAIRE__NAME)
-//			}
-//		}
+	
+	
+	//Every DropDown Question must contain at least 2 Answers	
+	@Check
+	def DropDownWith2Answers (DropDown dropdown) {
+		if (dropdown.answer.size <= 1){
+			error("A DropDown Question must contain at least 2 Answers!", 
+			SurveyPackage.Literals.DROP_DOWN__ANSWER)
+		}
 	}
 	
-//	@Check(CheckType.FAST)
-//	def DropboxWith2Answers (Question question) {
-//		if(question.questionType == 'DropDown'){
-//			val dropDown = DropDown
-//			if (dropDown.answer.size <= 2){
-//				error("A DropDown must contain at least 2 Answers!", 
-//				SurveyPackage.Literals.QUESTION__NAME)
-//			}
-//		}
-//	}
-//}
+	
+	//Every CheckBox Question must contain at least 2 Answers
+	@Check
+	def CheckBoxWith2Answers (CheckBox checkbox) {
+		if (checkbox.answer.size <= 1){
+			error("A CheckBox Question must contain at least 2 Answers!", 
+			SurveyPackage.Literals.CHECK_BOX__ANSWER)
+		}
+	}
+	
+	
+	//Every Radio Question must contain at least 1 Answer (Opt-in functionality)
+	@Check
+	def RadioWith1Answer (Radio radio) {
+		if (radio.answer.size <= 0){
+			error("A Radio Question must contain at least 1 Answer!", 
+			SurveyPackage.Literals.RADIO__ANSWER)
+		}
+	}
+	
+			
+	//In a Survey may not have two or more Questionnaires the same ID
+	@Check(CheckType.FAST)
+	def IDQuestionnaire (Questionnaire questionnaire) {
+		val questionnairearray = questionnaire.containingSurvey.questionnaire
+			for (j: questionnairearray){
+				if((questionnaire.id.equals(j.id)) && (questionnaire.id !== (j.id))) {
+				error("Duplicate ID of Questionnaires.", SurveyPackage.Literals.QUESTIONNAIRE__ID)
+			}
+		}
+	}
+
+	
+	//In a Questionnaire may not have two or more Parts the same ID
+	@Check(CheckType.FAST)
+	def IDPart (Part part){
+		val partarray = part.containingQuestionnaire.part
+			for (j: partarray){
+				if((part.id.equals(j.id)) && (part.id !== (j.id))) {
+				error("Duplicate ID of Parts.", SurveyPackage.Literals.PART__ID)
+			}
+		}
+	}
+	
+	
+	//In a Part may not have two or more Questions the same ID
+	@Check(CheckType.FAST)
+	def IDQuestion (Question question){
+		val questionarray = question.containingPart.question
+			for (j: questionarray){
+				if((question.id.equals(j.id)) && (question.id !== (j.id))) {
+				error("Duplicate ID of Questions.", SurveyPackage.Literals.QUESTION__ID)
+			}
+		}
+	}
+	
+	
+	//In a Question with type DropDown, Radio or CheckBox may not have two or more Answers the same ID
+	@Check(CheckType.FAST)
+	def IDAnswer (Answer answer){
+		var questionTypename = ((answer.eContainer as SurveyTerminalTypes).eContainer as Question).questionType.name 
+		 switch questionTypename {
+		 	case "DropDown": {
+		 		val answerarray = answer.containingDropDown.answer
+				for (j: answerarray){
+					if((answer.id.equals(j.id)) && (answer.id !== (j.id))) {
+						error("Duplicate ID of Answers.", SurveyPackage.Literals.ANSWER__ID)
+					}
+				}
+			}
+			case "Radio": {
+				val answerarray = answer.containingRadio.answer
+				for (j: answerarray){
+					if((answer.id.equals(j.id)) && (answer.id !== (j.id))) {
+						error("Duplicate ID of Answers.", SurveyPackage.Literals.ANSWER__ID)
+					}
+		  		} 
+		  	}
+		  	case "CheckBox": {
+		  		val answerarray = answer.containingCheckBox.answer
+				for (j: answerarray){
+					if((answer.id.equals(j.id)) && (answer.id !== (j.id))) {
+						error("Duplicate ID of Answers.", SurveyPackage.Literals.ANSWER__ID)
+					}
+		  		} 
+		  	}
+		  	case "Matrix":{
+		  		val answerarray = answer.containingMatrix.answer
+				for (j: answerarray){
+					if((answer.id.equals(j.id)) && (answer.id !== (j.id))) {
+						error("Duplicate ID of Answers.", SurveyPackage.Literals.ANSWER__ID)
+					}
+		  		} 
+			}	 
+		}
+	}
+
+
+	//The Question types Textline and Textblock require a minimum text length of 3 caracters
+	@Check
+	def dispatch textlength (TextBlock textblock){
+			if (textblock.length <= 2) {
+				warning("Consider the minimal of length of textblock (3 caracters).", SurveyPackage.Literals.TEXT_BLOCK__LENGTH)
+			}
+			
+	}
+
+	@Check
+	def dispatch textlength (TextLine textline){
+			if (textline.length <= 2) {
+				warning("Consider the minimal of length of textline (3 caracters).", SurveyPackage.Literals.TEXT_LINE__LENGTH)
+			}
+			
+	}
+	
+}

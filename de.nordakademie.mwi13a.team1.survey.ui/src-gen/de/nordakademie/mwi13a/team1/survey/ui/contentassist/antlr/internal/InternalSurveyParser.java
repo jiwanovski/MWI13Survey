@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSurveyParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Questionnaire:'", "'{'", "'Questionnaire-ID:'", "'}'", "'Part:'", "'Part-ID:'", "'Question:'", "'Question-ID:'", "'Type:'", "'Answer-ID:'", "'Answer:'", "'('", "')'", "'Scale:'", "'Questions:'", "'|'", "'Mandatory Field'", "'TextLine'", "'TextBlock'", "'Matrix'", "'ComboBox'", "'DropDown'", "'Radio'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Questionnaire:'", "'{'", "'Questionnaire-ID:'", "'}'", "'Part:'", "'Part-ID:'", "'Question:'", "'Question-ID:'", "'Type:'", "'Answer-ID:'", "'Answer:'", "'('", "')'", "'Scale:'", "'Questions:'", "'|'", "'Mandatory Field'", "'TextLine'", "'TextBlock'", "'Matrix'", "'CheckBox'", "'DropDown'", "'Radio'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -5871,13 +5871,13 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2287:1: ( () )
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2288:1: ()
             {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getComboBoxAction_3_0()); 
+             before(grammarAccess.getSurveyTerminalTypesAccess().getCheckBoxAction_3_0()); 
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2289:1: ()
             // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:2291:1: 
             {
             }
 
-             after(grammarAccess.getSurveyTerminalTypesAccess().getComboBoxAction_3_0()); 
+             after(grammarAccess.getSurveyTerminalTypesAccess().getCheckBoxAction_3_0()); 
 
             }
 
@@ -8092,29 +8092,29 @@ public class InternalSurveyParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SurveyTerminalTypes__NameAssignment_3_1"
-    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3165:1: rule__SurveyTerminalTypes__NameAssignment_3_1 : ( ( 'ComboBox' ) ) ;
+    // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3165:1: rule__SurveyTerminalTypes__NameAssignment_3_1 : ( ( 'CheckBox' ) ) ;
     public final void rule__SurveyTerminalTypes__NameAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3169:1: ( ( ( 'ComboBox' ) ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3170:1: ( ( 'ComboBox' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3169:1: ( ( ( 'CheckBox' ) ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3170:1: ( ( 'CheckBox' ) )
             {
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3170:1: ( ( 'ComboBox' ) )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3171:1: ( 'ComboBox' )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3170:1: ( ( 'CheckBox' ) )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3171:1: ( 'CheckBox' )
             {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3172:1: ( 'ComboBox' )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3173:1: 'ComboBox'
+             before(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); 
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3172:1: ( 'CheckBox' )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:3173:1: 'CheckBox'
             {
-             before(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
+             before(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); 
             match(input,31,FOLLOW_31_in_rule__SurveyTerminalTypes__NameAssignment_3_16280); 
-             after(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
+             after(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); 
 
             }
 
-             after(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); 
+             after(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); 
 
             }
 

@@ -3,9 +3,20 @@
  */
 package de.nordakademie.mwi13a.team1.survey;
 
+import org.eclipse.xtext.generator.IOutputConfigurationProvider;
+
+import com.google.inject.Binder;
+import com.google.inject.Singleton;
+
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class SurveyRuntimeModule extends de.nordakademie.mwi13a.team1.survey.AbstractSurveyRuntimeModule {
-
+	@Override
+	public void configure(Binder binder) {
+		super.configure(binder);
+		
+		binder.bind(IOutputConfigurationProvider.class).to(SurveyOutputConfiguration.class).in(Singleton.class);
+	}
 }

@@ -122,13 +122,13 @@ public interface SurveyFactory extends EFactory
   Matrix createMatrix();
 
   /**
-   * Returns a new object of class '<em>Combo Box</em>'.
+   * Returns a new object of class '<em>Check Box</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Combo Box</em>'.
+   * @return a new object of class '<em>Check Box</em>'.
    * @generated
    */
-  ComboBox createComboBox();
+  CheckBox createCheckBox();
 
   /**
    * Returns a new object of class '<em>Drop Down</em>'.

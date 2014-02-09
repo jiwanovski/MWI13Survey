@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSurveyParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Questionnaire:'", "'{'", "'Questionnaire-ID:'", "'}'", "'Part:'", "'Part-ID:'", "'Question:'", "'Question-ID:'", "'Mandatory Field'", "'Type:'", "'Answer-ID:'", "'Answer:'", "'TextLine'", "'('", "')'", "'TextBlock'", "'Matrix'", "'Scale:'", "'|'", "'Questions:'", "'ComboBox'", "'DropDown'", "'Radio'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Questionnaire:'", "'{'", "'Questionnaire-ID:'", "'}'", "'Part:'", "'Part-ID:'", "'Question:'", "'Question-ID:'", "'Mandatory Field'", "'Type:'", "'Answer-ID:'", "'Answer:'", "'TextLine'", "'('", "')'", "'TextBlock'", "'Matrix'", "'Scale:'", "'|'", "'Questions:'", "'CheckBox'", "'DropDown'", "'Radio'"
     };
     public static final int RULE_ID=6;
     public static final int T__29=29;
@@ -1170,7 +1170,7 @@ public class InternalSurveyParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSurveyTerminalTypes"
-    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:539:1: ruleSurveyTerminalTypes returns [EObject current=null] : ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'ComboBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) ) ;
+    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:539:1: ruleSurveyTerminalTypes returns [EObject current=null] : ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'CheckBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) ) ;
     public final EObject ruleSurveyTerminalTypes() throws RecognitionException {
         EObject current = null;
 
@@ -1220,10 +1220,10 @@ public class InternalSurveyParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:542:28: ( ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'ComboBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) ) )
-            // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:543:1: ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'ComboBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) )
+            // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:542:28: ( ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'CheckBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) ) )
+            // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:543:1: ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'CheckBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) )
             {
-            // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:543:1: ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'ComboBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) )
+            // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:543:1: ( ( () ( (lv_name_1_0= 'TextLine' ) ) otherlv_2= '(' ( (lv_length_3_0= RULE_INT ) ) otherlv_4= ')' ) | ( () ( (lv_name_6_0= 'TextBlock' ) ) otherlv_7= '(' ( (lv_length_8_0= RULE_INT ) ) otherlv_9= ')' ) | ( () ( (lv_name_11_0= 'Matrix' ) ) otherlv_12= '{' otherlv_13= 'Scale:' otherlv_14= '(' ( (lv_answer_15_0= ruleAnswer ) ) (otherlv_16= '|' ( (lv_answer_17_0= ruleAnswer ) ) )* otherlv_18= ')' otherlv_19= 'Questions:' otherlv_20= '(' ( (lv_matrixQuestion_21_0= ruleMatrixQuestion ) ) (otherlv_22= '|' ( (lv_matrixQuestion_23_0= ruleMatrixQuestion ) ) )* otherlv_24= ')' otherlv_25= '}' ) | ( () ( (lv_name_27_0= 'CheckBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' ) | ( () ( (lv_name_32_0= 'DropDown' ) ) otherlv_33= '{' ( (lv_answer_34_0= ruleAnswer ) )+ otherlv_35= '}' ) | ( () ( (lv_name_37_0= 'Radio' ) ) otherlv_38= '{' ( (lv_answer_39_0= ruleAnswer ) )+ otherlv_40= '}' ) )
             int alt10=6;
             switch ( input.LA(1) ) {
             case 23:
@@ -1680,37 +1680,37 @@ public class InternalSurveyParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:773:6: ( () ( (lv_name_27_0= 'ComboBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' )
+                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:773:6: ( () ( (lv_name_27_0= 'CheckBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' )
                     {
-                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:773:6: ( () ( (lv_name_27_0= 'ComboBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' )
-                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:773:7: () ( (lv_name_27_0= 'ComboBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}'
+                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:773:6: ( () ( (lv_name_27_0= 'CheckBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}' )
+                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:773:7: () ( (lv_name_27_0= 'CheckBox' ) ) otherlv_28= '{' ( (lv_answer_29_0= ruleAnswer ) )+ otherlv_30= '}'
                     {
                     // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:773:7: ()
                     // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:774:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getSurveyTerminalTypesAccess().getComboBoxAction_3_0(),
+                                grammarAccess.getSurveyTerminalTypesAccess().getCheckBoxAction_3_0(),
                                 current);
                         
 
                     }
 
-                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:779:2: ( (lv_name_27_0= 'ComboBox' ) )
-                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:780:1: (lv_name_27_0= 'ComboBox' )
+                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:779:2: ( (lv_name_27_0= 'CheckBox' ) )
+                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:780:1: (lv_name_27_0= 'CheckBox' )
                     {
-                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:780:1: (lv_name_27_0= 'ComboBox' )
-                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:781:3: lv_name_27_0= 'ComboBox'
+                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:780:1: (lv_name_27_0= 'CheckBox' )
+                    // ../de.nordakademie.mwi13a.team1.survey/src-gen/de/nordakademie/mwi13a/team1/survey/parser/antlr/internal/InternalSurvey.g:781:3: lv_name_27_0= 'CheckBox'
                     {
                     lv_name_27_0=(Token)match(input,31,FOLLOW_31_in_ruleSurveyTerminalTypes1548); 
 
-                            newLeafNode(lv_name_27_0, grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0());
+                            newLeafNode(lv_name_27_0, grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0());
                         
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getSurveyTerminalTypesRule());
                     	        }
-                           		setWithLastConsumed(current, "name", lv_name_27_0, "ComboBox");
+                           		setWithLastConsumed(current, "name", lv_name_27_0, "CheckBox");
                     	    
 
                     }

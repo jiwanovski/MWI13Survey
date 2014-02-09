@@ -477,10 +477,10 @@ public class InternalSurveyLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:31:7: ( 'ComboBox' )
-            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:31:9: 'ComboBox'
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:31:7: ( 'CheckBox' )
+            // ../de.nordakademie.mwi13a.team1.survey.ui/src-gen/de/nordakademie/mwi13a/team1/survey/ui/contentassist/antlr/internal/InternalSurvey.g:31:9: 'CheckBox'
             {
-            match("ComboBox"); 
+            match("CheckBox"); 
 
 
             }
@@ -1281,10 +1281,10 @@ public class InternalSurveyLexer extends Lexer {
         "\172\uffff";
     static final String DFA12_minS =
         "\1\0\1\165\2\uffff\1\141\1\145\1\156\2\uffff\1\143\1\uffff\1\141"+
-        "\1\157\1\162\1\141\1\101\2\uffff\2\0\1\52\2\uffff\1\145\3\uffff"+
-        "\1\162\1\160\1\170\1\163\2\uffff\1\141\1\uffff\1\156\1\155\1\157"+
+        "\1\150\1\162\1\141\1\101\2\uffff\2\0\1\52\2\uffff\1\145\3\uffff"+
+        "\1\162\1\160\1\170\1\163\2\uffff\1\141\1\uffff\1\156\1\145\1\157"+
         "\1\144\5\uffff\1\163\1\164\1\145\1\164\1\167\1\154\1\144\1\162\1"+
-        "\142\1\160\1\151\1\164\1\55\1\72\1\102\2\145\1\141\1\151\1\157\1"+
+        "\143\1\160\1\151\1\164\1\55\1\72\1\102\2\145\1\141\1\151\1\153\1"+
         "\104\1\157\1\151\3\uffff\1\151\1\154\1\162\1\72\1\164\1\170\1\102"+
         "\1\157\1\60\1\157\1\156\1\157\1\55\1\uffff\1\157\1\60\1\157\1\167"+
         "\1\uffff\1\156\1\145\1\143\2\uffff\1\162\1\uffff\1\170\1\156\1\55"+
@@ -1292,10 +1292,10 @@ public class InternalSurveyLexer extends Lexer {
         "\1\151\3\uffff\1\162\1\145\1\55\2\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\165\2\uffff\1\141\1\171\1\156\2\uffff\1\143\1\uffff"+
-        "\1\141\1\157\1\162\1\141\1\172\2\uffff\2\uffff\1\57\2\uffff\1\145"+
-        "\3\uffff\1\162\1\160\1\170\1\163\2\uffff\1\141\1\uffff\1\164\1\155"+
+        "\1\141\1\150\1\162\1\141\1\172\2\uffff\2\uffff\1\57\2\uffff\1\145"+
+        "\3\uffff\1\162\1\160\1\170\1\163\2\uffff\1\141\1\uffff\1\164\1\145"+
         "\1\157\1\144\5\uffff\1\163\1\164\1\145\1\164\1\167\1\154\1\144\1"+
-        "\162\1\142\1\160\1\151\1\164\2\72\1\114\2\145\1\141\1\151\1\157"+
+        "\162\1\143\1\160\1\151\1\164\2\72\1\114\2\145\1\141\1\151\1\153"+
         "\1\104\1\157\1\151\3\uffff\1\151\1\154\1\162\1\72\1\164\1\170\1"+
         "\102\1\157\1\172\1\157\1\156\1\157\1\72\1\uffff\1\157\1\172\1\157"+
         "\1\167\1\uffff\1\156\1\145\1\143\2\uffff\1\162\1\uffff\1\170\1\156"+

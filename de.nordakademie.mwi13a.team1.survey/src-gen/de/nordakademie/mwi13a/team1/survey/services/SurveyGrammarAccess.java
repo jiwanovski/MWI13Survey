@@ -341,9 +341,9 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		private final Keyword cRightCurlyBracketKeyword_2_13 = (Keyword)cGroup_2.eContents().get(13);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cComboBoxAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Action cCheckBoxAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final Keyword cNameComboBoxKeyword_3_1_0 = (Keyword)cNameAssignment_3_1.eContents().get(0);
+		private final Keyword cNameCheckBoxKeyword_3_1_0 = (Keyword)cNameAssignment_3_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		private final Assignment cAnswerAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
 		private final RuleCall cAnswerAnswerParserRuleCall_3_3_0 = (RuleCall)cAnswerAssignment_3_3.eContents().get(0);
@@ -368,14 +368,14 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//SurveyTerminalTypes:
 		//	{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix}
 		//	name="Matrix" "{" "Scale:" "(" answer+=Answer ("|" answer+=Answer)* ")" "Questions:" "("
-		//	matrixQuestion+=MatrixQuestion ("|" matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{"
+		//	matrixQuestion+=MatrixQuestion ("|" matrixQuestion+=MatrixQuestion)* ")" "}" | {CheckBox} name="CheckBox" "{"
 		//	answer+=Answer+ "}" | {DropDown} name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+
 		//	"}";
 		public ParserRule getRule() { return rule; }
 
 		//{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix} name="Matrix"
 		//"{" "Scale:" "(" answer+=Answer ("|" answer+=Answer)* ")" "Questions:" "(" matrixQuestion+=MatrixQuestion ("|"
-		//matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{" answer+=Answer+ "}" | {DropDown}
+		//matrixQuestion+=MatrixQuestion)* ")" "}" | {CheckBox} name="CheckBox" "{" answer+=Answer+ "}" | {DropDown}
 		//name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+ "}"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -500,17 +500,17 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_2_13() { return cRightCurlyBracketKeyword_2_13; }
 
-		//{ComboBox} name="ComboBox" "{" answer+=Answer+ "}"
+		//{CheckBox} name="CheckBox" "{" answer+=Answer+ "}"
 		public Group getGroup_3() { return cGroup_3; }
 
-		//{ComboBox}
-		public Action getComboBoxAction_3_0() { return cComboBoxAction_3_0; }
+		//{CheckBox}
+		public Action getCheckBoxAction_3_0() { return cCheckBoxAction_3_0; }
 
-		//name="ComboBox"
+		//name="CheckBox"
 		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
 
-		//"ComboBox"
-		public Keyword getNameComboBoxKeyword_3_1_0() { return cNameComboBoxKeyword_3_1_0; }
+		//"CheckBox"
+		public Keyword getNameCheckBoxKeyword_3_1_0() { return cNameCheckBoxKeyword_3_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3_2() { return cLeftCurlyBracketKeyword_3_2; }
@@ -722,7 +722,7 @@ public class SurveyGrammarAccess extends AbstractGrammarElementFinder {
 	//SurveyTerminalTypes:
 	//	{TextLine} name="TextLine" "(" length=INT ")" | {TextBlock} name="TextBlock" "(" length=INT ")" | {Matrix}
 	//	name="Matrix" "{" "Scale:" "(" answer+=Answer ("|" answer+=Answer)* ")" "Questions:" "("
-	//	matrixQuestion+=MatrixQuestion ("|" matrixQuestion+=MatrixQuestion)* ")" "}" | {ComboBox} name="ComboBox" "{"
+	//	matrixQuestion+=MatrixQuestion ("|" matrixQuestion+=MatrixQuestion)* ")" "}" | {CheckBox} name="CheckBox" "{"
 	//	answer+=Answer+ "}" | {DropDown} name="DropDown" "{" answer+=Answer+ "}" | {Radio} name="Radio" "{" answer+=Answer+
 	//	"}";
 	public SurveyTerminalTypesElements getSurveyTerminalTypesAccess() {

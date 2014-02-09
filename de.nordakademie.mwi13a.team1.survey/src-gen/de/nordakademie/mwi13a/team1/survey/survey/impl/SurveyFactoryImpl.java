@@ -75,7 +75,7 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
       case SurveyPackage.TEXT_LINE: return createTextLine();
       case SurveyPackage.TEXT_BLOCK: return createTextBlock();
       case SurveyPackage.MATRIX: return createMatrix();
-      case SurveyPackage.COMBO_BOX: return createComboBox();
+      case SurveyPackage.CHECK_BOX: return createCheckBox();
       case SurveyPackage.DROP_DOWN: return createDropDown();
       case SurveyPackage.RADIO: return createRadio();
       default:
@@ -209,10 +209,10 @@ public class SurveyFactoryImpl extends EFactoryImpl implements SurveyFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComboBox createComboBox()
+  public CheckBox createCheckBox()
   {
-    ComboBoxImpl comboBox = new ComboBoxImpl();
-    return comboBox;
+    CheckBoxImpl checkBox = new CheckBoxImpl();
+    return checkBox;
   }
 
   /**

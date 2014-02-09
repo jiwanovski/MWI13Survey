@@ -12,10 +12,11 @@ import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
 import de.nordakademie.mwi13a.team1.survey.survey.Question
 import de.nordakademie.mwi13a.team1.survey.survey.TextBlock
 import de.nordakademie.mwi13a.team1.survey.survey.TextLine
-import de.nordakademie.mwi13a.team1.survey.survey.ComboBox
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown
 import de.nordakademie.mwi13a.team1.survey.survey.Radio
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix
+import de.nordakademie.mwi13a.team1.survey.SurveyOutputConfiguration
+import de.nordakademie.mwi13a.team1.survey.survey.CheckBox
 
 /**
  * Generates code from your model files on save.
@@ -27,18 +28,16 @@ class SurveyGenerator implements IGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		val survey = resource.contents.head as Survey
 		if (survey != null) {
-		fsa.generateFile("../webapps/webapp/css/" + "default.css", toCSS)	
-		fsa.generateFile("../webapps/webapp/"+ "index.jsp", toOverview( survey))
-		fsa.generateFile("../webapps/webapp/"+ "final.jsp", toFinalJSP(survey))
+		fsa.generateFile("default.css", SurveyOutputConfiguration::GEN_CSS_OUTPUT, toCSS)	
+		fsa.generateFile("index.jsp", SurveyOutputConfiguration::GEN_JSP_OUTPUT, survey.toOverview)
+		fsa.generateFile("final.jsp", SurveyOutputConfiguration::GEN_JSP_OUTPUT, survey.toFinalJSP)
 			for (questionnaire : survey.questionnaire){
 				for (part : questionnaire.part){
 					val fileName = part.name.replace(" ","_").replace("ä","ae").replace("ö","oe").replace("ü","ue")
-					fsa.generateFile("../webapps/webapp/"+ fileName + ".jsp", toJSP( questionnaire , part))
-				}	
-				
+					fsa.generateFile(fileName + ".jsp", SurveyOutputConfiguration::GEN_JSP_OUTPUT, toJSP( questionnaire , part))
+				}					
 			}
 		}
-
 	}
 	
 	def toOverview(Survey survey) ''' 
@@ -286,7 +285,7 @@ class SurveyGenerator implements IGenerator {
 	'''
  
  	def toFinalJSP(Survey survey) '''
- 		<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 		pageEncoding="ISO-8859-1"%>
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -330,7 +329,7 @@ def dispatch  questiongenerate(TextLine questiontype , Question question)'''
 								</p>
 
  '''
- def dispatch  questiongenerate(ComboBox questiontype , Question question)''' 
+ def dispatch  questiongenerate(CheckBox questiontype , Question question)''' 
 								<p>
 								<label class="lblQuestion">«question.name»
 								</label>
@@ -398,6 +397,4 @@ def dispatch  questiongenerate(TextLine questiontype , Question question)'''
 									</table>
 								</p>
  '''
- 
- 
 }

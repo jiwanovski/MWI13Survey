@@ -16,6 +16,8 @@ import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
 import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
 import java.util.ArrayList
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
 
 //import org.eclipse.xtext.validation.Check
 
@@ -26,31 +28,81 @@ import java.util.ArrayList
  */
 class DependencyValidator extends AbstractDependencyValidator {
 		
-//	@Check
-//	def checkNextPart(DMNextParts nextPart) {
-//		val previousPart = (nextPart.eContainer as PartElements).name
-//		val destinationPart = (nextPart.name as Part)
-//		if (previousPart.equals(destinationPart)) {
-//			error("Ein Abschnitt darf nicht auf sich selbst verweisen!",
-//				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
-//			)
-//		}
-//	}
+	@Check
+	def checkNextPart(DMNextParts nextPart) {
+		val previousPart = ((nextPart.eContainer as DefineNextPart).eContainer as PartElements).name
+		val destinationPart = (nextPart.name as Part)
+		if (previousPart.equals(destinationPart)) {
+			error("Ein Abschnitt darf nicht auf sich selbst verweisen!",
+				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
+			)
+		}
+	}
 	
-//	@Check
-//	def checkNextPartExists(DMNextParts nextPart) {
-//		var i = 0
-//		for (part: (nextPart.eContainer as PartElements).nextParts) {			
-//			if (nextPart.name.equals(part.name)) {				
-//				i = i + 1
-//				if (i == 2) {
-//					error("Der Next Part ist mehrfach definiert.",
-//						DependencyPackage.Literals.DM_NEXT_PARTS__NAME
-//					)
-//				}
-//			}			
-//		}
-//	}
+	@Check
+	def checkNextPartExists(DMNextParts nextPart) {
+		var i = 0
+		for (part: (nextPart.eContainer as DefineNextPart).nextParts) {			
+			if (nextPart.name.equals(part.name)) {				
+				i = i + 1
+				if (i == 2) {
+					error("Der Next Part ist mehrfach definiert.",
+						DependencyPackage.Literals.DM_NEXT_PARTS__NAME
+					)
+				}
+			}			
+		}
+	}
+	
+	@Check
+	def checkPartMembership(PartElements partElement) {
+		val survey = (partElement.eContainer as SurveyElements).name
+		val part = (partElement.name as Part)
+		if (!survey.equals(part.eContainer)) {
+			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
+				DependencyPackage.Literals.PART_ELEMENTS__NAME
+			)
+		}
+	}
+	
+	@Check
+	def checkPartMembership(DMNextParts nextPart) {
+		var q = nextPart.containingSurveyElement.name
+		var q2 = nextPart.name.containingQuestionnaire
+		if (!q.equals(q2)) {
+			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
+				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
+			)
+		}
+	}
+	
+	@Check
+	def checkQuestionMembership(DMQuestion q) {
+		val expectedPart = q.containingPartElement.name
+		val actualPart = q.question.containingPart
+		if (!expectedPart.equals(actualPart)) {
+			error("Die Frage gehört nicht zu dem Abschnitt!",
+				DependencyPackage.Literals.DM_QUESTION__QUESTION
+			)
+		}
+	}
+	
+	@Check
+	def checkAnswerMembership(DMQuestion q) {
+		val expectedQuestion = q.question
+		val actualQuestion = q.answer.containingQuestion
+		if (!expectedQuestion.equals(actualQuestion)) {
+			error("Die Antwort gehört nicht zu der Frage!",
+				DependencyPackage.Literals.DM_QUESTION__ANSWER
+			)
+		}		
+	}
+	
+	@Check
+	def checkMatrixQuestionMembership(DMMatrixQuestion mq) {
+		var i = 0
+		i + 1
+	}
 	
 //	@Check
 //	def checkPartHierarchy(PartElements element) {
@@ -106,16 +158,7 @@ class DependencyValidator extends AbstractDependencyValidator {
 		
 	
 	
-//	@Check
-//	def checkPartMembership(PartElements partElement) {
-//		val survey = (partElement.eContainer as SurveyElements).name
-//		val part = (partElement.name as Part)
-//		if (!survey.equals(part.eContainer)) {
-//			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
-//				DependencyPackage.Literals.PART_ELEMENTS__NAME
-//			)
-//		}
-//	}
+	
 	//@Check
 	//def checkPartSurvey(SDPart part) {
 	//	val surveyName = (part.eContainer as SurveyDependency).survey.name

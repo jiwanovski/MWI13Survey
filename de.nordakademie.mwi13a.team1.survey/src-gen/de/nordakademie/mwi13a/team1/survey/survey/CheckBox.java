@@ -6,21 +6,21 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Combo Box</b></em>'.
+ * A representation of the model object '<em><b>Check Box</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.ComboBox#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.CheckBox#getAnswer <em>Answer</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getComboBox()
+ * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getCheckBox()
  * @model
  * @generated
  */
-public interface ComboBox extends SurveyTerminalTypes
+public interface CheckBox extends SurveyTerminalTypes
 {
   /**
    * Returns the value of the '<em><b>Answer</b></em>' containment reference list.
@@ -32,10 +32,10 @@ public interface ComboBox extends SurveyTerminalTypes
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Answer</em>' containment reference list.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getComboBox_Answer()
+   * @see de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage#getCheckBox_Answer()
    * @model containment="true"
    * @generated
    */
   EList<Answer> getAnswer();
 
-} // ComboBox
+} // CheckBox

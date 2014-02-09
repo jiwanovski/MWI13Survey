@@ -3,28 +3,24 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.generator
 
-import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
 import de.nordakademie.mwi13a.team1.dependency.DependencyOutputConfiguration
 import de.nordakademie.mwi13a.team1.dependency.dependency.And
 import de.nordakademie.mwi13a.team1.dependency.dependency.Bracket
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
 import de.nordakademie.mwi13a.team1.dependency.dependency.Dependency
 import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyModel
+import de.nordakademie.mwi13a.team1.dependency.dependency.LastPart
 import de.nordakademie.mwi13a.team1.dependency.dependency.Or
 import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
-import de.nordakademie.mwi13a.team1.survey.survey.Matrix
-import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion
 import de.nordakademie.mwi13a.team1.survey.survey.Part
-import de.nordakademie.mwi13a.team1.survey.survey.Question
-import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtend2.lib.StringConcatenation
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
-import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
-import de.nordakademie.mwi13a.team1.dependency.dependency.LastPart
+
+import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
 
 /**
  * Generates code from your model files on save.
@@ -43,18 +39,56 @@ class DependencyGenerator implements IGenerator {
 			fsa.generateFile("StartEmbeddedApache.java", DependencyOutputConfiguration::GEN_EMBEDDED_APACHE_OUTPUT, dm.toStartEmbeddedApache)
 			for (survey: dm.elements) {				
 				for (part: survey.partElements) {
-					val fileName = (survey.name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue") + (part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue") + "Servlet"
+					// Generate the Beans
+					val fileNameBean = part.getObjectName + "Bean"
+					fsa.generateFile(fileNameBean + ".java", DependencyOutputConfiguration::GEN_BEAN_OUTPUT, part.toBean)
 					// Generate the Servlets
-					fsa.generateFile(fileName + ".java", DependencyOutputConfiguration::GEN_SERVLET_OUTPUT, part.toServlet)
+					val fileNameServlet = part.getObjectName + "Servlet"
+					fsa.generateFile(fileNameServlet + ".java", DependencyOutputConfiguration::GEN_SERVLET_OUTPUT, part.toServlet)
 				}			
 			}
 		}
 	}
 	
+	def toBean(PartElements part) '''
+		package beans;
+		import com.mongodb.BasicDBObject;
+		import com.mongodb.DBObject;
+
+		public class «part.getObjectName»Bean {
+			«FOR q: (part.name as Part).partParams»
+				private String «q.getID»;
+				public String get«q.getID»() {
+					return «q.getID»;
+				}
+				public void set«q.getID»(String «q.getID») {
+					this.«q.getID» = «q.getID»;
+				}
+				
+			«ENDFOR»
+			public BasicDBObject toDBObject() {
+				BasicDBObject document = new BasicDBObject();
+				«FOR q: (part.name as Part).partParams»
+					document.put("«q.getID»", «q.getID»);
+				«ENDFOR»
+				return document;
+			}
+		
+			public static «part.getObjectName»Bean fromDBObject(DBObject document) {
+				«part.getObjectName»Bean b = new «part.getObjectName»Bean();
+				«FOR q: (part.name as Part).partParams»					
+						b.«q.getID» = (String) document.get("«q.getID»");
+				«ENDFOR»
+				return b;
+			}
+		}
+	'''
+	
 	def toServlet(PartElements part) '''		
 		«generalServletHead»
+		import beans.«part.getObjectName»Bean;
 		
-		public class «((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet extends HttpServlet {
+		public class «part.getObjectName»Servlet extends HttpServlet {
 			private static final long serialVersionUID = 1L;
 			
 			@Override
@@ -64,6 +98,33 @@ class DependencyGenerator implements IGenerator {
 				request.setAttribute("messages", messages);
 						
 				String nextPart = "";
+				
+				// Connect to MongoDB
+				DBCollection ownCollection;
+				MongoClient mongoClient = new MongoClient();
+
+				DB db = mongoClient.getDB("surveyDB");
+				ownCollection = db.getCollection("«part.getObjectName»»");
+		
+				if (ownCollection == null) {
+					ownCollection = db.createCollection("«part.getObjectName»", null);
+				}
+				// create    
+				«part.getObjectName»Bean ownBean = new «part.getObjectName»Bean();
+				
+				«FOR q: (part.name as Part).partParams»
+					// get and validate «q.getID»
+					String «q.getID» = request.getParameter("«q.getID»");
+					«IF q.isMandatory»
+						if («q.getID» == null || «q.getID».trim().isEmpty()) {
+							messages.put("«q.getID»","Please enter a value");
+						}
+					«ENDIF»
+					ownBean.set«q.getID»(«q.getID»);
+				«ENDFOR»
+				BasicDBObject doc = ownBean.toDBObject();
+				ownCollection.insert(doc);
+				
 				«switch(part.option) {
 					DefineNextPart: {
 						printNextParts((part.option as DefineNextPart))
@@ -72,8 +133,7 @@ class DependencyGenerator implements IGenerator {
 					LastPart: {
 						printLastPart
 					}
-				}
-				»
+				}»
 			}
 		}
 	'''
@@ -92,12 +152,12 @@ class DependencyGenerator implements IGenerator {
 		«FOR survey: dm.elements»		
 			«FOR part: survey.partElements»
 				<servlet>
-					<servlet-name>«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet</servlet-name>
-					<servlet-class>servlets.«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet</servlet-class>
+					<servlet-name>«part.getObjectName»Servlet</servlet-name>
+					<servlet-class>servlets.«part.getObjectName»Servlet</servlet-class>
 				</servlet>
 				<servlet-mapping>
-					<servlet-name>«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»Servlet</servlet-name>
-					<url-pattern>/«((part.eContainer as SurveyElements).name as Questionnaire).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»«(part.name as Part).name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»</url-pattern>
+					<servlet-name>«part.getObjectName»Servlet</servlet-name>
+					<url-pattern>/«part.getObjectName»</url-pattern>
 				</servlet-mapping>
 			«ENDFOR»							
 		«ENDFOR»	
@@ -107,23 +167,18 @@ class DependencyGenerator implements IGenerator {
 		</web-app>
 	'''
 	
-	def printNextParts(DefineNextPart np) '''
-		«FOR parameter: np.nextParts»
-			«IF (parameter.expressions.length == 0)»
-				nextPart = "«parameter.name.name.replace(" ","_")».jsp";
-			«ELSE»
-				«FOR expression: parameter.expressions»
-					«getParameter(expression)»
-				«ENDFOR»
-			«ENDIF»	
-		«ENDFOR»		
+	def printNextParts(DefineNextPart np) '''															
 		«FOR dependency: np.nextParts»
-			«FOR expression: dependency.expressions»
-				// Check next page dependencies
-				if («solveDependencies(expression)») {
-					nextPart = "«(dependency.name as Part).name.replace(" ","_").replace("ä","ae").replace("ö","oe").replace("ü","ue")».jsp";
-				}
-			«ENDFOR»					
+			«IF (dependency.expressions.length == 0)»
+				nextPart = "«dependency.name.name.replace(" ","_")».jsp";
+			«ELSE»
+				«FOR expression: dependency.expressions»
+					// Check next page dependencies
+					if («solveDependencies(expression)») {
+						nextPart = "«(dependency.name as Part).name.replace(" ","_").replace("ä","ae").replace("ö","oe").replace("ü","ue")».jsp";
+					}
+				«ENDFOR»
+			«ENDIF»						
 		«ENDFOR»
 		// call next page
 		request.getRequestDispatcher(nextPart).forward(request, response);
@@ -159,33 +214,6 @@ class DependencyGenerator implements IGenerator {
 			}
 		}
 	'''
-	// ------- GET PARAMETER -----------------------------------------
-	def dispatch Object getParameter(Dependency d) '''
-		«switch (d) {
-			And: {
-				(d.left.getParameter as StringConcatenation).toString + (d.right.getParameter as StringConcatenation).toString
-			}
-			Or: {
-				(d.left.getParameter as StringConcatenation).toString + (d.right.getParameter as StringConcatenation).toString
-			}
-			Bracket : {
-				d.dependency.getParameter			
-			}
-			
-			DMQuestion: {
-				if (!d.question.addedQuestionParameters) {
-					printVariableBlock(d.question.id, (d.question as Question).mandatory)
-				}
-															
-			}
-			
-			DMMatrixQuestion: {
-				if (!d.question.addedMatrixQuestionParameters) {
-					printVariableBlock(d.question.id, (((d.question as MatrixQuestion).eContainer as Matrix).eContainer as Question).mandatory)				
-				}				
-			}
-		}»
-	'''
 		
 	// ------- SOLVE DEPENDENCIES--------------------------------------
 	def dispatch Object solveDependencies(Dependency d) '''
@@ -202,7 +230,6 @@ class DependencyGenerator implements IGenerator {
 			DMQuestion: {
 				solveQuestion(d)
 			}
-			
 			DMMatrixQuestion: {
 				solveQuestion(d)			
 			}
@@ -233,16 +260,6 @@ class DependencyGenerator implements IGenerator {
 		(«(bracket.dependency.solveDependencies as StringConcatenation)»)
 	'''
 	
-	def printVariableBlock(String id, Boolean mandatory) '''
-		// get and validate «id»
-		String «id» = request.getParameter("«id»");
-		«IF mandatory»
-			if («id» == null || «id».trim().isEmpty()) {
-				messages.put("«id»","Please enter a value");
-			}
-		«ENDIF»	
-	'''
-	
 	def generalServletHead() '''
 		package servlets;
 		import java.io.IOException;
@@ -250,14 +267,14 @@ class DependencyGenerator implements IGenerator {
 		import java.util.Map;
 
 		import javax.servlet.ServletException;
-		import javax.servlet.annotation.WebServlet;
 		import javax.servlet.http.HttpServlet;
 		import javax.servlet.http.HttpServletRequest;
 		import javax.servlet.http.HttpServletResponse;
-	'''
-	
-	def servletClassHead() '''
 		
+		import com.mongodb.BasicDBObject;
+		import com.mongodb.DB;
+		import com.mongodb.DBCollection;
+		import com.mongodb.MongoClient;
 	'''
 }
 	

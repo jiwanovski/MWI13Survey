@@ -130,9 +130,9 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
         return createMatrixAdapter();
       }
       @Override
-      public Adapter caseComboBox(ComboBox object)
+      public Adapter caseCheckBox(CheckBox object)
       {
-        return createComboBoxAdapter();
+        return createCheckBoxAdapter();
       }
       @Override
       public Adapter caseDropDown(DropDown object)
@@ -332,16 +332,16 @@ public class SurveyAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.ComboBox <em>Combo Box</em>}'.
+   * Creates a new adapter for an object of class '{@link de.nordakademie.mwi13a.team1.survey.survey.CheckBox <em>Check Box</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.nordakademie.mwi13a.team1.survey.survey.ComboBox
+   * @see de.nordakademie.mwi13a.team1.survey.survey.CheckBox
    * @generated
    */
-  public Adapter createComboBoxAdapter()
+  public Adapter createCheckBoxAdapter()
   {
     return null;
   }

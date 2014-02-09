@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import de.nordakademie.mwi13a.team1.survey.services.SurveyGrammarAccess;
 import de.nordakademie.mwi13a.team1.survey.survey.Answer;
-import de.nordakademie.mwi13a.team1.survey.survey.ComboBox;
+import de.nordakademie.mwi13a.team1.survey.survey.CheckBox;
 import de.nordakademie.mwi13a.team1.survey.survey.DropDown;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
@@ -43,9 +43,9 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case SurveyPackage.COMBO_BOX:
+			case SurveyPackage.CHECK_BOX:
 				if(context == grammarAccess.getSurveyTerminalTypesRule()) {
-					sequence_SurveyTerminalTypes(context, (ComboBox) semanticObject); 
+					sequence_SurveyTerminalTypes(context, (CheckBox) semanticObject); 
 					return; 
 				}
 				else break;
@@ -202,9 +202,9 @@ public class SurveySemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name='ComboBox' answer+=Answer+)
+	 *     (name='CheckBox' answer+=Answer+)
 	 */
-	protected void sequence_SurveyTerminalTypes(EObject context, ComboBox semanticObject) {
+	protected void sequence_SurveyTerminalTypes(EObject context, CheckBox semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

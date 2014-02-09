@@ -51,7 +51,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="matrixQuestion" upperBound="-1"
         eType="#//MatrixQuestion" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComboBox" eSuperTypes="#//SurveyTerminalTypes">
+  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//SurveyTerminalTypes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="answer" upperBound="-1"
         eType="#//Answer" containment="true"/>
   </eClassifiers>

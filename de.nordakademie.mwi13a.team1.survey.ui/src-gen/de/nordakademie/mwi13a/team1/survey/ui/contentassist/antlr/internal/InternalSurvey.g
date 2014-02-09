@@ -2285,11 +2285,11 @@ rule__SurveyTerminalTypes__Group_3__0__Impl
     }
 :
 (
-{ before(grammarAccess.getSurveyTerminalTypesAccess().getComboBoxAction_3_0()); }
+{ before(grammarAccess.getSurveyTerminalTypesAccess().getCheckBoxAction_3_0()); }
 (
 
 )
-{ after(grammarAccess.getSurveyTerminalTypesAccess().getComboBoxAction_3_0()); }
+{ after(grammarAccess.getSurveyTerminalTypesAccess().getCheckBoxAction_3_0()); }
 )
 
 ;
@@ -3168,16 +3168,16 @@ rule__SurveyTerminalTypes__NameAssignment_3_1
     }
 :
 (
-{ before(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); }
+{ before(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); }
 (
-{ before(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); }
+{ before(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); }
 
-	'ComboBox' 
+	'CheckBox' 
 
-{ after(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); }
+{ after(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); }
 )
 
-{ after(grammarAccess.getSurveyTerminalTypesAccess().getNameComboBoxKeyword_3_1_0()); }
+{ after(grammarAccess.getSurveyTerminalTypesAccess().getNameCheckBoxKeyword_3_1_0()); }
 )
 
 ;

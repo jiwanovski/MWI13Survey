@@ -3,7 +3,7 @@
 package de.nordakademie.mwi13a.team1.survey.survey.impl;
 
 import de.nordakademie.mwi13a.team1.survey.survey.Answer;
-import de.nordakademie.mwi13a.team1.survey.survey.ComboBox;
+import de.nordakademie.mwi13a.team1.survey.survey.CheckBox;
 import de.nordakademie.mwi13a.team1.survey.survey.SurveyPackage;
 
 import java.util.Collection;
@@ -20,18 +20,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Combo Box</b></em>'.
+ * An implementation of the model object '<em><b>Check Box</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.ComboBoxImpl#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link de.nordakademie.mwi13a.team1.survey.survey.impl.CheckBoxImpl#getAnswer <em>Answer</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
+public class CheckBoxImpl extends SurveyTerminalTypesImpl implements CheckBox
 {
   /**
    * The cached value of the '{@link #getAnswer() <em>Answer</em>}' containment reference list.
@@ -48,7 +48,7 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComboBoxImpl()
+  protected CheckBoxImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
   @Override
   protected EClass eStaticClass()
   {
-    return SurveyPackage.Literals.COMBO_BOX;
+    return SurveyPackage.Literals.CHECK_BOX;
   }
 
   /**
@@ -73,7 +73,7 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
   {
     if (answer == null)
     {
-      answer = new EObjectContainmentEList<Answer>(Answer.class, this, SurveyPackage.COMBO_BOX__ANSWER);
+      answer = new EObjectContainmentEList<Answer>(Answer.class, this, SurveyPackage.CHECK_BOX__ANSWER);
     }
     return answer;
   }
@@ -88,7 +88,7 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
   {
     switch (featureID)
     {
-      case SurveyPackage.COMBO_BOX__ANSWER:
+      case SurveyPackage.CHECK_BOX__ANSWER:
         return ((InternalEList<?>)getAnswer()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -104,7 +104,7 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
   {
     switch (featureID)
     {
-      case SurveyPackage.COMBO_BOX__ANSWER:
+      case SurveyPackage.CHECK_BOX__ANSWER:
         return getAnswer();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -121,7 +121,7 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
   {
     switch (featureID)
     {
-      case SurveyPackage.COMBO_BOX__ANSWER:
+      case SurveyPackage.CHECK_BOX__ANSWER:
         getAnswer().clear();
         getAnswer().addAll((Collection<? extends Answer>)newValue);
         return;
@@ -139,7 +139,7 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
   {
     switch (featureID)
     {
-      case SurveyPackage.COMBO_BOX__ANSWER:
+      case SurveyPackage.CHECK_BOX__ANSWER:
         getAnswer().clear();
         return;
     }
@@ -156,10 +156,10 @@ public class ComboBoxImpl extends SurveyTerminalTypesImpl implements ComboBox
   {
     switch (featureID)
     {
-      case SurveyPackage.COMBO_BOX__ANSWER:
+      case SurveyPackage.CHECK_BOX__ANSWER:
         return answer != null && !answer.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ComboBoxImpl
+} //CheckBoxImpl

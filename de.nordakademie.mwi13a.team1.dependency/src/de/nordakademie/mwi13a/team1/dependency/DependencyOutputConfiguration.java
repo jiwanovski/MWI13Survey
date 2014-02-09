@@ -11,17 +11,10 @@ public class DependencyOutputConfiguration implements IOutputConfigurationProvid
 	public static final String GEN_SERVLET_OUTPUT = "gen-servlet";
 	public static final String GEN_WEBXML_OUTPUT = "gen-webXml";
 	public static final String GEN_EMBEDDED_APACHE_OUTPUT = "gen-embeddedApache";
+	public static final String GEN_BEAN_OUTPUT = "gen-bean";
 	
 	@Override
 	public Set<OutputConfiguration> getOutputConfigurations() {
-		OutputConfiguration defaultOutput = new OutputConfiguration(IFileSystemAccess.DEFAULT_OUTPUT);
-	    defaultOutput.setDescription("Output Folder");
-	    defaultOutput.setOutputDirectory("./src-gen");
-	    defaultOutput.setOverrideExistingResources(true);
-	    defaultOutput.setCreateOutputDirectory(true);
-	    defaultOutput.setCleanUpDerivedResources(true);
-	    defaultOutput.setSetDerivedProperty(true);
-
 	    OutputConfiguration servletOutput = new OutputConfiguration(GEN_SERVLET_OUTPUT);
 	    servletOutput.setDescription("Read-only Output Folder");
 	    servletOutput.setOutputDirectory("./src/servlets");
@@ -45,7 +38,15 @@ public class DependencyOutputConfiguration implements IOutputConfigurationProvid
 	    embeddedApacheOutput.setCreateOutputDirectory(true);
 	    embeddedApacheOutput.setCleanUpDerivedResources(false);
 	    embeddedApacheOutput.setSetDerivedProperty(false);
-	    return newHashSet(defaultOutput, servletOutput, webXmlOutput, embeddedApacheOutput);
+	    
+	    OutputConfiguration beanOutput = new OutputConfiguration(GEN_BEAN_OUTPUT);
+	    beanOutput.setDescription("Read-only Output Folder");
+	    beanOutput.setOutputDirectory("./src/beans");
+	    beanOutput.setOverrideExistingResources(false);
+	    beanOutput.setCreateOutputDirectory(true);
+	    beanOutput.setCleanUpDerivedResources(false);
+	    beanOutput.setSetDerivedProperty(false);
+	    return newHashSet(servletOutput, webXmlOutput, embeddedApacheOutput, beanOutput);
 	}
 
 }
