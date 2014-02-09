@@ -3,6 +3,7 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.generator
 
+import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
 import de.nordakademie.mwi13a.team1.dependency.DependencyOutputConfiguration
 import de.nordakademie.mwi13a.team1.dependency.dependency.And
 import de.nordakademie.mwi13a.team1.dependency.dependency.Bracket
@@ -19,8 +20,16 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtend2.lib.StringConcatenation
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-
-import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
+import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
+import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
+import de.nordakademie.mwi13a.team1.survey.survey.CheckBox
+import de.nordakademie.mwi13a.team1.survey.survey.TextLine
+import de.nordakademie.mwi13a.team1.survey.survey.TextBlock
+import de.nordakademie.mwi13a.team1.survey.survey.Radio
+import de.nordakademie.mwi13a.team1.survey.survey.DropDown
+import de.nordakademie.mwi13a.team1.survey.survey.Matrix
+import org.eclipse.emf.common.util.EList
+import de.nordakademie.mwi13a.team1.survey.survey.Answer
 
 /**
  * Generates code from your model files on save.
@@ -37,7 +46,10 @@ class DependencyGenerator implements IGenerator {
 			fsa.generateFile("web.xml", DependencyOutputConfiguration::GEN_WEBXML_OUTPUT, dm.toWebXml)
 			// Generate the StartEmbeddedApache.java
 			fsa.generateFile("StartEmbeddedApache.java", DependencyOutputConfiguration::GEN_EMBEDDED_APACHE_OUTPUT, dm.toStartEmbeddedApache)
-			for (survey: dm.elements) {				
+			for (survey: dm.elements) {
+				// Generate overview servlets
+				val fileNameOverviewServlet = (survey.name as Questionnaire).name.cleanUpString + "OverviewServlet.java"			
+				fsa.generateFile(fileNameOverviewServlet, DependencyOutputConfiguration::GEN_SERVLET_OUTPUT, survey.toOverviewServlet)				
 				for (part: survey.partElements) {
 					// Generate the Beans
 					val fileNameBean = part.getObjectName + "Bean"
@@ -49,6 +61,96 @@ class DependencyGenerator implements IGenerator {
 			}
 		}
 	}
+	
+	def toOverviewServlet(SurveyElements e) '''
+		package servlets;
+
+		import java.io.IOException;
+		import java.io.PrintWriter;
+		import java.util.ArrayList;
+		import java.util.List;
+
+		import javax.servlet.ServletException;
+		import javax.servlet.http.HttpServlet;
+		import javax.servlet.http.HttpServletRequest;
+		import javax.servlet.http.HttpServletResponse;
+
+		import com.mongodb.DB;
+		import com.mongodb.DBCollection;
+		import com.mongodb.DBCursor;
+		import com.mongodb.DBObject;
+		import com.mongodb.MongoClient;
+		
+		«FOR p: e.partElements»
+			import beans.«p.getObjectName»Bean;
+		«ENDFOR»
+		
+		public class «(e.name as Questionnaire).name.cleanUpString»OverviewServlet extends HttpServlet {
+			private static final long serialVersionUID = 1L;
+			protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+				// Connect to MongoDB
+				MongoClient mongoClient = new MongoClient();
+				DBCursor cursor;
+				DB db = mongoClient.getDB("surveyDB");
+				«FOR p: e.partElements»
+					DBCollection «p.getObjectName»Collection;
+					«p.getObjectName»Collection = db.getCollection("«p.getObjectName»Collection");
+					
+					if («p.getObjectName»Collection == null) {
+						«p.getObjectName»Collection = db.createCollection("«p.getObjectName»Collection", null);
+					}
+					
+					cursor = «p.getObjectName»Collection.find();
+					List<«p.getObjectName»Bean> «p.getObjectName»List = new ArrayList<«p.getObjectName»Bean>();
+					while (cursor.hasNext()) {
+						DBObject dbo = cursor.next();
+						«p.getObjectName»Bean Bean«p.getObjectName» = «p.getObjectName»Bean.fromDBObject(dbo);
+						
+						«p.getObjectName»List.add(Bean«p.getObjectName»);
+					}
+				«ENDFOR»
+				
+				
+				
+				response.setContentType("text/html");
+				PrintWriter out = response.getWriter();
+				out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 " +
+					"Transitional//EN\">\n" +
+					"<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/css/default.css'/>\n"+
+					"<HTML>\n" +
+					"<HEAD><TITLE>«(e.name as Questionnaire).name»</TITLE></HEAD>\n" +
+					"<BODY>\n<FORM><DIV>" +
+					"<H1>«(e.name as Questionnaire).name»</H1>");
+					«FOR p: e.partElements»
+						out.println("<fieldset class='part'>\n" +
+							"<legend>«p.name.name»</legend>");
+						«FOR q: p.name.question»
+							«switch(q.questionType) {
+										
+								Radio: {
+									q.name.printOverviewQuestionLine;
+									(q.questionType as Radio).answer.printOverviewAnswerLine 																																				
+								}
+								CheckBox: {
+									q.name.printOverviewQuestionLine;
+									(q.questionType as CheckBox).answer.printOverviewAnswerLine
+								}
+								DropDown: {
+									q.name.printOverviewQuestionLine;
+									(q.questionType as DropDown).answer.printOverviewAnswerLine
+								}
+								Matrix: {
+									q.name.printOverviewQuestionLine;
+									(q.questionType as Matrix).printOverviewMatrix									
+								}								
+							}»
+						«ENDFOR»
+						out.println("</fieldset>\n");
+					«ENDFOR»
+					out.println("</DIV></FORM></BODY></HTML>");
+			}
+		}
+	'''
 	
 	def toBean(PartElements part) '''
 		package beans;
@@ -159,7 +261,15 @@ class DependencyGenerator implements IGenerator {
 					<servlet-name>«part.getObjectName»Servlet</servlet-name>
 					<url-pattern>/«part.getObjectName»</url-pattern>
 				</servlet-mapping>
-			«ENDFOR»							
+			«ENDFOR»	
+			<servlet>
+				<servlet-name>«(survey.name as Questionnaire).name.cleanUpString»OverviewServlet</servlet-name>
+				<servlet-class>servlets.«(survey.name as Questionnaire).name.cleanUpString»OverviewServlet</servlet-class>
+			</servlet>
+			<servlet-mapping>
+				<servlet-name>«(survey.name as Questionnaire).name.cleanUpString»OverviewServlet</servlet-name>
+				<url-pattern>/«(survey.name as Questionnaire).name.cleanUpString»</url-pattern>
+			</servlet-mapping>
 		«ENDFOR»	
 			<welcome-file-list>
 				<welcome-file>index.jsp</welcome-file>  	
@@ -170,12 +280,12 @@ class DependencyGenerator implements IGenerator {
 	def printNextParts(DefineNextPart np) '''															
 		«FOR dependency: np.nextParts»
 			«IF (dependency.expressions.length == 0)»
-				nextPart = "«dependency.name.name.replace(" ","_")».jsp";
+				nextPart = "«getObjectName(np.containingPartElement)».jsp";
 			«ELSE»
 				«FOR expression: dependency.expressions»
 					// Check next page dependencies
 					if («solveDependencies(expression)») {
-						nextPart = "«(dependency.name as Part).name.replace(" ","_").replace("ä","ae").replace("ö","oe").replace("ü","ue")».jsp";
+						nextPart = "«getObjectName(np.containingPartElement)».jsp";
 					}
 				«ENDFOR»
 			«ENDIF»						
@@ -186,6 +296,56 @@ class DependencyGenerator implements IGenerator {
 	
 	def printLastPart() '''
 		request.getRequestDispatcher("final.jsp").forward(request, response);
+	'''
+	
+	def printOverviewQuestionLine(String q) '''
+		out.println(
+			"<p>" +
+				"<label class='lblQuestion'>Frage:</label>" +
+			"</p>" +
+			"<p>" +
+				"<label>«q»</label>" +
+			"</p>"
+		);
+	'''
+	
+	def printOverviewAnswerLine(EList<Answer> a) '''
+		out.println(
+			"<p>" +
+				"<label class='lblQuestion'>Antworten/Anzahl:</label>" +
+			"</p>" +
+			"<p>" +
+				"<ol>" +
+					«FOR a2: a»
+						"<li>«a2.name»+ Anzahl</li>" +
+					«ENDFOR»
+				"</ol>" +
+				"</p>"
+		);
+	'''
+	
+	def printOverviewMatrix(Matrix m) '''
+		out.println(
+			"<table cellspacing='5'>" +
+				"<tr>" +
+					"<td>&nbsp;</td>" +
+					«FOR answer: m.answer»
+						"<td>«answer.name»</td>" +
+					«ENDFOR»
+				"</tr>" +
+				"<tr>" +
+					«FOR matrixquestion: m.matrixQuestion»
+						"<tr>" +
+							"<td>«matrixquestion.name»</td>" +
+							«FOR answer: m.answer»
+								"<td class='radio'>" +
+									"<input class='matrix' type='radio' name='«matrixquestion.id»' value='«answer.id»'/>" +
+								"</td>" +
+							«ENDFOR»
+						"</tr>" +
+					«ENDFOR»
+			"</table>"
+		);
 	'''
 	
 	def toStartEmbeddedApache(DependencyModel dm) '''

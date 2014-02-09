@@ -61,7 +61,7 @@ class SurveyGenerator implements IGenerator {
 							«IF !questionnaire.name.empty»
 								«val partname = questionnaire.part.head»
 								<p> 
-								<a href="«partname.name».jsp">«questionnaire.name»</a><br>
+								<a href="«questionnaire.name»«partname.name».jsp">«questionnaire.name»</a><br>
 							«ENDIF»
 						«ENDFOR»
 					</p>
@@ -190,6 +190,17 @@ class SurveyGenerator implements IGenerator {
 			margin-right: 0px;
 			margin-top: 15px;
 			margin-bottom: 5px;
+		}
+		
+		ol /*Label format for all Lists*/ {
+			width: auto;
+			float: left;
+			text-align: left;
+			font-weight: 100;
+			margin-right: 0px;
+			margin-bottom: 5px;
+			margin-left: 25px;
+			font-size: 10pt;
 		}
 		
 		.lblBox /*Label format for all questions*/ {

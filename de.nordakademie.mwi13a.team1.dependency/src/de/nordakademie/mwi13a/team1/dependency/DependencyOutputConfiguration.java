@@ -46,6 +46,7 @@ public class DependencyOutputConfiguration implements IOutputConfigurationProvid
 	    beanOutput.setCreateOutputDirectory(true);
 	    beanOutput.setCleanUpDerivedResources(false);
 	    beanOutput.setSetDerivedProperty(false);
+	    
 	    return newHashSet(servletOutput, webXmlOutput, embeddedApacheOutput, beanOutput);
 	}
 
