@@ -33,8 +33,9 @@ class SurveyGenerator implements IGenerator {
 		fsa.generateFile("final.jsp", SurveyOutputConfiguration::GEN_JSP_OUTPUT, survey.toFinalJSP)
 			for (questionnaire : survey.questionnaire){
 				for (part : questionnaire.part){
-					val fileName = part.name.replace(" ","_").replace("ä","ae").replace("ö","oe").replace("ü","ue")
-					fsa.generateFile(fileName + ".jsp", SurveyOutputConfiguration::GEN_JSP_OUTPUT, toJSP( questionnaire , part))
+					val fileName = questionnaire.name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")
+					val filepartname = part.name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")
+					fsa.generateFile(fileName+filepartname + ".jsp", SurveyOutputConfiguration::GEN_JSP_OUTPUT, toJSP( questionnaire , part))
 				}					
 			}
 		}
@@ -46,22 +47,24 @@ class SurveyGenerator implements IGenerator {
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 			<head>
-				  <title>«survey.toString»</title>
+				  <title>Overview of all Questionnairies</title>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<link rel="stylesheet" type="text/css" href="css/default.css" />
 			</head>
 			<body>    
 				<form>
 				<div>
-					<h1>«survey.toString»</h1>
+					<h1>Overview of all Questionnairies </h1>
 					<fieldset class="part">
 					<legend>Your Questionnairies</legend>
 					<p>
 						«FOR questionnaire : survey.questionnaire»
 							«IF !questionnaire.name.empty»
 								«val partname = questionnaire.part.head»
+								«val fileName = questionnaire.name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»
+								«val filepartname = partname.name.replace(" ","").replace("ä","ae").replace("ö","oe").replace("ü","ue")»
 								<p> 
-								<a href="«questionnaire.name»«partname.name».jsp">«questionnaire.name»</a><br>
+								<a href="«fileName»«filepartname».jsp">«questionnaire.name»</a><br>
 							«ENDIF»
 						«ENDFOR»
 					</p>
@@ -99,7 +102,7 @@ class SurveyGenerator implements IGenerator {
 					</fieldset>
 					<p>
 					<fieldset class="buttons">
-						<input class="button" type="reset" value=" Cancel">
+						<a class="button" href="index.jsp"> Cancel</a>
 						<input class="button" type="submit" value=" Next &raquo;">
 					</fieldset>
 					</p>
@@ -301,14 +304,14 @@ class SurveyGenerator implements IGenerator {
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 			<head>
-				  <title>«survey.toString»</title>
+				  <title>Thanks</title>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<link rel="stylesheet" type="text/css" href="css/default.css" />
 			</head>
 			<body>    
 				<form>
 				<div>
-					<h1>«survey.toString»</h1>
+					<h1>Thanks</h1>
 					<fieldset class="part">
 					<h2>Vielen Dank für Ihre Teilnahme.</h2><br>
 					<a href="index.jsp">Zurück zur Startseite</a>

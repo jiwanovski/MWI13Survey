@@ -21,25 +21,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class DependencyUtil {
-  private final static ArrayList<Question> questionsAdded = new Function0<ArrayList<Question>>() {
-    public ArrayList<Question> apply() {
-      ArrayList<Question> _newArrayList = CollectionLiterals.<Question>newArrayList();
-      return _newArrayList;
-    }
-  }.apply();
+  private final static ArrayList<Question> questionsAdded = CollectionLiterals.<Question>newArrayList();
   
-  private final static ArrayList<MatrixQuestion> matrixQuestionsAdded = new Function0<ArrayList<MatrixQuestion>>() {
-    public ArrayList<MatrixQuestion> apply() {
-      ArrayList<MatrixQuestion> _newArrayList = CollectionLiterals.<MatrixQuestion>newArrayList();
-      return _newArrayList;
-    }
-  }.apply();
+  private final static ArrayList<MatrixQuestion> matrixQuestionsAdded = CollectionLiterals.<MatrixQuestion>newArrayList();
   
   public static ArrayList<Part> partHierarchy(final PartElements e) {
     ArrayList<Part> _xblockexpression = null;
@@ -59,7 +48,7 @@ public class DependencyUtil {
             } else {
               boolean _contains = visited.contains(current);
               boolean _not = (!_contains);
-              _and = (_notEquals && _not);
+              _and = _not;
             }
             if (_and) {
               visited.add(current);
@@ -71,8 +60,7 @@ public class DependencyUtil {
                 boolean _equals = _name.equals(_name_1);
                 if (_equals) {
                   int i = 0;
-                  int _plus = (1 + 1);
-                  i = _plus;
+                  i = (1 + 1);
                 }
               }
             }
@@ -96,8 +84,7 @@ public class DependencyUtil {
       if (_notEquals) {
         boolean _contains = DependencyUtil.questionsAdded.contains(q);
         contains = _contains;
-        boolean _not = (!contains);
-        if (_not) {
+        if ((!contains)) {
           DependencyUtil.questionsAdded.add(q);
         }
       }
@@ -114,8 +101,7 @@ public class DependencyUtil {
       if (_notEquals) {
         boolean _contains = DependencyUtil.matrixQuestionsAdded.contains(q);
         contains = _contains;
-        boolean _not = (!contains);
-        if (_not) {
+        if ((!contains)) {
           DependencyUtil.matrixQuestionsAdded.add(q);
         }
       }
@@ -154,7 +140,7 @@ public class DependencyUtil {
             } else {
               boolean _contains = params.contains(mq);
               boolean _not = (!_contains);
-              _and = (_notEquals && _not);
+              _and = _not;
             }
             if (_and) {
               params.add(mq);
@@ -168,7 +154,7 @@ public class DependencyUtil {
           } else {
             boolean _contains_1 = params.contains(q);
             boolean _not_1 = (!_contains_1);
-            _and_1 = (_notEquals_1 && _not_1);
+            _and_1 = _not_1;
           }
           if (_and_1) {
             params.add(q);
@@ -215,8 +201,7 @@ public class DependencyUtil {
       String _questionaireName = DependencyUtil.getQuestionaireName(e);
       String _partName = DependencyUtil.getPartName(e);
       final String text = (_questionaireName + _partName);
-      String _cleanUpString = DependencyUtil.cleanUpString(text);
-      _xblockexpression = (_cleanUpString);
+      _xblockexpression = (DependencyUtil.cleanUpString(text));
     }
     return _xblockexpression;
   }
@@ -228,51 +213,42 @@ public class DependencyUtil {
       final EList<Dependency> allQuestions = _containerOfType.getExpressions();
       final Function1<Dependency,Boolean> _function = new Function1<Dependency,Boolean>() {
         public Boolean apply(final Dependency it) {
-          boolean _isAncestor = EcoreUtil.isAncestor(it, e);
-          return Boolean.valueOf(_isAncestor);
+          return Boolean.valueOf(EcoreUtil.isAncestor(it, e));
         }
       };
       final Dependency containingPart = IterableExtensions.<Dependency>findFirst(allQuestions, _function);
       int _indexOf = allQuestions.indexOf(containingPart);
       List<Dependency> _subList = allQuestions.subList(0, _indexOf);
-      List<DMQuestion> _typeSelect = EcoreUtil2.<DMQuestion>typeSelect(_subList, DMQuestion.class);
-      _xblockexpression = (_typeSelect);
+      _xblockexpression = (EcoreUtil2.<DMQuestion>typeSelect(_subList, DMQuestion.class));
     }
     return _xblockexpression;
   }
   
   public static SurveyElements containingSurveyElement(final EObject e) {
-    SurveyElements _containerOfType = EcoreUtil2.<SurveyElements>getContainerOfType(e, SurveyElements.class);
-    return _containerOfType;
+    return EcoreUtil2.<SurveyElements>getContainerOfType(e, SurveyElements.class);
   }
   
   public static Questionnaire containingQuestionnaire(final EObject e) {
-    Questionnaire _containerOfType = EcoreUtil2.<Questionnaire>getContainerOfType(e, Questionnaire.class);
-    return _containerOfType;
+    return EcoreUtil2.<Questionnaire>getContainerOfType(e, Questionnaire.class);
   }
   
   public static DMNextParts containingDMNextPart(final EObject e) {
-    DMNextParts _containerOfType = EcoreUtil2.<DMNextParts>getContainerOfType(e, DMNextParts.class);
-    return _containerOfType;
+    return EcoreUtil2.<DMNextParts>getContainerOfType(e, DMNextParts.class);
   }
   
   public static Part containingPart(final EObject e) {
-    Part _containerOfType = EcoreUtil2.<Part>getContainerOfType(e, Part.class);
-    return _containerOfType;
+    return EcoreUtil2.<Part>getContainerOfType(e, Part.class);
   }
   
   public static PartElements containingPartElement(final EObject e) {
-    PartElements _containerOfType = EcoreUtil2.<PartElements>getContainerOfType(e, PartElements.class);
-    return _containerOfType;
+    return EcoreUtil2.<PartElements>getContainerOfType(e, PartElements.class);
   }
   
   public static Question containingQuestion(final EObject e) {
-    Question _containerOfType = EcoreUtil2.<Question>getContainerOfType(e, Question.class);
-    return _containerOfType;
+    return EcoreUtil2.<Question>getContainerOfType(e, Question.class);
   }
   
   public static Matrix containingMatrix(final EObject e) {
-    Matrix _containerOfType = EcoreUtil2.<Matrix>getContainerOfType(e, Matrix.class);
-    return _containerOfType;
+    return EcoreUtil2.<Matrix>getContainerOfType(e, Matrix.class);
   }
 }

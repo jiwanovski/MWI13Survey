@@ -280,12 +280,12 @@ class DependencyGenerator implements IGenerator {
 	def printNextParts(DefineNextPart np) '''															
 		«FOR dependency: np.nextParts»
 			«IF (dependency.expressions.length == 0)»
-				nextPart = "«getObjectName(np.containingPartElement)».jsp";
+				nextPart = "«getQuestionaireName(np.containingPartElement).cleanUpString»«dependency.name.name.cleanUpString».jsp";
 			«ELSE»
 				«FOR expression: dependency.expressions»
 					// Check next page dependencies
 					if («solveDependencies(expression)») {
-						nextPart = "«getObjectName(np.containingPartElement)».jsp";
+						nextPart = "«getQuestionaireName(np.containingPartElement).cleanUpString»«(dependency.name as Part).name.cleanUpString».jsp";
 					}
 				«ENDFOR»
 			«ENDIF»						
