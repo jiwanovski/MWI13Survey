@@ -274,7 +274,7 @@ class SurveyGeneratorTest {
 						</fieldset>
 						<p>
 						<fieldset class="buttons">
-							<input class="button" type="reset" value=" Cancel">
+							<a class="button" href="index.jsp"> Cancel</a>
 							<input class="button" type="submit" value=" Next &raquo;">
 						</fieldset>
 						</p>

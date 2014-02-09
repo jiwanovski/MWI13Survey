@@ -763,7 +763,7 @@ public class SurveyGeneratorTest {
     _builder_1.append("<fieldset class=\"buttons\">");
     _builder_1.newLine();
     _builder_1.append("\t\t\t\t");
-    _builder_1.append("<input class=\"button\" type=\"reset\" value=\" Cancel\">");
+    _builder_1.append("<a class=\"button\" href=\"index.jsp\"> Cancel</a>");
     _builder_1.newLine();
     _builder_1.append("\t\t\t\t");
     _builder_1.append("<input class=\"button\" type=\"submit\" value=\" Next &raquo;\">");
