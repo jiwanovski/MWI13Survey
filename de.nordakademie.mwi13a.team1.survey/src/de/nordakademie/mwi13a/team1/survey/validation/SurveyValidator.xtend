@@ -31,6 +31,7 @@ class SurveyValidator extends AbstractSurveyValidator {
 	public static val ID_ANSWER = "de.nordakademie.mwi13a.team1.survey.IDAnswer"
 	public static val TEXTLENGTH_TEXTBLOCK = "de.nordakademie.mwi13a.team1.survey.textlengthTextblock"
 	public static val TEXTLENGTH_TEXTLINE = "de.nordakademie.mwi13a.team1.survey.textlengthTextline"
+	public static val NAME_PART = "de.nordakademie.mwi13a.team1.survey.NamePart"
 	
 	
 	//Every Questionnaire must contain at least 1 Part
@@ -112,6 +113,20 @@ class SurveyValidator extends AbstractSurveyValidator {
 				SurveyPackage::eINSTANCE.part_Id,
 				ID_PART,
 				part.id)
+			}
+		}
+	}
+	
+	//In a Questionnaire may not have two or more Parts the same ID
+	@Check(CheckType.FAST)
+	def NamePart (Part part){
+		val partarray = part.containingQuestionnaire.part
+			for (j: partarray){
+				if((part.name.equals(j.name)) && (part.name !== (j.name))) {
+				error("Duplicate Name of Parts.", 
+				SurveyPackage::eINSTANCE.part_Name,
+				NAME_PART,
+				part.name)
 			}
 		}
 	}

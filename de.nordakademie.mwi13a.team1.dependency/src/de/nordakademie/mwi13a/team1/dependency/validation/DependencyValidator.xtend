@@ -30,6 +30,7 @@ class DependencyValidator extends AbstractDependencyValidator {
 	public static val CHECK_ANSWERS_MEMBERSHIP = "de.nordakademie.mwi13a.team1.dependency.checkAnswerMembership" 
 	public static val CHECK_MATRIXQUESTION_MEMBERSHIP = "de.nordakademie.mwi13a.team1.dependency.checkMatrixQuestionMembership"
 	public static val CHECK_MATRIXANSWER_MEMBERSHIP = "de.nordakademie.mwi13a.team1.dependency.checkMatrixAnswerMembership"
+	public static val CHECK_DEFAULT_NEXT_PART = "de.nordakademie.mwi13a.team1.dependency.checkMatrixAnswerMembership"
 	
 	
 	@Check
@@ -141,5 +142,15 @@ class DependencyValidator extends AbstractDependencyValidator {
 			CHECK_MATRIXANSWER_MEMBERSHIP,
 			mq.answer.toString)
 		}
+	}
+	
+	@Check
+	def checkDefaultNextPart(DefineNextPart np) {
+		if (!((np.nextParts.head as DMNextParts).expressions.length == 0)) {
+			error("The first next Part should have no dependencies",
+			DependencyPackage::eINSTANCE.defineNextPart_NextParts,
+			CHECK_DEFAULT_NEXT_PART,
+			np.nextParts.head.name.name)
+		}		
 	}
 }
