@@ -18,15 +18,36 @@ import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
 import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
 import org.eclipse.emf.ecore.EObject
 import de.nordakademie.mwi13a.team1.survey.survey.Survey
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
 
 class DependencyUtil {
 	static val questionsAdded = <Question>newArrayList()
 	static val matrixQuestionsAdded = <MatrixQuestion>newArrayList()
 	
-	def static partHierarchy(PartElements c) {
-		val visited = <PartElements>newArrayList()
+	def static partHierarchy(PartElements e) {
+		val visited = <Part>newArrayList()
 		
-		//var current = c.superclass
+		if (e.option instanceof DefineNextPart) {
+			for (v: (e.option as DefineNextPart).nextParts) {
+				var current = v.name
+				if (current != null && !visited.contains(current)) {
+					visited.add(current)
+					//val test = (e.containingSurveyElement.name) as Questionnaire
+					for (t: ((e.containingSurveyElement.partElements) )) {
+						if (t.name.equals(v.name)) {
+							var i = 0
+							i = 1+ 1
+						}
+					}
+				}
+				
+			}	
+		}
+		visited
+	}
+	
+	def static partHierarchy(Part p) {
+		val visited = <Part>newArrayList()
 	}
 	
 	def static addedQuestionParameters(Question q) {
@@ -133,4 +154,7 @@ class DependencyUtil {
 		e.getContainerOfType(typeof(Question))
 	}
 	
+	def static containingMatrix(EObject e) {
+		e.getContainerOfType(typeof(Matrix))
+	}
 }

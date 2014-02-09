@@ -3,21 +3,16 @@
  */
 package de.nordakademie.mwi13a.team1.dependency.validation
 
-import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
-import static extension org.eclipse.xtext.EcoreUtil2.*
-
-import org.eclipse.xtext.validation.Check
-import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts
-import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
-import de.nordakademie.mwi13a.team1.survey.survey.Part
-import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage
-import de.nordakademie.mwi13a.team1.survey.survey.Questionnaire
-import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
-import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
 import static extension de.nordakademie.mwi13a.team1.dependency.util.DependencyUtil.*
-import java.util.ArrayList
-import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts
+import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart
+import de.nordakademie.mwi13a.team1.dependency.dependency.DependencyPackage
+import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements
+import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements
+import de.nordakademie.mwi13a.team1.survey.survey.Part
+import org.eclipse.xtext.validation.Check
 
 //import org.eclipse.xtext.validation.Check
 
@@ -27,18 +22,37 @@ import de.nordakademie.mwi13a.team1.dependency.dependency.DMMatrixQuestion
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class DependencyValidator extends AbstractDependencyValidator {
-		
+	public static val CHECK_NEXT_PART = "de.nordakademie.mwi13a.team1.dependency.checkNextPart"
+	public static val CHECK_NEXT_PARTS_EXISTS = "de.nordakademie.mwi13a.team1.dependency.checkNextPartExists"
+	public static val CHECK_PART_MEMBERSHIP_PARTELEMENTS = "de.nordakademie.mwi13a.team1.dependency.checkPartMembershipPartElements"
+	public static val CHECK_PART_MEMBERSHIP_DMNEXTPARTS = "de.nordakademie.mwi13a.team1.dependency.checkPartMembershipDMNextParts"
+	public static val CHECK_QUESTION_MEMBERSHIP = "de.nordakademie.mwi13a.team1.dependency.checkQuestionMembership"
+	public static val CHECK_ANSWERS_MEMBERSHIP = "de.nordakademie.mwi13a.team1.dependency.checkAnswerMembership" 
+	public static val CHECK_MATRIXQUESTION_MEMBERSHIP = "de.nordakademie.mwi13a.team1.dependency.checkMatrixQuestionMembership"
+	public static val CHECK_MATRIXANSWER_MEMBERSHIP = "de.nordakademie.mwi13a.team1.dependency.checkMatrixAnswerMembership"
+	
+	
+	@Check
+	def checkPartHierarchy(PartElements e) {
+		if (e.partHierarchy.contains(e)) {
+			
+		}
+	}
+	
+	//A Part may not have a reference to itself
 	@Check
 	def checkNextPart(DMNextParts nextPart) {
 		val previousPart = ((nextPart.eContainer as DefineNextPart).eContainer as PartElements).name
 		val destinationPart = (nextPart.name as Part)
 		if (previousPart.equals(destinationPart)) {
-			error("Ein Abschnitt darf nicht auf sich selbst verweisen!",
-				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
-			)
+			error("A Part may not have a reference to itself!",
+				DependencyPackage::eINSTANCE.DMNextParts_Name,
+				CHECK_NEXT_PART,
+				nextPart.name.toString)
 		}
 	}
 	
+	//For a Part may not be defined the same Next Part several times
 	@Check
 	def checkNextPartExists(DMNextParts nextPart) {
 		var i = 0
@@ -46,22 +60,25 @@ class DependencyValidator extends AbstractDependencyValidator {
 			if (nextPart.name.equals(part.name)) {				
 				i = i + 1
 				if (i == 2) {
-					error("Der Next Part ist mehrfach definiert.",
-						DependencyPackage.Literals.DM_NEXT_PARTS__NAME
-					)
+					error("This part is referred several times.",
+					DependencyPackage::eINSTANCE.DMNextParts_Name,
+					CHECK_NEXT_PARTS_EXISTS,	
+					nextPart.name.toString)
 				}
 			}			
 		}
 	}
 	
+	//Every Part for which Dependencies are defined must be a member of its Questionnaire
 	@Check
 	def checkPartMembership(PartElements partElement) {
 		val survey = (partElement.eContainer as SurveyElements).name
 		val part = (partElement.name as Part)
 		if (!survey.equals(part.eContainer)) {
-			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
-				DependencyPackage.Literals.PART_ELEMENTS__NAME
-			)
+			error("This Part is not a member of the Questionnaire!",
+			DependencyPackage::eINSTANCE.partElements_Name,
+			CHECK_PART_MEMBERSHIP_PARTELEMENTS,
+			partElement.name.toString)
 		}
 	}
 	
@@ -70,9 +87,10 @@ class DependencyValidator extends AbstractDependencyValidator {
 		var q = nextPart.containingSurveyElement.name
 		var q2 = nextPart.name.containingQuestionnaire
 		if (!q.equals(q2)) {
-			error("Der Abschnitt gehört nicht zu dem Fragebogen!",
-				DependencyPackage.Literals.DM_NEXT_PARTS__NAME
-			)
+			error("This Part is not a member of the Questionnaire!",
+			DependencyPackage::eINSTANCE.DMNextParts_Name,
+			CHECK_PART_MEMBERSHIP_DMNEXTPARTS,
+			nextPart.name.toString)
 		}
 	}
 	
@@ -81,121 +99,47 @@ class DependencyValidator extends AbstractDependencyValidator {
 		val expectedPart = q.containingPartElement.name
 		val actualPart = q.question.containingPart
 		if (!expectedPart.equals(actualPart)) {
-			error("Die Frage gehört nicht zu dem Abschnitt!",
-				DependencyPackage.Literals.DM_QUESTION__QUESTION
-			)
+			error("This Question is not a member of the Part!",
+			DependencyPackage::eINSTANCE.DMQuestion_Question,
+			CHECK_QUESTION_MEMBERSHIP,
+			q.question.toString)
 		}
 	}
 	
+	//Dependencies may only be defined for corresponding Questions and Answers
 	@Check
 	def checkAnswerMembership(DMQuestion q) {
 		val expectedQuestion = q.question
 		val actualQuestion = q.answer.containingQuestion
 		if (!expectedQuestion.equals(actualQuestion)) {
-			error("Die Antwort gehört nicht zu der Frage!",
-				DependencyPackage.Literals.DM_QUESTION__ANSWER
-			)
+			error("This Answer is not a member of the Question!",
+			DependencyPackage::eINSTANCE.DMQuestion_Answer,
+			CHECK_ANSWERS_MEMBERSHIP,
+			q.answer.toString)
 		}		
 	}
 	
 	@Check
 	def checkMatrixQuestionMembership(DMMatrixQuestion mq) {
-		var i = 0
-		i + 1
+		val expectedPart = mq.containingPartElement.name
+		val actualPart = mq.question.containingPart
+		if (!expectedPart.equals(actualPart)) {
+			error("This Matrix Question is not a member of the Part!",
+			DependencyPackage::eINSTANCE.DMMatrixQuestion_Question,
+			CHECK_MATRIXQUESTION_MEMBERSHIP,
+			mq.question.toString)
+		}
 	}
 	
-//	@Check
-//	def checkPartHierarchy(PartElements element) {
-//		val visited = <Part>newArrayList()
-//		partHierarchyHelper(element, visited)
-//		//var current = element.name
-//		//while (current != null && !visited.contains(current)) {
-//		//	visited.add(current)
-//		//	for (next: element.nextParts) {
-//				
-//		//	}
-//		//	current =
-//		//}
-//		//visited
-//	}
-	
-//	def partHierarchyHelper(PartElements neededElement, ArrayList<Part> visited) {
-//		for (e: (neededElement.eContainer as SurveyElements).partElements) {
-//			if (e.name.equals(neededElement.name)) {
-//				if (!visited.contains(neededElement.name)) {
-//					visited.add(neededElement.name)
-//					
-//					for (n: neededElement.nextParts) {
-//						if (n.name != null) {
-//							//partHierarchyHelper(n.name.,visited)						
-//							
-//						}
-//					}
-//				} else {
-//					// ERROR
-//				}
-//			}
-//			
-//		}
-//		if (neededElement.name != null) {
-//			if (!visited.contains(neededElement.name)) {
-//				visited.add(neededElement.name)
-//				
-//				for (next: neededElement.nextParts) {
-//					if (next.name != null) {
-//						val g = (next.name as Part)
-//					}				
-//				}
-//			} else {
-//				
-//			}
-//			
-//		} 
-//			
-//			
-//			
-//		}
-		
-	
-	
-	
-	//@Check
-	//def checkPartSurvey(SDPart part) {
-	//	val surveyName = (part.eContainer as SurveyDependency).survey.name
-	//	val questionaireName = (part.part2.eContainer as Questionnaire).name
-		
-	//	if (!surveyName.equals(questionaireName)) {
-	//		error("Meine Fehlermeldung. Endlich!!!",
-	//			DependencyPackage.Literals.SD_PART__PART2
-	//		)
-	//	}
-	//}
-	
-	//@Check 
-	//def checkDefaultPart(SDPart part) {
-	//	val rootPartName = part.part2.name
-	//	val destinationPartName = part.defaultNextPart.name
-		
-	//	if (rootPartName.equals(destinationPartName)) {
-	//		error("Eine Seite kann nicht auf sich selbst verweisen.",
-	//			DependencyPackage.Literals.SD_PART__DEFAULT_NEXT_PART
-	//		)
-	//	}
-	//}
-	
-	//@Check
-	//def checkNextParts(SDNextParts nextPart) {
-//		val rootPartName = (nextPart.eContainer as SDPart).part2.name
-//		val destinationPartName = (nextPart.)
-//	}
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	@Check
+	def checkMatrixAnswerMembership(DMMatrixQuestion mq) {
+		val expectedMatrix = mq.question.containingMatrix
+		val actualMatrix = mq.answer.containingMatrix
+		if (!expectedMatrix.equals(actualMatrix)) {
+			error("This Matrix Answer is not a member of the Matrix!",
+			DependencyPackage::eINSTANCE.DMMatrixQuestion_Answer,
+			CHECK_MATRIXANSWER_MEMBERSHIP,
+			mq.answer.toString)
+		}
+	}
 }

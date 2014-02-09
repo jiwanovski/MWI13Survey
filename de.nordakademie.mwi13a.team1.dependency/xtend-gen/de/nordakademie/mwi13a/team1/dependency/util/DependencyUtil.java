@@ -3,8 +3,10 @@ package de.nordakademie.mwi13a.team1.dependency.util;
 import com.google.common.base.Objects;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMNextParts;
 import de.nordakademie.mwi13a.team1.dependency.dependency.DMQuestion;
+import de.nordakademie.mwi13a.team1.dependency.dependency.DefineNextPart;
 import de.nordakademie.mwi13a.team1.dependency.dependency.Dependency;
 import de.nordakademie.mwi13a.team1.dependency.dependency.PartElements;
+import de.nordakademie.mwi13a.team1.dependency.dependency.PartOptions;
 import de.nordakademie.mwi13a.team1.dependency.dependency.SurveyElements;
 import de.nordakademie.mwi13a.team1.survey.survey.Matrix;
 import de.nordakademie.mwi13a.team1.survey.survey.MatrixQuestion;
@@ -39,8 +41,51 @@ public class DependencyUtil {
     }
   }.apply();
   
-  public static void partHierarchy(final PartElements c) {
-    final ArrayList<PartElements> visited = CollectionLiterals.<PartElements>newArrayList();
+  public static ArrayList<Part> partHierarchy(final PartElements e) {
+    ArrayList<Part> _xblockexpression = null;
+    {
+      final ArrayList<Part> visited = CollectionLiterals.<Part>newArrayList();
+      PartOptions _option = e.getOption();
+      if ((_option instanceof DefineNextPart)) {
+        PartOptions _option_1 = e.getOption();
+        EList<DMNextParts> _nextParts = ((DefineNextPart) _option_1).getNextParts();
+        for (final DMNextParts v : _nextParts) {
+          {
+            Part current = v.getName();
+            boolean _and = false;
+            boolean _notEquals = (!Objects.equal(current, null));
+            if (!_notEquals) {
+              _and = false;
+            } else {
+              boolean _contains = visited.contains(current);
+              boolean _not = (!_contains);
+              _and = (_notEquals && _not);
+            }
+            if (_and) {
+              visited.add(current);
+              SurveyElements _containingSurveyElement = DependencyUtil.containingSurveyElement(e);
+              EList<PartElements> _partElements = _containingSurveyElement.getPartElements();
+              for (final PartElements t : _partElements) {
+                Part _name = t.getName();
+                Part _name_1 = v.getName();
+                boolean _equals = _name.equals(_name_1);
+                if (_equals) {
+                  int i = 0;
+                  int _plus = (1 + 1);
+                  i = _plus;
+                }
+              }
+            }
+          }
+        }
+      }
+      _xblockexpression = (visited);
+    }
+    return _xblockexpression;
+  }
+  
+  public static void partHierarchy(final Part p) {
+    final ArrayList<Part> visited = CollectionLiterals.<Part>newArrayList();
   }
   
   public static boolean addedQuestionParameters(final Question q) {
@@ -223,6 +268,11 @@ public class DependencyUtil {
   
   public static Question containingQuestion(final EObject e) {
     Question _containerOfType = EcoreUtil2.<Question>getContainerOfType(e, Question.class);
+    return _containerOfType;
+  }
+  
+  public static Matrix containingMatrix(final EObject e) {
+    Matrix _containerOfType = EcoreUtil2.<Matrix>getContainerOfType(e, Matrix.class);
     return _containerOfType;
   }
 }
